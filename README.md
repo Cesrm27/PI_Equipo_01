@@ -5,7 +5,6 @@
 ---
 
 ## 🌍 Descripción del Equipo 
-
 Somos el **Equipo 01** del curso **Proyecto Integrador 2026-1**, conformado por estudiantes de la carrera de Ingeniería Informática e Ingeniería Industrial.
 
 Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
@@ -16,9 +15,12 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 ## 📸 Fotografía del Equipo  
 <p align="center">
-<img width="1280" height="960" alt="WhatsApp Image 2026-08-18 at 5 41 05 PM" src="https://github.com/user-attachments/assets/c021a826-14ad-4eea-b32d-1759b97aaf3c" />
+<img width="650" alt="WhatsApp Image 2026-08-18 at 5 41 05 PM" src="https://github.com/user-attachments/assets/c021a826-14ad-4eea-b32d-1759b97aaf3c" />
+  <em>
 
-  <em>Figura 1. Fotografía del equipo 01</em>
+  
+Figura 1. Fotografía del equipo 01</em>
+ 
 </p>
 
 ---
