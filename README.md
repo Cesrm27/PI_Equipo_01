@@ -27,6 +27,7 @@ Figura 1. Fotografía del equipo 01</em>
 
 ## 👥 Integrantes del Equipo  
 
+
 <div align="center">
 
 | Foto | Nombre | Rol | Intereses |
