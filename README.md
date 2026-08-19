@@ -1,16 +1,9 @@
+# Equipo 01 - Proyecto Integrador
+
 <div align="center">
 
-<table>
-<tr>
-<td align="center">
-
-# Equipo 01 - Proyecto Integrador
 ### Carrera de Ingeniería Informática / Industrial  
 **Universidad Peruana Cayetano Heredia**
-
-</td>
-</tr>
-</table>
 
 </div>
 
@@ -44,13 +37,4 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Cesar Rodrigo Milla Gómez** | Líder del equipo | Innovación tecnológica, gestión de proyectos |
-| <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Anderson Josue Delerna Infantes** | Responsable de investigación | Sensores IoT, sostenibilidad agrícola |
-| <img src="/Recursos/Imágenes/integrante3.png" width="90"/> | **Kevin Esty Carvallo Neciosup** | Programador - Modelador | Programación, análisis de datos, simulación |
-| <img src="/Recursos/Imágenes/integrante4.png" width="90"/> | **Shedira Lumeris Sihuincha Palacin** | Encargada de documentación | Comunicación científica, redacción técnica |
-
----
-
-## 📌 Resumen Final  
-
-Este README resume quiénes somos, qué nos motiva y en qué ODS queremos enfocar nuestro trabajo durante el curso. A través de **AgroMind AI**, buscamos impulsar decisiones agrícolas más rentables y sostenibles mediante el uso de tecnología IoT e inteligencia artificial.
+| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Cesar Rodrigo Milla Gómez** | Líder
