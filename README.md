@@ -9,13 +9,7 @@ Somos el **Equipo 01** del curso **Proyecto Integrador 2026-1**, conformado por 
 
 Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
 - ODS 12: Producción y Consumo Responsables
- <p align="center">
- <img width="150" height="150" alt="WhatsApp Image 2026-08-18 at 9 39 10 PM" src="https://github.com/user-attachments/assets/eab4e84c-0aea-4777-8b69-fbe865d7d26d" />
-
 - ODS 15: Vida de Ecosistemas Terrestres
- <p align="center">
- <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/16aa973f-1a3b-444b-90fa-f3c18fd84832" />
-
 
 ---
 
