@@ -68,13 +68,11 @@ Integramos **sensores IoT, inteligencia artificial, análisis de datos y gestió
 
 ### ⚠️ Problemática
 
-Muchos agricultores pueden obtener información sobre su suelo mediante métodos tradicionales o sensores, pero estos datos suelen presentarse como **mediciones aisladas**, sin indicar claramente qué significan o qué acción tomar.
+Muchos agricultores pueden obtener datos sobre su suelo, pero no siempre saben **cómo interpretarlos ni qué acción tomar**.
 
-Conocer valores como la **humedad, pH, salinidad o temperatura** no siempre es suficiente para determinar qué necesita el suelo.
+> 🌱 **El reto no es medir el suelo, sino convertir los datos en decisiones útiles.**
 
-> **El problema no es únicamente medir el suelo, sino saber interpretar los datos y convertirlos en decisiones útiles.**
-
-Esto puede generar un manejo poco eficiente del suelo y de los recursos, afectando la productividad y su conservación.
+Esto puede generar un manejo poco eficiente del suelo y los recursos.
 
 ---
 
@@ -95,48 +93,67 @@ Buscamos que el agricultor pueda pasar de **observar datos** a **comprender qué
 De esta manera, buscamos contribuir a una agricultura más eficiente y sostenible, donde la tecnología permita **cuidar el suelo y utilizar los recursos de manera más responsable**.
 
 ---
-
 ### 🛠️ ¿En qué consistirá el proyecto?
 
-**AgroMind AI** será un sistema inteligente de **diagnóstico y seguimiento del suelo** que integrará sensores IoT e inteligencia artificial.
+AgroMind AI será un sistema inteligente que permitirá **monitorear, analizar y comprender las condiciones del suelo** mediante sensores IoT e inteligencia artificial.
 
-Los sensores recopilarán información sobre:
+<details>
+<summary>🌱 <strong>Ver cómo funcionará AgroMind AI</strong> ⬇️</summary>
+
+<br>
+
+Los sensores recopilarán información sobre diferentes condiciones del suelo y del entorno:
 
 <div align="center">
 
-💧 **Humedad** &nbsp;&nbsp; 🧪 **pH** &nbsp;&nbsp; 🧂 **Salinidad**  
-🌡️ **Temperatura** &nbsp;&nbsp; 🌧️ **Lluvia**
+💧 **Humedad**    🧪 **pH**    🧂 **Salinidad**
+🌡️ **Temperatura**    🌧️ **Lluvia**
 
 </div>
 
 Estos datos serán analizados conjuntamente mediante inteligencia artificial para **identificar posibles condiciones desfavorables y generar recomendaciones prácticas de manejo**.
 
-El sistema seguirá un ciclo de:
-
 <div align="center">
 
-**📡 Medir → 🔎 Diagnosticar → 💡 Recomendar → ⚙️ Actuar → 🔄 Verificar**
+**📡 Medir**
+⬇️
+**🔎 Diagnosticar**
+⬇️
+**💡 Recomendar**
+⬇️
+**⚙️ Actuar**
+⬇️
+**🔄 Verificar**
 
 </div>
 
-Además, almacenará el historial de mediciones para observar la evolución de las condiciones del suelo a lo largo del tiempo.
+Además, el sistema almacenará el historial de mediciones para observar **cómo evolucionan las condiciones del suelo a lo largo del tiempo**.
+
+</details>
 
 ---
 
 ### 🧠 ¿Dónde está nuestra innovación?
 
+AgroMind AI no busca únicamente medir el suelo, sino **convertir los datos obtenidos en información útil para tomar decisiones y hacer seguimiento de los resultados**.
+
+<details>
+<summary>💡 <strong>Ver nuestra propuesta de innovación</strong> ⬇️</summary>
+
+<br>
+
 La innovación de **AgroMind AI** no está únicamente en utilizar sensores, ya que esta tecnología ya existe.
 
-Nuestra propuesta busca integrar las mediciones dentro de un **proceso inteligente de diagnóstico, recomendación y seguimiento**.
+Nuestra propuesta consiste en integrar las mediciones dentro de un **proceso inteligente de diagnóstico, recomendación y seguimiento**.
 
 <div align="center">
 
-| Soluciones convencionales | AgroMind AI |
-|:---:|:---:|
-| 📊 Entregan mediciones | 🧠 Interpretan los datos |
-| 🔢 Datos aislados | 🔗 Analiza múltiples variables |
-| 👨‍🌾 El usuario interpreta | 💡 Genera recomendaciones |
-| 📍 Diagnóstico puntual | 🔄 Seguimiento de la evolución |
+|  Soluciones convencionales  |           AgroMind AI          |
+| :-------------------------: | :----------------------------: |
+|    📊 Entregan mediciones   |    🧠 Interpretan los datos    |
+|  🔢 Analizan datos aislados | 🔗 Analiza múltiples variables |
+| 👨‍🌾 El usuario interpreta |    💡 Genera recomendaciones   |
+|    📍 Diagnóstico puntual   | 🔄 Seguimiento de la evolución |
 
 </div>
 
@@ -148,19 +165,29 @@ sino también:
 
 > **“¿Qué puedo hacer y cómo sé si funcionó?”**
 
+De esta manera, el sistema permitirá pasar de una simple **medición del suelo** a un proceso continuo de **diagnóstico, acción y verificación**.
+
+</details>
+
+
 ---
 
 ### 📊 Índice de Estado del Suelo
 
-Como parte de la propuesta, desarrollaremos un indicador que permita representar de manera sencilla el estado general del suelo.
+AgroMind AI contará con un indicador que permitirá conocer de forma rápida y sencilla el estado general del suelo.
+
+<details>
+<summary>🌱 <strong>Ver ejemplo del Índice de Estado del Suelo</strong> ⬇️</summary>
+
+<br>
 
 <div align="center">
 
-### 🌱 Estado del suelo
+# 🌱 Estado del suelo
 
-# **72 / 100**
+## **72 / 100**
 
-**🟡 Condición moderada**
+### 🟡 Condición moderada
 
 | Indicador | Estado |
 |:---:|:---:|
@@ -173,11 +200,18 @@ Como parte de la propuesta, desarrollaremos un indicador que permita representar
 
 El objetivo es convertir información técnica en un resultado **simple y fácil de comprender** para el agricultor.
 
+</details>
+
 ---
 
-### 🔄 Seguimiento de la evolución del suelo
+### 🔄 Seguimiento de la Evolución del Suelo
 
-AgroMind AI permitirá comparar las condiciones del suelo antes y después de una acción de manejo.
+AgroMind AI permitirá comparar las condiciones del suelo antes y después de una acción de manejo, facilitando el seguimiento de sus resultados.
+
+<details>
+<summary>📈 <strong>Ver ejemplo de seguimiento</strong> ⬇️</summary>
+
+<br>
 
 <div align="center">
 
@@ -191,21 +225,21 @@ AgroMind AI permitirá comparar las condiciones del suelo antes y después de un
 ⬇️  
 📊 **Resultado**
 
-</div>
+<br>
 
-Por ejemplo:
-
-<div align="center">
+### 📊 Ejemplo de evolución
 
 | Momento | pH | Humedad | Salinidad | Estado |
 |:---:|:---:|:---:|:---:|:---:|
-| Día 01 | 5.3 | 24 % | Alta | 🔴 |
-| Día 10 | 5.5 | 30 % | Media | 🟡 |
-| Día 20 | 5.8 | 34 % | Normal | 🟢 |
+| 🌱 Día 01 | 5.3 | 24 % | Alta | 🔴 |
+| 🌿 Día 10 | 5.5 | 30 % | Media | 🟡 |
+| 🌳 Día 20 | 5.8 | 34 % | Normal | 🟢 |
 
 </div>
 
 Esto permitirá observar si las condiciones del suelo **mejoraron, empeoraron o permanecieron estables**.
+
+</details>
 
 ---
 
