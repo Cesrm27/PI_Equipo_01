@@ -32,10 +32,10 @@ Figura 1. Fotografía del equipo 01</em>
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img width="765" height="764" alt="WhatsApp Image 2026-08-19 at 10 23 42 PM" src="https://github.com/user-attachments/assets/5da76d94-df4b-4ea9-b54f-6879ac3897a6" />| **Cesar Rodrigo Milla Gómez** | Responsable de investigación - Programador | Innovación tecnológica |
-| <img width="1024" height="1024" alt="WhatsApp Image 2026-08-19 at 10 18 01 PM" src="https://github.com/user-attachments/assets/09920ed4-d84b-4cf9-9d69-33ff7fc7fb35" />| **Anderson Josue Delerna Infantes** | programador - Modelador -Responsable de investigación | Sensores IoT |
-| <img width="1064" height="1064" alt="WhatsApp Image 2026-08-19 at 2 44 57 PM" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" />| **Kevin Esty Carvallo Neciosup** | Líder del equipo - Modelador | Programación, análisis de datos, simulación|
-|<img width="1064" height="1064" alt="WhatsApp Image 2026-08-19 at 9 49 10 PM" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" />| **Shedira Lumeris Sihuincha Palacin** | Encargada de documentación - Responsable de investigacion  | Comunicación científica, redacción técnica |
+| <img width="164" height="164" alt="WhatsApp Image 2026-08-19 at 10 23 42 PM" src="https://github.com/user-attachments/assets/5da76d94-df4b-4ea9-b54f-6879ac3897a6" />| **Cesar Rodrigo Milla Gómez** | Responsable de investigación - Programador | Innovación tecnológica |
+| <img width="164" height="164" alt="WhatsApp Image 2026-08-19 at 10 18 01 PM" src="https://github.com/user-attachments/assets/09920ed4-d84b-4cf9-9d69-33ff7fc7fb35" />| **Anderson Josue Delerna Infantes** | programador - Modelador -Responsable de investigación | Sensores IoT |
+| <img width="164" height="164" alt="WhatsApp Image 2026-08-19 at 2 44 57 PM" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" />| **Kevin Esty Carvallo Neciosup** | Líder del equipo - Modelador | Programación, análisis de datos, simulación|
+|<img width="164" height="164" alt="WhatsApp Image 2026-08-19 at 9 49 10 PM" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" />| **Shedira Lumeris Sihuincha Palacin** | Encargada de documentación - Responsable de investigacion  | Comunicación científica, redacción técnica |
 
 </div>
 
