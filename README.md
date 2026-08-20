@@ -1,15 +1,31 @@
-# Equipo 01 - Proyecto Integrador
-### Carrera de Ingeniería Informática / Industrial  
-**Universidad Peruana Cayetano Heredia**
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20AgroMind%20AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=Smart%20Agriculture%20%7C%20IoT%20%7C%20Data%20%7C%20Sustainability&descSize=16&descAlignY=68" width="100%"/>
+</p>
+
+<p align="center">
+  <strong>PROYECTO INTEGRADOR · 2026-1</strong>
+  <br>
+  <sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática / Industrial</sub>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🌱%20AgTech-2E7D32?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/📡%20IoT-1565C0?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/🧠%20AI-6A1B9A?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/🌍%20ODS%2012%20%7C%2015-388E3C?style=for-the-badge&labelColor=1B1F23"/>
+</p>
 
 ---
 
-## 🌍 Descripción del Equipo 
-Somos el **Equipo 01** del curso **Proyecto Integrador 2026-1**, conformado por estudiantes de la carrera de Ingeniería Informática e Ingeniería Industrial.
+## 🌎 Descripción del Equipo
 
-Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
-- ODS 12: Producción y Consumo Responsables
-- ODS 15: Vida de Ecosistemas Terrestres
+> **Equipo 01** · Proyecto Integrador 2026-1  
+> Un equipo multidisciplinario que combina **tecnología, datos e innovación** para desarrollar soluciones orientadas a una agricultura más inteligente y sostenible.
+
+### 🎯 Nuestro enfoque
+
+**ODS 12** · Producción y Consumo Responsables  
+**ODS 15** · Vida de Ecosistemas Terrestres
 
 ---
 
