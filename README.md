@@ -57,7 +57,7 @@ Figura 1. Fotografía del equipo 01</em>
 
 ---
 
-## 📌 Resumen Final  
+## 📌 Resumen Final: 
 
 ### 🌱 ¿Quiénes somos?
 Somos **AgroMind AI**, un equipo de estudiantes de Ingeniería Informática e Industrial de la UPCH que cree que la tecnología y el campo no deberían ir por caminos separados. Combinamos sensores, datos y algoritmos con el conocimiento del terreno para construir una herramienta que ayude a que la tierra rinda más, sin agotarla.
