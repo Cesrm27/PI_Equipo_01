@@ -32,10 +32,10 @@ Figura 1. Fotografía del equipo 01</em>
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img width="1254" height="1254" alt="WhatsApp Image 2026-08-19 at 11 04 31 PM" src="https://github.com/user-attachments/assets/365b9f4f-e7b6-4e00-9224-4c63955fa9ec" />| **Cesar Rodrigo Milla Gómez** | Responsable de investigación y desarrollo tecnológico | Tecnología, programación e innovación |
-| <img width="364" height="364" alt="image" src="https://github.com/user-attachments/assets/cd4f5d69-105e-405f-b197-bf7ede08fc25" />| **Anderson Josue Delerna Infantes** | Sensores, Internet de las Cosas y automatización | Sensores, tecnología y automatización |
-| <img width="364" height="364" alt="WhatsApp Image 2026-08-19 at 2 44 57 PM" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" />| **Kevin Esty Carvallo Neciosup** | Líder del equipo y responsable de desarrollo de software | Programación, datos y simulación|
-|<img width="364" height="364" alt="WhatsApp Image 2026-08-19 at 9 49 10 PM" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" />| **Shedira Lumeris Sihuincha Palacin** | Responsable de procesos, análisis y documentación  | Procesos, organización e investigación |
+| <img width="264" height="264" alt="WhatsApp Image 2026-08-19 at 11 04 31 PM" src="https://github.com/user-attachments/assets/365b9f4f-e7b6-4e00-9224-4c63955fa9ec" />| **Cesar Rodrigo Milla Gómez** | Responsable de investigación y desarrollo tecnológico | Tecnología, programación e innovación |
+| <img width="264" height="264" alt="image" src="https://github.com/user-attachments/assets/cd4f5d69-105e-405f-b197-bf7ede08fc25" />| **Anderson Josue Delerna Infantes** | Sensores, Internet de las Cosas y automatización | Sensores, tecnología y automatización |
+| <img width="264" height="264" alt="WhatsApp Image 2026-08-19 at 2 44 57 PM" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" />| **Kevin Esty Carvallo Neciosup** | Líder del equipo y responsable de desarrollo de software | Programación, datos y simulación|
+|<img width="264" height="264" alt="WhatsApp Image 2026-08-19 at 9 49 10 PM" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" />| **Shedira Lumeris Sihuincha Palacin** | Responsable de procesos, análisis y documentación  | Procesos, organización e investigación |
 
 </div>
 
