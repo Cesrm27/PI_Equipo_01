@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20AgroMind%20AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=Smart%20Agriculture%20%7C%20IoT%20%7C%20Data%20%7C%20Sustainability&descSize=16&descAlignY=68" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20AgroMind%&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=Smart%20Agriculture%20%7C%20IoT%20%7C%20Data%20%7C%20Sustainability&descSize=16&descAlignY=68" width="100%"/>
 </p>
 
 <p align="center">
