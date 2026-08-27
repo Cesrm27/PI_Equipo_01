@@ -436,36 +436,6 @@ El objetivo será identificar diferencias en el comportamiento de las variables 
 
 ---
 
-# 🔬 Proceso Experimental
-
-GREENPLANT AI seguirá una metodología que permita repetir los ensayos bajo condiciones similares.
-
-<div align="center">
-
-### 🌱 01 · Seleccionar cultivo
-⬇️
-### 📦 02 · Colocar planta en cámara
-⬇️
-### 📡 03 · Verificar sensores
-⬇️
-### 💡 04 · Establecer condiciones
-⬇️
-### ⏱️ 05 · Iniciar medición
-⬇️
-### 💾 06 · Registrar datos
-⬇️
-### 🧹 07 · Finalizar y ventilar
-⬇️
-### 🌱 08 · Cambiar cultivo
-⬇️
-### 🔁 09 · Repetir ensayo
-⬇️
-### 🧠 10 · Analizar datos
-
-</div>
-
----
-
 # 🛡️ Seguridad del Prototipo
 
 Debido a que el sistema trabajará dentro de una cámara cerrada con gases, se considerarán medidas de seguridad durante su utilización.
