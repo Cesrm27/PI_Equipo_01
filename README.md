@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20AgroMind%20AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=Smart%20Agriculture%20%7C%20IoT%20%7C%20AI%20%7C%20Sustainability&descSize=16&descAlignY=68" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20GREENPLANT%20AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=IoT%20%7C%20Machine%20Learning%20%7C%20Gases%20%7C%20Sostenibilidad&descSize=16&descAlignY=68" width="100%"/>
 </p>
 
 <p align="center">
-  <strong>PROYECTO INTEGRADOR · 2026-1</strong>
+  <strong>PROYECTO INTEGRADOR · 2026-II</strong>
   <br>
   <sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática / Industrial</sub>
 </p>
@@ -11,21 +11,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/🌱%20AgTech-2E7D32?style=for-the-badge&labelColor=1B1F23"/>
   <img src="https://img.shields.io/badge/📡%20IoT-1565C0?style=for-the-badge&labelColor=1B1F23"/>
-  <img src="https://img.shields.io/badge/🧠%20AI-6A1B9A?style=for-the-badge&labelColor=1B1F23"/>
-  <img src="https://img.shields.io/badge/🌍%20ODS%2012%20%7C%2015-388E3C?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/🧠%20Machine%20Learning-6A1B9A?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/🌍%20ODS%2013-388E3C?style=for-the-badge&labelColor=1B1F23"/>
 </p>
 
 ---
 
 # 🌎 Descripción del Equipo
 
-> **Equipo 01** · Proyecto Integrador 2026-1  
-> Un equipo multidisciplinario que combina **tecnología, datos e innovación** para desarrollar soluciones orientadas a una agricultura más inteligente y sostenible.
+> **Equipo 01** · Proyecto Integrador 2026-II  
+> Un equipo multidisciplinario que combina **Ingeniería Informática e Ingeniería Industrial** para desarrollar una solución tecnológica orientada al monitoreo y análisis de emisiones asociadas a diferentes cultivos.
 
 ### 🎯 Nuestro enfoque
 
-**ODS 12** · Producción y Consumo Responsables  
-**ODS 15** · Vida de Ecosistemas Terrestres
+**ODS 13** · Acción por el Clima
+
+Buscamos aplicar **sensores IoT, adquisición de datos, análisis de información y Machine Learning** para estudiar el comportamiento de gases de efecto invernadero generados durante condiciones experimentales controladas.
 
 ---
 
@@ -47,227 +48,502 @@
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img width="180" height="180" alt="Cesar Rodrigo Milla Gómez" src="https://github.com/user-attachments/assets/365b9f4f-e7b6-4e00-9224-4c63955fa9ec" /> | **Cesar Rodrigo Milla Gómez** | Responsable de investigación y desarrollo tecnológico | Tecnología, programación e innovación |
-| <img width="180" height="180" alt="Anderson Josue Delerna Infantes" src="https://github.com/user-attachments/assets/cd4f5d69-105e-405f-b197-bf7ede08fc25" /> | **Anderson Josue Delerna Infantes** | Responsable de sensores, IoT y automatización | Sensores, tecnología y automatización |
-| <img width="180" height="180" alt="Kevin Esty Carvallo Neciosup" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" /> | **Kevin Esty Carvallo Neciosup** | Líder del equipo y responsable de desarrollo de software | Programación, datos y simulación |
-| <img width="180" height="180" alt="Shedira Lumeris Sihuincha Palacin" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" /> | **Shedira Lumeris Sihuincha Palacin** | Responsable de procesos, análisis y documentación | Procesos, organización e investigación |
+| <img width="180" height="180" alt="Cesar Rodrigo Milla Gómez" src="https://github.com/user-attachments/assets/365b9f4f-e7b6-4e00-9224-4c63955fa9ec" /> | **Cesar Rodrigo Milla Gómez** | Responsable de función general, análisis de información y seguridad | Investigación, tecnología y análisis |
+| <img width="180" height="180" alt="Anderson Josue Delerna Infantes" src="https://github.com/user-attachments/assets/cd4f5d69-105e-405f-b197-bf7ede08fc25" /> | **Anderson Josue Delerna Infantes** | Responsable de geometría, energía, control y software | Programación, automatización y desarrollo |
+| <img width="180" height="180" alt="Kevin Esty Carvallo Neciosup" src="https://github.com/user-attachments/assets/971ad11e-950f-45ed-a6a2-e6fe3e4e6dbc" /> | **Kevin Esty Carvallo Neciosup** | Líder del equipo y responsable de sensores, hardware y adquisición de datos | Sensores, programación y sistemas |
+| <img width="180" height="180" alt="Shedira Lumeris Sihuincha Palacin" src="https://github.com/user-attachments/assets/1861e18f-728a-443d-9060-df34c1079c61" /> | **Shedira Lumeris Sihuincha Palacin** | Responsable de estructura, comunicaciones, ergonomía, calidad y documentación | Procesos, análisis y organización |
 
 </div>
 
 ---
 
-## 📌 Resumen Final:
+# 📌 Resumen del Proyecto
 
-### 🌱 ¿Quiénes somos?
+### 🌱 ¿Qué es GREENPLANT AI?
 
-Somos **AgroMind AI**, un equipo de estudiantes de **Ingeniería Informática e Ingeniería Industrial de la UPCH** que combina tecnología, datos e innovación para desarrollar soluciones orientadas a una agricultura más inteligente y sostenible.
+**GREENPLANT AI** es un prototipo experimental que busca **detectar, registrar y comparar las concentraciones de gases de efecto invernadero asociadas a diferentes cultivos**.
 
-Integramos **sensores IoT, inteligencia artificial, análisis de datos y gestión de procesos** para ayudar a los agricultores a comprender mejor las condiciones de su suelo y tomar decisiones informadas sobre su manejo.
+El sistema utilizará una **cámara experimental cerrada**, sensores y un microcontrolador para obtener datos de manera controlada.
 
----
-
-### ⚠️ Problemática
-
-Muchos agricultores pueden obtener datos sobre su suelo, pero no siempre saben **cómo interpretarlos ni qué acción tomar**.
-
-> 🌱 **El reto no es medir el suelo, sino convertir los datos en decisiones útiles.**
-
-Esto puede generar un manejo poco eficiente del suelo y los recursos.
-
----
-
-### 🔥 Nuestra motivación
-
-Nos motiva reducir la brecha entre la información que pueden proporcionar las tecnologías agrícolas y las decisiones que realmente necesita tomar un agricultor.
-
-Buscamos que el agricultor pueda pasar de **observar datos** a **comprender qué está ocurriendo y saber qué hacer**.
+Las mediciones estarán orientadas principalmente a:
 
 <div align="center">
 
-| 🌱 Conocer | 🔎 Comprender | 💡 Actuar | 🔄 Verificar |
-|:---:|:---:|:---:|:---:|
-| Estado del suelo | Identificar el problema | Aplicar una acción | Evaluar el resultado |
+🌫️ **CH₄** &nbsp;&nbsp;&nbsp; 🌫️ **CO₂**  
+🌡️ **Temperatura** &nbsp;&nbsp;&nbsp; 💧 **Humedad**  
+🌱 **Condiciones del sustrato** &nbsp;&nbsp;&nbsp; 💡 **Iluminación**
 
 </div>
 
-De esta manera, buscamos contribuir a una agricultura más eficiente y sostenible, donde la tecnología permita **cuidar el suelo y utilizar los recursos de manera más responsable**.
+Los datos obtenidos serán almacenados y procesados para posteriormente utilizar **Machine Learning** en el análisis y comparación de los cultivos evaluados.
 
 ---
-### 🛠️ ¿En qué consistirá el proyecto?
 
-AgroMind AI será un sistema inteligente que permitirá **monitorear, analizar y comprender las condiciones del suelo** mediante sensores IoT e inteligencia artificial.
+# ⚠️ Problemática
+
+La agricultura forma parte de los sectores relacionados con las emisiones de gases de efecto invernadero.
+
+Sin embargo, obtener información sobre las emisiones de un cultivo en condiciones reales puede requerir procedimientos, equipos y metodologías que no siempre son accesibles para un entorno experimental educativo.
+
+> 🌱 **El reto no es solamente detectar un gas, sino obtener datos comparables que permitan comprender el comportamiento de las emisiones entre diferentes cultivos.**
+
+Por ello, se plantea desarrollar un prototipo que permita realizar mediciones dentro de un **volumen experimental controlado**, facilitando la adquisición de datos y su posterior análisis.
+
+---
+
+# 🔥 Nuestra Motivación
+
+Nos motiva desarrollar una solución que permita acercar las tecnologías de **IoT y Machine Learning** al estudio de las emisiones agrícolas.
+
+Queremos transformar las lecturas individuales de los sensores en un conjunto de datos que permita:
+
+<div align="center">
+
+| 📡 Medir | 💾 Registrar | 🧠 Analizar | 📊 Comparar |
+|:---:|:---:|:---:|:---:|
+| Gases y variables | Datos experimentales | Patrones | Cultivos |
+
+</div>
+
+De esta manera, GREENPLANT AI busca generar una base tecnológica para estudiar el comportamiento de las emisiones bajo condiciones experimentales similares.
+
+---
+
+# 🛠️ ¿En qué consistirá el proyecto?
+
+GREENPLANT AI estará compuesto por una **cámara experimental cerrada** en la que se colocará una planta joven dentro de una maceta con sustrato.
+
+La cámara tendrá aproximadamente:
+
+<div align="center">
+
+### 📦 Dimensiones
+
+**20 cm × 18 cm × 18 cm**
+
+### 🧪 Volumen aproximado
+
+**6,48 L**
+
+</div>
+
+El sistema contará con sensores distribuidos entre la cámara, el cultivo y el sustrato.
 
 <details>
-<summary>🌱 <strong>Ver cómo funcionará AgroMind AI</strong> ⬇️</summary>
+<summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary>
 
 <br>
 
-Los sensores recopilarán información sobre diferentes condiciones del suelo y del entorno:
+### 1️⃣ Preparación
+
+Se seleccionará el cultivo que será evaluado y se colocará la planta joven dentro de la cámara experimental.
+
+<br>
+
+### 2️⃣ Instalación
+
+Se verificará la ubicación y funcionamiento de los sensores antes de iniciar el ensayo.
+
+<br>
+
+### 3️⃣ Medición
+
+Los sensores registrarán información relacionada con los gases y las condiciones ambientales y del sustrato.
 
 <div align="center">
 
-💧 **Humedad**    🧪 **pH**    🧂 **Salinidad**
-🌡️ **Temperatura**    🌧️ **Lluvia**
+🌫️ **CH₄**  
+🌫️ **CO₂**  
+🌡️ **Temperatura**  
+💧 **Humedad**  
+🧂 **Conductividad eléctrica**  
+💡 **Iluminación**
 
 </div>
 
-Estos datos serán analizados conjuntamente mediante inteligencia artificial para **identificar posibles condiciones desfavorables y generar recomendaciones prácticas de manejo**.
+### 4️⃣ Registro
+
+El microcontrolador recopilará las mediciones y las asociará con el cultivo y el número de ensayo.
+
+### 5️⃣ Análisis
+
+Los datos serán procesados para identificar variaciones y patrones en las concentraciones de gases.
+
+### 6️⃣ Comparación
+
+Los resultados obtenidos podrán compararse entre diferentes cultivos evaluados bajo condiciones similares.
+
+### 7️⃣ Machine Learning
+
+Los datos generados podrán utilizarse para desarrollar modelos de **Machine Learning** capaces de identificar patrones relacionados con las emisiones.
+
+<br>
 
 <div align="center">
 
-**📡 Medir**
+**🌱 Cultivo**
 ⬇️
-**🔎 Diagnosticar**
+**📦 Cámara experimental**
 ⬇️
-**💡 Recomendar**
+**📡 Sensores**
 ⬇️
-**⚙️ Actuar**
+**💾 Datos**
 ⬇️
-**🔄 Verificar**
+**🧠 Machine Learning**
+⬇️
+**📊 Comparación**
 
 </div>
-
-Además, el sistema almacenará el historial de mediciones para observar **cómo evolucionan las condiciones del suelo a lo largo del tiempo**.
 
 </details>
 
 ---
 
-### 🧠 ¿Dónde está nuestra innovación?
+# 📡 Sistema de Sensores
 
-AgroMind AI no busca únicamente medir el suelo, sino **convertir los datos obtenidos en información útil para tomar decisiones y hacer seguimiento de los resultados**.
+GREENPLANT AI integrará diferentes sensores para obtener una visión más completa de las condiciones presentes durante cada ensayo.
+
+<details>
+<summary>🔎 <strong>Ver sensores y variables del sistema</strong> ⬇️</summary>
+
+<br>
+
+<div align="center">
+
+| Variable | Función |
+|:---:|:---|
+| 🌫️ **CH₄** | Detectar y registrar concentración de metano |
+| 🌫️ **CO₂** | Registrar concentración de dióxido de carbono |
+| 🌡️ **Temperatura del suelo** | Caracterizar las condiciones del sustrato |
+| 💧 **Humedad del suelo** | Registrar el contenido de humedad |
+| 🌡️ **Temperatura ambiental** | Controlar las condiciones dentro de la cámara |
+| 💧 **Humedad ambiental** | Registrar las condiciones de humedad del ambiente |
+| 🧂 **Conductividad eléctrica** | Caracterizar las condiciones del sustrato |
+| 💡 **Iluminación** | Registrar la intensidad lumínica del ensayo |
+
+</div>
+
+<br>
+
+El objetivo de utilizar múltiples variables es **contextualizar las mediciones de CH₄ y CO₂**, evitando analizar las concentraciones gaseosas como datos completamente aislados.
+
+</details>
+
+---
+
+# 📦 Cámara Experimental
+
+La cámara será el espacio donde se realizarán los ensayos de manera controlada.
+
+<details>
+<summary>📐 <strong>Ver características de la cámara</strong> ⬇️</summary>
+
+<br>
+
+<div align="center">
+
+### 📏 Dimensiones aproximadas
+
+| Característica | Valor |
+|:---:|:---:|
+| Ancho | **20 cm** |
+| Largo | **18 cm** |
+| Alto | **18 cm** |
+| Volumen | **6,48 L** |
+| Maceta | **≈ 10 cm de diámetro** |
+| Planta | **Planta joven** |
+
+</div>
+
+<br>
+
+### Características principales
+
+- 📦 Cámara cerrada de volumen conocido.
+- 🔍 Tapa superior transparente.
+- 🌱 Espacio para una planta joven.
+- 📡 Soportes para los sensores.
+- 💡 Posibilidad de iluminación artificial.
+- 🔌 Paso organizado de cables.
+- 🧹 Fácil apertura para limpieza y cambio de cultivo.
+- 🛠️ Estructura modular.
+
+La cámara permitirá realizar diferentes ensayos manteniendo una geometría similar para favorecer la comparación de los resultados.
+
+</details>
+
+---
+
+# 🧠 ¿Dónde está nuestra innovación?
+
+GREENPLANT AI no busca afirmar que los sensores de gases o las cámaras experimentales sean tecnologías nuevas.
+
+La innovación de nuestra propuesta está en **integrar diferentes variables en un sistema experimental orientado a generar datos comparables y utilizarlos posteriormente mediante Machine Learning**.
 
 <details>
 <summary>💡 <strong>Ver nuestra propuesta de innovación</strong> ⬇️</summary>
 
 <br>
 
-La innovación de **AgroMind AI** no está únicamente en utilizar sensores, ya que esta tecnología ya existe.
-
-Nuestra propuesta consiste en integrar las mediciones dentro de un **proceso inteligente de diagnóstico, recomendación y seguimiento**.
-
 <div align="center">
 
-|  Soluciones convencionales  |           AgroMind AI          |
-| :-------------------------: | :----------------------------: |
-|    📊 Entregan mediciones   |    🧠 Interpretan los datos    |
-|  🔢 Analizan datos aislados | 🔗 Analiza múltiples variables |
-| 👨‍🌾 El usuario interpreta |    💡 Genera recomendaciones   |
-|    📍 Diagnóstico puntual   | 🔄 Seguimiento de la evolución |
+| Medición convencional | GREENPLANT AI |
+|:---:|:---:|
+| 🌫️ Detecta gases | 📡 Detecta múltiples variables |
+| 🔢 Obtiene valores | 💾 Construye un conjunto de datos |
+| 📊 Observa mediciones | 🔗 Relaciona variables |
+| 📍 Evalúa un momento | 🔄 Registra la evolución |
+| 👨‍🔬 Interpretación manual | 🧠 Análisis mediante ML |
+| 🌱 Cultivos aislados | 📊 Comparación entre cultivos |
 
 </div>
 
-Por ello, AgroMind AI no busca responder solamente:
+<br>
 
-> **“¿Cómo está mi suelo?”**
+Por ello, nuestra propuesta busca pasar de:
 
-sino también:
+> **“¿Cuánto gas se detectó?”**
 
-> **“¿Qué puedo hacer y cómo sé si funcionó?”**
+a:
 
-De esta manera, el sistema permitirá pasar de una simple **medición del suelo** a un proceso continuo de **diagnóstico, acción y verificación**.
+> **“¿Cómo varían las emisiones entre diferentes cultivos y qué patrones pueden identificarse a partir de los datos?”**
 
 </details>
 
-
 ---
 
-### 📊 Índice de Estado del Suelo
+# 🧠 Machine Learning
 
-AgroMind AI contará con un indicador que permitirá conocer de forma rápida y sencilla el estado general del suelo.
+Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de **Machine Learning**.
 
 <details>
-<summary>🌱 <strong>Ver ejemplo del Índice de Estado del Suelo</strong> ⬇️</summary>
+<summary>🤖 <strong>Ver cómo utilizaremos Machine Learning</strong> ⬇️</summary>
 
 <br>
 
+El conjunto de datos podrá contener información como:
+
 <div align="center">
 
-# 🌱 Estado del suelo
-
-## **72 / 100**
-
-### 🟡 Condición moderada
-
-| Indicador | Estado |
-|:---:|:---:|
-| 💧 Humedad | 🟢 Adecuada |
-| 🧪 pH | 🟡 Requiere atención |
-| 🧂 Salinidad | 🟢 Adecuada |
-| 🌡️ Temperatura | 🟢 Adecuada |
+| Variable | Tipo de información |
+|:---:|:---|
+| 🌱 Cultivo | Identificación del cultivo |
+| 🌫️ CH₄ | Concentración medida |
+| 🌫️ CO₂ | Concentración medida |
+| 🌡️ Temperatura | Condición experimental |
+| 💧 Humedad | Condición experimental |
+| 🧂 Conductividad | Condición del sustrato |
+| 💡 Iluminación | Condición del ensayo |
+| ⏱️ Tiempo | Momento de la medición |
 
 </div>
 
-El objetivo es convertir información técnica en un resultado **simple y fácil de comprender** para el agricultor.
+<br>
+
+El flujo de análisis será:
+
+<div align="center">
+
+**📡 Adquisición**
+⬇️
+**💾 Almacenamiento**
+⬇️
+**🧹 Limpieza de datos**
+⬇️
+**📊 Análisis exploratorio**
+⬇️
+**🧠 Entrenamiento**
+⬇️
+**🔎 Validación**
+⬇️
+**📈 Comparación**
+
+</div>
+
+<br>
+
+El modelo buscará identificar **patrones y relaciones entre las variables registradas**, apoyando el análisis de las emisiones observadas durante los ensayos.
 
 </details>
 
 ---
 
-### 🔄 Seguimiento de la Evolución del Suelo
+# 📊 Visualización de Datos
 
-AgroMind AI permitirá comparar las condiciones del suelo antes y después de una acción de manejo, facilitando el seguimiento de sus resultados.
+GREENPLANT AI permitirá organizar las mediciones para facilitar su interpretación.
 
 <details>
-<summary>📈 <strong>Ver ejemplo de seguimiento</strong> ⬇️</summary>
+<summary>📈 <strong>Ver ejemplo de visualización</strong> ⬇️</summary>
 
 <br>
 
-<div align="center">
+### 🌫️ Evolución de CO₂
 
-**Condición inicial**  
-⬇️  
-💡 **Recomendación**  
-⬇️  
-⚙️ **Acción**  
-⬇️  
-📡 **Nueva medición**  
-⬇️  
-📊 **Resultado**
+| Tiempo | Cultivo A | Cultivo B |
+|:---:|:---:|:---:|
+| 0 min | 420 ppm | 425 ppm |
+| 10 min | 450 ppm | 438 ppm |
+| 20 min | 480 ppm | 460 ppm |
+| 30 min | 515 ppm | 489 ppm |
 
 <br>
 
-### 📊 Ejemplo de evolución
+### 🌫️ Evolución de CH₄
 
-| Momento | pH | Humedad | Salinidad | Estado |
-|:---:|:---:|:---:|:---:|:---:|
-| 🌱 Día 01 | 5.3 | 24 % | Alta | 🔴 |
-| 🌿 Día 10 | 5.5 | 30 % | Media | 🟡 |
-| 🌳 Día 20 | 5.8 | 34 % | Normal | 🟢 |
+| Tiempo | Cultivo A | Cultivo B |
+|:---:|:---:|:---:|
+| 0 min | Registro inicial | Registro inicial |
+| 10 min | Medición | Medición |
+| 20 min | Medición | Medición |
+| 30 min | Medición | Medición |
 
-</div>
+<br>
 
-Esto permitirá observar si las condiciones del suelo **mejoraron, empeoraron o permanecieron estables**.
+> ⚠️ **Los valores mostrados son únicamente ejemplos de visualización y no representan resultados experimentales reales.**
 
 </details>
 
 ---
 
-### 🌍 ODS en los que nos enfocamos
+# 🔄 Comparación entre Cultivos
 
-<div align="center">
+Una de las funciones principales del proyecto será permitir comparar los resultados obtenidos para diferentes cultivos.
 
-| 🌍 ODS 12 | 🌱 ODS 15 |
-|:---:|:---:|
-| **Producción y Consumo Responsables** | **Vida de Ecosistemas Terrestres** |
-| Uso más eficiente y responsable de los recursos agrícolas. | Manejo más sostenible y conservación del suelo. |
-
-</div>
-
----
-
-### 🎯 Nuestra propuesta de valor
-
-<div align="center">
-
-## **AgroMind AI transforma los datos del suelo en decisiones.**
+<details>
+<summary>🌱 <strong>Ver ejemplo de comparación</strong> ⬇️</summary>
 
 <br>
 
-**🌱 Conocer → 🧠 Comprender → 💡 Actuar → 🔄 Verificar**
+<div align="center">
+
+### 📊 Comparación experimental
+
+| Indicador | 🌱 Cultivo A | 🌿 Cultivo B | 🌾 Cultivo C |
+|:---:|:---:|:---:|:---:|
+| CH₄ | Bajo | Medio | Alto |
+| CO₂ | Medio | Bajo | Alto |
+| Temperatura | Normal | Normal | Normal |
+| Humedad | Media | Media | Alta |
+| Conductividad | Normal | Alta | Normal |
 
 </div>
 
-No buscamos solo medir el suelo, sino ayudar al agricultor a comprenderlo, tomar decisiones informadas y verificar sus resultados. Para ello, integramos IoT, inteligencia artificial y análisis de datos en una solución agrícola más inteligente, eficiente y sostenible.
+<br>
+
+El objetivo será identificar diferencias en el comportamiento de las variables medidas y determinar qué patrones pueden observarse entre los cultivos evaluados.
+
+</details>
 
 ---
+
+# 🔬 Proceso Experimental
+
+GREENPLANT AI seguirá una metodología que permita repetir los ensayos bajo condiciones similares.
+
+<div align="center">
+
+### 🌱 01 · Seleccionar cultivo
+⬇️
+### 📦 02 · Colocar planta en cámara
+⬇️
+### 📡 03 · Verificar sensores
+⬇️
+### 💡 04 · Establecer condiciones
+⬇️
+### ⏱️ 05 · Iniciar medición
+⬇️
+### 💾 06 · Registrar datos
+⬇️
+### 🧹 07 · Finalizar y ventilar
+⬇️
+### 🌱 08 · Cambiar cultivo
+⬇️
+### 🔁 09 · Repetir ensayo
+⬇️
+### 🧠 10 · Analizar datos
+
+</div>
+
+---
+
+# 🛡️ Seguridad del Prototipo
+
+Debido a que el sistema trabajará dentro de una cámara cerrada con gases, se considerarán medidas de seguridad durante su utilización.
+
+<div align="center">
+
+| 🛡️ Medida | 🎯 Objetivo |
+|:---:|:---:|
+| 🔌 Protección eléctrica | Evitar cortocircuitos y contactos accidentales |
+| 🧤 Protección de componentes | Evitar contacto con humedad y sustrato |
+| 🌬️ Ventilación | Reducir acumulación de gases entre ensayos |
+| 📦 Carcasa | Proteger los componentes electrónicos |
+| 🧹 Limpieza | Reducir contaminación cruzada |
+| 🔎 Verificación | Comprobar sensores antes de cada ensayo |
+
+</div>
+
+---
+
+# 🌍 ODS en el que nos enfocamos
+
+<div align="center">
+
+| 🌍 ODS 13 |
+|:---:|
+| **Acción por el Clima** |
+| Medición y análisis de gases de efecto invernadero asociados a actividades agrícolas. |
+
+</div>
+
+GREENPLANT AI busca contribuir desde la tecnología al **monitoreo y comprensión de emisiones agrícolas**, utilizando sensores, adquisición de datos y Machine Learning como herramientas para el análisis experimental.
+
+---
+
+# 🎯 Nuestra Propuesta de Valor
+
+<div align="center">
+
+## **GREENPLANT AI convierte mediciones de gases en datos analizables.**
+
+<br>
+
+**🌱 Cultivo → 📦 Cámara → 📡 Sensores → 💾 Datos → 🧠 IA → 📊 Comparación**
+
+</div>
+
+Nuestro objetivo no es solamente detectar gases.
+
+Buscamos desarrollar un sistema experimental que permita:
+
+**Medir → Registrar → Analizar → Comparar**
+
+integrando **IoT, sensores, procesamiento de datos y Machine Learning** en una propuesta orientada al estudio de las emisiones asociadas a diferentes cultivos.
+
+---
+
+# 🚀 Visión del Proyecto
+
+GREENPLANT AI busca convertirse en una plataforma experimental que permita generar información útil sobre el comportamiento de gases de efecto invernadero bajo condiciones controladas.
+
+A futuro, el sistema podría ampliarse mediante:
+
+- 📊 Mayor cantidad de ensayos.
+- 🌱 Evaluación de diferentes cultivos.
+- 📡 Incorporación de nuevos sensores.
+- 🧠 Modelos de Machine Learning más avanzados.
+- 📈 Análisis temporal de las emisiones.
+- ☁️ Almacenamiento de datos en la nube.
+- 📱 Interfaces de visualización más completas.
+
+> **De sensores a datos. De datos a conocimiento.**
+
+---
+
+<p align="center">
+  <strong>🌱 GREENPLANT AI · IoT · Machine Learning · Agricultura · Sostenibilidad</strong>
+</p>
+
+<p align="center">
+  <sub>Universidad Peruana Cayetano Heredia · Proyecto Integrador · 2026-II</sub>
+</p>
