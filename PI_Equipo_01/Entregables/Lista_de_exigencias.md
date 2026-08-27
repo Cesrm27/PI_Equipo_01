@@ -26,10 +26,10 @@
 
 | Integrante | Aporte/s en específico | % de aporte |
 |---|---|:---:|
-| Cesar Rodrigo Milla Gómez | Definió qué debe hacer el sistema en general, qué información entra y sale de él, y se encargó de los temas de seguridad y armado del equipo. | 25% |
-| Anderson Josue Delerna Infantes | Diseñó el tamaño y la forma del equipo, cómo se alimenta de energía, cómo funciona el control del sistema, el software, y organizó el cronograma y el mantenimiento. | 25% |
-| Kevin Esty Carvallo Neciosup | Diseñó cómo se colocan las sondas en el suelo, ayudó con la información que maneja el sistema, el control, la parte electrónica (sensores y microcontrolador), el software y cómo lo usará el agricultor. | 25% |
-| Shedira Lumeris Sihuincha Palacin | Revisó qué tan resistente es el equipo, la parte electrónica, cómo se conecta Wi-Fi/Bluetooth, qué tan cómodo es de usar, calibró los sensores, y se encargó del transporte y los costos del prototipo. | 25% |
+| Cesar Rodrigo Milla Gómez | Definió la función general del sistema, las señales de entrada y salida, y se encargó de los aspectos relacionados con la seguridad del prototipo y el manejo de los gases durante los ensayos. | 25% |
+| Anderson Josue Delerna Infantes | Diseñó el tamaño y la forma de la cámara experimental, la alimentación de energía, el sistema de control, el software, la fabricación y la planificación de las etapas del proyecto. | 25% |
+| Kevin Esty Carvallo Neciosup | Trabajó en la integración de los sensores de gases, suelo y ambiente, el hardware y microcontrolador, el control de las mediciones, el software y el procedimiento de uso del prototipo. | 25% |
+| Shedira Lumeris Sihuincha Palacin | Revisó la resistencia y estructura del equipo, la integración electrónica, las comunicaciones, la ergonomía, la calibración y control de calidad de los sensores, además del transporte, mantenimiento y costos del prototipo. | 25% |
 | **Equipo** | **Informe final** | **100%** |
 
 ---
@@ -49,8 +49,8 @@
   </tr>
   <tr>
     <th>PROYECTO:</th>
-    <td colspan="2"><strong>AgroMind AI – Sistema inteligente de diagnóstico y monitoreo del estado del suelo</strong></td>
-    <td><strong>Fecha:</strong> 25/08/2026<br><strong>Revisado:</strong></td>
+    <td colspan="2"><strong>GREENPLANT AI – Sistema inteligente para detectar y comparar emisiones de gases de efecto invernadero asociadas a diferentes cultivos mediante sensores y Machine Learning</strong></td>
+    <td><strong>Fecha:</strong> 08/2026<br><strong>Revisado:</strong></td>
   </tr>
   <tr>
     <th>CLIENTE:</th>
@@ -73,221 +73,258 @@
   <tbody>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Función general:</strong> El sistema deberá realizar mediciones de parámetros físicos y químicos del suelo y del ambiente, procesar la información obtenida mediante sensores y generar un diagnóstico comprensible para el agricultor. Como mínimo deberá considerar humedad del suelo, temperatura del suelo, pH del suelo, temperatura ambiental y humedad ambiental. A partir de las mediciones y de la información del cultivo y de la parcela, el sistema deberá identificar posibles condiciones que puedan afectar el desarrollo del cultivo y generar recomendaciones de manejo. Además, deberá registrar las acciones realizadas por el usuario y permitir realizar nuevas mediciones para verificar y comparar la evolución de las condiciones antes y después de la intervención. (FAO, 2026; Prity et al., 2024; Sawant et al., 2026; Alawadhi y Patidar, 2025).
+      <strong>Función general:</strong> El sistema deberá permitir realizar mediciones experimentales de gases de efecto invernadero asociados a diferentes cultivos dentro de una cámara cerrada de volumen controlado. Deberá registrar principalmente la concentración de <strong>CH₄ y CO₂</strong>, además de variables ambientales y del sustrato, procesar la información obtenida y permitir comparar los resultados entre diferentes cultivos bajo condiciones experimentales similares. Los datos deberán almacenarse junto con la identificación del cultivo, tiempo de medición y condiciones del ensayo para posteriormente aplicar técnicas de Machine Learning e identificar patrones relacionados con las emisiones. Las cámaras cerradas permiten estudiar cambios en la concentración de gases dentro de un volumen definido y durante un periodo determinado. (de Klein et al., 2020; Parkin y Venterea, 2010; Pavelka et al., 2018).
     </td>
     <td align="center">C.M, K.C, A.D, L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Geometría:</strong> El sistema deberá presentar una configuración portátil y compacta que permita su utilización directamente en campo. La unidad principal, sin considerar las sondas, no deberá superar aproximadamente 30 cm × 25 cm × 20 cm. Las sondas destinadas a la medición deberán permitir trabajar en la zona superficial de raíces, con una profundidad aproximada de 10 a 20 cm, dependiendo del cultivo.
+      <strong>Geometría:</strong> El prototipo deberá presentar una cámara experimental cerrada, portátil y de dimensiones aproximadas de <strong>20 cm × 18 cm × 18 cm</strong>, con un volumen interno aproximado de <strong>6,48 L</strong>. Deberá permitir colocar una maceta de aproximadamente <strong>10 cm de diámetro y 8 cm de altura</strong>, junto con una planta joven. La tapa superior deberá ser transparente para permitir la observación del cultivo y el ingreso de iluminación artificial. El interior deberá disponer de espacio suficiente para instalar los sensores sin interferir significativamente con la planta. Las dimensiones deberán facilitar la limpieza, el cambio de cultivo y la repetición de los ensayos. (de Klein et al., 2020; Pavelka et al., 2018).
     </td>
     <td align="center">A.D</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Cinemática:</strong> El prototipo no requerirá mecanismos de movimiento continuo durante la operación. La inserción y extracción de las sondas se realizará manualmente. El diseño deberá permitir que la colocación del sensor en el suelo pueda realizarse sin movimientos complejos y sin necesidad de herramientas adicionales. (FAO, 2020)
+      <strong>Cinemática:</strong> El prototipo no requerirá mecanismos de movimiento durante la medición. La cámara deberá permanecer estática durante cada ensayo para mantener estable el volumen experimental y reducir perturbaciones en las mediciones. La colocación y retiro de la maceta con el cultivo se realizará manualmente entre ensayos. La tapa deberá permitir una apertura y cierre sencillo para facilitar la instalación, retiro y limpieza del cultivo. (de Klein et al., 2020; Parkin y Venterea, 2010).
     </td>
     <td align="center">K.C</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Fuerzas:</strong> Las sondas de medición deberán soportar la fuerza de inserción manual necesaria para su utilización en suelo agrícola sin presentar deformaciones permanentes durante condiciones normales de trabajo. La estructura y carcasa deberán soportar la manipulación y transporte del dispositivo sin comprometer los sensores ni los componentes electrónicos. (FAO, 2020).
+      <strong>Fuerzas:</strong> La estructura de la cámara, la tapa y los soportes deberán resistir la manipulación manual, el peso de la maceta con el sustrato y las aperturas y cierres repetidos durante los ensayos. Los soportes de los sensores deberán mantenerse firmes durante la medición y evitar desplazamientos accidentales. La estructura deberá conservar su estabilidad durante la manipulación y transporte del prototipo. (de Klein et al., 2020).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Energía:</strong> El sistema deberá funcionar mediante una fuente de alimentación portátil de bajo voltaje, preferentemente mediante una batería recargable, con una autonomía mínima objetivo de 8 horas de operación. Asimismo, deberá permitir conocer el estado o porcentaje aproximado de carga disponible. (Sawant et al., 2026; Saxena et al., 2025).
+      <strong>Energía:</strong> El sistema deberá funcionar mediante una fuente de alimentación de bajo voltaje compatible con el controlador, los sensores y los demás componentes electrónicos. La alimentación deberá ser estable durante todo el periodo experimental para evitar interrupciones durante la adquisición de datos.
       <ul>
-        <li>La alimentación de los sensores y componentes electrónicos deberá ser compatible con los niveles de tensión requeridos por cada dispositivo.</li>
-        <li>Se priorizará el uso de una batería recargable que permita el funcionamiento del sistema durante las actividades de medición en campo, evitando depender de una conexión eléctrica permanente.</li>
-        <li>El sistema deberá permitir verificar el nivel de carga disponible para evitar interrupciones durante la toma de datos.</li>
+        <li>La iluminación artificial instalada sobre la tapa transparente deberá disponer de una alimentación adecuada y mantenerse estable durante los ensayos.</li>
+        <li>Los sensores y componentes electrónicos deberán recibir niveles de tensión compatibles con sus especificaciones de funcionamiento.</li>
+        <li>El sistema deberá permitir verificar la disponibilidad de alimentación antes y durante la medición.</li>
       </ul>
+      (Espressif Systems, 2026; Sensirion AG, 2020).
     </td>
     <td align="center">A.D</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Materia:</strong> El material de entrada al sistema será el suelo agrícola, del cual se obtendrán las variables necesarias para determinar sus condiciones. Los elementos que entren directamente en contacto con el suelo deberán ser resistentes a la humedad y corrosión. La medición no deberá incorporar sustancias que alteren significativamente las características del suelo analizado. (FAO, 2020)
+      <strong>Materia:</strong> El elemento experimental estará constituido por una planta joven colocada en una maceta o recipiente con sustrato agrícola. El sistema deberá permitir retirar y reemplazar el cultivo entre ensayos para realizar comparaciones entre diferentes especies vegetales. La cámara podrá fabricarse mediante materiales adecuados para impresión 3D y una tapa transparente. Los materiales utilizados deberán soportar las condiciones de humedad presentes durante los experimentos y permitir una limpieza adecuada después de cada ensayo para reducir la contaminación cruzada. (de Klein et al., 2020; Pavelka et al., 2018).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Señales (Información):</strong> El sistema deberá contar con señales de entrada y salida asociadas al proceso de diagnóstico y seguimiento del suelo.
+      <strong>Señales (Información):</strong> El sistema deberá contar con señales de entrada y salida asociadas al proceso de medición y comparación de emisiones.
       <br><br>
       <strong>Señales de entrada:</strong>
       <ul>
-        <li>Humedad del suelo.</li>
+        <li>Concentración de CH₄.</li>
+        <li>Concentración de CO₂.</li>
         <li>Temperatura del suelo.</li>
-        <li>pH del suelo.</li>
+        <li>Humedad del suelo.</li>
         <li>Temperatura ambiental.</li>
         <li>Humedad ambiental.</li>
-        <li>Identificación de la parcela.</li>
-        <li>Cultivo seleccionado.</li>
-        <li>Etapa del cultivo.</li>
+        <li>Conductividad eléctrica del sustrato.</li>
+        <li>Intensidad de iluminación.</li>
+        <li>Identificación del cultivo.</li>
+        <li>Número de ensayo.</li>
+        <li>Tiempo de medición.</li>
         <li>Comandos e información ingresada por el usuario.</li>
       </ul>
       <strong>Señales de salida:</strong>
       <ul>
         <li>Valores obtenidos de los sensores.</li>
         <li>Estado de funcionamiento de los sensores.</li>
-        <li>Diagnóstico de las condiciones del suelo.</li>
-        <li>Alertas ante condiciones anormales o datos no válidos.</li>
-        <li>Recomendaciones de manejo.</li>
-        <li>Registro de las acciones realizadas.</li>
+        <li>Variación de CH₄ y CO₂ durante el ensayo.</li>
+        <li>Alertas ante lecturas anormales o inválidas.</li>
         <li>Historial de mediciones.</li>
-        <li>Comparación de la evolución de las condiciones antes y después de la intervención.</li>
+        <li>Resultados del procesamiento de datos.</li>
+        <li>Resultados del análisis mediante Machine Learning.</li>
+        <li>Comparación de emisiones entre cultivos.</li>
       </ul>
-      Las señales provenientes de los sensores permitirán obtener información sobre las condiciones del suelo y del ambiente, mientras que la información del cultivo y de la parcela permitirá contextualizar el diagnóstico. Las señales de salida deberán presentar la información procesada de manera comprensible para apoyar la toma de decisiones del usuario. (Sawant et al., 2026; Thilakarathne et al., 2022; Prity et al., 2024; FAO, 2026).
+      Las variables ambientales y del sustrato permitirán contextualizar las concentraciones gaseosas y analizar su relación con las emisiones observadas. (Zhang et al., 2025; Jiang et al., 2023; Pavelka et al., 2018).
     </td>
     <td align="center">K.C, C.M</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Control:</strong> El sistema de control deberá coordinar la adquisición de datos provenientes de los sensores y verificar que las mediciones se encuentren dentro de rangos válidos antes de procesarlas. El sistema deberá ejecutar la secuencia de medición, validación, análisis, diagnóstico, recomendación y almacenamiento. Asimismo, deberá registrar las acciones realizadas por el usuario y permitir una nueva medición para evaluar la evolución de las condiciones del suelo y del ambiente después de la intervención. En caso de detectar valores fuera del rango operativo de un sensor o información insuficiente, deberá advertir al usuario y evitar la generación de un diagnóstico basado en datos no válidos. (Sawant et al., 2026; Kiran et al., 2024).
+      <strong>Control:</strong> El sistema de control deberá coordinar la adquisición de información proveniente de los sensores y verificar que las mediciones se encuentren dentro de rangos operativos antes de almacenarlas. Durante cada ensayo deberá registrar el tiempo transcurrido y asociar las lecturas al cultivo correspondiente. El sistema deberá ejecutar la secuencia de <strong>inicio, medición, validación, almacenamiento y finalización del ensayo</strong>. En caso de detectar valores fuera del rango operativo o información insuficiente, deberá identificar la condición para evitar que datos no válidos sean utilizados posteriormente en el análisis. (de Klein et al., 2020; Parkin y Venterea, 2010).
     </td>
     <td align="center">A.D, K.C</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Electrónico (hardware):</strong> El sistema utilizará un controlador o microcontrolador con capacidad suficiente para adquirir información de varios sensores y comunicarse con una interfaz externa. Se considera, como referencia, un dispositivo tipo ESP32, sin que ello excluya otras alternativas equivalentes que cumplan el mismo requisito funcional. El prototipo deberá integrar sensores para humedad del suelo, temperatura del suelo, pH del suelo, temperatura ambiental y humedad ambiental, además de los circuitos de acondicionamiento necesarios. Los módulos deberán ser reemplazables para facilitar el mantenimiento y futuras mejoras. (Sawant et al., 2026; Correa-Quiroz et al., 2025).
+      <strong>Electrónico (hardware):</strong> El sistema utilizará un controlador o microcontrolador con capacidad suficiente para adquirir información de varios sensores y comunicarse con una interfaz externa. Se considera, como referencia, un dispositivo tipo <strong>ESP32</strong>, sin que ello excluya otras alternativas equivalentes que cumplan con los requisitos funcionales.
+      <br><br>
+      El prototipo deberá integrar sensores destinados a detectar <strong>CH₄ y CO₂</strong>, además de sensores para registrar temperatura del suelo, humedad del suelo, temperatura ambiental, humedad ambiental, conductividad eléctrica e iluminación. Los módulos deberán ser reemplazables para facilitar el mantenimiento y futuras mejoras. El controlador deberá disponer de interfaces adecuadas para la adquisición y comunicación de las diferentes señales. (Winsen Electronics, 2018; Sensirion AG, 2020; Analog Devices, 2019; Espressif Systems, 2026).
     </td>
     <td align="center">K.C, L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Software:</strong> El software deberá permitir adquirir, procesar, almacenar y visualizar la información obtenida de los sensores. Deberá incluir una interfaz amigable para el agricultor, evitando que sea necesario interpretar únicamente valores numéricos. El sistema deberá emplear algoritmos de procesamiento e inteligencia artificial para analizar simultáneamente las variables de humedad del suelo, temperatura del suelo, pH, temperatura ambiental y humedad ambiental, determinar el estado de las condiciones evaluadas y generar recomendaciones según el cultivo seleccionado. (Prity et al., 2024; Kiran et al., 2024; Gunasekaran et al., 2025).
+      <strong>Software:</strong> El software deberá permitir adquirir, procesar, almacenar y visualizar la información obtenida durante los ensayos. Deberá registrar la identificación del cultivo, número de ensayo, fecha, hora, tiempo de medición y valores obtenidos por los sensores.
+      <br><br>
+      La interfaz deberá permitir visualizar las concentraciones de <strong>CH₄ y CO₂</strong> junto con las variables ambientales y del sustrato mediante tablas y gráficos. El sistema deberá conservar el historial de las mediciones para facilitar la comparación entre cultivos.
+      <br><br>
+      Posteriormente, los datos podrán utilizarse para entrenar y validar modelos de <strong>Machine Learning</strong> destinados a identificar patrones y comparar los niveles de emisión entre los cultivos evaluados. (Zhang et al., 2025; Jiang et al., 2023).
     </td>
     <td align="center">A.D, K.C</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Comunicaciones:</strong> El controlador deberá comunicarse correctamente con todos los sensores utilizados. Para la comunicación con la aplicación o interfaz de usuario se utilizará Wi-Fi, Bluetooth o ambos, según la arquitectura seleccionada. La ausencia temporal de conexión a Internet no deberá impedir realizar las mediciones básicas. Los datos podrán almacenarse localmente y sincronizarse posteriormente cuando exista conectividad. (Sawant et al., 2026; Thilakarathne et al., 2022).
+      <strong>Comunicaciones:</strong> El controlador deberá comunicarse correctamente con los sensores utilizados y permitir el envío de los datos hacia una interfaz de visualización o sistema de almacenamiento. La comunicación entre el controlador y los sensores deberá realizarse mediante interfaces y protocolos compatibles con los componentes utilizados.
+      <br><br>
+      Cuando exista conectividad disponible, los datos podrán enviarse a una plataforma externa para su almacenamiento y visualización. En caso de no existir conexión, el sistema deberá permitir almacenar temporalmente las mediciones para su posterior transferencia. (Espressif Systems, 2026; Sensirion AG, 2020).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Seguridad:</strong> Los componentes electrónicos deberán encontrarse protegidos frente al contacto directo con humedad, polvo y tierra. La alimentación eléctrica deberá trabajar con tensiones seguras para el usuario. El sistema deberá incorporar protección frente a cortocircuitos, polaridad incorrecta o condiciones eléctricas que puedan comprometer los componentes. La carcasa no deberá presentar bordes o superficies que generen riesgo durante la manipulación. (FAO, 2020).
+      <strong>Seguridad:</strong> Los componentes electrónicos deberán encontrarse protegidos frente al contacto accidental con humedad, sustrato y otros elementos presentes durante el experimento. Las conexiones eléctricas deberán estar aisladas y protegidas frente a cortocircuitos y conexiones incorrectas.
+      <br><br>
+      La estructura deberá evitar bordes cortantes o superficies que puedan generar riesgos durante la manipulación. La alimentación eléctrica deberá utilizar niveles seguros para el usuario y respetar las especificaciones de los componentes utilizados. La cámara deberá poder <strong>ventilarse adecuadamente entre ensayos</strong> para evitar la acumulación de gases y garantizar condiciones seguras de manipulación. (de Klein et al., 2020; Espressif Systems, 2026).
     </td>
     <td align="center">C.M</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Ergonomía:</strong> El equipo deberá ser manipulable por una sola persona. El peso total objetivo no deberá superar aproximadamente los 3 kg para facilitar su desplazamiento en campo. La interfaz deberá presentar la información mediante términos de fácil comprensión, por ejemplo: adecuado, atención y crítico, acompañados de los valores medidos y de la recomendación correspondiente. (FAO, 2026)
+      <strong>Ergonomía:</strong> El equipo deberá ser manipulable por una sola persona y permitir la colocación y retiro de la maceta sin procedimientos complejos. La tapa transparente deberá permitir observar el cultivo sin necesidad de abrir la cámara durante la medición.
+      <br><br>
+      La interfaz deberá presentar la información mediante valores, gráficos e indicadores comprensibles. Los resultados obtenidos directamente de los sensores deberán diferenciarse de los resultados generados mediante Machine Learning para facilitar su interpretación. (Pavelka et al., 2018; Zhang et al., 2025).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Fabricación:</strong> El prototipo deberá poder fabricarse utilizando materiales, sensores y componentes electrónicos disponibles comercialmente. Se priorizarán componentes de fácil adquisición y reemplazo. La carcasa podrá fabricarse mediante impresión 3D, mecanizado o materiales comerciales adecuados para protección de los componentes electrónicos. (Sawant et al., 2026)
+      <strong>Fabricación:</strong> El prototipo deberá poder fabricarse utilizando materiales y componentes disponibles comercialmente. El cuerpo principal de la cámara podrá fabricarse mediante impresión 3D utilizando un material adecuado para su estructura, mientras que la tapa deberá utilizar un material transparente que permita observar el cultivo y recibir iluminación artificial.
+      <br><br>
+      El diseño deberá incorporar espacios para la instalación de sensores, paso de cables, fijación de la tapa y ubicación de los componentes electrónicos. La fabricación deberá mantener aproximadamente las dimensiones de <strong>20 cm × 18 cm × 18 cm</strong> y permitir retirar fácilmente la maceta para realizar el cambio de cultivo y la limpieza. (de Klein et al., 2020; Pavelka et al., 2018).
     </td>
     <td align="center">K.C, A.D</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Control de calidad:</strong> Antes de las pruebas en campo, los sensores deberán ser calibrados utilizando instrumentos o soluciones de referencia según corresponda. En particular, el sensor de pH deberá calibrarse utilizando soluciones buffer adecuadas. Las mediciones del prototipo deberán contrastarse con métodos o instrumentos de referencia para determinar su error. Se deberá comprobar individualmente el correcto funcionamiento de cada sensor, así como el funcionamiento conjunto del sistema antes de validar las recomendaciones generadas. (Sawant et al., 2026; Kiran et al., 2024).
+      <strong>Control de calidad:</strong> Antes de realizar los experimentos comparativos, los sensores deberán verificarse y, cuando corresponda, calibrarse de acuerdo con las recomendaciones de sus fabricantes o procedimientos de referencia.
+      <br><br>
+      Se deberán realizar mediciones de prueba para evaluar la estabilidad y consistencia de los resultados. También deberá comprobarse individualmente el funcionamiento de cada sensor y posteriormente el funcionamiento conjunto del sistema.
+      <br><br>
+      Las mediciones deberán revisarse antes de incorporarse al conjunto de datos utilizado para el análisis mediante Machine Learning. (de Klein et al., 2020; Parkin y Venterea, 2010; Sensirion AG, 2020; Winsen Electronics, 2018).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Montaje:</strong> El diseño deberá ser modular para permitir el montaje y desmontaje de sensores, batería, controlador y demás componentes sin reconstruir completamente el equipo. Las conexiones deberán estar identificadas y aseguradas para evitar desconexiones accidentales durante el trabajo en campo. (Sawant et al., 2026)
+      <strong>Montaje:</strong> El diseño deberá ser modular para permitir el montaje y desmontaje de los sensores, controlador, fuente de alimentación, iluminación y demás componentes sin reconstruir completamente la cámara.
+      <br><br>
+      Las conexiones deberán encontrarse identificadas y aseguradas para evitar desconexiones accidentales durante el ensayo. La cámara deberá permitir retirar fácilmente la maceta para realizar el cambio de cultivo y facilitar la limpieza. Los sensores deberán mantenerse en posiciones similares durante los diferentes ensayos para favorecer la comparabilidad de las mediciones. (de Klein et al., 2020; Pavelka et al., 2018).
     </td>
     <td align="center">L.S, C.M</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Transporte:</strong> El dispositivo deberá ser transportable manualmente entre diferentes parcelas. La carcasa deberá proteger los componentes durante el traslado. Las sondas deberán contar con un sistema de almacenamiento o protección que reduzca el riesgo de daño durante el transporte.
+      <strong>Transporte:</strong> El dispositivo deberá poder trasladarse manualmente sin desprender sensores, cables o componentes electrónicos. La estructura deberá proteger los componentes y mantener la geometría de la cámara durante el traslado.
+      <br><br>
+      La tapa transparente deberá contar con una fijación adecuada para reducir el riesgo de daños durante el transporte. Los sensores y accesorios desmontables deberán poder almacenarse de manera segura cuando no estén instalados. (de Klein et al., 2020).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">D</td>
     <td>
-      <strong>Uso:</strong> Se desea que el sistema pueda utilizarse bajo diferentes condiciones ambientales presentes en zonas agrícolas. La secuencia de utilización deberá ser sencilla:<br><br>
-      seleccionar parcela y cultivo → colocar las sondas → iniciar medición → obtener diagnóstico → visualizar recomendación → registrar la acción realizada → realizar una medición posterior. (FAO, 2026; FAO, 2020)
+      <strong>Uso:</strong> Se desea que el sistema pueda utilizarse de manera repetible para diferentes cultivos jóvenes bajo condiciones experimentales controladas. La secuencia de utilización deberá ser sencilla:
+      <br><br>
+      <strong>Seleccionar cultivo → colocar maceta y planta → verificar sensores → cerrar cámara → encender iluminación → iniciar medición → registrar datos → finalizar ensayo → ventilar y limpiar → retirar cultivo → colocar nuevo cultivo → repetir.</strong>
+      <br><br>
+      Cada ensayo deberá registrar el cultivo evaluado y las condiciones experimentales para posteriormente comparar los resultados obtenidos. (Parkin y Venterea, 2010; Pavelka et al., 2018).
     </td>
     <td align="center">K.C</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Mantenimiento:</strong> Los sensores que estén en contacto con el suelo deberán poder limpiarse después de cada medición. Los sensores que requieran calibración deberán poder ser retirados o calibrados sin desmontar completamente el prototipo. Los componentes electrónicos deberán poder reemplazarse individualmente en caso de falla.
+      <strong>Mantenimiento:</strong> Los sensores que estén en contacto con el sustrato deberán poder limpiarse después de cada medición. Los sensores de gases y ambientales deberán revisarse y mantenerse de acuerdo con las recomendaciones de sus fabricantes.
+      <br><br>
+      Los sensores que requieran calibración deberán poder retirarse sin desmontar completamente la cámara. Los componentes electrónicos deberán poder reemplazarse individualmente en caso de falla.
+      <br><br>
+      La cámara deberá limpiarse y secarse entre experimentos para reducir la contaminación cruzada y mantener condiciones comparables entre los diferentes cultivos. (de Klein et al., 2020; Sensirion AG, 2020; Winsen Electronics, 2018).
     </td>
-    <td align="center">A.D</td>
+    <td align="center">A.D, L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Costos:</strong> Se buscará que el prototipo utiliza componentes comerciales de costo accesible. Como meta inicial de diseño, el costo de los componentes del prototipo no deberá superar aproximadamente S/ 1500, sujeto a modificación después de seleccionar y cotizar los sensores definitivos. (Sawant et al., 2026)
+      <strong>Costos:</strong> Se buscará que el prototipo utilice componentes comerciales de costo accesible y fácil adquisición. Como objetivo inicial, el costo total de los componentes no deberá superar aproximadamente <strong>S/ 1500</strong>, sujeto a modificación después de seleccionar y cotizar definitivamente los sensores, controlador, cámara, iluminación y demás componentes.
+      <br><br>
+      Se priorizarán componentes reutilizables y reemplazables, manteniendo como criterios principales la estabilidad, disponibilidad y calidad de las mediciones. (Winsen Electronics, 2018; Sensirion AG, 2020).
     </td>
     <td align="center">L.S</td>
   </tr>
 
   <tr>
-    <td>/08/2026</td>
+    <td>08/2026</td>
     <td align="center">E</td>
     <td>
-      <strong>Plazos:</strong> El proyecto comprenderá las etapas de definición del problema, revisión del estado de la tecnología, determinación de variables del suelo, selección de sensores, diseño electrónico, desarrollo del software, desarrollo del algoritmo de inteligencia artificial, fabricación del prototipo, integración, calibración, pruebas experimentales y validación final. Las fechas específicas deberán establecerse mediante el plan de trabajo del proyecto. (Prity et al., 2024; Sawant et al., 2026)
+      <strong>Plazos:</strong> El proyecto comprenderá las etapas de definición del problema, revisión del estado de la tecnología, selección de cultivos y variables, selección de sensores, diseño de la cámara experimental, diseño electrónico, desarrollo del software, fabricación del prototipo, integración de sensores, calibración, realización de ensayos experimentales, generación del conjunto de datos, desarrollo y validación del algoritmo de Machine Learning y comparación final de los cultivos.
+      <br><br>
+      Las fechas específicas de cada etapa deberán establecerse mediante el plan de trabajo del proyecto. (de Klein et al., 2020; Zhang et al., 2025; Jiang et al., 2023).
     </td>
     <td align="center">A.D, K.C</td>
   </tr>
@@ -299,43 +336,28 @@
 
 # Bibliografía
 
-## Lista de Requerimientos
+[1] C. A. M. de Klein et al., “Global Research Alliance N2O chamber methodology guidelines: Introduction, with health and safety considerations,” *Journal of Environmental Quality*, vol. 49, 2020, doi: 10.1002/jeq2.20131.
 
-[1] Food and Agriculture Organization of the United Nations, “FAO launches CropSuit app to help farmers grow the right crops in the right places,” Jul. 2, 2026. [Online]. Available:  
-https://www.fao.org/newsroom/detail/fao-launches-cropsuit-app-to-help-farmers-grow-the-right-crops-in-the-right-places/en.  
-[Accessed: Aug. 20, 2026].
+[2] A. R. Parkin and T. C. Venterea, “Measurement of Greenhouse Gas Flux from Agricultural Soils Using Static Chambers,” *Methods in Molecular Biology*, 2010.
 
-[2] F. S. Prity, M. M. Hasan, S. H. Saif, M. M. Hossain, S. H. Bhuiyan, M. A. Islam, et al., “Enhancing agricultural productivity: A machine learning approach to crop recommendations,” *Human-Centric Intelligent Systems*, vol. 4, pp. 497–510, 2024, doi: 10.1007/s44230-024-00081-3.
+[3] P. Pavelka et al., “Assessment of methane and nitrous oxide fluxes from paddy field by means of static closed chambers maintaining plants within headspace,” *Methods and Protocols*, 2018.
 
-[3] N. R. Sawant, A. Kumar, S. Pant, and K. Kotecha, “An IoT-driven machine learning system for real-time smart crop recommendation and optimization in precision agriculture,” *Discover Artificial Intelligence*, vol. 6, Art. no. 194, 2026, doi: 10.1007/s44163-026-00896-y.
+[4] Food and Agriculture Organization of the United Nations, “Emissions from crops (Global, National - Annual),” FAOSTAT, 2026.
 
-[4] N. N. Thilakarathne, M. S. A. Bakar, P. E. Abas, and H. Yassin, “A cloud enabled crop recommendation platform for machine learning-driven precision farming,” *Sensors*, vol. 22, no. 16, Art. no. 6299, Aug. 2022, doi: 10.3390/s22166299.
+[5] Q. Zhang, W. Wen, Y. Zhuang, L. Zhang, L. Zhai, S. Li, H. Liu, and Y. Du, “Machine learning-driven method for in-situ high-frequency CH₄ measurement in paddy fields based on water-soil-air factors: A case study of the Yangtze River Basin,” *Journal of Environmental Management*, vol. 393, p. 127132, 2025, doi: 10.1016/j.jenvman.2025.127132.
 
-[5] P. S. Kiran, G. Abhinaya, S. Sruti, and N. Padhy, “A machine learning-enabled system for crop recommendation,” *Engineering Proceedings*, vol. 67, no. 1, Art. no. 51, 2024, doi: 10.3390/engproc2024067051.
+[6] Z. Jiang, S. Yang, P. Smith, and Q. Pang, “Ensemble machine learning for modeling greenhouse gas emissions at different time scales from irrigated paddy fields,” *Field Crops Research*, vol. 292, p. 108821, 2023, doi: 10.1016/j.fcr.2023.108821.
 
-[6] H. Gunasekaran, K. Ramalakshmi, S. Debnath, and D. K. Swaminathan, “Physics-aware ensemble learning for superior crop recommendation in smart agriculture,” *Sensors*, vol. 25, no. 19, Art. no. 6243, Oct. 2025, doi: 10.3390/s25196243.
+[7] Sensirion AG, “SCD30 CO₂ Sensor Datasheet,” Sensirion AG, 2020. El SCD30 utiliza tecnología NDIR para CO₂ e integra medición de temperatura y humedad.
 
-[7] Food and Agriculture Organization of the United Nations, “Crop suitability assessment,” *SoilFER Programme*. [Online]. Available:  
-https://www.fao.org/in-action/soilfer/in-action/crop-suitability-assessment/en.  
-[Accessed: Aug. 20, 2026].
+[8] Sensirion AG, “SHT3x-DIS Digital Humidity and Temperature Sensor Datasheet,” Sensirion AG.
 
-[8] Food and Agriculture Organization of the United Nations, “SoilFER Programme—Soil mapping for resilient agrifood systems,” FAO. [Online]. Available:  
-https://www.fao.org/in-action/soilfer/.  
-[Accessed: Aug. 20, 2026].
+[9] Analog Devices, “DS18B20 Programmable Resolution 1-Wire Digital Thermometer,” Datasheet.
 
-[9] Food and Agriculture Organization of the United Nations, “Right crop, right place: What soil can tell us about the future of farming,” Jul. 2, 2026. [Online]. Available:  
-https://www.fao.org/newsroom/story/right-crop-right-place/en.  
-[Accessed: Aug. 20, 2026].
+[10] Espressif Systems, “ESP32-WROOM-32 Datasheet,” Espressif Systems, 2026. El módulo dispone de GPIO, I²C, UART, ADC, Wi-Fi y Bluetooth para la integración del sistema.
 
-[10] Food and Agriculture Organization of the United Nations, “SoilFER CropSuit App,” 2026. [Online]. Available:  
-https://data.apps.fao.org/soilfer/cropsuit.  
-[Accessed: Aug. 20, 2026].
+[11] Winsen Electronics, “MQ-4 Semiconductor Sensor for Flammable Gas,” Datasheet, 2018. El sensor está diseñado para detectar metano (CH₄) y presenta un rango especificado de 300–10 000 ppm.
 
-[11] FAO/GSP, *Soil Testing Methods Manual*. Food and Agriculture Organization of the United Nations, 2020. [Online]. Available:  
-https://openknowledge.fao.org/items/08f3bf38-5df7-4c79-b78b-a8a910824969
+[12] ROHM Semiconductor, “BH1750FVI Digital 16bit Serial Output Type Ambient Light Sensor IC,” Datasheet.
 
-[12] J. J. Correa-Quiroz, M. A. Toribio-Barrueto, and C. Castro-Vargas, “IoT system with ESP32 for smart drip irrigation and climate monitoring in greenhouses,” *Emerging Science Journal*, vol. 9, no. 3, pp. 1133–1157, 2025, doi: 10.28991/ESJ-2025-09-03-01.
-
-[13] A. Saxena, A. Agarwal, B. Nagrath, C. S. Jayavanth, S. Thulasidoss, S. Maheswari, and P. Sasikumar, “Deep learning-driven IoT solution for smart tomato farming,” *Scientific Reports*, vol. 15, Art. no. 15615, 2025, doi: 10.1038/s41598-025-15615-3.
-
-[14] A. Alawadhi and S. Patidar, “From Sensors to Insights: A Review of IoT Applications in Soil Health Monitoring and Precision Farming,” *International Journal of Applied Mathematics*, vol. 38, no. 10S, 2025, doi: 10.12732/ijam.v38i10s.1070.
+[13] DFRobot, “Analog Electrical Conductivity Sensor / Soil Conductivity Sensor,” DFRobot, 2025.
