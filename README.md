@@ -57,463 +57,219 @@ Buscamos aplicar **sensores IoT, adquisición de datos, análisis de informació
 
 ---
 
+# 🌱 GREENPLANT AI
+
+### Sistema experimental inteligente para la medición, registro y análisis de gases asociados a diferentes cultivos
+
+<p align="center">
+
+**Cultivo → Cámara experimental → Sensores → Datos → Machine Learning → Comparación**
+
+</p>
+
+---
+
 # 📌 Resumen del Proyecto
 
-### 🌱 ¿Qué es GREENPLANT AI?
+## 🌱 ¿Qué es GREENPLANT AI?
 
-**GREENPLANT AI** es un prototipo experimental que busca **detectar, registrar y comparar las concentraciones de gases de efecto invernadero asociadas a diferentes cultivos**.
+**GREENPLANT AI** es un prototipo experimental diseñado para **detectar, registrar y comparar las concentraciones de gases asociadas a diferentes cultivos bajo condiciones controladas**.
 
-El sistema utilizará una **cámara experimental cerrada**, sensores y un microcontrolador para obtener datos de manera controlada.
+El sistema utiliza una **cámara experimental cerrada**, sensores y un microcontrolador para obtener mediciones durante cada ensayo.
 
-Las mediciones estarán orientadas principalmente a:
+Las principales variables consideradas son:
 
-<div align="center">
+- 🌫️ **CH₄ — Metano**
+- 🌫️ **CO₂ — Dióxido de carbono**
+- 🌡️ **Temperatura del suelo**
+- 💧 **Humedad del suelo**
+- 🌡️ **Temperatura ambiental**
+- 💧 **Humedad ambiental**
+- 🧂 **Conductividad eléctrica del sustrato**
+- 💡 **Iluminación**
 
-🌫️ **CH₄** &nbsp;&nbsp;&nbsp; 🌫️ **CO₂**  
-🌡️ **Temperatura** &nbsp;&nbsp;&nbsp; 💧 **Humedad**  
-🌱 **Condiciones del sustrato** &nbsp;&nbsp;&nbsp; 💡 **Iluminación**
+Los datos obtenidos serán almacenados y posteriormente analizados mediante técnicas de **Machine Learning**, con el objetivo de identificar patrones y diferencias entre los cultivos evaluados.
 
-</div>
-
-Los datos obtenidos serán almacenados y procesados para posteriormente utilizar **Machine Learning** en el análisis y comparación de los cultivos evaluados.
+> **GREENPLANT AI no busca asumir qué cultivo presenta mayores concentraciones de gases. Los resultados serán determinados a partir de las mediciones experimentales obtenidas bajo condiciones controladas.**
 
 ---
 
 # ⚠️ Problemática
 
-La agricultura forma parte de los sectores relacionados con las emisiones de gases de efecto invernadero.
+La agricultura está relacionada con la generación de diferentes **gases de efecto invernadero**, entre ellos el **CH₄ y CO₂**.
 
-Sin embargo, obtener información sobre las emisiones de un cultivo en condiciones reales puede requerir procedimientos, equipos y metodologías que no siempre son accesibles para un entorno experimental educativo.
+Sin embargo, las concentraciones gaseosas asociadas a un cultivo pueden variar dependiendo de diferentes condiciones experimentales, como:
 
-> 🌱 **El reto no es solamente detectar un gas, sino obtener datos comparables que permitan comprender el comportamiento de las emisiones entre diferentes cultivos.**
+- 🌱 Tipo de cultivo.
+- 💧 Humedad del sustrato.
+- 🌡️ Temperatura.
+- 🧂 Condiciones del sustrato.
+- 💡 Iluminación.
+- 💦 Condiciones ambientales.
+- 🪴 Estado y desarrollo de la planta.
 
-Por ello, se plantea desarrollar un prototipo que permita realizar mediciones dentro de un **volumen experimental controlado**, facilitando la adquisición de datos y su posterior análisis.
+Obtener mediciones comparables puede requerir procedimientos y condiciones experimentales controladas.
 
----
+Por ello, **GREENPLANT AI** propone utilizar una cámara de volumen definido que permita realizar ensayos individuales y registrar las variaciones de las concentraciones gaseosas durante un periodo determinado.
 
-# 🔥 Nuestra Motivación
-
-Nos motiva desarrollar una solución que permita acercar las tecnologías de **IoT y Machine Learning** al estudio de las emisiones agrícolas.
-
-Queremos transformar las lecturas individuales de los sensores en un conjunto de datos que permita:
-
-<div align="center">
-
-| 📡 Medir | 💾 Registrar | 🧠 Analizar | 📊 Comparar |
-|:---:|:---:|:---:|:---:|
-| Gases y variables | Datos experimentales | Patrones | Cultivos |
-
-</div>
-
-De esta manera, GREENPLANT AI busca generar una base tecnológica para estudiar el comportamiento de las emisiones bajo condiciones experimentales similares.
+> **El reto no es solamente detectar un gas, sino generar datos experimentales comparables que permitan estudiar cómo varían las concentraciones gaseosas entre diferentes cultivos.**
 
 ---
 
-# 🛠️ ¿En qué consistirá el proyecto?
+# 🎯 Objetivo General
 
-GREENPLANT AI estará compuesto por una **cámara experimental cerrada** en la que se colocará una planta joven dentro de una maceta con sustrato.
+**Desarrollar un prototipo experimental capaz de detectar, registrar y comparar las concentraciones de gases asociadas a diferentes cultivos mediante sensores, IoT y técnicas de Machine Learning.**
 
-La cámara tendrá aproximadamente:
+---
 
-<div align="center">
+# 🎯 Objetivos Específicos
 
-### 📦 Dimensiones
+1. Diseñar una cámara experimental cerrada de volumen controlado.
 
-**20 cm × 18 cm × 18 cm**
+2. Implementar sensores para detectar principalmente **CH₄ y CO₂**.
 
-### 🧪 Volumen aproximado
+3. Registrar variables ambientales y del sustrato durante cada experimento.
 
-**6,48 L**
+4. Almacenar las mediciones obtenidas junto con información del cultivo y el tiempo de experimentación.
 
-</div>
+5. Generar un conjunto de datos experimentales.
 
-El sistema contará con sensores distribuidos entre la cámara, el cultivo y el sustrato.
+6. Analizar los datos mediante técnicas de **Machine Learning**.
 
-<details>
-<summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary>
+7. Identificar patrones relacionados con las concentraciones gaseosas y las condiciones del experimento.
 
-<br>
+8. Comparar los resultados obtenidos entre diferentes cultivos.
 
-### 1️⃣ Preparación
+---
 
-Se seleccionará el cultivo que será evaluado y se colocará la planta joven dentro de la cámara experimental.
+# 🌾 Cultivos a Evaluar
 
-<br>
+GREENPLANT AI permitirá realizar experimentos utilizando diferentes cultivos.
 
-### 2️⃣ Instalación
+La metodología consiste en utilizar **una planta joven por experimento**, manteniendo condiciones experimentales similares y cambiando el cultivo entre ensayos.
 
-Se verificará la ubicación y funcionamiento de los sensores antes de iniciar el ensayo.
+### Ejemplo de comparación
 
-<br>
+| Experimento | Cultivo |
+|:---:|:---:|
+| 01 | 🌱 Cultivo A |
+| 02 | 🌱 Cultivo B |
+| 03 | 🌱 Cultivo C |
+| 04 | 🌱 Cultivo D |
 
-### 3️⃣ Medición
+La planta será colocada dentro de una maceta o recipiente con sustrato y posteriormente introducida en la cámara experimental.
 
-Los sensores registrarán información relacionada con los gases y las condiciones ambientales y del sustrato.
+Al finalizar cada ensayo se seguirá una secuencia similar:
 
-<div align="center">
+**Finalizar medición → Ventilar → Limpiar → Cambiar planta → Repetir ensayo**
 
-🌫️ **CH₄**  
-🌫️ **CO₂**  
-🌡️ **Temperatura**  
-💧 **Humedad**  
-🧂 **Conductividad eléctrica**  
-💡 **Iluminación**
+Esto permitirá mantener una metodología uniforme para facilitar la comparación de los resultados.
 
-</div>
+---
 
-### 4️⃣ Registro
+# 🧪 Gases de Interés
 
-El microcontrolador recopilará las mediciones y las asociará con el cultivo y el número de ensayo.
+## 🌫️ CH₄ — Metano
 
-### 5️⃣ Análisis
+El **metano (CH₄)** será uno de los principales gases de interés del proyecto.
 
-Los datos serán procesados para identificar variaciones y patrones en las concentraciones de gases.
+Su concentración será registrada dentro de la cámara durante los experimentos para analizar su comportamiento bajo las condiciones establecidas.
 
-### 6️⃣ Comparación
+## 🌫️ CO₂ — Dióxido de carbono
 
-Los resultados obtenidos podrán compararse entre diferentes cultivos evaluados bajo condiciones similares.
+El **dióxido de carbono (CO₂)** será utilizado como una segunda variable gaseosa para estudiar la dinámica de los gases dentro de la cámara y relacionarla con las condiciones del cultivo.
 
-### 7️⃣ Machine Learning
+## N₂O — Óxido nitroso
 
-Los datos generados podrán utilizarse para desarrollar modelos de **Machine Learning** capaces de identificar patrones relacionados con las emisiones.
+El **N₂O** es un gas de importancia dentro de la agricultura. Sin embargo, no forma parte de la primera versión del prototipo debido a las dificultades técnicas y al costo asociado con su medición mediante sensores adecuados.
 
-<br>
-
-<div align="center">
-
-**🌱 Cultivo**
-⬇️
-**📦 Cámara experimental**
-⬇️
-**📡 Sensores**
-⬇️
-**💾 Datos**
-⬇️
-**🧠 Machine Learning**
-⬇️
-**📊 Comparación**
-
-</div>
-
-</details>
+> La primera versión del prototipo estará enfocada principalmente en **CH₄ y CO₂**.
 
 ---
 
 # 📡 Sistema de Sensores
 
-GREENPLANT AI integrará diferentes sensores para obtener una visión más completa de las condiciones presentes durante cada ensayo.
-
-<details>
-<summary>🔎 <strong>Ver sensores y variables del sistema</strong> ⬇️</summary>
-
-<br>
-
-<div align="center">
+GREENPLANT AI integrará sensores destinados a registrar las condiciones gaseosas, ambientales y del sustrato.
 
 | Variable | Función |
-|:---:|:---|
-| 🌫️ **CH₄** | Detectar y registrar concentración de metano |
-| 🌫️ **CO₂** | Registrar concentración de dióxido de carbono |
-| 🌡️ **Temperatura del suelo** | Caracterizar las condiciones del sustrato |
-| 💧 **Humedad del suelo** | Registrar el contenido de humedad |
-| 🌡️ **Temperatura ambiental** | Controlar las condiciones dentro de la cámara |
-| 💧 **Humedad ambiental** | Registrar las condiciones de humedad del ambiente |
+|:---|:---|
+| 🌫️ **CH₄** | Detectar y registrar metano |
+| 🌫️ **CO₂** | Registrar dióxido de carbono |
+| 🌡️ **Temperatura del suelo** | Caracterizar la temperatura del sustrato |
+| 💧 **Humedad del suelo** | Registrar la humedad del sustrato |
+| 🌡️ **Temperatura ambiental** | Registrar las condiciones térmicas dentro de la cámara |
+| 💧 **Humedad ambiental** | Registrar la humedad relativa |
 | 🧂 **Conductividad eléctrica** | Caracterizar las condiciones del sustrato |
-| 💡 **Iluminación** | Registrar la intensidad lumínica del ensayo |
+| 💡 **Iluminación** | Registrar la intensidad de luz durante el ensayo |
 
-</div>
+No todas las variables cumplen la misma función.
 
-<br>
+Los sensores de **CH₄ y CO₂** proporcionarán las principales mediciones gaseosas.
 
-El objetivo de utilizar múltiples variables es **contextualizar las mediciones de CH₄ y CO₂**, evitando analizar las concentraciones gaseosas como datos completamente aislados.
-
-</details>
+Las demás variables permitirán **contextualizar las mediciones** y analizar posibles relaciones entre las condiciones experimentales y las concentraciones gaseosas.
 
 ---
 
 # 📦 Cámara Experimental
 
-La cámara será el espacio donde se realizarán los ensayos de manera controlada.
+La cámara experimental será el espacio donde se realizarán los ensayos.
 
-<details>
-<summary>📐 <strong>Ver características de la cámara</strong> ⬇️</summary>
-
-<br>
-
-<div align="center">
-
-### 📏 Dimensiones aproximadas
+## 📏 Dimensiones aproximadas
 
 | Característica | Valor |
-|:---:|:---:|
+|:---|:---:|
 | Ancho | **20 cm** |
 | Largo | **18 cm** |
 | Alto | **18 cm** |
-| Volumen | **6,48 L** |
+| Volumen geométrico | **6,48 L** |
 | Maceta | **≈ 10 cm de diámetro** |
 | Planta | **Planta joven** |
 
-</div>
-
-<br>
-
 ### Características principales
 
-- 📦 Cámara cerrada de volumen conocido.
-- 🔍 Tapa superior transparente.
-- 🌱 Espacio para una planta joven.
-- 📡 Soportes para los sensores.
-- 💡 Posibilidad de iluminación artificial.
-- 🔌 Paso organizado de cables.
-- 🧹 Fácil apertura para limpieza y cambio de cultivo.
-- 🛠️ Estructura modular.
+- Cámara experimental cerrada.
+- Tapa superior transparente.
+- Espacio para una planta joven.
+- Soportes para los sensores.
+- Iluminación artificial.
+- Paso organizado de cables.
+- Fácil apertura para limpieza.
+- Posibilidad de cambiar el cultivo entre experimentos.
+- Diseño modular para facilitar el mantenimiento.
 
-La cámara permitirá realizar diferentes ensayos manteniendo una geometría similar para favorecer la comparación de los resultados.
-
-</details>
-
----
-
-# 🧠 ¿Dónde está nuestra innovación?
-
-GREENPLANT AI no busca afirmar que los sensores de gases o las cámaras experimentales sean tecnologías nuevas.
-
-La innovación de nuestra propuesta está en **integrar diferentes variables en un sistema experimental orientado a generar datos comparables y utilizarlos posteriormente mediante Machine Learning**.
-
-<details>
-<summary>💡 <strong>Ver nuestra propuesta de innovación</strong> ⬇️</summary>
-
-<br>
-
-<div align="center">
-
-| Medición convencional | GREENPLANT AI |
-|:---:|:---:|
-| 🌫️ Detecta gases | 📡 Detecta múltiples variables |
-| 🔢 Obtiene valores | 💾 Construye un conjunto de datos |
-| 📊 Observa mediciones | 🔗 Relaciona variables |
-| 📍 Evalúa un momento | 🔄 Registra la evolución |
-| 👨‍🔬 Interpretación manual | 🧠 Análisis mediante ML |
-| 🌱 Cultivos aislados | 📊 Comparación entre cultivos |
-
-</div>
-
-<br>
-
-Por ello, nuestra propuesta busca pasar de:
-
-> **“¿Cuánto gas se detectó?”**
-
-a:
-
-> **“¿Cómo varían las emisiones entre diferentes cultivos y qué patrones pueden identificarse a partir de los datos?”**
-
-</details>
+La cámara estará diseñada para mantener un **volumen experimental definido**, permitiendo realizar mediciones bajo condiciones similares entre los diferentes ensayos.
 
 ---
 
-# 🧠 Machine Learning
+# 💡 Iluminación
 
-Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de **Machine Learning**.
+La cámara contará con una fuente de **iluminación artificial** ubicada en la zona superior.
 
-<details>
-<summary>🤖 <strong>Ver cómo utilizaremos Machine Learning</strong> ⬇️</summary>
+La tapa transparente permitirá el ingreso de la iluminación y facilitará la observación de la planta durante el experimento.
 
-<br>
-
-El conjunto de datos podrá contener información como:
-
-<div align="center">
-
-| Variable | Tipo de información |
-|:---:|:---|
-| 🌱 Cultivo | Identificación del cultivo |
-| 🌫️ CH₄ | Concentración medida |
-| 🌫️ CO₂ | Concentración medida |
-| 🌡️ Temperatura | Condición experimental |
-| 💧 Humedad | Condición experimental |
-| 🧂 Conductividad | Condición del sustrato |
-| 💡 Iluminación | Condición del ensayo |
-| ⏱️ Tiempo | Momento de la medición |
-
-</div>
-
-<br>
-
-El flujo de análisis será:
-
-<div align="center">
-
-**📡 Adquisición**
-⬇️
-**💾 Almacenamiento**
-⬇️
-**🧹 Limpieza de datos**
-⬇️
-**📊 Análisis exploratorio**
-⬇️
-**🧠 Entrenamiento**
-⬇️
-**🔎 Validación**
-⬇️
-**📈 Comparación**
-
-</div>
-
-<br>
-
-El modelo buscará identificar **patrones y relaciones entre las variables registradas**, apoyando el análisis de las emisiones observadas durante los ensayos.
-
-</details>
+La iluminación será considerada como una variable experimental, permitiendo registrar las condiciones de luz presentes durante cada ensayo.
 
 ---
 
-# 📊 Visualización de Datos
+# ⚙️ Arquitectura General del Sistema
 
-GREENPLANT AI permitirá organizar las mediciones para facilitar su interpretación.
+El funcionamiento de GREENPLANT AI puede representarse de la siguiente manera:
 
-<details>
-<summary>📈 <strong>Ver ejemplo de visualización</strong> ⬇️</summary>
-
-<br>
-
-### 🌫️ Evolución de CO₂
-
-| Tiempo | Cultivo A | Cultivo B |
-|:---:|:---:|:---:|
-| 0 min | 420 ppm | 425 ppm |
-| 10 min | 450 ppm | 438 ppm |
-| 20 min | 480 ppm | 460 ppm |
-| 30 min | 515 ppm | 489 ppm |
-
-<br>
-
-### 🌫️ Evolución de CH₄
-
-| Tiempo | Cultivo A | Cultivo B |
-|:---:|:---:|:---:|
-| 0 min | Registro inicial | Registro inicial |
-| 10 min | Medición | Medición |
-| 20 min | Medición | Medición |
-| 30 min | Medición | Medición |
-
-<br>
-
-> ⚠️ **Los valores mostrados son únicamente ejemplos de visualización y no representan resultados experimentales reales.**
-
-</details>
-
----
-
-# 🔄 Comparación entre Cultivos
-
-Una de las funciones principales del proyecto será permitir comparar los resultados obtenidos para diferentes cultivos.
-
-<details>
-<summary>🌱 <strong>Ver ejemplo de comparación</strong> ⬇️</summary>
-
-<br>
-
-<div align="center">
-
-### 📊 Comparación experimental
-
-| Indicador | 🌱 Cultivo A | 🌿 Cultivo B | 🌾 Cultivo C |
-|:---:|:---:|:---:|:---:|
-| CH₄ | Bajo | Medio | Alto |
-| CO₂ | Medio | Bajo | Alto |
-| Temperatura | Normal | Normal | Normal |
-| Humedad | Media | Media | Alta |
-| Conductividad | Normal | Alta | Normal |
-
-</div>
-
-<br>
-
-El objetivo será identificar diferencias en el comportamiento de las variables medidas y determinar qué patrones pueden observarse entre los cultivos evaluados.
-
-</details>
-
----
-
-# 🛡️ Seguridad del Prototipo
-
-Debido a que el sistema trabajará dentro de una cámara cerrada con gases, se considerarán medidas de seguridad durante su utilización.
-
-<div align="center">
-
-| 🛡️ Medida | 🎯 Objetivo |
-|:---:|:---:|
-| 🔌 Protección eléctrica | Evitar cortocircuitos y contactos accidentales |
-| 🧤 Protección de componentes | Evitar contacto con humedad y sustrato |
-| 🌬️ Ventilación | Reducir acumulación de gases entre ensayos |
-| 📦 Carcasa | Proteger los componentes electrónicos |
-| 🧹 Limpieza | Reducir contaminación cruzada |
-| 🔎 Verificación | Comprobar sensores antes de cada ensayo |
-
-</div>
-
----
-
-# 🌍 ODS en el que nos enfocamos
-
-<div align="center">
-
-| 🌍 ODS 13 |
-|:---:|
-| **Acción por el Clima** |
-| Medición y análisis de gases de efecto invernadero asociados a actividades agrícolas. |
-
-</div>
-
-GREENPLANT AI busca contribuir desde la tecnología al **monitoreo y comprensión de emisiones agrícolas**, utilizando sensores, adquisición de datos y Machine Learning como herramientas para el análisis experimental.
-
----
-
-# 🎯 Nuestra Propuesta de Valor
-
-<div align="center">
-
-## **GREENPLANT AI convierte mediciones de gases en datos analizables.**
-
-<br>
-
-**🌱 Cultivo → 📦 Cámara → 📡 Sensores → 💾 Datos → 🧠 IA → 📊 Comparación**
-
-</div>
-
-Nuestro objetivo no es solamente detectar gases.
-
-Buscamos desarrollar un sistema experimental que permita:
-
-**Medir → Registrar → Analizar → Comparar**
-
-integrando **IoT, sensores, procesamiento de datos y Machine Learning** en una propuesta orientada al estudio de las emisiones asociadas a diferentes cultivos.
-
----
-
-# 🚀 Visión del Proyecto
-
-GREENPLANT AI busca convertirse en una plataforma experimental que permita generar información útil sobre el comportamiento de gases de efecto invernadero bajo condiciones controladas.
-
-A futuro, el sistema podría ampliarse mediante:
-
-- 📊 Mayor cantidad de ensayos.
-- 🌱 Evaluación de diferentes cultivos.
-- 📡 Incorporación de nuevos sensores.
-- 🧠 Modelos de Machine Learning más avanzados.
-- 📈 Análisis temporal de las emisiones.
-- ☁️ Almacenamiento de datos en la nube.
-- 📱 Interfaces de visualización más completas.
-
-> **De sensores a datos. De datos a conocimiento.**
-
----
-
-<p align="center">
-  <strong>🌱 GREENPLANT AI · IoT · Machine Learning · Agricultura · Sostenibilidad</strong>
-</p>
-
-<p align="center">
-  <sub>Universidad Peruana Cayetano Heredia · Proyecto Integrador · 2026-II</sub>
-</p>
+```text
+              🌱 CULTIVO
+                  ↓
+        🪴 PLANTA + SUSTRATO
+                  ↓
+         📦 CÁMARA EXPERIMENTAL
+                  ↓
+              📡 SENSORES
+                  ↓
+             ⚙️ ESP32
+                  ↓
+          💾 ADQUISICIÓN DE DATOS
+                  ↓
+          🗄️ ALMACENAMIENTO
+                  ↓
+            🧠 MACHINE LEARNING
+                  ↓
+          📊 ANÁLISIS Y COMPARACIÓN
