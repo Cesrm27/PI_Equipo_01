@@ -155,7 +155,6 @@ La metodología consiste en utilizar **una planta joven por experimento**, mante
 | 01 | 🌱 Cultivo A |
 | 02 | 🌱 Cultivo B |
 | 03 | 🌱 Cultivo C |
-| 04 | 🌱 Cultivo D |
 
 La planta será colocada dentro de una maceta o recipiente con sustrato y posteriormente introducida en la cámara experimental.
 
