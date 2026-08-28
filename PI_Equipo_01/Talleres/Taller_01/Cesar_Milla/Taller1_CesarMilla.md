@@ -14,7 +14,7 @@ La pieza estructural fue modelada en **Onshape** como una barra rectangular, def
 
 Una vez terminado el diseño, la pieza fue llevada a un entorno de simulación por elementos finitos para evaluar su comportamiento mecánico.
 
-En la simulación se asignó **PLA como material**, se establecieron las condiciones de soporte y las cargas correspondientes, y posteriormente se generó la malla del modelo. A partir del análisis estático se obtuvo la distribución de esfuerzos mediante el criterio de **Von Mises**, observándose cómo las tensiones varían a lo largo de la pieza y permitiendo identificar las zonas sometidas a mayor esfuerzo.
+En la simulación se asignó **PLA como material**, se establecieron las condiciones de soporte y las cargas correspondientes, y posteriormente se generó la malla del modelo. A partir del análisis estático se obtuvo la distribución de esfuerzos, observándose cómo las tensiones varían a lo largo de la pieza y permitiendo identificar las zonas sometidas a mayor esfuerzo.
 
 <p align="center">
   <img src="simulacion.jpeg" alt="Simulación de esfuerzos de Von Mises" width="750">
