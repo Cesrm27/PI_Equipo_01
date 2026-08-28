@@ -4,7 +4,8 @@
 
 En la siguiente imagen se muestra el **modelado lateral de la pieza**, donde se pueden observar los pequeños orificios destinados a la colocación de los tornillos de fijación.
 
-![Modelado lateral de la pieza](modelado-lateral.png)
+<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/532e1bb1-a5a9-4007-ab8e-c857449d3b7c" />
+
 
 ---
 
@@ -20,12 +21,8 @@ En la siguiente imagen se muestra el **modelado lateral de la pieza**, donde se 
 
 Los pequeños agujeros ubicados en la pieza están diseñados para recibir los **tornillos de montaje**, permitiendo asegurar la pieza a la estructura correspondiente.
 
-> **Nota:** La imagen corresponde a una representación del modelo y permite identificar visualmente la distribución de los puntos de fijación.
 
 ---
 
-### 📷 Archivo de referencia
-
-**Imagen:** `modelado-lateral.png`
-
-Esta imagen debe colocarse en la misma carpeta que este archivo `README.md` para que pueda visualizarse correctamente en GitHub.
+<img width="1600" height="772" alt="image" src="https://github.com/user-attachments/assets/52413d43-e0eb-4499-b1b7-303d54361f87" />
+<img width="1600" height="762" alt="image" src="https://github.com/user-attachments/assets/7678729b-196e-4b73-800e-27d78a046045" />
