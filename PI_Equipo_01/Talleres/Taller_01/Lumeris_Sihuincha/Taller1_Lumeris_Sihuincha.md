@@ -1,8 +1,8 @@
 
 Taller 1: Modelado y simulación en Onshape
-Modelo lateral de la pieza
+Modelo lateral de la pieza:
+<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/763cc70f-9568-4a68-9e1b-bf7bbbbacfbc" />
 
-Modelo de la pieza estructural en Onshape
 
 Figura 1. Modelado de la pieza estructural en Onshape.
 
