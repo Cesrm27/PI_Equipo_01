@@ -27,6 +27,8 @@ Los pequeños agujeros ubicados en la pieza están diseñados para recibir los *
 <img width="1600" height="772" alt="image" src="https://github.com/user-attachments/assets/52413d43-e0eb-4499-b1b7-303d54361f87" />
 
 La pieza tiene forma de cuña, con un extremo fijo y presión aplicada en la cara opuesta. El gradiente de colores representa el desplazamiento absoluto en fase Y, con una escala de 0 a 180 rad. La mayor variación se concentra en el extremo angosto, mientras que el resto de la pieza mantiene una fase prácticamente constante.
+
+
 ---
 
 <img width="1600" height="762" alt="image" src="https://github.com/user-attachments/assets/7678729b-196e-4b73-800e-27d78a046045" />
