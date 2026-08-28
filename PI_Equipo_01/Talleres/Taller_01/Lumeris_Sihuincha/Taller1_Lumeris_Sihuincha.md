@@ -33,3 +33,8 @@ La pieza tiene forma de cuña, con un extremo fijo y presión aplicada en la car
 
 <img width="1600" height="762" alt="image" src="https://github.com/user-attachments/assets/7678729b-196e-4b73-800e-27d78a046045" />
 La geometría tipo placa/bloque presenta un degradado de azul a rojo, representando valores de EM entre 0 y 1.656 × 10⁻¹¹. Estos valores extremadamente bajos indican que, a 0 Hz, la respuesta dinámica es prácticamente nula, por lo que el sistema se comporta casi de forma estática.
+
+---
+Shedira Lumeris sihuincha Palacin
+ONESHAPE
+Link: https://cad.onshape.com/documents/70658c4b5d3fe9a19752c02d/w/dce491f4056c340a6e6822a1/e/b34eb9c8975484f3f167059e?renderMode=0&uiState=6a9106726d662ac4fef301d1
