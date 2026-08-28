@@ -1,19 +1,31 @@
+# 🔩 Modelado Lateral — Pieza de Fijación
 
-Taller 1: Modelado y simulación en Onshape
-Modelo lateral de la pieza:
-<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/763cc70f-9568-4a68-9e1b-bf7bbbbacfbc" />
+## 📐 Vista lateral de la pieza
 
+En la siguiente imagen se muestra el **modelado lateral de la pieza**, donde se pueden observar los pequeños orificios destinados a la colocación de los tornillos de fijación.
 
-Figura 1. Modelado de la pieza estructural en Onshape.
+![Modelado lateral de la pieza](modelado-lateral.png)
 
-Simulación estructural
-Una vez terminado el diseño, la pieza fue llevada a un entorno de simulación por elementos finitos para evaluar su comportamiento mecánico.
+---
 
-En la simulación se asignó PLA como material, se establecieron las condiciones de soporte y las cargas correspondientes, y posteriormente se generó la malla del modelo. A partir del análisis estático se obtuvo la distribución de esfuerzos, observándose cómo las tensiones varían a lo largo de la pieza y permitiendo identificar las zonas sometidas a mayor esfuerzo.
+## 🛠️ Características del diseño
 
-Simulación de esfuerzos de Von Mises
+* **Vista:** Lateral
+* **Elemento principal:** Pieza de fijación
+* **Orificios:** Pequeños agujeros para la instalación de tornillos
+* **Función de los orificios:** Permitir la fijación y montaje de la pieza
+* **Modelado:** Diseño tridimensional de la pieza
 
-Figura 2. Distribución de esfuerzos de Von Mises obtenida en la simulación.
+### 🔩 Orificios de fijación
 
-Enlace del modelo
-🔗 Abrir proyecto en Onshape
+Los pequeños agujeros ubicados en la pieza están diseñados para recibir los **tornillos de montaje**, permitiendo asegurar la pieza a la estructura correspondiente.
+
+> **Nota:** La imagen corresponde a una representación del modelo y permite identificar visualmente la distribución de los puntos de fijación.
+
+---
+
+### 📷 Archivo de referencia
+
+**Imagen:** `modelado-lateral.png`
+
+Esta imagen debe colocarse en la misma carpeta que este archivo `README.md` para que pueda visualizarse correctamente en GitHub.
