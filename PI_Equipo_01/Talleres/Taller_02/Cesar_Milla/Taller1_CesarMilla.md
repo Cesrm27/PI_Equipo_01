@@ -17,14 +17,11 @@ Una vez terminado el diseño, la pieza fue llevada a un entorno de simulación p
 En la simulación se asignó **PLA como material**, se establecieron las condiciones de soporte y las cargas correspondientes, y posteriormente se generó la malla del modelo. A partir del análisis estático se obtuvo la distribución de esfuerzos mediante el criterio de **Von Mises**, observándose cómo las tensiones varían a lo largo de la pieza y permitiendo identificar las zonas sometidas a mayor esfuerzo.
 
 <p align="center">
-  <img src="media/simulacion_von_mises.png" alt="Simulación de esfuerzos de Von Mises" width="750">
+  <img src="media/simulacion.jpeg" alt="Simulación de esfuerzos de Von Mises" width="750">
 </p>
 
 <p align="center"><em>Figura 2. Distribución de esfuerzos de Von Mises obtenida en la simulación.</em></p>
 
-## Resultado
-
-El análisis permite verificar de manera preliminar si la geometría diseñada puede soportar las condiciones de carga propuestas antes de proceder con su fabricación física.
 
 ## Enlace del modelo
 
