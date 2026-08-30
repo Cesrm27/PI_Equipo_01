@@ -8,7 +8,7 @@
 
 **Semestre Académico:** 2026 II – VI Ciclo  
 **Semana N.° 1**  
-**Tema:** “Lista de exigencias”  
+**Tema:** Lista de exigencias  
 **Curso:** Proyecto Integrador – Práctica N.° 1  
 **Año:** 2026  
 **Lugar:** Lima – Perú
@@ -17,7 +17,7 @@
 
 ## Docentes
 
-- Ing. [Umbert Lewis De La Cruz Rodriguez](#)
+- Ing. Umbert Lewis De La Cruz Rodriguez
 - Ing. Vanessa Stefanny Stefanny Arevalo
 
 ---
@@ -25,339 +25,458 @@
 ## Integrantes del equipo
 
 | Integrante | Aporte/s en específico | % de aporte |
-|---|---|:---:|
-| Cesar Rodrigo Milla Gómez | Definió la función general del sistema, las señales de entrada y salida, y se encargó de los aspectos relacionados con la seguridad del prototipo y el manejo de los gases durante los ensayos. | 25% |
-| Anderson Josue Delerna Infantes | Diseñó el tamaño y la forma de la cámara experimental, la alimentación de energía, el sistema de control, el software, la fabricación y la planificación de las etapas del proyecto. | 25% |
-| Kevin Esty Carvallo Neciosup | Trabajó en la integración de los sensores de gases, suelo y ambiente, el hardware y microcontrolador, el control de las mediciones, el software y el procedimiento de uso del prototipo. | 25% |
-| Shedira Lumeris Sihuincha Palacin | Revisó la resistencia y estructura del equipo, la integración electrónica, las comunicaciones, la ergonomía, la calibración y control de calidad de los sensores, además del transporte, mantenimiento y costos del prototipo. | 25% |
-| **Equipo** | **Informe final** | **100%** |
+|---|---|---:|
+| Cesar Rodrigo Milla Gómez | Definió la función general del sistema, las señales de entrada y salida, y los aspectos relacionados con la seguridad del prototipo y el manejo de alertas. | 25% |
+| Anderson Josue Delerna Infantes | Diseñó el tamaño y la forma del prototipo, la alimentación de energía, el sistema de control, el software, la fabricación y la planificación de las etapas del proyecto. | 25% |
+| Kevin Esty Carvallo Neciosup | Trabajó en la integración de los sensores, sensor de movimiento, GPS, microcontrolador, control de las mediciones, software y funcionamiento general del sistema. | 25% |
+| Shedira Lumeris Sihuincha Palacin | Revisó la resistencia de la estructura, la parte electrónica, las comunicaciones, ergonomía, control de calidad, transporte y costos del prototipo. | 25% |
+
+**Equipo:** Informe final – 100%
 
 ---
 
 # 1. Lista de Exigencias
 
-**Tabla 1: Lista de Exigencias**
-
-<table>
-  <tr>
-    <th colspan="3">LISTA DE EXIGENCIAS</th>
-    <th>Páginas: 5</th>
-  </tr>
-  <tr>
-    <td colspan="3"></td>
-    <td><strong>Edición:</strong> Rev. 1</td>
-  </tr>
-  <tr>
-    <th>PROYECTO:</th>
-    <td colspan="2"><strong>GREENPLANT AI – Sistema inteligente para detectar y comparar emisiones de gases de efecto invernadero asociadas a diferentes cultivos mediante sensores y Machine Learning</strong></td>
-    <td><strong>Fecha:</strong> 08/2026<br><strong>Revisado:</strong></td>
-  </tr>
-  <tr>
-    <th>CLIENTE:</th>
-    <td colspan="2"><strong>Universidad Peruana Cayetano Heredia (UPCH)</strong></td>
-    <td><strong>Elaborado:</strong><br>K.C, A.D, C.M, L.S</td>
-  </tr>
-</table>
-
-<br>
-
-<table>
-  <thead>
-    <tr>
-      <th>Fecha (cambios)</th>
-      <th>Deseo o Exigencia</th>
-      <th>Descripción</th>
-      <th>Responsable</th>
-    </tr>
-  </thead>
-  <tbody>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Función general:</strong> El sistema deberá permitir realizar mediciones experimentales de gases de efecto invernadero asociados a diferentes cultivos dentro de una cámara cerrada de volumen controlado. Deberá registrar principalmente la concentración de <strong>CH₄ y CO₂</strong>, además de variables ambientales y del sustrato, procesar la información obtenida y permitir comparar los resultados entre diferentes cultivos bajo condiciones experimentales similares. Los datos deberán almacenarse junto con la identificación del cultivo, tiempo de medición y condiciones del ensayo para posteriormente aplicar técnicas de Machine Learning e identificar patrones relacionados con las emisiones. Las cámaras cerradas permiten estudiar cambios en la concentración de gases dentro de un volumen definido y durante un periodo determinado. (de Klein et al., 2020; Parkin y Venterea, 2010; Pavelka et al., 2018).
-    </td>
-    <td align="center">C.M, K.C, A.D, L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Geometría:</strong> El prototipo deberá presentar una cámara experimental cerrada, portátil y de dimensiones aproximadas de <strong>20 cm × 18 cm × 18 cm</strong>, con un volumen interno aproximado de <strong>6,48 L</strong>. Deberá permitir colocar una maceta de aproximadamente <strong>10 cm de diámetro y 8 cm de altura</strong>, junto con una planta joven. La tapa superior deberá ser transparente para permitir la observación del cultivo y el ingreso de iluminación artificial. El interior deberá disponer de espacio suficiente para instalar los sensores sin interferir significativamente con la planta. Las dimensiones deberán facilitar la limpieza, el cambio de cultivo y la repetición de los ensayos. (de Klein et al., 2020; Pavelka et al., 2018).
-    </td>
-    <td align="center">A.D</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Cinemática:</strong> El prototipo no requerirá mecanismos de movimiento durante la medición. La cámara deberá permanecer estática durante cada ensayo para mantener estable el volumen experimental y reducir perturbaciones en las mediciones. La colocación y retiro de la maceta con el cultivo se realizará manualmente entre ensayos. La tapa deberá permitir una apertura y cierre sencillo para facilitar la instalación, retiro y limpieza del cultivo. (de Klein et al., 2020; Parkin y Venterea, 2010).
-    </td>
-    <td align="center">K.C</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Fuerzas:</strong> La estructura de la cámara, la tapa y los soportes deberán resistir la manipulación manual, el peso de la maceta con el sustrato y las aperturas y cierres repetidos durante los ensayos. Los soportes de los sensores deberán mantenerse firmes durante la medición y evitar desplazamientos accidentales. La estructura deberá conservar su estabilidad durante la manipulación y transporte del prototipo. (de Klein et al., 2020).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Energía:</strong> El sistema deberá funcionar mediante una fuente de alimentación de bajo voltaje compatible con el controlador, los sensores y los demás componentes electrónicos. La alimentación deberá ser estable durante todo el periodo experimental para evitar interrupciones durante la adquisición de datos.
-      <ul>
-        <li>La iluminación artificial instalada sobre la tapa transparente deberá disponer de una alimentación adecuada y mantenerse estable durante los ensayos.</li>
-        <li>Los sensores y componentes electrónicos deberán recibir niveles de tensión compatibles con sus especificaciones de funcionamiento.</li>
-        <li>El sistema deberá permitir verificar la disponibilidad de alimentación antes y durante la medición.</li>
-      </ul>
-      (Espressif Systems, 2026; Sensirion AG, 2020).
-    </td>
-    <td align="center">A.D</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Materia:</strong> El elemento experimental estará constituido por una planta joven colocada en una maceta o recipiente con sustrato agrícola. El sistema deberá permitir retirar y reemplazar el cultivo entre ensayos para realizar comparaciones entre diferentes especies vegetales. La cámara podrá fabricarse mediante materiales adecuados para impresión 3D y una tapa transparente. Los materiales utilizados deberán soportar las condiciones de humedad presentes durante los experimentos y permitir una limpieza adecuada después de cada ensayo para reducir la contaminación cruzada. (de Klein et al., 2020; Pavelka et al., 2018).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Señales (Información):</strong> El sistema deberá contar con señales de entrada y salida asociadas al proceso de medición y comparación de emisiones.
-      <br><br>
-      <strong>Señales de entrada:</strong>
-      <ul>
-        <li>Concentración de CH₄.</li>
-        <li>Concentración de CO₂.</li>
-        <li>Temperatura del suelo.</li>
-        <li>Humedad del suelo.</li>
-        <li>Temperatura ambiental.</li>
-        <li>Humedad ambiental.</li>
-        <li>Conductividad eléctrica del sustrato.</li>
-        <li>Intensidad de iluminación.</li>
-        <li>Identificación del cultivo.</li>
-        <li>Número de ensayo.</li>
-        <li>Tiempo de medición.</li>
-        <li>Comandos e información ingresada por el usuario.</li>
-      </ul>
-      <strong>Señales de salida:</strong>
-      <ul>
-        <li>Valores obtenidos de los sensores.</li>
-        <li>Estado de funcionamiento de los sensores.</li>
-        <li>Variación de CH₄ y CO₂ durante el ensayo.</li>
-        <li>Alertas ante lecturas anormales o inválidas.</li>
-        <li>Historial de mediciones.</li>
-        <li>Resultados del procesamiento de datos.</li>
-        <li>Resultados del análisis mediante Machine Learning.</li>
-        <li>Comparación de emisiones entre cultivos.</li>
-      </ul>
-      Las variables ambientales y del sustrato permitirán contextualizar las concentraciones gaseosas y analizar su relación con las emisiones observadas. (Zhang et al., 2025; Jiang et al., 2023; Pavelka et al., 2018).
-    </td>
-    <td align="center">K.C, C.M</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Control:</strong> El sistema de control deberá coordinar la adquisición de información proveniente de los sensores y verificar que las mediciones se encuentren dentro de rangos operativos antes de almacenarlas. Durante cada ensayo deberá registrar el tiempo transcurrido y asociar las lecturas al cultivo correspondiente. El sistema deberá ejecutar la secuencia de <strong>inicio, medición, validación, almacenamiento y finalización del ensayo</strong>. En caso de detectar valores fuera del rango operativo o información insuficiente, deberá identificar la condición para evitar que datos no válidos sean utilizados posteriormente en el análisis. (de Klein et al., 2020; Parkin y Venterea, 2010).
-    </td>
-    <td align="center">A.D, K.C</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Electrónico (hardware):</strong> El sistema utilizará un controlador o microcontrolador con capacidad suficiente para adquirir información de varios sensores y comunicarse con una interfaz externa. Se considera, como referencia, un dispositivo tipo <strong>ESP32</strong>, sin que ello excluya otras alternativas equivalentes que cumplan con los requisitos funcionales.
-      <br><br>
-      El prototipo deberá integrar sensores destinados a detectar <strong>CH₄ y CO₂</strong>, además de sensores para registrar temperatura del suelo, humedad del suelo, temperatura ambiental, humedad ambiental, conductividad eléctrica e iluminación. Los módulos deberán ser reemplazables para facilitar el mantenimiento y futuras mejoras. El controlador deberá disponer de interfaces adecuadas para la adquisición y comunicación de las diferentes señales. (Winsen Electronics, 2018; Sensirion AG, 2020; Analog Devices, 2019; Espressif Systems, 2026).
-    </td>
-    <td align="center">K.C, L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Software:</strong> El software deberá permitir adquirir, procesar, almacenar y visualizar la información obtenida durante los ensayos. Deberá registrar la identificación del cultivo, número de ensayo, fecha, hora, tiempo de medición y valores obtenidos por los sensores.
-      <br><br>
-      La interfaz deberá permitir visualizar las concentraciones de <strong>CH₄ y CO₂</strong> junto con las variables ambientales y del sustrato mediante tablas y gráficos. El sistema deberá conservar el historial de las mediciones para facilitar la comparación entre cultivos.
-      <br><br>
-      Posteriormente, los datos podrán utilizarse para entrenar y validar modelos de <strong>Machine Learning</strong> destinados a identificar patrones y comparar los niveles de emisión entre los cultivos evaluados. (Zhang et al., 2025; Jiang et al., 2023).
-    </td>
-    <td align="center">A.D, K.C</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Comunicaciones:</strong> El controlador deberá comunicarse correctamente con los sensores utilizados y permitir el envío de los datos hacia una interfaz de visualización o sistema de almacenamiento. La comunicación entre el controlador y los sensores deberá realizarse mediante interfaces y protocolos compatibles con los componentes utilizados.
-      <br><br>
-      Cuando exista conectividad disponible, los datos podrán enviarse a una plataforma externa para su almacenamiento y visualización. En caso de no existir conexión, el sistema deberá permitir almacenar temporalmente las mediciones para su posterior transferencia. (Espressif Systems, 2026; Sensirion AG, 2020).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Seguridad:</strong> Los componentes electrónicos deberán encontrarse protegidos frente al contacto accidental con humedad, sustrato y otros elementos presentes durante el experimento. Las conexiones eléctricas deberán estar aisladas y protegidas frente a cortocircuitos y conexiones incorrectas.
-      <br><br>
-      La estructura deberá evitar bordes cortantes o superficies que puedan generar riesgos durante la manipulación. La alimentación eléctrica deberá utilizar niveles seguros para el usuario y respetar las especificaciones de los componentes utilizados. La cámara deberá poder <strong>ventilarse adecuadamente entre ensayos</strong> para evitar la acumulación de gases y garantizar condiciones seguras de manipulación. (de Klein et al., 2020; Espressif Systems, 2026).
-    </td>
-    <td align="center">C.M</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Ergonomía:</strong> El equipo deberá ser manipulable por una sola persona y permitir la colocación y retiro de la maceta sin procedimientos complejos. La tapa transparente deberá permitir observar el cultivo sin necesidad de abrir la cámara durante la medición.
-      <br><br>
-      La interfaz deberá presentar la información mediante valores, gráficos e indicadores comprensibles. Los resultados obtenidos directamente de los sensores deberán diferenciarse de los resultados generados mediante Machine Learning para facilitar su interpretación. (Pavelka et al., 2018; Zhang et al., 2025).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Fabricación:</strong> El prototipo deberá poder fabricarse utilizando materiales y componentes disponibles comercialmente. El cuerpo principal de la cámara podrá fabricarse mediante impresión 3D utilizando un material adecuado para su estructura, mientras que la tapa deberá utilizar un material transparente que permita observar el cultivo y recibir iluminación artificial.
-      <br><br>
-      El diseño deberá incorporar espacios para la instalación de sensores, paso de cables, fijación de la tapa y ubicación de los componentes electrónicos. La fabricación deberá mantener aproximadamente las dimensiones de <strong>20 cm × 18 cm × 18 cm</strong> y permitir retirar fácilmente la maceta para realizar el cambio de cultivo y la limpieza. (de Klein et al., 2020; Pavelka et al., 2018).
-    </td>
-    <td align="center">K.C, A.D</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Control de calidad:</strong> Antes de realizar los experimentos comparativos, los sensores deberán verificarse y, cuando corresponda, calibrarse de acuerdo con las recomendaciones de sus fabricantes o procedimientos de referencia.
-      <br><br>
-      Se deberán realizar mediciones de prueba para evaluar la estabilidad y consistencia de los resultados. También deberá comprobarse individualmente el funcionamiento de cada sensor y posteriormente el funcionamiento conjunto del sistema.
-      <br><br>
-      Las mediciones deberán revisarse antes de incorporarse al conjunto de datos utilizado para el análisis mediante Machine Learning. (de Klein et al., 2020; Parkin y Venterea, 2010; Sensirion AG, 2020; Winsen Electronics, 2018).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Montaje:</strong> El diseño deberá ser modular para permitir el montaje y desmontaje de los sensores, controlador, fuente de alimentación, iluminación y demás componentes sin reconstruir completamente la cámara.
-      <br><br>
-      Las conexiones deberán encontrarse identificadas y aseguradas para evitar desconexiones accidentales durante el ensayo. La cámara deberá permitir retirar fácilmente la maceta para realizar el cambio de cultivo y facilitar la limpieza. Los sensores deberán mantenerse en posiciones similares durante los diferentes ensayos para favorecer la comparabilidad de las mediciones. (de Klein et al., 2020; Pavelka et al., 2018).
-    </td>
-    <td align="center">L.S, C.M</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Transporte:</strong> El dispositivo deberá poder trasladarse manualmente sin desprender sensores, cables o componentes electrónicos. La estructura deberá proteger los componentes y mantener la geometría de la cámara durante el traslado.
-      <br><br>
-      La tapa transparente deberá contar con una fijación adecuada para reducir el riesgo de daños durante el transporte. Los sensores y accesorios desmontables deberán poder almacenarse de manera segura cuando no estén instalados. (de Klein et al., 2020).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">D</td>
-    <td>
-      <strong>Uso:</strong> Se desea que el sistema pueda utilizarse de manera repetible para diferentes cultivos jóvenes bajo condiciones experimentales controladas. La secuencia de utilización deberá ser sencilla:
-      <br><br>
-      <strong>Seleccionar cultivo → colocar maceta y planta → verificar sensores → cerrar cámara → encender iluminación → iniciar medición → registrar datos → finalizar ensayo → ventilar y limpiar → retirar cultivo → colocar nuevo cultivo → repetir.</strong>
-      <br><br>
-      Cada ensayo deberá registrar el cultivo evaluado y las condiciones experimentales para posteriormente comparar los resultados obtenidos. (Parkin y Venterea, 2010; Pavelka et al., 2018).
-    </td>
-    <td align="center">K.C</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Mantenimiento:</strong> Los sensores que estén en contacto con el sustrato deberán poder limpiarse después de cada medición. Los sensores de gases y ambientales deberán revisarse y mantenerse de acuerdo con las recomendaciones de sus fabricantes.
-      <br><br>
-      Los sensores que requieran calibración deberán poder retirarse sin desmontar completamente la cámara. Los componentes electrónicos deberán poder reemplazarse individualmente en caso de falla.
-      <br><br>
-      La cámara deberá limpiarse y secarse entre experimentos para reducir la contaminación cruzada y mantener condiciones comparables entre los diferentes cultivos. (de Klein et al., 2020; Sensirion AG, 2020; Winsen Electronics, 2018).
-    </td>
-    <td align="center">A.D, L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Costos:</strong> Se buscará que el prototipo utilice componentes comerciales de costo accesible y fácil adquisición. Como objetivo inicial, el costo total de los componentes no deberá superar aproximadamente <strong>S/ 1500</strong>, sujeto a modificación después de seleccionar y cotizar definitivamente los sensores, controlador, cámara, iluminación y demás componentes.
-      <br><br>
-      Se priorizarán componentes reutilizables y reemplazables, manteniendo como criterios principales la estabilidad, disponibilidad y calidad de las mediciones. (Winsen Electronics, 2018; Sensirion AG, 2020).
-    </td>
-    <td align="center">L.S</td>
-  </tr>
-
-  <tr>
-    <td>08/2026</td>
-    <td align="center">E</td>
-    <td>
-      <strong>Plazos:</strong> El proyecto comprenderá las etapas de definición del problema, revisión del estado de la tecnología, selección de cultivos y variables, selección de sensores, diseño de la cámara experimental, diseño electrónico, desarrollo del software, fabricación del prototipo, integración de sensores, calibración, realización de ensayos experimentales, generación del conjunto de datos, desarrollo y validación del algoritmo de Machine Learning y comparación final de los cultivos.
-      <br><br>
-      Las fechas específicas de cada etapa deberán establecerse mediante el plan de trabajo del proyecto. (de Klein et al., 2020; Zhang et al., 2025; Jiang et al., 2023).
-    </td>
-    <td align="center">A.D, K.C</td>
-  </tr>
-
-  </tbody>
-</table>
+**Páginas:** 5  
+**Edición:** Rev. 1  
+**Proyecto:** **DriveSafe AI – Sistema inteligente de monitoreo y detección de somnolencia del conductor**  
+**Cliente:** Universidad Peruana Cayetano Heredia (UPCH)  
+**Fecha:** 30/08/2026  
+**Elaborado:** K.C, A.D, C.M, L.S
 
 ---
 
-# Bibliografía
+## 1.1 Función general
 
-[1] C. A. M. de Klein et al., “Global Research Alliance N2O chamber methodology guidelines: Introduction, with health and safety considerations,” *Journal of Environmental Quality*, vol. 49, 2020, doi: 10.1002/jeq2.20131.
+**Tipo:** Exigencia (E)
 
-[2] A. R. Parkin and T. C. Venterea, “Measurement of Greenhouse Gas Flux from Agricultural Soils Using Static Chambers,” *Methods in Molecular Biology*, 2010.
+El sistema deberá permitir monitorear al conductor durante la conducción mediante una cámara y sensores, con el objetivo de identificar posibles signos de somnolencia, pérdida de atención y cambios de postura asociados.
 
-[3] P. Pavelka et al., “Assessment of methane and nitrous oxide fluxes from paddy field by means of static closed chambers maintaining plants within headspace,” *Methods and Protocols*, 2018.
+El sistema deberá analizar indicadores visuales como apertura de los ojos, posición del rostro y postura del conductor, así como información relacionada con los movimientos y la ubicación del vehículo.
 
-[4] Food and Agriculture Organization of the United Nations, “Emissions from crops (Global, National - Annual),” FAOSTAT, 2026.
+La información será procesada mediante algoritmos de inteligencia artificial para identificar patrones de riesgo y generar una alerta cuando corresponda.
 
-[5] Q. Zhang, W. Wen, Y. Zhuang, L. Zhang, L. Zhai, S. Li, H. Liu, and Y. Du, “Machine learning-driven method for in-situ high-frequency CH₄ measurement in paddy fields based on water-soil-air factors: A case study of the Yangtze River Basin,” *Journal of Environmental Management*, vol. 393, p. 127132, 2025, doi: 10.1016/j.jenvman.2025.127132.
+Los datos obtenidos podrán registrarse para evaluar posteriormente el comportamiento del sistema.
 
-[6] Z. Jiang, S. Yang, P. Smith, and Q. Pang, “Ensemble machine learning for modeling greenhouse gas emissions at different time scales from irrigated paddy fields,” *Field Crops Research*, vol. 292, p. 108821, 2023, doi: 10.1016/j.fcr.2023.108821.
+La detección de somnolencia se justifica debido a que la fatiga puede afectar la atención, el tiempo de reacción y la capacidad para conducir de manera segura.
 
-[7] Sensirion AG, “SCD30 CO₂ Sensor Datasheet,” Sensirion AG, 2020. El SCD30 utiliza tecnología NDIR para CO₂ e integra medición de temperatura y humedad.
+**Responsables:** C.M, K.C, A.D, L.S
 
-[8] Sensirion AG, “SHT3x-DIS Digital Humidity and Temperature Sensor Datasheet,” Sensirion AG.
+---
 
-[9] Analog Devices, “DS18B20 Programmable Resolution 1-Wire Digital Thermometer,” Datasheet.
+## 1.2 Geometría
 
-[10] Espressif Systems, “ESP32-WROOM-32 Datasheet,” Espressif Systems, 2026. El módulo dispone de GPIO, I²C, UART, ADC, Wi-Fi y Bluetooth para la integración del sistema.
+**Tipo:** Exigencia (E)
 
-[11] Winsen Electronics, “MQ-4 Semiconductor Sensor for Flammable Gas,” Datasheet, 2018. El sensor está diseñado para detectar metano (CH₄) y presenta un rango especificado de 300–10 000 ppm.
+El prototipo no requerirá mecanismos automatizados de movimiento durante el monitoreo. La cámara, el sensor de movimiento y los demás componentes permanecerán instalados en posiciones definidas para mantener una captura estable del conductor.
 
-[12] ROHM Semiconductor, “BH1750FVI Digital 16bit Serial Output Type Ambient Light Sensor IC,” Datasheet.
+La estructura deberá permitir realizar ajustes manuales de orientación durante la instalación para conseguir un encuadre adecuado del rostro y la postura.
 
-[13] DFRobot, “Analog Electrical Conductivity Sensor / Soil Conductivity Sensor,” DFRobot, 2025.
+El sensor de movimiento deberá instalarse en una posición estable que permita registrar adecuadamente los movimientos e inclinaciones del dispositivo o vehículo.
+
+El módulo GPS deberá ubicarse de manera que permita una adecuada recepción de las señales de posicionamiento.
+
+**Responsable:** A.D
+
+---
+
+## 1.3 Cinemática
+
+**Tipo:** Exigencia (E)
+
+El prototipo no requerirá mecanismos de movimiento continuo durante la operación. La cámara permanecerá estática durante el monitoreo para evitar variaciones en la captura de imágenes.
+
+El sensor de movimiento permitirá detectar cambios de orientación, inclinaciones y movimientos del dispositivo o vehículo.
+
+Los movimientos detectados deberán utilizarse como información complementaria para el análisis del comportamiento del conductor.
+
+**Responsable:** K.C
+
+---
+
+## 1.4 Fuerzas
+
+**Tipo:** Exigencia (E)
+
+La estructura deberá soportar el peso de la cámara, sensores, sensor de movimiento, GPS, microcontrolador y demás componentes instalados, manteniendo su posición durante el funcionamiento.
+
+Los elementos de fijación deberán resistir vibraciones y movimientos propios del vehículo para evitar que la cámara pierda el encuadre del conductor.
+
+La estructura deberá permanecer estable y evitar desplazamientos que puedan afectar la captura de imágenes, el funcionamiento del sensor de movimiento o la recepción de los datos del GPS.
+
+**Responsable:** L.S
+
+---
+
+## 1.5 Energía
+
+**Tipo:** Exigencia (E)
+
+El sistema deberá funcionar mediante una fuente de alimentación de bajo voltaje compatible con el microcontrolador, cámara, sensores, sensor de movimiento, módulo GPS y dispositivos de alerta.
+
+Se deberá priorizar una fuente estable que permita mantener el funcionamiento durante todo el periodo de monitoreo.
+
+El sistema deberá permitir verificar la disponibilidad de alimentación para evitar interrupciones durante la adquisición y procesamiento de datos.
+
+Los sensores y módulos deberán alimentarse respetando los niveles de tensión especificados por sus fabricantes.
+
+**Responsable:** A.D
+
+---
+
+## 1.6 Materia
+
+**Tipo:** Exigencia (E)
+
+El sistema deberá utilizar materiales adecuados para fabricar la carcasa y los soportes de los componentes electrónicos.
+
+La estructura deberá proteger la cámara, sensores, sensor de movimiento, GPS, microcontrolador y conexiones frente a golpes, vibraciones y manipulación durante el uso.
+
+Los materiales deberán permitir una fabricación sencilla y facilitar el acceso a los componentes para realizar mantenimiento, pruebas y reemplazos.
+
+**Responsable:** L.S
+
+---
+
+## 1.7 Señales (Información)
+
+**Tipo:** Exigencia (E)
+
+El sistema deberá contar con señales de entrada y salida asociadas al proceso de monitoreo y detección del estado del conductor.
+
+### Señales de entrada
+
+- Imagen y video capturados mediante la cámara.
+- Apertura y cierre de los ojos.
+- Frecuencia y duración del parpadeo.
+- Orientación y posición del rostro.
+- Movimientos de la cabeza.
+- Postura corporal del conductor.
+- Bostezos u otros indicadores visuales asociados a la somnolencia.
+- Información proveniente de los sensores utilizados.
+- Datos del sensor de movimiento para identificar movimientos, inclinaciones y cambios de orientación del conductor o del dispositivo.
+- Datos de ubicación y desplazamiento obtenidos mediante el GPS.
+- Estado inicial del sistema y parámetros configurados para el monitoreo.
+
+### Señales de salida
+
+- Estado estimado de atención del conductor.
+- Indicadores detectados de somnolencia.
+- Cambios de postura identificados.
+- Nivel o condición de riesgo.
+- Alerta visual, sonora o vibratoria ante la detección de un patrón de riesgo.
+- Estado de funcionamiento de los sensores y componentes.
+- Registro de eventos detectados durante el monitoreo.
+- Historial de las detecciones y alertas generadas.
+- Datos de ubicación asociados a los eventos de riesgo.
+- Datos procesados para la evaluación posterior del comportamiento del sistema.
+
+Las señales obtenidas mediante la cámara, el sensor de movimiento, el GPS y los demás sensores permitirán analizar diferentes indicadores relacionados con el estado del conductor y las condiciones de conducción.
+
+La información será procesada para identificar patrones asociados con somnolencia, pérdida de atención y cambios de postura, considerando indicadores como el cierre de los ojos, parpadeo, orientación de la cabeza, movimientos y postura corporal.
+
+Los datos del sensor de movimiento permitirán complementar el análisis de los movimientos y orientación, mientras que el GPS permitirá asociar los eventos detectados con su ubicación durante el monitoreo.
+
+A partir de esta información, el sistema podrá determinar el nivel de riesgo y generar una alerta cuando corresponda.
+
+**Responsables:** K.C, C.M
+
+---
+
+## 1.8 Control
+
+**Tipo:** Exigencia (E)
+
+El sistema de control deberá coordinar la adquisición de información proveniente de la cámara, los sensores, el sensor de movimiento y el GPS, realizar el procesamiento de los datos y ejecutar el análisis correspondiente.
+
+La secuencia deberá contemplar:
+
+1. Captura de información.
+2. Procesamiento de datos.
+3. Extracción de características.
+4. Análisis mediante inteligencia artificial.
+5. Clasificación del estado del conductor.
+6. Análisis de movimiento.
+7. Análisis de ubicación.
+8. Generación de alerta.
+9. Registro de información.
+
+El sistema deberá evitar generar alertas únicamente a partir de una observación aislada, considerando conjuntamente los indicadores visuales, los movimientos detectados y la información de ubicación para disminuir posibles falsas detecciones.
+
+**Responsables:** A.D, K.C
+
+---
+
+## 1.9 Electrónico (Hardware)
+
+**Tipo:** Exigencia (E)
+
+El sistema utilizará un microcontrolador o controlador electrónico con capacidad suficiente para adquirir información de la cámara, sensores, sensor de movimiento y módulo GPS, además de comunicarse con los demás componentes.
+
+Se podrá considerar un ESP32 como plataforma de referencia debido a sus interfaces GPIO, I2C, SPI y UART, además de sus capacidades de procesamiento y comunicación.
+
+El hardware deberá permitir la integración del sensor de movimiento para detectar movimientos e inclinaciones del dispositivo y del módulo GPS para obtener información de ubicación y desplazamiento.
+
+Los componentes deberán encontrarse correctamente conectados y protegidos para garantizar el funcionamiento del prototipo.
+
+**Responsables:** K.C, L.S
+
+---
+
+## 1.10 Software
+
+**Tipo:** Exigencia (E)
+
+El software deberá permitir adquirir, procesar, almacenar y visualizar la información obtenida durante el monitoreo.
+
+Deberá incorporar técnicas de visión artificial para identificar características del rostro y postura del conductor.
+
+También deberá incorporar algoritmos de procesamiento para analizar los datos provenientes del sensor de movimiento y del GPS.
+
+El procesamiento deberá permitir relacionar los indicadores visuales con los movimientos, cambios de orientación y datos de ubicación del vehículo para determinar el estado del conductor y generar alertas cuando corresponda.
+
+El sistema deberá permitir registrar los eventos detectados y almacenar información relevante para su evaluación posterior.
+
+**Responsables:** A.D, K.C
+
+---
+
+## 1.11 Comunicaciones
+
+**Tipo:** Exigencia (E)
+
+El sistema deberá permitir la comunicación entre el microcontrolador, la cámara, los sensores, el sensor de movimiento, el GPS y los demás componentes utilizados.
+
+Cuando sea necesario transmitir información hacia una aplicación o interfaz de usuario, podrá utilizarse Wi-Fi, Bluetooth u otra comunicación disponible en la arquitectura seleccionada.
+
+La comunicación deberá permitir transmitir los resultados del monitoreo y las alertas sin afectar el funcionamiento básico del sistema.
+
+**Responsable:** L.S
+
+---
+
+## 1.12 Seguridad
+
+**Tipo:** Exigencia (E)
+
+Los componentes electrónicos deberán encontrarse protegidos frente a golpes, polvo, humedad y manipulación accidental.
+
+La alimentación eléctrica deberá trabajar con niveles seguros para el usuario y deberá evitar el contacto directo con partes energizadas.
+
+El sistema deberá incorporar protección frente a cortocircuitos, conexiones incorrectas y condiciones eléctricas que puedan comprometer los componentes.
+
+La carcasa no deberá presentar bordes o superficies que generen riesgos durante la manipulación.
+
+Las alertas deberán ser claras y no deberán generar una distracción adicional para el conductor.
+
+Debido a que el sistema interviene en una función relacionada con la seguridad vial, se deberán realizar pruebas y validaciones antes de considerar confiables las detecciones.
+
+**Responsable:** C.M
+
+---
+
+## 1.13 Ergonomía
+
+**Tipo:** Exigencia (E)
+
+El equipo deberá instalarse de manera que no interfiera con el campo visual del conductor ni con los controles normales del vehículo.
+
+La cámara deberá ubicarse de manera que pueda obtener información suficiente del rostro y postura sin requerir movimientos adicionales por parte del conductor.
+
+El sistema deberá ser sencillo de utilizar y requerir una intervención mínima durante la conducción.
+
+Las alertas deberán ser fáciles de interpretar y no deberán generar una carga de interacción innecesaria.
+
+**Responsable:** L.S
+
+---
+
+## 1.14 Fabricación
+
+**Tipo:** Exigencia (E)
+
+El prototipo deberá poder fabricarse utilizando materiales y componentes disponibles comercialmente.
+
+La carcasa y los soportes podrán fabricarse mediante impresión 3D, mecanizado u otros procedimientos accesibles para el equipo.
+
+Se deberán priorizar componentes de fácil adquisición y reemplazo, procurando que la estructura pueda modificarse durante las etapas de prueba y validación sin requerir una fabricación compleja.
+
+**Responsables:** K.C, A.D
+
+---
+
+## 1.15 Control de calidad
+
+**Tipo:** Exigencia (E)
+
+Antes de realizar las pruebas de funcionamiento, la cámara, sensores, sensor de movimiento, GPS y componentes electrónicos deberán ser revisados para comprobar su correcto funcionamiento.
+
+Se deberán realizar pruebas de:
+
+- Captura de imágenes.
+- Detección facial.
+- Reconocimiento de patrones de somnolencia.
+- Detección de movimientos.
+- Adquisición de datos de ubicación.
+- Comunicación entre componentes.
+- Generación de alertas.
+- Registro de eventos.
+
+También se deberá comprobar el funcionamiento conjunto del sistema y registrar los resultados obtenidos para identificar errores y realizar mejoras.
+
+**Responsable:** L.S
+
+---
+
+## 1.16 Montaje
+
+**Tipo:** Exigencia (E)
+
+El diseño deberá ser modular para permitir el montaje y desmontaje de la cámara, sensores, sensor de movimiento, GPS, microcontrolador, alimentación y demás componentes.
+
+Las conexiones deberán estar identificadas y protegidas para evitar conexiones incorrectas durante la instalación.
+
+El sensor de movimiento deberá instalarse en una posición estable para obtener correctamente los movimientos y cambios de orientación.
+
+El GPS deberá ubicarse de manera que permita una adecuada recepción de las señales de posicionamiento.
+
+La estructura deberá permitir reemplazar componentes sin necesidad de reconstruir completamente el prototipo y deberá facilitar las actividades de mantenimiento y pruebas.
+
+**Responsables:** L.S, C.M
+
+---
+
+## 1.17 Transporte
+
+**Tipo:** Exigencia (E)
+
+El dispositivo deberá ser transportable manualmente entre diferentes espacios de trabajo, laboratorios o vehículos de prueba.
+
+La carcasa deberá proteger la cámara, sensores, microcontrolador, sensor de movimiento, GPS y conexiones durante el traslado.
+
+Los componentes deberán mantenerse asegurados para reducir el riesgo de golpes, desconexiones o daños que puedan afectar posteriormente el funcionamiento del sistema.
+
+**Responsable:** L.S
+
+---
+
+## 1.18 Uso
+
+**Tipo:** Deseo (D)
+
+Se desea que el sistema pueda utilizarse de manera sencilla durante una sesión de conducción.
+
+La secuencia de utilización deberá ser:
+
+**Instalar el dispositivo → orientar la cámara hacia el conductor → encender el sistema → iniciar el monitoreo → analizar los indicadores visuales, movimientos y ubicación → identificar un patrón de riesgo → generar una alerta → registrar el evento.**
+
+El funcionamiento deberá requerir una intervención mínima por parte del conductor para evitar generar distracciones adicionales durante la conducción.
+
+**Responsable:** K.C
+
+---
+
+## 1.19 Mantenimiento
+
+**Tipo:** Exigencia (E)
+
+La cámara y los sensores deberán poder limpiarse periódicamente para mantener la calidad de las mediciones y detecciones.
+
+El sensor de movimiento y el GPS deberán poder revisarse y reemplazarse en caso de falla.
+
+Las conexiones deberán revisarse periódicamente para detectar cables sueltos, daños o desconexiones.
+
+Los componentes electrónicos deberán poder reemplazarse individualmente sin desmontar completamente el prototipo.
+
+El software y los modelos utilizados podrán actualizarse cuando sea necesario.
+
+**Responsables:** A.D, D
+
+---
+
+## 1.20 Costos
+
+**Tipo:** Exigencia (E)
+
+Se buscará que el prototipo utilice componentes comerciales de costo accesible.
+
+El costo deberá considerar principalmente:
+
+- Microcontrolador.
+- Cámara.
+- Sensor de movimiento.
+- Módulo GPS.
+- Sensores adicionales.
+- Dispositivos de alerta.
+- Fuente de alimentación.
+- Carcasa.
+- Materiales de fabricación.
+- Cables y conectores.
+
+Se priorizarán componentes disponibles comercialmente, de fácil adquisición y reemplazo, manteniendo como prioridad el funcionamiento y confiabilidad del sistema.
+
+**Responsable:** L.S
+
+---
+
+## 1.21 Plazos
+
+**Tipo:** Exigencia (E)
+
+El proyecto comprenderá las etapas de:
+
+1. Definición del problema.
+2. Revisión del estado de la tecnología.
+3. Selección de sensores.
+4. Diseño del prototipo.
+5. Diseño electrónico.
+6. Desarrollo del software.
+7. Integración de cámara y sensores.
+8. Integración del sensor de movimiento.
+9. Integración del GPS.
+10. Desarrollo del algoritmo de inteligencia artificial.
+11. Fabricación del prototipo.
+12. Integración general del sistema.
+13. Calibración y configuración.
+14. Pruebas experimentales.
+15. Validación del sistema.
+16. Registro y análisis de resultados.
+17. Mejoras finales del prototipo.
+
+Las fechas específicas deberán establecerse mediante el plan de trabajo del proyecto.
+
+**Responsables:** A.D, K.C
+
+---
+
+# 2. Bibliografía
+
+[1] National Highway Traffic Safety Administration (NHTSA). *Drowsy Driving*, 2026.
+
+[2] Centers for Disease Control and Prevention / National Institute for Occupational Safety and Health (CDC/NIOSH). *Driver Fatigue on the Job*, 2024.
+
+[3] National Highway Traffic Safety Administration (NHTSA). *Advanced Impaired Driving Prevention Technology*, 2024.
+
+[4] World Health Organization (WHO). *Global Status Report on Road Safety*, 2023.
+
+[5] Espressif Systems. *ESP32-WROOM-32D & ESP32-WROOM-32U Datasheet*, 2025.
+
+[6] Google AI for Developers. *MediaPipe Face Landmarker*, 2026.
+
+[7] OpenCV. *OpenCV Documentation*, 2025.
+
+[8] International Organization for Standardization (ISO). *ISO 21448:2022 — Road vehicles — Safety of the intended functionality*, 2022.
+
+[9] International Organization for Standardization (ISO). *ISO 12100:2010 — Safety of machinery — General principles for design — Risk assessment and risk reduction*, 2010.
+
+[10] International Organization for Standardization (ISO). *ISO 9241-210:2019 — Ergonomics of human-system interaction — Human-centred design for interactive systems*, 2019.
+
+[11] International Organization for Standardization (ISO). *ISO 9241-115:2024 — Ergonomics of human-system interaction — Guidance on conceptual design, user-system interaction design, user interface design and navigation design*, 2024.
+
+[12] International Organization for Standardization (ISO). *ISO 9001:2015 — Quality management systems — Requirements*, 2015.
+
+[13] Dahiya, A., et al. *Technologies for detecting and monitoring drivers' states: A systematic review*, Heliyon, 2024.
+
+[14] TDK InvenSense. *Motion Sensor / IMU Documentation*, 2013.
+
+[15] u-blox. *GPS/GNSS Module Documentation*, 2016.
