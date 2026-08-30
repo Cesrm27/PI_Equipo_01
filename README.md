@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>🚗 Sistema inteligente para la detección de somnolencia y cambios de postura en conductores</strong>
+  <strong> Sistema inteligente para la detección de somnolencia y cambios de postura en conductores</strong>
 </p>
 
 <p align="center">
