@@ -136,31 +136,34 @@ El sistema permitirá registrar información relacionada con:
 </div>
 
 ---
-📌 Resumen del Proyecto
-🌱 ¿Qué es GREENPLANT AI?
+# 📌 Resumen del Proyecto
 
-GREENPLANT AI es un prototipo experimental orientado al monitoreo del cultivo de papa, mediante sensores, adquisición de datos y técnicas de Machine Learning.
+## 🌱 ¿Qué es GREENPLANT AI?
 
-El sistema utilizará una cámara experimental cerrada en la que se colocará una planta joven de papa junto con su sustrato.
+**GREENPLANT AI** es un prototipo experimental orientado al **monitoreo del cultivo de papa**, mediante sensores, adquisición de datos y técnicas de **Machine Learning**.
+
+El sistema utilizará una **cámara experimental cerrada**, en la cual se colocará una planta joven de papa junto con su sustrato.
 
 Dentro de la cámara se realizarán mediciones controladas de gases y variables relacionadas con las condiciones del cultivo.
 
-Las mediciones podrán incluir:
+### 📡 Las mediciones podrán incluir:
 
-🌫️ Gases presentes en la cámara
-🌡️ Temperatura ambiental
-💧 Humedad ambiental
-🌡️ Temperatura del suelo
-💧 Humedad del suelo
-🧂 Conductividad eléctrica
-💡 Iluminación
-⏱️ Tiempo de experimentación
+- 🌫️ Gases presentes en la cámara
+- 🌡️ Temperatura ambiental
+- 💧 Humedad ambiental
+- 🌡️ Temperatura del suelo
+- 💧 Humedad del suelo
+- 🧂 Conductividad eléctrica
+- 💡 Iluminación
+- ⏱️ Tiempo de experimentación
 
-De acuerdo con el enfoque planteado para el proyecto, se prestará especial atención al monitoreo de amoniaco gaseoso (NH₃) y cianuro de hidrógeno (HCN) en el cultivo de papa.
+De acuerdo con el enfoque planteado para el proyecto, se prestará especial atención al monitoreo de **amoniaco gaseoso (NH₃)** y **cianuro de hidrógeno (HCN)** en el cultivo de papa.
 
-Los datos obtenidos serán almacenados para posteriormente analizarlos mediante Machine Learning, buscando identificar patrones y relaciones entre las variables registradas.
+Los datos obtenidos serán almacenados para posteriormente analizarlos mediante **Machine Learning**, buscando identificar patrones y relaciones entre las variables registradas.
 
-⚠️ Problemática
+---
+
+# ⚠️ Problemática
 
 La agricultura requiere información que permita comprender mejor el comportamiento de los cultivos y las condiciones que los rodean.
 
@@ -168,220 +171,255 @@ En el caso del cultivo de papa, existe interés en estudiar las condiciones asoc
 
 Sin embargo, realizar mediciones de diferentes variables de manera simultánea puede requerir equipos especializados y procedimientos controlados.
 
-Por ello, GREENPLANT AI propone desarrollar una alternativa experimental que permita:
+Por ello, **GREENPLANT AI** propone desarrollar una alternativa experimental que permita:
 
-Medir → Registrar → Analizar → Comparar
+<div align="center">
+
+### 📡 Medir → 💾 Registrar → 🧠 Analizar → 📊 Comparar
+
+</div>
 
 las variables obtenidas durante los ensayos.
 
-El reto del proyecto no consiste únicamente en detectar un gas, sino en generar un conjunto de datos que permita relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo.
+El reto del proyecto no consiste únicamente en detectar un gas, sino en generar un conjunto de datos que permita relacionar las **concentraciones gaseosas** con las **condiciones ambientales y del sustrato** del cultivo.
 
 Buscamos transformar las lecturas individuales de los sensores en información organizada que permita:
 
 <div align="center">
-📡 Medir	💾 Registrar	🧠 Analizar	📊 Comparar
-Gases y variables	Datos experimentales	Patrones	Resultados
+
+| 📡 Medir | 💾 Registrar | 🧠 Analizar | 📊 Comparar |
+|----------|--------------|-------------|-------------|
+| Gases y variables | Datos experimentales | Patrones | Resultados |
+
 </div>
 
-De esta manera, GREENPLANT AI busca generar una base tecnológica que permita estudiar el comportamiento del cultivo bajo condiciones experimentales controladas.
+De esta manera, GREENPLANT AI busca generar una base tecnológica que permita estudiar el comportamiento del cultivo bajo **condiciones experimentales controladas**.
 
-🎯 Objetivo General
+---
 
-Desarrollar un prototipo experimental inteligente capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante sensores, IoT y Machine Learning, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
+# 🎯 Objetivo General
 
-🎯 Objetivos Específicos
-Diseñar una cámara experimental cerrada para realizar ensayos con plantas jóvenes de papa.
-Implementar sensores para medir gases y variables ambientales y del sustrato.
-Registrar información relacionada con las concentraciones de gases presentes durante cada ensayo.
-Registrar temperatura, humedad, conductividad eléctrica e iluminación asociadas a las condiciones experimentales.
-Utilizar un microcontrolador ESP32 para adquirir y gestionar los datos obtenidos por los sensores.
-Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
-Generar un conjunto de datos para el análisis de las variables registradas.
-Aplicar técnicas de Machine Learning para identificar patrones y relaciones entre las variables.
-Comparar los resultados obtenidos durante diferentes ensayos del cultivo de papa.
-Generar información que facilite el análisis experimental del comportamiento del cultivo.
-👤 Público Objetivo
+Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante **sensores, IoT y Machine Learning**, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
 
-GREENPLANT AI estará dirigido principalmente a usuarios relacionados con el estudio, producción y monitoreo agrícola.
+---
 
-Entre los posibles usuarios se consideran:
+# 🎯 Objetivos Específicos
 
-👨‍🌾 Agricultores: interesados en conocer mejor las condiciones de sus cultivos.
-🔬 Investigadores: para realizar ensayos y analizar datos relacionados con cultivos.
-🎓 Estudiantes: como herramienta experimental para proyectos académicos.
-🏫 Instituciones educativas: para actividades de investigación y experimentación.
-🌱 Profesionales del sector agrícola: interesados en el monitoreo y análisis de variables del cultivo.
+- Diseñar una cámara experimental cerrada para realizar ensayos con plantas jóvenes de papa.
+- Implementar sensores para medir gases y variables ambientales y del sustrato.
+- Registrar información relacionada con las concentraciones de gases presentes durante cada ensayo.
+- Registrar temperatura, humedad, conductividad eléctrica e iluminación asociadas a las condiciones experimentales.
+- Utilizar un microcontrolador **ESP32** para adquirir y gestionar los datos obtenidos por los sensores.
+- Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
+- Generar un conjunto de datos para el análisis de las variables registradas.
+- Aplicar técnicas de **Machine Learning** para identificar patrones y relaciones entre las variables.
+- Comparar los resultados obtenidos durante diferentes ensayos del cultivo de papa.
+- Generar información que facilite el análisis experimental del comportamiento del cultivo.
 
-El proyecto se plantea inicialmente para el cultivo de papa, pudiendo posteriormente adaptarse a otros cultivos.
+---
 
-🧪 Variables y Gases a Monitorear
+# 👤 Público Objetivo
+
+**GREENPLANT AI** estará dirigido principalmente a usuarios relacionados con el **estudio, producción y monitoreo agrícola**.
+
+### 👨‍🌾 Agricultores
+Interesados en conocer mejor las condiciones de sus cultivos.
+
+### 🔬 Investigadores
+Para realizar ensayos y analizar datos relacionados con cultivos.
+
+### 🎓 Estudiantes
+Como herramienta experimental para proyectos académicos.
+
+### 🏫 Instituciones educativas
+Para actividades de investigación y experimentación.
+
+### 🌱 Profesionales del sector agrícola
+Interesados en el monitoreo y análisis de variables del cultivo.
+
+> El proyecto se plantea inicialmente para el **cultivo de papa**, pudiendo posteriormente adaptarse a otros cultivos.
+
+---
+
+# 🧪 Variables y Gases a Monitorear
 
 GREENPLANT AI utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
 
-<div align="center">
-Variable	Función
-🌫️ NH₃	Monitoreo de amoniaco gaseoso
-☠️ HCN	Monitoreo de cianuro de hidrógeno gaseoso
-🌡️ Temperatura ambiental	Medición de la temperatura dentro de la cámara
-💧 Humedad ambiental	Medición de la humedad relativa
-🌡️ Temperatura del suelo	Caracterización de las condiciones del sustrato
-💧 Humedad del suelo	Medición de humedad del sustrato
-🧂 Conductividad eléctrica	Caracterización del sustrato
-💡 Iluminación	Medición de la intensidad de luz
-⏱️ Tiempo	Registro temporal de cada medición
-</div>
+| Variable | Función |
+|----------|---------|
+| 🌫️ **NH₃** | Monitoreo de amoniaco gaseoso |
+| ☠️ **HCN** | Monitoreo de cianuro de hidrógeno gaseoso |
+| 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara |
+| 💧 **Humedad ambiental** | Medición de la humedad relativa |
+| 🌡️ **Temperatura del suelo** | Caracterización de las condiciones del sustrato |
+| 💧 **Humedad del suelo** | Medición de humedad del sustrato |
+| 🧂 **Conductividad eléctrica** | Caracterización del sustrato |
+| 💡 **Iluminación** | Medición de la intensidad de luz |
+| ⏱️ **Tiempo** | Registro temporal de cada medición |
 
-Nota: la selección definitiva de sensores dependerá de la viabilidad técnica, disponibilidad y validación de los componentes durante el desarrollo del prototipo.
+> **Nota:** La selección definitiva de sensores dependerá de la viabilidad técnica, disponibilidad y validación de los componentes durante el desarrollo del prototipo.
 
-📦 Cámara Experimental
+---
 
-GREENPLANT AI contará con una cámara experimental cerrada destinada a realizar mediciones controladas del cultivo de papa.
+# 📦 Cámara Experimental
+
+GREENPLANT AI contará con una **cámara experimental cerrada** destinada a realizar mediciones controladas del cultivo de papa.
 
 La cámara permitirá mantener un volumen de medición definido y facilitar la instalación de los sensores.
 
-<div align="center">
-📏 Diseño aproximado
-Característica	Valor
-Altura total	22 – 24 cm
-Diámetro exterior	18 – 20 cm
-Diámetro interior	16 – 17 cm
-Altura útil interna	15 – 18 cm
-Grosor de paredes	3 – 4 mm
-Volumen interno	2.5 – 3.5 L
-Planta	Planta joven de papa
-</div>
-Características principales
-📦 Cámara experimental cerrada.
-🌱 Espacio para una planta joven de papa.
-🔍 Tapa superior transparente.
-💡 Sistema de iluminación artificial.
-📡 Soportes para sensores.
-🔌 Entradas organizadas para cables.
-🌬️ Sistema de ventilación.
-🛠️ Estructura diseñada para facilitar el montaje y desmontaje.
-🧹 Facilidad de limpieza entre ensayos.
-⚙️ Funcionamiento del Sistema
-<details> <summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary> <br>
-1️⃣ Preparación
+### 📏 Diseño aproximado
+
+| Característica | Valor |
+|----------------|-------|
+| Altura total | 22 – 24 cm |
+| Diámetro exterior | 18 – 20 cm |
+| Diámetro interior | 16 – 17 cm |
+| Altura útil interna | 15 – 18 cm |
+| Grosor de paredes | 3 – 4 mm |
+| Volumen interno | 2.5 – 3.5 L |
+| Planta | Planta joven de papa |
+
+### ⚙️ Características principales
+
+- 📦 Cámara experimental cerrada.
+- 🌱 Espacio para una planta joven de papa.
+- 🔍 Tapa superior transparente.
+- 💡 Sistema de iluminación artificial.
+- 📡 Soportes para sensores.
+- 🔌 Entradas organizadas para cables.
+- 🌬️ Sistema de ventilación.
+- 🛠️ Estructura diseñada para facilitar el montaje y desmontaje.
+- 🧹 Facilidad de limpieza entre ensayos.
+
+---
+
+# ⚙️ Funcionamiento del Sistema
+
+<details>
+<summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary>
+
+<br>
+
+### 1️⃣ Preparación
 
 Se seleccionará una planta joven de papa y se colocará dentro de la cámara experimental junto con su sustrato.
 
-<br>
-2️⃣ Instalación
+### 2️⃣ Instalación
 
 Se instalarán los sensores correspondientes dentro de la cámara y en el sustrato.
 
-<br>
-3️⃣ Medición
+### 3️⃣ Medición
 
 Los sensores realizarán mediciones de gases y variables ambientales y del suelo.
 
-<div align="center">
+- 🌫️ NH₃
+- ☠️ HCN
+- 🌡️ Temperatura
+- 💧 Humedad
+- 🧂 Conductividad eléctrica
+- 💡 Iluminación
 
-🌫️ NH₃
+### 4️⃣ Adquisición
 
-🌫️ HCN
+El **ESP32** recibirá las lecturas generadas por los sensores.
 
-🌡️ Temperatura
-
-💧 Humedad
-
-🧂 Conductividad eléctrica
-
-💡 Iluminación
-
-</div>
-4️⃣ Adquisición
-
-El ESP32 recibirá las lecturas generadas por los sensores.
-
-<br>
-5️⃣ Registro
+### 5️⃣ Registro
 
 Los datos serán registrados junto con información como:
 
-Identificación del cultivo.
-Número de ensayo.
-Fecha.
-Tiempo de medición.
-Variables ambientales.
-Variables del sustrato.
-Concentraciones gaseosas.
-6️⃣ Procesamiento
+- Identificación del cultivo.
+- Número de ensayo.
+- Fecha.
+- Tiempo de medición.
+- Variables ambientales.
+- Variables del sustrato.
+- Concentraciones gaseosas.
+
+### 6️⃣ Procesamiento
 
 Los datos serán organizados y preparados para su análisis.
 
-7️⃣ Machine Learning
+### 7️⃣ Machine Learning
 
 Los datos podrán utilizarse para desarrollar modelos capaces de identificar patrones y relaciones entre las variables registradas.
 
-8️⃣ Comparación
+### 8️⃣ Comparación
 
 Los resultados de los ensayos podrán compararse para observar diferencias en el comportamiento de las variables medidas.
 
-<br> <div align="center">
+<br>
 
-🌱 PAPA
-⬇️
-📦 CÁMARA
-⬇️
-📡 SENSORES
-⬇️
-⚙️ ESP32
-⬇️
-💾 DATOS
-⬇️
-🧠 MACHINE LEARNING
-⬇️
-📊 ANÁLISIS
-⬇️
-📈 COMPARACIÓN
+<div align="center">
 
-</div> </details>
-🧠 ¿Dónde está nuestra innovación?
+🌱 **PAPA**  
+⬇️  
+📦 **CÁMARA EXPERIMENTAL**  
+⬇️  
+📡 **SENSORES**  
+⬇️  
+⚙️ **ESP32**  
+⬇️  
+💾 **DATOS**  
+⬇️  
+🧠 **MACHINE LEARNING**  
+⬇️  
+📊 **ANÁLISIS**  
+⬇️  
+📈 **COMPARACIÓN**
+
+</div>
+
+</details>
+
+---
+
+# 🧠 ¿Dónde está nuestra innovación?
 
 GREENPLANT AI no busca afirmar que los sensores, el ESP32 o las cámaras experimentales sean tecnologías nuevas.
 
-La propuesta de innovación está en integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental, generando un conjunto de datos que posteriormente pueda ser analizado mediante Machine Learning.
+La propuesta de innovación está en **integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental**, generando un conjunto de datos que posteriormente pueda ser analizado mediante Machine Learning.
 
-<div align="center">
-Enfoque convencional	GREENPLANT AI
-🌫️ Medición individual	📡 Múltiples variables
-🔢 Obtiene valores	💾 Registra datos
-📊 Observación manual	🧠 Análisis mediante ML
-📍 Mediciones aisladas	⏱️ Registro temporal
-🌱 Un ensayo	📊 Comparación entre ensayos
-👨‍🔬 Interpretación manual	🤖 Identificación de patrones
-</div>
+| Enfoque convencional | GREENPLANT AI |
+|----------------------|---------------|
+| 🌫️ Medición individual | 📡 Múltiples variables |
+| 🔢 Obtiene valores | 💾 Registra datos |
+| 📊 Observación manual | 🧠 Análisis mediante ML |
+| 📍 Mediciones aisladas | ⏱️ Registro temporal |
+| 🌱 Un ensayo | 📊 Comparación entre ensayos |
+| 👨‍🔬 Interpretación manual | 🤖 Identificación de patrones |
 
 Por ello, la propuesta busca pasar de:
 
-“¿Qué concentración de gas se obtuvo?”
+> **“¿Qué concentración de gas se obtuvo?”**
 
 a:
 
-“¿Qué patrones pueden identificarse al relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo de papa?”
+> **“¿Qué patrones pueden identificarse al relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo de papa?”**
 
-🧠 Machine Learning
+---
 
-Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de Machine Learning.
+# 🧠 Machine Learning
 
-El conjunto de datos podrá incluir:
+Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de **Machine Learning**.
 
-<div align="center">
-Variable	Información
-🌱 Cultivo	Identificación del cultivo
-🌫️ NH₃	Concentración medida
-🌫️ HCN	Concentración medida
-🌡️ Temperatura	Condición ambiental
-💧 Humedad	Condición ambiental
-🌡️ Temperatura del suelo	Condición del sustrato
-💧 Humedad del suelo	Condición del sustrato
-🧂 Conductividad	Condición del sustrato
-💡 Iluminación	Condición experimental
-⏱️ Tiempo	Momento de la medición
-</div>
-🔄 Flujo de Machine Learning
+### 📊 El conjunto de datos podrá incluir:
+
+| Variable | Información |
+|----------|-------------|
+| 🌱 Cultivo | Identificación del cultivo |
+| 🌫️ NH₃ | Concentración medida |
+| ☠️ HCN | Concentración medida |
+| 🌡️ Temperatura | Condición ambiental |
+| 💧 Humedad | Condición ambiental |
+| 🌡️ Temperatura del suelo | Condición del sustrato |
+| 💧 Humedad del suelo | Condición del sustrato |
+| 🧂 Conductividad | Condición del sustrato |
+| 💡 Iluminación | Condición experimental |
+| ⏱️ Tiempo | Momento de la medición |
+
+### 🔄 Flujo de Machine Learning
+
+```text
 📡 ADQUISICIÓN DE DATOS
           ↓
 💾 ALMACENAMIENTO
@@ -397,70 +435,3 @@ Variable	Información
 📈 IDENTIFICACIÓN DE PATRONES
           ↓
 📊 COMPARACIÓN DE RESULTADOS
-
-El objetivo del Machine Learning será analizar las relaciones entre las variables registradas e identificar patrones que puedan apoyar la interpretación de los resultados experimentales.
-
-📊 Visualización y Comparación
-
-GREENPLANT AI permitirá organizar las mediciones obtenidas durante los ensayos para facilitar su interpretación.
-
-Los datos podrán representarse mediante:
-
-📈 Gráficas de concentración de gases respecto al tiempo.
-🌡️ Gráficas de temperatura.
-💧 Evolución de la humedad.
-🧂 Variación de la conductividad eléctrica.
-💡 Variación de la iluminación.
-📊 Comparación entre diferentes ensayos.
-
-⚠️ Los resultados mostrados durante la etapa de desarrollo serán diferenciados entre datos experimentales reales y ejemplos de visualización.
-
-🛡️ Seguridad del Prototipo
-
-Debido a que el sistema trabajará con sensores destinados al monitoreo de gases dentro de una cámara experimental, se considerarán medidas de seguridad durante su utilización.
-
-<div align="center">
-🛡️ Medida	🎯 Objetivo
-🔌 Protección eléctrica	Evitar cortocircuitos y contactos accidentales
-🧤 Protección de componentes	Evitar contacto con humedad y sustrato
-🌬️ Ventilación	Reducir acumulación de gases entre ensayos
-📦 Protección de sensores	Evitar daños durante la experimentación
-🧹 Limpieza	Reducir contaminación entre ensayos
-🔎 Verificación	Comprobar el funcionamiento de los sensores
-</div>
-
-⚠️ El manejo de sensores para gases potencialmente peligrosos deberá realizarse siguiendo las especificaciones técnicas del fabricante y las medidas de seguridad correspondientes.
-
-🎯 Nuestra Propuesta de Valor
-<div align="center">
-GREENPLANT AI convierte mediciones agrícolas en datos analizables.
-<br>
-
-🌱 Papa → 📦 Cámara → 📡 Sensores → 💾 Datos → 🧠 IA → 📊 Análisis
-
-</div>
-
-Nuestro objetivo no es solamente detectar gases.
-
-Buscamos desarrollar un sistema experimental que permita:
-
-Medir → Registrar → Analizar → Comparar
-
-integrando IoT, sensores, procesamiento de datos y Machine Learning en una propuesta orientada al estudio experimental del cultivo de papa.
-
-🚀 Visión del Proyecto
-
-GREENPLANT AI busca convertirse en una plataforma experimental que permita estudiar el comportamiento de variables gaseosas, ambientales y del sustrato bajo condiciones controladas.
-
-A futuro, el sistema podría ampliarse mediante:
-
-📊 Mayor cantidad de ensayos.
-🌱 Evaluación de diferentes cultivos.
-📡 Incorporación de nuevos sensores.
-🧠 Modelos de Machine Learning más avanzados.
-📈 Análisis temporal de las mediciones.
-☁️ Almacenamiento de datos en la nube.
-📱 Interfaces de visualización.
-🌾 Adaptación a otros cultivos agrícolas.
-
-De sensores a datos. De datos a conocimiento.
