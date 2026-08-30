@@ -26,6 +26,52 @@
 </p>
 
 ---
+## 🧠 Simulación del funcionamiento de DriveSafe AI
+
+```mermaid
+flowchart LR
+
+    A["🚗 CONDUCTOR"] --> B["📷 CÁMARA"]
+    A --> C["📡 SENSORES"]
+
+    B --> D["👁️ VISIÓN ARTIFICIAL"]
+    D --> D1["👀 OJOS"]
+    D --> D2["🧍 POSTURA"]
+    D --> D3["😴 ROSTRO"]
+
+    C --> E["⚙️ ESP32"]
+
+    D1 --> F["🧠 PROCESAMIENTO"]
+    D2 --> F
+    D3 --> F
+    E --> F
+
+    F --> G["🤖 MACHINE LEARNING"]
+
+    G --> H{"⚠️ ¿PATRÓN DE SOMNOLENCIA?"}
+
+    H -->|"NO"| I["✅ CONDUCCIÓN NORMAL"]
+    H -->|"SÍ"| J["🚨 DETECCIÓN DE RIESGO"]
+
+    J --> K["🔔 ALERTA AL CONDUCTOR"]
+
+    K --> L["📊 REGISTRO DE DATOS"]
+
+    style A fill:#123B5D,color:#fff,stroke:#00A8A8
+    style B fill:#123B5D,color:#fff,stroke:#00A8A8
+    style C fill:#123B5D,color:#fff,stroke:#00A8A8
+    style G fill:#6A1B9A,color:#fff,stroke:#CE93D8
+    style H fill:#F57C00,color:#fff,stroke:#FFB74D
+    style J fill:#C62828,color:#fff,stroke:#EF9A9A
+    style K fill:#AD1457,color:#fff,stroke:#F48FB1
+    style I fill:#2E7D32,color:#fff,stroke:#81C784
+```
+
+### 🔄 Flujo principal
+
+**Conductor → Captura → Análisis → Machine Learning → Detección → Alerta**
+
+El sistema combinará información visual y datos de sensores para analizar el comportamiento del conductor y determinar si existe un patrón asociado a la somnolencia.
 
 ## 🌍 Objetivos de Desarrollo Sostenible
 
