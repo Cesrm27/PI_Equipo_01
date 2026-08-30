@@ -27,6 +27,23 @@
 
 ---
 
+## 🌍 Objetivos de Desarrollo Sostenible
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ODS%203-Salud%20y%20Bienestar-E5243B?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ODS%209-Innovación%20e%20Infraestructura-FD6925?style=for-the-badge" />
+</p>
+
+### ❤️ ODS 3 · Salud y Bienestar
+
+DriveSafe AI se relaciona principalmente con la **ODS 3**, ya que busca contribuir a la prevención de accidentes de tránsito mediante la detección temprana de posibles signos de **somnolencia y fatiga durante la conducción**.
+
+### 💡 ODS 9 · Industria, Innovación e Infraestructura
+
+De manera complementaria, el proyecto se relaciona con la **ODS 9** mediante la aplicación de **Inteligencia Artificial, visión artificial, IoT y Machine Learning** para desarrollar una solución tecnológica orientada a la seguridad vial.
+
+---
+
 # 🚗 DriveSafe AI
 
 > **Una solución inteligente orientada a reducir el riesgo asociado a la somnolencia durante la conducción mediante visión artificial, sensores y Machine Learning.**
