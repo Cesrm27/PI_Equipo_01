@@ -57,13 +57,13 @@ Buscamos aplicar **sensores IoT, adquisición de datos, análisis de informació
 
 ---
 
-# 🌱 GREENPLANT AI
+# 🚗 DriveSafe AI
 
-### Sistema experimental inteligente para la medición, registro y análisis de gases asociados a diferentes cultivos
+### Sistema inteligente para la detección de somnolencia y cambios de postura en conductores mediante visión artificial, sensores y Machine Learning
 
 <p align="center">
 
-**Cultivo → Cámara experimental → Sensores → Datos → Machine Learning → Comparación**
+**Conductor → Cámara + Sensores → Datos → Machine Learning → Análisis → Alerta**
 
 </p>
 
@@ -71,204 +71,115 @@ Buscamos aplicar **sensores IoT, adquisición de datos, análisis de informació
 
 # 📌 Resumen del Proyecto
 
-## 🌱 ¿Qué es GREENPLANT AI?
+## 🚗 ¿Qué es DriveSafe AI?
 
-**GREENPLANT AI** es un prototipo experimental diseñado para **detectar, registrar y comparar las concentraciones de gases asociadas a diferentes cultivos bajo condiciones controladas**.
+**DriveSafe AI** es un prototipo experimental diseñado para **detectar signos de somnolencia y cambios de postura en conductores**, utilizando visión artificial, sensores y técnicas de Machine Learning.
 
-El sistema utiliza una **cámara experimental cerrada**, sensores y un microcontrolador para obtener mediciones durante cada ensayo.
+El sistema busca analizar el comportamiento del conductor durante la conducción para identificar patrones asociados con la pérdida de atención o somnolencia.
+
+A diferencia de una solución basada únicamente en el cierre de los ojos, DriveSafe AI propone combinar diferentes indicadores para mejorar la detección.
 
 Las principales variables consideradas son:
 
-- 🌫️ **CH₄ — Metano**
-- 🌫️ **CO₂ — Dióxido de carbono**
-- 🌡️ **Temperatura del suelo**
-- 💧 **Humedad del suelo**
-- 🌡️ **Temperatura ambiental**
-- 💧 **Humedad ambiental**
-- 🧂 **Conductividad eléctrica del sustrato**
-- 💡 **Iluminación**
+- 👁️ **Estado de los ojos**
+- 🧑 **Posición e inclinación de la cabeza**
+- 🪑 **Cambios de postura**
+- ⏱️ **Duración de los eventos**
+- 🔄 **Frecuencia de los eventos**
+- 📷 **Imágenes del conductor**
+- 🌡️ **Condiciones ambientales**, si se incorporan al prototipo
 
-Los datos obtenidos serán almacenados y posteriormente analizados mediante técnicas de **Machine Learning**, con el objetivo de identificar patrones y diferencias entre los cultivos evaluados.
+Los datos obtenidos serán procesados mediante técnicas de **Machine Learning**, con el objetivo de identificar patrones relacionados con la somnolencia y generar alertas oportunas.
 
-> **GREENPLANT AI no busca asumir qué cultivo presenta mayores concentraciones de gases. Los resultados serán determinados a partir de las mediciones experimentales obtenidas bajo condiciones controladas.**
+> **DriveSafe AI no busca determinar únicamente si el conductor tiene los ojos cerrados, sino analizar diferentes indicadores de comportamiento para identificar patrones compatibles con somnolencia.**
 
 ---
 
 # ⚠️ Problemática
 
-La agricultura está relacionada con la generación de diferentes **gases de efecto invernadero**, entre ellos el **CH₄ y CO₂**.
+La **somnolencia durante la conducción** puede disminuir la atención, el tiempo de reacción y la capacidad del conductor para responder adecuadamente ante situaciones inesperadas.
 
-Sin embargo, las concentraciones gaseosas asociadas a un cultivo pueden variar dependiendo de diferentes condiciones experimentales, como:
+El problema puede ser especialmente relevante en conductores que realizan:
 
-- 🌱 Tipo de cultivo.
-- 💧 Humedad del sustrato.
-- 🌡️ Temperatura.
-- 🧂 Condiciones del sustrato.
-- 💡 Iluminación.
-- 💦 Condiciones ambientales.
-- 🪴 Estado y desarrollo de la planta.
+- Jornadas prolongadas.
+- Viajes interprovinciales.
+- Conducción nocturna.
+- Transporte público.
+- Transporte de carga.
 
-Obtener mediciones comparables puede requerir procedimientos y condiciones experimentales controladas.
+Los sistemas existentes de monitoreo pueden utilizar diferentes tecnologías para detectar la somnolencia. Sin embargo, algunos se basan principalmente en indicadores como el cierre de los ojos o se encuentran integrados de fábrica en vehículos modernos.
 
-Por ello, **GREENPLANT AI** propone utilizar una cámara de volumen definido que permita realizar ensayos individuales y registrar las variaciones de las concentraciones gaseosas durante un periodo determinado.
+Por ello, se plantea desarrollar una alternativa que pueda **combinar indicadores visuales y posturales**, utilizando tecnologías accesibles y con posibilidad de adaptación a vehículos convencionales.
 
-> **El reto no es solamente detectar un gas, sino generar datos experimentales comparables que permitan estudiar cómo varían las concentraciones gaseosas entre diferentes cultivos.**
+> **El reto no es solamente detectar el cierre de los ojos, sino identificar de manera más confiable un patrón de somnolencia mediante la combinación de diferentes señales del conductor.**
 
 ---
 
 # 🎯 Objetivo General
 
-**Desarrollar un prototipo experimental capaz de detectar, registrar y comparar las concentraciones de gases asociadas a diferentes cultivos mediante sensores, IoT y técnicas de Machine Learning.**
+**Desarrollar un prototipo inteligente capaz de detectar signos de somnolencia y cambios de postura en conductores mediante visión artificial, sensores y técnicas de Machine Learning, generando alertas oportunas ante situaciones de riesgo.**
 
 ---
 
 # 🎯 Objetivos Específicos
 
-1. Diseñar una cámara experimental cerrada de volumen controlado.
+1. Diseñar un prototipo de monitoreo orientado al conductor.
 
-2. Implementar sensores para detectar principalmente **CH₄ y CO₂**.
+2. Implementar una cámara para capturar imágenes del rostro y postura del conductor.
 
-3. Registrar variables ambientales y del sustrato durante cada experimento.
+3. Detectar indicadores relacionados con la somnolencia, como cierre prolongado de los ojos e inclinación de la cabeza.
 
-4. Almacenar las mediciones obtenidas junto con información del cultivo y el tiempo de experimentación.
+4. Identificar cambios significativos en la postura del conductor.
 
-5. Generar un conjunto de datos experimentales.
+5. Registrar los eventos detectados junto con su duración y frecuencia.
 
-6. Analizar los datos mediante técnicas de **Machine Learning**.
+6. Generar un conjunto de datos para el entrenamiento y evaluación del modelo.
 
-7. Identificar patrones relacionados con las concentraciones gaseosas y las condiciones del experimento.
+7. Aplicar técnicas de Machine Learning para analizar los patrones relacionados con la somnolencia.
 
-8. Comparar los resultados obtenidos entre diferentes cultivos.
+8. Implementar un sistema de alerta ante la detección de un patrón de posible somnolencia.
 
----
-
-# 🌾 Cultivos a Evaluar
-
-GREENPLANT AI permitirá realizar experimentos utilizando diferentes cultivos.
-
-La metodología consiste en utilizar **una planta joven por experimento**, manteniendo condiciones experimentales similares y cambiando el cultivo entre ensayos.
-
-### Ejemplo de comparación
-
-| Experimento | Cultivo |
-|:---:|:---:|
-| 01 | 🌱 Cultivo A |
-| 02 | 🌱 Cultivo B |
-| 03 | 🌱 Cultivo C |
-
-La planta será colocada dentro de una maceta o recipiente con sustrato y posteriormente introducida en la cámara experimental.
-
-Al finalizar cada ensayo se seguirá una secuencia similar:
-
-**Finalizar medición → Ventilar → Limpiar → Cambiar planta → Repetir ensayo**
-
-Esto permitirá mantener una metodología uniforme para facilitar la comparación de los resultados.
+9. Evaluar el funcionamiento del prototipo mediante pruebas controladas.
 
 ---
 
-# 🧪 Gases de Interés
+# 👤 Público Objetivo
 
-## 🌫️ CH₄ — Metano
+El proyecto estará orientado principalmente a **conductores de vehículos que realizan jornadas prolongadas o recorridos extensos**.
 
-El **metano (CH₄)** será uno de los principales gases de interés del proyecto.
+Entre los posibles usuarios se consideran:
 
-Su concentración será registrada dentro de la cámara durante los experimentos para analizar su comportamiento bajo las condiciones establecidas.
+- 🚍 Conductores de transporte público.
+- 🚌 Conductores de transporte interprovincial.
+- 🚛 Conductores de vehículos de carga.
+- 🚕 Conductores de taxi.
+- 🚗 Conductores de vehículos convencionales.
 
-## 🌫️ CO₂ — Dióxido de carbono
-
-El **dióxido de carbono (CO₂)** será utilizado como una segunda variable gaseosa para estudiar la dinámica de los gases dentro de la cámara y relacionarla con las condiciones del cultivo.
-
-## N₂O — Óxido nitroso
-
-El **N₂O** es un gas de importancia dentro de la agricultura. Sin embargo, no forma parte de la primera versión del prototipo debido a las dificultades técnicas y al costo asociado con su medición mediante sensores adecuados.
-
-> La primera versión del prototipo estará enfocada principalmente en **CH₄ y CO₂**.
+La propuesta busca especialmente desarrollar una alternativa que pueda adaptarse a **vehículos que no cuentan con sistemas avanzados de monitoreo del conductor incorporados de fábrica**.
 
 ---
 
-# 📡 Sistema de Sensores
+# 🧠 Detección mediante Machine Learning
 
-GREENPLANT AI integrará sensores destinados a registrar las condiciones gaseosas, ambientales y del sustrato.
+Uno de los principales componentes de DriveSafe AI será el análisis mediante **Machine Learning y visión artificial**.
 
-| Variable | Función |
-|:---|:---|
-| 🌫️ **CH₄** | Detectar y registrar metano |
-| 🌫️ **CO₂** | Registrar dióxido de carbono |
-| 🌡️ **Temperatura del suelo** | Caracterizar la temperatura del sustrato |
-| 💧 **Humedad del suelo** | Registrar la humedad del sustrato |
-| 🌡️ **Temperatura ambiental** | Registrar las condiciones térmicas dentro de la cámara |
-| 💧 **Humedad ambiental** | Registrar la humedad relativa |
-| 🧂 **Conductividad eléctrica** | Caracterizar las condiciones del sustrato |
-| 💡 **Iluminación** | Registrar la intensidad de luz durante el ensayo |
+El sistema no tomará una decisión únicamente por una señal aislada.
 
-No todas las variables cumplen la misma función.
-
-Los sensores de **CH₄ y CO₂** proporcionarán las principales mediciones gaseosas.
-
-Las demás variables permitirán **contextualizar las mediciones** y analizar posibles relaciones entre las condiciones experimentales y las concentraciones gaseosas.
-
----
-
-# 📦 Cámara Experimental
-
-La cámara experimental será el espacio donde se realizarán los ensayos.
-
-## 📏 Dimensiones aproximadas
-
-| Característica | Valor |
-|:---|:---:|
-| Ancho | **20 cm** |
-| Largo | **18 cm** |
-| Alto | **18 cm** |
-| Volumen geométrico | **6,48 L** |
-| Maceta | **≈ 10 cm de diámetro** |
-| Planta | **Planta joven** |
-
-### Características principales
-
-- Cámara experimental cerrada.
-- Tapa superior transparente.
-- Espacio para una planta joven.
-- Soportes para los sensores.
-- Iluminación artificial.
-- Paso organizado de cables.
-- Fácil apertura para limpieza.
-- Posibilidad de cambiar el cultivo entre experimentos.
-- Diseño modular para facilitar el mantenimiento.
-
-La cámara estará diseñada para mantener un **volumen experimental definido**, permitiendo realizar mediciones bajo condiciones similares entre los diferentes ensayos.
-
----
-
-# 💡 Iluminación
-
-La cámara contará con una fuente de **iluminación artificial** ubicada en la zona superior.
-
-La tapa transparente permitirá el ingreso de la iluminación y facilitará la observación de la planta durante el experimento.
-
-La iluminación será considerada como una variable experimental, permitiendo registrar las condiciones de luz presentes durante cada ensayo.
-
----
-
-# ⚙️ Arquitectura General del Sistema
-
-El funcionamiento de GREENPLANT AI puede representarse de la siguiente manera:
+Por ejemplo:
 
 ```text
-              🌱 CULTIVO
-                  ↓
-        🪴 PLANTA + SUSTRATO
-                  ↓
-         📦 CÁMARA EXPERIMENTAL
-                  ↓
-              📡 SENSORES
-                  ↓
-             ⚙️ ESP32
-                  ↓
-          💾 ADQUISICIÓN DE DATOS
-                  ↓
-          🗄️ ALMACENAMIENTO
-                  ↓
-            🧠 MACHINE LEARNING
-                  ↓
-          📊 ANÁLISIS Y COMPARACIÓN
+👁️ Cierre de ojos
+        +
+🧑 Inclinación de cabeza
+        +
+🪑 Cambio de postura
+        +
+⏱️ Duración
+        ↓
+🧠 MACHINE LEARNING
+        ↓
+¿Patrón de posible somnolencia?
+        ↓
+   Sí          No
+   ↓            ↓
+🚨 Alerta     👌 Continuar
