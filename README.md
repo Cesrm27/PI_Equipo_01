@@ -70,30 +70,39 @@ flowchart LR
     style J fill:#2E7D32,color:#fff,stroke:#81C784
 
 ``` 
-🔄 Flujo principal
+# 🔄 Flujo principal
 
-Cultivo → Cámara → Sensores → ESP32 → Datos → Machine Learning → Análisis → Comparación
+**Cultivo → Cámara → Sensores → ESP32 → Datos → Machine Learning → Análisis → Comparación**
 
 GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimentales controladas para posteriormente analizarlos y encontrar patrones relacionados con las variables medidas.
 
-🌍 Objetivos de Desarrollo Sostenible
-<p align="center"> <img src="https://img.shields.io/badge/ODS%2013-Acción%20por%20el%20Clima-3F7E44?style=for-the-badge" /> </p>
-🌱 ODS 13 · Acción por el Clima
+---
 
-GREENPLANT AI se relaciona con el ODS 13, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
+# 🌍 Objetivos de Desarrollo Sostenible
 
-El proyecto utiliza IoT, sensores y Machine Learning para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
+<p align="center">
+  <img src="https://img.shields.io/badge/ODS%2013-Acción%20por%20el%20Clima-3F7E44?style=for-the-badge" />
+</p>
 
-🌱 GREENPLANT AI
+## 🌱 ODS 13 · Acción por el Clima
 
-Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores, adquisición de datos y Machine Learning.
+GREENPLANT AI se relaciona con el **ODS 13: Acción por el Clima**, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
 
-🎯 Nuestro enfoque
+El proyecto utiliza **IoT, sensores y Machine Learning** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
-GREENPLANT AI busca desarrollar un prototipo experimental para el cultivo de papa, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
+---
+
+# 🌱 GREENPLANT AI
+
+> **Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores, adquisición de datos y Machine Learning.**
+
+## 🎯 Nuestro enfoque
+
+GREENPLANT AI busca desarrollar un **prototipo experimental para el cultivo de papa**, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
 
 El sistema permitirá registrar información relacionada con:
 
+```text
         🌱 CULTIVO DE PAPA
                 ↓
         📦 CÁMARA EXPERIMENTAL
