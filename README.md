@@ -118,6 +118,7 @@ El sistema permitirá registrar información relacionada con:
        📊 ANÁLISIS Y PATRONES
                 ↓
         📈 COMPARACIÓN
+```
 
 # 📸 Fotografía del Equipo
 
