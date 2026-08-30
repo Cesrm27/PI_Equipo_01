@@ -1,34 +1,54 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=12,20,24&height=180&section=header&text=🌱%20GREENPLANT%20AI&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=45&desc=IoT%20%7C%20Machine%20Learning%20%7C%20Gases%20%7C%20Sostenibilidad&descSize=16&descAlignY=68" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:123B5D,100:00A8A8&height=230&section=header&text=DRIVESAFE%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=Visión%20Artificial%20%7C%20IoT%20%7C%20Machine%20Learning&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
+</p>
+
+<p align="center">
+  <strong>🚗 Sistema inteligente para la detección de somnolencia y cambios de postura en conductores</strong>
 </p>
 
 <p align="center">
   <strong>PROYECTO INTEGRADOR · 2026-II</strong>
   <br>
-  <sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática / Industrial</sub>
+  <sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática + Ingeniería Industrial</sub>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🌱%20AgTech-2E7D32?style=for-the-badge&labelColor=1B1F23"/>
-  <img src="https://img.shields.io/badge/📡%20IoT-1565C0?style=for-the-badge&labelColor=1B1F23"/>
-  <img src="https://img.shields.io/badge/🧠%20Machine%20Learning-6A1B9A?style=for-the-badge&labelColor=1B1F23"/>
-  <img src="https://img.shields.io/badge/🌍%20ODS%2013-388E3C?style=for-the-badge&labelColor=1B1F23"/>
+  <img src="https://img.shields.io/badge/AI-Machine%20Learning-00A8A8?style=for-the-badge&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Computer-Vision-123B5D?style=for-the-badge&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/IoT-ESP32-07111F?style=for-the-badge&logo=espressif&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Safety-Road%20Safety-2E7D32?style=for-the-badge&logo=shield&logoColor=white"/>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=00A8A8&center=true&vCenter=true&width=750&lines=DETECTAR+%E2%86%92+ANALIZAR+%E2%86%92+ADVERTIR+%E2%86%92+PREVENIR;Inteligencia+artificial+para+una+conducci%C3%B3n+m%C3%A1s+segura" />
 </p>
 
 ---
 
-# 🌎 Descripción del Equipo
+# 🚗 DriveSafe AI
 
-> **Equipo 01** · Proyecto Integrador 2026-II  
-> Un equipo multidisciplinario que combina **Ingeniería Informática e Ingeniería Industrial** para desarrollar una solución tecnológica orientada al monitoreo y análisis de emisiones asociadas a diferentes cultivos.
+> **Una solución inteligente orientada a reducir el riesgo asociado a la somnolencia durante la conducción mediante visión artificial, sensores y Machine Learning.**
 
 ### 🎯 Nuestro enfoque
 
-**ODS 13** · Acción por el Clima
+DriveSafe AI busca desarrollar un **prototipo de monitoreo del conductor** capaz de analizar indicadores visuales y posturales para identificar posibles signos de somnolencia y generar una alerta cuando se detecte un patrón de riesgo.
 
-Buscamos aplicar **sensores IoT, adquisición de datos, análisis de información y Machine Learning** para estudiar el comportamiento de gases de efecto invernadero generados durante condiciones experimentales controladas.
-
----
+```text
+        👁️ ROSTRO
+           +
+        🧍 POSTURA
+           +
+       📡 SENSORES
+           ↓
+    🧠 MACHINE LEARNING
+           ↓
+   📊 ANÁLISIS DEL PATRÓN
+           ↓
+      ⚠️ DETECCIÓN
+           ↓
+      🔔 ALERTA
 
 # 📸 Fotografía del Equipo
 
