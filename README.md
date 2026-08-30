@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:123B5D,100:00A8A8&height=230&section=header&text=DRIVESAFE%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=Visión%20Artificial%20%7C%20IoT%20%7C%20Machine%20Learning&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Machine%20Learning%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <strong> Sistema inteligente para la detección de somnolencia y cambios de postura en conductores</strong>
+  <strong>Sistema inteligente para el monitoreo experimental del cultivo de papa y sus emisiones gaseosas</strong>
 </p>
 
 <p align="center">
@@ -13,106 +13,103 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Machine%20Learning-00A8A8?style=for-the-badge&logo=openai&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Computer-Vision-123B5D?style=for-the-badge&logo=opencv&logoColor=white"/>
-  <img src="https://img.shields.io/badge/IoT-ESP32-07111F?style=for-the-badge&logo=espressif&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Safety-Road%20Safety-2E7D32?style=for-the-badge&logo=shield&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AI-Machine%20Learning-4CAF50?style=for-the-badge&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/IoT-ESP32-285C3A?style=for-the-badge&logo=espressif&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Agricultura-Inteligente-66BB6A?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Sostenibilidad-ODS%2013-2E7D32?style=for-the-badge"/>
 </p>
 
 <br>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=00A8A8&center=true&vCenter=true&width=750&lines=DETECTAR+%E2%86%92+ANALIZAR+%E2%86%92+ADVERTIR+%E2%86%92+PREVENIR;Inteligencia+artificial+para+una+conducci%C3%B3n+m%C3%A1s+segura" />
+  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=4CAF50&center=true&vCenter=true&width=750&lines=MEDIR+%E2%86%92+REGISTRAR+%E2%86%92+ANALIZAR+%E2%86%92+COMPARAR;Inteligencia+artificial+para+una+agricultura+m%C3%A1s+sostenible" />
 </p>
 
 ---
-## 🧠 Simulación del funcionamiento de DriveSafe AI
+
+# 🌱 Simulación del funcionamiento de GREENPLANT AI
 
 ```mermaid
 flowchart LR
 
-    A["🚗 CONDUCTOR"] --> B["📷 CÁMARA"]
-    A --> C["📡 SENSORES"]
+    A["🌱 CULTIVO DE PAPA"] --> B["📦 CÁMARA EXPERIMENTAL"]
 
-    B --> D["👁️ VISIÓN ARTIFICIAL"]
-    D --> D1["👀 OJOS"]
-    D --> D2["🧍 POSTURA"]
-    D --> D3["😴 ROSTRO"]
+    B --> C["📡 SENSORES"]
 
-    C --> E["⚙️ ESP32"]
+    C --> C1["🌫️ GASES"]
+    C --> C2["🌡️ TEMPERATURA"]
+    C --> C3["💧 HUMEDAD"]
+    C --> C4["🧂 CONDUCTIVIDAD"]
+    C --> C5["💡 ILUMINACIÓN"]
 
-    D1 --> F["🧠 PROCESAMIENTO"]
-    D2 --> F
-    D3 --> F
-    E --> F
+    C1 --> D["⚙️ ESP32"]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    C5 --> D
 
-    F --> G["🤖 MACHINE LEARNING"]
+    D --> E["💾 ADQUISICIÓN Y REGISTRO DE DATOS"]
 
-    G --> H{"⚠️ ¿PATRÓN DE SOMNOLENCIA?"}
+    E --> F["🧹 PROCESAMIENTO DE DATOS"]
 
-    H -->|"NO"| I["✅ CONDUCCIÓN NORMAL"]
-    H -->|"SÍ"| J["🚨 DETECCIÓN DE RIESGO"]
+    F --> G["🧠 MACHINE LEARNING"]
 
-    J --> K["🔔 ALERTA AL CONDUCTOR"]
+    G --> H["📊 ANÁLISIS DE PATRONES"]
 
-    K --> L["📊 REGISTRO DE DATOS"]
+    H --> I["🔎 COMPARACIÓN DE RESULTADOS"]
 
-    style A fill:#123B5D,color:#fff,stroke:#00A8A8
-    style B fill:#123B5D,color:#fff,stroke:#00A8A8
-    style C fill:#123B5D,color:#fff,stroke:#00A8A8
+    I --> J["📈 INFORMACIÓN PARA EL ANÁLISIS DEL CULTIVO"]
+
+    style A fill:#285C3A,color:#fff,stroke:#4CAF50
+    style B fill:#388E3C,color:#fff,stroke:#81C784
+    style C fill:#1565C0,color:#fff,stroke:#64B5F6
+    style D fill:#37474F,color:#fff,stroke:#90A4AE
     style G fill:#6A1B9A,color:#fff,stroke:#CE93D8
-    style H fill:#F57C00,color:#fff,stroke:#FFB74D
-    style J fill:#C62828,color:#fff,stroke:#EF9A9A
-    style K fill:#AD1457,color:#fff,stroke:#F48FB1
-    style I fill:#2E7D32,color:#fff,stroke:#81C784
-```
+    style H fill:#EF6C00,color:#fff,stroke:#FFB74D
+    style I fill:#00838F,color:#fff,stroke:#80DEEA
+    style J fill:#2E7D32,color:#fff,stroke:#81C784
 
-### 🔄 Flujo principal
+``` 
+🔄 Flujo principal
 
-**Conductor → Captura → Análisis → Machine Learning → Detección → Alerta**
+Cultivo → Cámara → Sensores → ESP32 → Datos → Machine Learning → Análisis → Comparación
 
-El sistema combinará información visual y datos de sensores para analizar el comportamiento del conductor y determinar si existe un patrón asociado a la somnolencia.
+GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimentales controladas para posteriormente analizarlos y encontrar patrones relacionados con las variables medidas.
 
-## 🌍 Objetivos de Desarrollo Sostenible
+🌍 Objetivos de Desarrollo Sostenible
+<p align="center"> <img src="https://img.shields.io/badge/ODS%2013-Acción%20por%20el%20Clima-3F7E44?style=for-the-badge" /> </p>
+🌱 ODS 13 · Acción por el Clima
 
-<p align="center">
-  <img src="https://img.shields.io/badge/ODS%203-Salud%20y%20Bienestar-E5243B?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/ODS%209-Innovación%20e%20Infraestructura-FD6925?style=for-the-badge" />
-</p>
+GREENPLANT AI se relaciona con el ODS 13, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
 
-### ❤️ ODS 3 · Salud y Bienestar
+El proyecto utiliza IoT, sensores y Machine Learning para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
-DriveSafe AI se relaciona principalmente con la **ODS 3**, ya que busca contribuir a la prevención de accidentes de tránsito mediante la detección temprana de posibles signos de **somnolencia y fatiga durante la conducción**.
+🌱 GREENPLANT AI
 
-### 💡 ODS 9 · Industria, Innovación e Infraestructura
+Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores, adquisición de datos y Machine Learning.
 
-De manera complementaria, el proyecto se relaciona con la **ODS 9** mediante la aplicación de **Inteligencia Artificial, visión artificial, IoT y Machine Learning** para desarrollar una solución tecnológica orientada a la seguridad vial.
+🎯 Nuestro enfoque
 
----
+GREENPLANT AI busca desarrollar un prototipo experimental para el cultivo de papa, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
 
-# 🚗 DriveSafe AI
+El sistema permitirá registrar información relacionada con:
 
-> **Una solución inteligente orientada a reducir el riesgo asociado a la somnolencia durante la conducción mediante visión artificial, sensores y Machine Learning.**
+        🌱 CULTIVO DE PAPA
+                ↓
+        📦 CÁMARA EXPERIMENTAL
+                ↓
+          📡 SENSORES
+                ↓
+        💾 REGISTRO DE DATOS
+                ↓
+       🧹 PROCESAMIENTO
+                ↓
+        🧠 MACHINE LEARNING
+                ↓
+       📊 ANÁLISIS Y PATRONES
+                ↓
+        📈 COMPARACIÓN
 
-### 🎯 Nuestro enfoque
-
-DriveSafe AI busca desarrollar un **prototipo de monitoreo del conductor** capaz de analizar indicadores visuales y posturales para identificar posibles signos de somnolencia y generar una alerta cuando se detecte un patrón de riesgo.
-
-```text
-        👁️ ROSTRO
-           +
-        🧍 POSTURA
-           +
-       📡 SENSORES
-           ↓
-    🧠 MACHINE LEARNING
-           ↓
-   📊 ANÁLISIS DEL PATRÓN
-           ↓
-      ⚠️ DETECCIÓN
-           ↓
-      🔔 ALERTA
-```
 # 📸 Fotografía del Equipo
 
 <p align="center">
@@ -139,130 +136,331 @@ DriveSafe AI busca desarrollar un **prototipo de monitoreo del conductor** capaz
 </div>
 
 ---
+📌 Resumen del Proyecto
+🌱 ¿Qué es GREENPLANT AI?
 
-# 🚗 DriveSafe AI
+GREENPLANT AI es un prototipo experimental orientado al monitoreo del cultivo de papa, mediante sensores, adquisición de datos y técnicas de Machine Learning.
 
-### Sistema inteligente para la detección de somnolencia y cambios de postura en conductores mediante visión artificial, sensores y Machine Learning
+El sistema utilizará una cámara experimental cerrada en la que se colocará una planta joven de papa junto con su sustrato.
 
-<p align="center">
+Dentro de la cámara se realizarán mediciones controladas de gases y variables relacionadas con las condiciones del cultivo.
 
-**Conductor → Cámara + Sensores → Datos → Machine Learning → Análisis → Alerta**
+Las mediciones podrán incluir:
 
-</p>
+🌫️ Gases presentes en la cámara
+🌡️ Temperatura ambiental
+💧 Humedad ambiental
+🌡️ Temperatura del suelo
+💧 Humedad del suelo
+🧂 Conductividad eléctrica
+💡 Iluminación
+⏱️ Tiempo de experimentación
 
----
+De acuerdo con el enfoque planteado para el proyecto, se prestará especial atención al monitoreo de amoniaco gaseoso (NH₃) y cianuro de hidrógeno (HCN) en el cultivo de papa.
 
-# 📌 Resumen del Proyecto
+Los datos obtenidos serán almacenados para posteriormente analizarlos mediante Machine Learning, buscando identificar patrones y relaciones entre las variables registradas.
 
-## 🚗 ¿Qué es DriveSafe AI?
+⚠️ Problemática
 
-**DriveSafe AI** es un prototipo experimental diseñado para **detectar signos de somnolencia y cambios de postura en conductores**, utilizando visión artificial, sensores y técnicas de Machine Learning.
+La agricultura requiere información que permita comprender mejor el comportamiento de los cultivos y las condiciones que los rodean.
 
-El sistema busca analizar el comportamiento del conductor durante la conducción para identificar patrones asociados con la pérdida de atención o somnolencia.
+En el caso del cultivo de papa, existe interés en estudiar las condiciones asociadas a su desarrollo y los gases presentes durante determinados procesos experimentales.
 
-A diferencia de una solución basada únicamente en el cierre de los ojos, DriveSafe AI propone combinar diferentes indicadores para mejorar la detección.
+Sin embargo, realizar mediciones de diferentes variables de manera simultánea puede requerir equipos especializados y procedimientos controlados.
 
-Las principales variables consideradas son:
+Por ello, GREENPLANT AI propone desarrollar una alternativa experimental que permita:
 
-- 👁️ **Estado de los ojos**
-- 🧑 **Posición e inclinación de la cabeza**
-- 🪑 **Cambios de postura**
-- ⏱️ **Duración de los eventos**
-- 🔄 **Frecuencia de los eventos**
-- 📷 **Imágenes del conductor**
-- 🌡️ **Condiciones ambientales**, si se incorporan al prototipo
+Medir → Registrar → Analizar → Comparar
 
-Los datos obtenidos serán procesados mediante técnicas de **Machine Learning**, con el objetivo de identificar patrones relacionados con la somnolencia y generar alertas oportunas.
+las variables obtenidas durante los ensayos.
 
-> **DriveSafe AI no busca determinar únicamente si el conductor tiene los ojos cerrados, sino analizar diferentes indicadores de comportamiento para identificar patrones compatibles con somnolencia.**
+El reto del proyecto no consiste únicamente en detectar un gas, sino en generar un conjunto de datos que permita relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo.
 
----
+Buscamos transformar las lecturas individuales de los sensores en información organizada que permita:
 
-# ⚠️ Problemática
+<div align="center">
+📡 Medir	💾 Registrar	🧠 Analizar	📊 Comparar
+Gases y variables	Datos experimentales	Patrones	Resultados
+</div>
 
-La **somnolencia durante la conducción** puede disminuir la atención, el tiempo de reacción y la capacidad del conductor para responder adecuadamente ante situaciones inesperadas.
+De esta manera, GREENPLANT AI busca generar una base tecnológica que permita estudiar el comportamiento del cultivo bajo condiciones experimentales controladas.
 
-El problema puede ser especialmente relevante en conductores que realizan:
+🎯 Objetivo General
 
-- Jornadas prolongadas.
-- Viajes interprovinciales.
-- Conducción nocturna.
-- Transporte público.
-- Transporte de carga.
+Desarrollar un prototipo experimental inteligente capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante sensores, IoT y Machine Learning, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
 
-Los sistemas existentes de monitoreo pueden utilizar diferentes tecnologías para detectar la somnolencia. Sin embargo, algunos se basan principalmente en indicadores como el cierre de los ojos o se encuentran integrados de fábrica en vehículos modernos.
+🎯 Objetivos Específicos
+Diseñar una cámara experimental cerrada para realizar ensayos con plantas jóvenes de papa.
+Implementar sensores para medir gases y variables ambientales y del sustrato.
+Registrar información relacionada con las concentraciones de gases presentes durante cada ensayo.
+Registrar temperatura, humedad, conductividad eléctrica e iluminación asociadas a las condiciones experimentales.
+Utilizar un microcontrolador ESP32 para adquirir y gestionar los datos obtenidos por los sensores.
+Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
+Generar un conjunto de datos para el análisis de las variables registradas.
+Aplicar técnicas de Machine Learning para identificar patrones y relaciones entre las variables.
+Comparar los resultados obtenidos durante diferentes ensayos del cultivo de papa.
+Generar información que facilite el análisis experimental del comportamiento del cultivo.
+👤 Público Objetivo
 
-Por ello, se plantea desarrollar una alternativa que pueda **combinar indicadores visuales y posturales**, utilizando tecnologías accesibles y con posibilidad de adaptación a vehículos convencionales.
-
-> **El reto no es solamente detectar el cierre de los ojos, sino identificar de manera más confiable un patrón de somnolencia mediante la combinación de diferentes señales del conductor.**
-
----
-
-# 🎯 Objetivo General
-
-**Desarrollar un prototipo inteligente capaz de detectar signos de somnolencia y cambios de postura en conductores mediante visión artificial, sensores y técnicas de Machine Learning, generando alertas oportunas ante situaciones de riesgo.**
-
----
-
-# 🎯 Objetivos Específicos
-
-1. Diseñar un prototipo de monitoreo orientado al conductor.
-
-2. Implementar una cámara para capturar imágenes del rostro y postura del conductor.
-
-3. Detectar indicadores relacionados con la somnolencia, como cierre prolongado de los ojos e inclinación de la cabeza.
-
-4. Identificar cambios significativos en la postura del conductor.
-
-5. Registrar los eventos detectados junto con su duración y frecuencia.
-
-6. Generar un conjunto de datos para el entrenamiento y evaluación del modelo.
-
-7. Aplicar técnicas de Machine Learning para analizar los patrones relacionados con la somnolencia.
-
-8. Implementar un sistema de alerta ante la detección de un patrón de posible somnolencia.
-
-9. Evaluar el funcionamiento del prototipo mediante pruebas controladas.
-
----
-
-# 👤 Público Objetivo
-
-El proyecto estará orientado principalmente a **conductores de vehículos que realizan jornadas prolongadas o recorridos extensos**.
+GREENPLANT AI estará dirigido principalmente a usuarios relacionados con el estudio, producción y monitoreo agrícola.
 
 Entre los posibles usuarios se consideran:
 
-- 🚍 Conductores de transporte público.
-- 🚌 Conductores de transporte interprovincial.
-- 🚛 Conductores de vehículos de carga.
-- 🚕 Conductores de taxi.
-- 🚗 Conductores de vehículos convencionales.
+👨‍🌾 Agricultores: interesados en conocer mejor las condiciones de sus cultivos.
+🔬 Investigadores: para realizar ensayos y analizar datos relacionados con cultivos.
+🎓 Estudiantes: como herramienta experimental para proyectos académicos.
+🏫 Instituciones educativas: para actividades de investigación y experimentación.
+🌱 Profesionales del sector agrícola: interesados en el monitoreo y análisis de variables del cultivo.
 
-La propuesta busca especialmente desarrollar una alternativa que pueda adaptarse a **vehículos que no cuentan con sistemas avanzados de monitoreo del conductor incorporados de fábrica**.
+El proyecto se plantea inicialmente para el cultivo de papa, pudiendo posteriormente adaptarse a otros cultivos.
 
----
+🧪 Variables y Gases a Monitorear
 
-# 🧠 Detección mediante Machine Learning
+GREENPLANT AI utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
 
-Uno de los principales componentes de DriveSafe AI será el análisis mediante **Machine Learning y visión artificial**.
+<div align="center">
+Variable	Función
+🌫️ NH₃	Monitoreo de amoniaco gaseoso
+☠️ HCN	Monitoreo de cianuro de hidrógeno gaseoso
+🌡️ Temperatura ambiental	Medición de la temperatura dentro de la cámara
+💧 Humedad ambiental	Medición de la humedad relativa
+🌡️ Temperatura del suelo	Caracterización de las condiciones del sustrato
+💧 Humedad del suelo	Medición de humedad del sustrato
+🧂 Conductividad eléctrica	Caracterización del sustrato
+💡 Iluminación	Medición de la intensidad de luz
+⏱️ Tiempo	Registro temporal de cada medición
+</div>
 
-El sistema no tomará una decisión únicamente por una señal aislada.
+Nota: la selección definitiva de sensores dependerá de la viabilidad técnica, disponibilidad y validación de los componentes durante el desarrollo del prototipo.
 
-Por ejemplo:
+📦 Cámara Experimental
 
-```text
-👁️ Cierre de ojos
-        +
-🧑 Inclinación de cabeza
-        +
-🪑 Cambio de postura
-        +
-⏱️ Duración
-        ↓
+GREENPLANT AI contará con una cámara experimental cerrada destinada a realizar mediciones controladas del cultivo de papa.
+
+La cámara permitirá mantener un volumen de medición definido y facilitar la instalación de los sensores.
+
+<div align="center">
+📏 Diseño aproximado
+Característica	Valor
+Altura total	22 – 24 cm
+Diámetro exterior	18 – 20 cm
+Diámetro interior	16 – 17 cm
+Altura útil interna	15 – 18 cm
+Grosor de paredes	3 – 4 mm
+Volumen interno	2.5 – 3.5 L
+Planta	Planta joven de papa
+</div>
+Características principales
+📦 Cámara experimental cerrada.
+🌱 Espacio para una planta joven de papa.
+🔍 Tapa superior transparente.
+💡 Sistema de iluminación artificial.
+📡 Soportes para sensores.
+🔌 Entradas organizadas para cables.
+🌬️ Sistema de ventilación.
+🛠️ Estructura diseñada para facilitar el montaje y desmontaje.
+🧹 Facilidad de limpieza entre ensayos.
+⚙️ Funcionamiento del Sistema
+<details> <summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary> <br>
+1️⃣ Preparación
+
+Se seleccionará una planta joven de papa y se colocará dentro de la cámara experimental junto con su sustrato.
+
+<br>
+2️⃣ Instalación
+
+Se instalarán los sensores correspondientes dentro de la cámara y en el sustrato.
+
+<br>
+3️⃣ Medición
+
+Los sensores realizarán mediciones de gases y variables ambientales y del suelo.
+
+<div align="center">
+
+🌫️ NH₃
+
+🌫️ HCN
+
+🌡️ Temperatura
+
+💧 Humedad
+
+🧂 Conductividad eléctrica
+
+💡 Iluminación
+
+</div>
+4️⃣ Adquisición
+
+El ESP32 recibirá las lecturas generadas por los sensores.
+
+<br>
+5️⃣ Registro
+
+Los datos serán registrados junto con información como:
+
+Identificación del cultivo.
+Número de ensayo.
+Fecha.
+Tiempo de medición.
+Variables ambientales.
+Variables del sustrato.
+Concentraciones gaseosas.
+6️⃣ Procesamiento
+
+Los datos serán organizados y preparados para su análisis.
+
+7️⃣ Machine Learning
+
+Los datos podrán utilizarse para desarrollar modelos capaces de identificar patrones y relaciones entre las variables registradas.
+
+8️⃣ Comparación
+
+Los resultados de los ensayos podrán compararse para observar diferencias en el comportamiento de las variables medidas.
+
+<br> <div align="center">
+
+🌱 PAPA
+⬇️
+📦 CÁMARA
+⬇️
+📡 SENSORES
+⬇️
+⚙️ ESP32
+⬇️
+💾 DATOS
+⬇️
 🧠 MACHINE LEARNING
-        ↓
-¿Patrón de posible somnolencia?
-        ↓
-   Sí          No
-   ↓            ↓
-🚨 Alerta     👌 Continuar
+⬇️
+📊 ANÁLISIS
+⬇️
+📈 COMPARACIÓN
+
+</div> </details>
+🧠 ¿Dónde está nuestra innovación?
+
+GREENPLANT AI no busca afirmar que los sensores, el ESP32 o las cámaras experimentales sean tecnologías nuevas.
+
+La propuesta de innovación está en integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental, generando un conjunto de datos que posteriormente pueda ser analizado mediante Machine Learning.
+
+<div align="center">
+Enfoque convencional	GREENPLANT AI
+🌫️ Medición individual	📡 Múltiples variables
+🔢 Obtiene valores	💾 Registra datos
+📊 Observación manual	🧠 Análisis mediante ML
+📍 Mediciones aisladas	⏱️ Registro temporal
+🌱 Un ensayo	📊 Comparación entre ensayos
+👨‍🔬 Interpretación manual	🤖 Identificación de patrones
+</div>
+
+Por ello, la propuesta busca pasar de:
+
+“¿Qué concentración de gas se obtuvo?”
+
+a:
+
+“¿Qué patrones pueden identificarse al relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo de papa?”
+
+🧠 Machine Learning
+
+Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de Machine Learning.
+
+El conjunto de datos podrá incluir:
+
+<div align="center">
+Variable	Información
+🌱 Cultivo	Identificación del cultivo
+🌫️ NH₃	Concentración medida
+🌫️ HCN	Concentración medida
+🌡️ Temperatura	Condición ambiental
+💧 Humedad	Condición ambiental
+🌡️ Temperatura del suelo	Condición del sustrato
+💧 Humedad del suelo	Condición del sustrato
+🧂 Conductividad	Condición del sustrato
+💡 Iluminación	Condición experimental
+⏱️ Tiempo	Momento de la medición
+</div>
+🔄 Flujo de Machine Learning
+📡 ADQUISICIÓN DE DATOS
+          ↓
+💾 ALMACENAMIENTO
+          ↓
+🧹 LIMPIEZA DE DATOS
+          ↓
+📊 ANÁLISIS EXPLORATORIO
+          ↓
+🧠 ENTRENAMIENTO
+          ↓
+🔎 VALIDACIÓN
+          ↓
+📈 IDENTIFICACIÓN DE PATRONES
+          ↓
+📊 COMPARACIÓN DE RESULTADOS
+
+El objetivo del Machine Learning será analizar las relaciones entre las variables registradas e identificar patrones que puedan apoyar la interpretación de los resultados experimentales.
+
+📊 Visualización y Comparación
+
+GREENPLANT AI permitirá organizar las mediciones obtenidas durante los ensayos para facilitar su interpretación.
+
+Los datos podrán representarse mediante:
+
+📈 Gráficas de concentración de gases respecto al tiempo.
+🌡️ Gráficas de temperatura.
+💧 Evolución de la humedad.
+🧂 Variación de la conductividad eléctrica.
+💡 Variación de la iluminación.
+📊 Comparación entre diferentes ensayos.
+
+⚠️ Los resultados mostrados durante la etapa de desarrollo serán diferenciados entre datos experimentales reales y ejemplos de visualización.
+
+🛡️ Seguridad del Prototipo
+
+Debido a que el sistema trabajará con sensores destinados al monitoreo de gases dentro de una cámara experimental, se considerarán medidas de seguridad durante su utilización.
+
+<div align="center">
+🛡️ Medida	🎯 Objetivo
+🔌 Protección eléctrica	Evitar cortocircuitos y contactos accidentales
+🧤 Protección de componentes	Evitar contacto con humedad y sustrato
+🌬️ Ventilación	Reducir acumulación de gases entre ensayos
+📦 Protección de sensores	Evitar daños durante la experimentación
+🧹 Limpieza	Reducir contaminación entre ensayos
+🔎 Verificación	Comprobar el funcionamiento de los sensores
+</div>
+
+⚠️ El manejo de sensores para gases potencialmente peligrosos deberá realizarse siguiendo las especificaciones técnicas del fabricante y las medidas de seguridad correspondientes.
+
+🎯 Nuestra Propuesta de Valor
+<div align="center">
+GREENPLANT AI convierte mediciones agrícolas en datos analizables.
+<br>
+
+🌱 Papa → 📦 Cámara → 📡 Sensores → 💾 Datos → 🧠 IA → 📊 Análisis
+
+</div>
+
+Nuestro objetivo no es solamente detectar gases.
+
+Buscamos desarrollar un sistema experimental que permita:
+
+Medir → Registrar → Analizar → Comparar
+
+integrando IoT, sensores, procesamiento de datos y Machine Learning en una propuesta orientada al estudio experimental del cultivo de papa.
+
+🚀 Visión del Proyecto
+
+GREENPLANT AI busca convertirse en una plataforma experimental que permita estudiar el comportamiento de variables gaseosas, ambientales y del sustrato bajo condiciones controladas.
+
+A futuro, el sistema podría ampliarse mediante:
+
+📊 Mayor cantidad de ensayos.
+🌱 Evaluación de diferentes cultivos.
+📡 Incorporación de nuevos sensores.
+🧠 Modelos de Machine Learning más avanzados.
+📈 Análisis temporal de las mediciones.
+☁️ Almacenamiento de datos en la nube.
+📱 Interfaces de visualización.
+🌾 Adaptación a otros cultivos agrícolas.
+
+De sensores a datos. De datos a conocimiento.
