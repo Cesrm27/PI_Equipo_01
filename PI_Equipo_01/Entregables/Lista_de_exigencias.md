@@ -390,7 +390,7 @@ Los componentes electrónicos deberán poder reemplazarse individualmente sin de
 
 El software y los modelos utilizados podrán actualizarse cuando sea necesario.
 
-**Responsables:** A.D, D
+**Responsables:** A.D
 
 ---
 
