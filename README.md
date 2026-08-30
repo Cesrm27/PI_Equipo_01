@@ -52,6 +52,7 @@ De manera complementaria, el proyecto se relaciona con la **ODS 9** mediante la 
 
 DriveSafe AI busca desarrollar un **prototipo de monitoreo del conductor** capaz de analizar indicadores visuales y posturales para identificar posibles signos de somnolencia y generar una alerta cuando se detecte un patrón de riesgo.
 
+```text
         👁️ ROSTRO
            +
         🧍 POSTURA
@@ -65,7 +66,7 @@ DriveSafe AI busca desarrollar un **prototipo de monitoreo del conductor** capaz
       ⚠️ DETECCIÓN
            ↓
       🔔 ALERTA
-
+```
 # 📸 Fotografía del Equipo
 
 <p align="center">
