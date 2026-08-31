@@ -35,14 +35,33 @@
 
 #  Lista de Exigencias
 
-## GREENPLANT AI
+<table>
+  <tr>
+    <td><strong>Edición:</strong></td>
+    <td>Rev. 1</td>
+  </tr>
+  <tr>
+    <td><strong>PROYECTO:</strong></td>
+    <td>GREENPLANT AI – Sistema inteligente para el monitoreo experimental del cultivo de papa y la detección de NH₃ y HCN.</td>
+  </tr>
+  <tr>
+    <td><strong>Fecha:</strong></td>
+    <td>30/08/2026</td>
+  </tr>
+  <tr>
+    <td><strong>Revisado:</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>CLIENTE:</strong></td>
+    <td>UNIVERSIDAD PERUANA CAYETANO HEREDIA (UPCH)</td>
+  </tr>
+  <tr>
+    <td><strong>Elaborado:</strong></td>
+    <td>K.C., A.D., C.M., L.S.</td>
+  </tr>
+</table>
 
-**Proyecto:** GREENPLANT AI – Sistema inteligente para el monitoreo experimental del cultivo de papa y la detección de NH₃ y HCN.
-
-**Fecha:** 31/08/2026  
-**Edición:** Rev. 1  
-**Cliente:** Universidad Peruana Cayetano Heredia (UPCH)  
-**Elaborado por:** K.C, A.D, C.M, L.S
 
 ---
 
