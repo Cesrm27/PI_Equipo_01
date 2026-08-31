@@ -100,41 +100,27 @@ El proyecto utiliza **IoT, sensores y Machine Learning** para generar informaci�
 
 GREENPLANT AI busca desarrollar un **prototipo experimental para el cultivo de papa**, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
 
-<p align="center">
-  <strong>El sistema permitirá registrar información relacionada con:</strong>
-</p>
+El sistema permitirá registrar información relacionada con:
 
-<p align="center">
-  🌱 <strong>CULTIVO DE PAPA</strong>
-  <br>
-  ↓
-  <br>
-  📦 <strong>CÁMARA EXPERIMENTAL</strong>
-  <br>
-  ↓
-  <br>
-  📡 <strong>SENSORES</strong>
-  <br>
-  ↓
-  <br>
-  💾 <strong>REGISTRO DE DATOS</strong>
-  <br>
-  ↓
-  <br>
-  🧹 <strong>PROCESAMIENTO</strong>
-  <br>
-  ↓
-  <br>
-  🧠 <strong>MACHINE LEARNING</strong>
-  <br>
-  ↓
-  <br>
-  📊 <strong>ANÁLISIS Y PATRONES</strong>
-  <br>
-  ↓
-  <br>
-  📈 <strong>COMPARACIÓN</strong>
-</p>
+<div align="center">
+
+```text
+🌱 CULTIVO DE PAPA
+        ↓
+📦 CÁMARA EXPERIMENTAL
+        ↓
+📡 SENSORES
+        ↓
+💾 REGISTRO DE DATOS
+        ↓
+🧹 PROCESAMIENTO
+        ↓
+🧠 MACHINE LEARNING
+        ↓
+📊 ANÁLISIS Y PATRONES
+        ↓
+📈 COMPARACIÓN
+```
 # 📸 Fotografía del Equipo
 
 <p align="center">
