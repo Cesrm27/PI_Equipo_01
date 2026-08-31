@@ -102,23 +102,23 @@ GREENPLANT AI busca desarrollar un **prototipo experimental para el cultivo de p
 
 El sistema permitirá registrar información relacionada con:
 
-```text
+<pre align="center">
 🌱 CULTIVO DE PAPA
-
+        ↓
 📦 CÁMARA EXPERIMENTAL
         ↓
-🔬 SENSORES
+📡 SENSORES
         ↓
 💾 REGISTRO DE DATOS
         ↓
-🖌️ PROCESAMIENTO
+🧹 PROCESAMIENTO
         ↓
 🧠 MACHINE LEARNING
         ↓
 📊 ANÁLISIS Y PATRONES
         ↓
 📈 COMPARACIÓN
-```
+</pre>
 
 
 # 📸 Fotografía del Equipo
