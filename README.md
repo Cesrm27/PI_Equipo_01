@@ -270,9 +270,11 @@ Interesados en el monitoreo y análisis de variables del cultivo.
 
 GREENPLANT AI utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
 
+<div align="center">
+
 | Variable | Función |
-|----------|---------|
-| 🌫️ **NH₃** | Monitoreo de amoniaco gaseoso |
+|---|---|
+| 🧂 **NH₃** | Monitoreo de amoniaco gaseoso |
 | ☠️ **HCN** | Monitoreo de cianuro de hidrógeno gaseoso |
 | 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara |
 | 💧 **Humedad ambiental** | Medición de la humedad relativa |
@@ -282,6 +284,7 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | 💡 **Iluminación** | Medición de la intensidad de luz |
 | ⏱️ **Tiempo** | Registro temporal de cada medición |
 
+</div>
 > **Nota:** La selección definitiva de sensores dependerá de la viabilidad técnica, disponibilidad y validación de los componentes durante el desarrollo del prototipo.
 
 ---
