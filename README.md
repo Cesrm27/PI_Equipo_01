@@ -120,7 +120,10 @@ El sistema permitirá registrar información relacionada con:
 📊 ANÁLISIS Y PATRONES
         ↓
 📈 COMPARACIÓN
-```
+ ```
+</div>
+
+
 # 📸 Fotografía del Equipo
 
 <p align="center">
