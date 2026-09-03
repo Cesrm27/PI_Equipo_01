@@ -253,7 +253,7 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | Variable | Función |
 |---|---|
 | 🧂 **NH₃** | Monitoreo de amoniaco gaseoso |
-| ☠️ **CO₂** | Monitoreo de dióxido de carbono gaseoso |
+| 🌫️ **CO₂** | Monitoreo de dióxido de carbono gaseoso |
 | 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara |
 | 💧 **Humedad ambiental** | Medición de la humedad relativa |
 | 🌡️ **Temperatura del suelo** | Caracterización de las condiciones del sustrato |
