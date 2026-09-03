@@ -156,7 +156,6 @@ Dentro de la cámara se realizarán mediciones controladas de gases y variables 
 - 💧 Humedad ambiental
 - 🌡️ Temperatura del suelo
 - 💧 Humedad del suelo
-- 🧂 Conductividad eléctrica
 - 💡 Iluminación
 - ⏱️ Tiempo de experimentación
 
@@ -211,7 +210,7 @@ Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases 
 - Diseñar una cámara experimental cerrada para realizar ensayos con plantas jóvenes de papa.
 - Implementar sensores para medir gases y variables ambientales y del sustrato.
 - Registrar información relacionada con las concentraciones de gases presentes durante cada ensayo.
-- Registrar temperatura, humedad, conductividad eléctrica e iluminación asociadas a las condiciones experimentales.
+- Registrar temperatura, humedad e iluminación asociadas a las condiciones experimentales.
 - Utilizar un microcontrolador **ESP32** para adquirir y gestionar los datos obtenidos por los sensores.
 - Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
 - Generar un conjunto de datos para el análisis de las variables registradas.
@@ -255,7 +254,6 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | 💧 **Humedad ambiental** | Medición de la humedad relativa |
 | 🌡️ **Temperatura del suelo** | Caracterización de las condiciones del sustrato |
 | 💧 **Humedad del suelo** | Medición de humedad del sustrato |
-| 🧂 **Conductividad eléctrica** | Caracterización del sustrato |
 | 💡 **Iluminación** | Medición de la intensidad de luz |
 | ⏱️ **Tiempo** | Registro temporal de cada medición |
 
@@ -319,7 +317,6 @@ Los sensores realizarán mediciones de gases y variables ambientales y del suelo
 - 🌫️ CO₂
 - 🌡️ Temperatura
 - 💧 Humedad
-- 🧂 Conductividad eléctrica
 - 💡 Iluminación
 
 ### 4️⃣ Adquisición
@@ -410,7 +407,6 @@ Los datos experimentales generados por GREENPLANT AI serán organizados para fac
 | 💧 Humedad | Condición ambiental |
 | 🌡️ Temperatura del suelo | Condición del sustrato |
 | 💧 Humedad del suelo | Condición del sustrato |
-| 🧂 Conductividad | Condición del sustrato |
 | 💡 Iluminación | Condición experimental |
 | ⏱️ Tiempo | Momento de la medición |
 
