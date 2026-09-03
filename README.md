@@ -237,9 +237,6 @@ Como herramienta experimental para proyectos académicos.
 ### 🏫 Instituciones educativas
 Para actividades de investigación y experimentación.
 
-### 🌱 Profesionales del sector agrícola
-Interesados en el monitoreo y análisis de variables del cultivo.
-
 > El proyecto se plantea inicialmente para el **cultivo de papa**, pudiendo posteriormente adaptarse a otros cultivos.
 
 ---
