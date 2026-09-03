@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Machine%20Learning%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Monitoreo%20Experimental%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <strong>Sistema inteligente para el monitoreo experimental del cultivo de papa y sus emisiones gaseosas</strong>
+  <strong>Sistema para el monitoreo experimental del cultivo de papa y sus emisiones gaseosas</strong>
 </p>
 
 <p align="center">
@@ -13,7 +13,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Machine%20Learning-4CAF50?style=for-the-badge&logo=openai&logoColor=white"/>
   <img src="https://img.shields.io/badge/IoT-ESP32-285C3A?style=for-the-badge&logo=espressif&logoColor=white"/>
   <img src="https://img.shields.io/badge/Agricultura-Inteligente-66BB6A?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Sostenibilidad-ODS%2013-2E7D32?style=for-the-badge"/>
@@ -22,7 +21,7 @@
 <br>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=4CAF50&center=true&vCenter=true&width=750&lines=MEDIR+%E2%86%92+REGISTRAR+%E2%86%92+ANALIZAR+%E2%86%92+COMPARAR;Inteligencia+artificial+para+una+agricultura+m%C3%A1s+sostenible" />
+  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=4CAF50&center=true&vCenter=true&width=750&lines=MEDIR+%E2%86%92+REGISTRAR+%E2%86%92+ANALIZAR+%E2%86%92+COMPARAR;Tecnolog%C3%ADa+IoT+para+una+agricultura+m%C3%A1s+sostenible" />
 </p>
 
 ---
@@ -50,24 +49,19 @@ flowchart LR
 
     D --> E["💾 ADQUISICIÓN Y REGISTRO DE DATOS"]
 
-    E --> F["🧹 PROCESAMIENTO DE DATOS"]
+    E --> F["📊 ANÁLISIS DE DATOS"]
 
-    F --> G["🧠 MACHINE LEARNING"]
+    F --> G["🔎 COMPARACIÓN DE RESULTADOS"]
 
-    G --> H["📊 ANÁLISIS DE PATRONES"]
-
-    H --> I["🔎 COMPARACIÓN DE RESULTADOS"]
-
-    I --> J["📈 INFORMACIÓN PARA EL ANÁLISIS DEL CULTIVO"]
+    G --> H["📈 INFORMACIÓN PARA EL ANÁLISIS DEL CULTIVO"]
 
     style A fill:#285C3A,color:#fff,stroke:#4CAF50
     style B fill:#388E3C,color:#fff,stroke:#81C784
     style C fill:#1565C0,color:#fff,stroke:#64B5F6
     style D fill:#37474F,color:#fff,stroke:#90A4AE
-    style G fill:#6A1B9A,color:#fff,stroke:#CE93D8
-    style H fill:#EF6C00,color:#fff,stroke:#FFB74D
-    style I fill:#00838F,color:#fff,stroke:#80DEEA
-    style J fill:#2E7D32,color:#fff,stroke:#81C784
+    style F fill:#EF6C00,color:#fff,stroke:#FFB74D
+    style G fill:#00838F,color:#fff,stroke:#80DEEA
+    style H fill:#2E7D32,color:#fff,stroke:#81C784
 
 ``` 
 # 🔄 Flujo principal
@@ -112,8 +106,6 @@ El sistema permitirá registrar información relacionada con:
 💾 REGISTRO DE DATOS
         ↓
 🧹 PROCESAMIENTO
-        ↓
-🧠 MACHINE LEARNING
         ↓
 📊 ANÁLISIS Y PATRONES
         ↓
@@ -168,9 +160,9 @@ Dentro de la cámara se realizarán mediciones controladas de gases y variables 
 - 💡 Iluminación
 - ⏱️ Tiempo de experimentación
 
-De acuerdo con el enfoque planteado para el proyecto, se prestará especial atención al monitoreo de **amoniaco gaseoso (NH₃)** y **cianuro de hidrógeno (HCN)** en el cultivo de papa.
+De acuerdo con el enfoque planteado para el proyecto, se prestará especial atención al monitoreo de **amoniaco gaseoso (NH₃)** y **dióxido de carbono (CO₂)** en el cultivo de papa.
 
-Los datos obtenidos serán almacenados para posteriormente analizarlos mediante **Machine Learning**, buscando identificar patrones y relaciones entre las variables registradas.
+Los datos obtenidos serán almacenados para posteriormente **analizarlos y compararlos**, buscando identificar variaciones y relaciones entre las variables registradas durante los ensayos.
 
 ---
 
@@ -261,7 +253,7 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | Variable | Función |
 |---|---|
 | 🧂 **NH₃** | Monitoreo de amoniaco gaseoso |
-| ☠️ **HCN** | Monitoreo de cianuro de hidrógeno gaseoso |
+| ☠️ **CO₂** | Monitoreo de dióxido de carbono gaseoso |
 | 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara |
 | 💧 **Humedad ambiental** | Medición de la humedad relativa |
 | 🌡️ **Temperatura del suelo** | Caracterización de las condiciones del sustrato |
@@ -327,7 +319,7 @@ Se instalarán los sensores correspondientes dentro de la cámara y en el sustra
 Los sensores realizarán mediciones de gases y variables ambientales y del suelo.
 
 - 🌫️ NH₃
-- ☠️ HCN
+- 🌫️ CO₂
 - 🌡️ Temperatura
 - 💧 Humedad
 - 🧂 Conductividad eléctrica
@@ -353,11 +345,7 @@ Los datos serán registrados junto con información como:
 
 Los datos serán organizados y preparados para su análisis.
 
-### 7️⃣ Machine Learning
-
-Los datos podrán utilizarse para desarrollar modelos capaces de identificar patrones y relaciones entre las variables registradas.
-
-### 8️⃣ Comparación
+### 7️⃣ Comparación
 
 Los resultados de los ensayos podrán compararse para observar diferencias en el comportamiento de las variables medidas.
 
@@ -375,8 +363,6 @@ Los resultados de los ensayos podrán compararse para observar diferencias en el
 ⬇️  
 💾 **DATOS**  
 ⬇️  
-🧠 **MACHINE LEARNING**  
-⬇️  
 📊 **ANÁLISIS**  
 ⬇️  
 📈 **COMPARACIÓN**
@@ -391,16 +377,16 @@ Los resultados de los ensayos podrán compararse para observar diferencias en el
 
 GREENPLANT AI no busca afirmar que los sensores, el ESP32 o las cámaras experimentales sean tecnologías nuevas.
 
-La propuesta de innovación está en **integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental**, generando un conjunto de datos que posteriormente pueda ser analizado mediante Machine Learning.
+La propuesta de innovación está en **integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental**, generando un conjunto de datos que permita analizar y comparar las condiciones del cultivo.
 
 | Enfoque convencional | GREENPLANT AI |
 |----------------------|---------------|
 | 🌫️ Medición individual | 📡 Múltiples variables |
 | 🔢 Obtiene valores | 💾 Registra datos |
-| 📊 Observación manual | 🧠 Análisis mediante ML |
+| 📊 Observación manual | 📊 Análisis de datos |
 | 📍 Mediciones aisladas | ⏱️ Registro temporal |
 | 🌱 Un ensayo | 📊 Comparación entre ensayos |
-| 👨‍🔬 Interpretación manual | 🤖 Identificación de patrones |
+| 👨‍🔬 Interpretación manual | 🔎 Comparación de resultados |
 
 Por ello, la propuesta busca pasar de:
 
@@ -408,21 +394,21 @@ Por ello, la propuesta busca pasar de:
 
 a:
 
-> **“¿Qué patrones pueden identificarse al relacionar las concentraciones gaseosas con las condiciones ambientales y del sustrato del cultivo de papa?”**
+> **“¿Cómo varían las concentraciones gaseosas al relacionarlas con las condiciones ambientales y del sustrato del cultivo de papa?”**
 
 ---
 
-# 🧠 Machine Learning
+# 📊 Análisis de Datos
 
-Una de las etapas principales de GREENPLANT AI será utilizar los datos experimentales generados para desarrollar un modelo de **Machine Learning**.
+Los datos experimentales generados por GREENPLANT AI serán organizados para facilitar su análisis y comparación.
 
-### 📊 El conjunto de datos podrá incluir:
+### 📋 El conjunto de datos podrá incluir:
 
 | Variable | Información |
 |----------|-------------|
 | 🌱 Cultivo | Identificación del cultivo |
 | 🌫️ NH₃ | Concentración medida |
-| ☠️ HCN | Concentración medida |
+| 🌫️ CO₂ | Concentración medida |
 | 🌡️ Temperatura | Condición ambiental |
 | 💧 Humedad | Condición ambiental |
 | 🌡️ Temperatura del suelo | Condición del sustrato |
@@ -431,21 +417,17 @@ Una de las etapas principales de GREENPLANT AI será utilizar los datos experime
 | 💡 Iluminación | Condición experimental |
 | ⏱️ Tiempo | Momento de la medición |
 
-### 🔄 Flujo de Machine Learning
+### 🔄 Flujo de análisis
 
 ```text
 📡 ADQUISICIÓN DE DATOS
           ↓
 💾 ALMACENAMIENTO
           ↓
-🧹 LIMPIEZA DE DATOS
+🧹 ORGANIZACIÓN DE DATOS
           ↓
-📊 ANÁLISIS EXPLORATORIO
+📊 ANÁLISIS
           ↓
-🧠 ENTRENAMIENTO
+🔎 COMPARACIÓN
           ↓
-🔎 VALIDACIÓN
-          ↓
-📈 IDENTIFICACIÓN DE PATRONES
-          ↓
-📊 COMPARACIÓN DE RESULTADOS
+📈 RESULTADOS EXPERIMENTALES
