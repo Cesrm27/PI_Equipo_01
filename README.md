@@ -66,7 +66,7 @@ flowchart LR
 ``` 
 # 🔄 Flujo principal
 
-**Cultivo → Cámara → Sensores → ESP32 → Datos → Machine Learning → Análisis → Comparación**
+**Cultivo → Cámara → Sensores → ESP32 → Datos → Análisis → Comparación**
 
 GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimentales controladas para posteriormente analizarlos y encontrar patrones relacionados con las variables medidas.
 
