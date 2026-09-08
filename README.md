@@ -90,7 +90,9 @@ El proyecto utiliza **IoT y sensores** para generar información que permita est
 
 GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyecto se enfoca en el **cultivo de papa** y busca generar información experimental sobre las condiciones que rodean su desarrollo.
 
-Mediante el monitoreo de **NH₃, CO₂ y variables ambientales y del sustrato**, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
+<p>
+Mediante el monitoreo de <strong>NH₃, CO₂ y variables ambientales y del sustrato</strong>, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
+</p>
 ---
 
 # 🌱 GREENPLANT AI
