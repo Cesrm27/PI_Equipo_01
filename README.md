@@ -185,7 +185,7 @@ las variables obtenidas durante los ensayos.
 
 El reto del proyecto no consiste únicamente en detectar un gas, sino en generar un conjunto de datos que permita relacionar las **concentraciones gaseosas** con las **condiciones ambientales y del sustrato** del cultivo.
 
-Buscamos transformar las lecturas individuales de los sensores en información organizada que facilite:
+Buscamos transformar las lecturas individuales de los sensores en información organizada que favorezca:
 
 <div align="center">
 
