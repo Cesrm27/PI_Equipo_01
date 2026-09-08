@@ -16,6 +16,7 @@
   <img src="https://img.shields.io/badge/IoT-ESP32-285C3A?style=for-the-badge&logo=espressif&logoColor=white"/>
   <img src="https://img.shields.io/badge/Agricultura-Inteligente-66BB6A?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Sostenibilidad-ODS%2013-2E7D32?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge"/>
 </p>
 
 <br>
