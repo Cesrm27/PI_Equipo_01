@@ -93,7 +93,6 @@ GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyec
 <p>
 Mediante el monitoreo de <strong>NH₃, CO₂ y variables ambientales y del sustrato</strong>, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
 </p>
----
 
 # 🌱 GREENPLANT AI
 
