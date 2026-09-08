@@ -76,6 +76,7 @@ GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimen
 
 <p align="center">
   <img src="https://img.shields.io/badge/ODS%2013-Acción%20por%20el%20Clima-3F7E44?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge" />
 </p>
 
 ## 🌱 ODS 13 · Acción por el Clima
@@ -84,6 +85,11 @@ GREENPLANT AI se relaciona con el **ODS 13: Acción por el Clima**, debido a que
 
 El proyecto utiliza **IoT y sensores** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
+## 🌾 ODS 2 · Hambre Cero
+
+GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyecto se enfoca en el **cultivo de papa** y busca generar información experimental sobre las condiciones que rodean su desarrollo.
+
+Mediante el monitoreo de **NH₃, CO₂ y variables ambientales y del sustrato**, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
 ---
 
 # 🌱 GREENPLANT AI
