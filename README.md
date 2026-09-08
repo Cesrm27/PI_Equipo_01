@@ -82,13 +82,13 @@ GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimen
 
 GREENPLANT AI se relaciona con el **ODS 13: Acción por el Clima**, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
 
-El proyecto utiliza **IoT, sensores y Machine Learning** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
+El proyecto utiliza **IoT y sensores** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
 ---
 
 # 🌱 GREENPLANT AI
 
-> **Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores, adquisición de datos y Machine Learning.**
+> **Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores y adquisición de datos.**
 
 ## 🎯 Nuestro enfoque
 
@@ -143,7 +143,7 @@ El sistema permitirá registrar información relacionada con:
 
 ## 🌱 ¿Qué es GREENPLANT AI?
 
-**GREENPLANT AI** es un prototipo experimental orientado al **monitoreo del cultivo de papa**, mediante sensores, adquisición de datos y técnicas de **Machine Learning**.
+**GREENPLANT AI** es un prototipo experimental orientado al **monitoreo del cultivo de papa**, mediante sensores y adquisición de datos.
 
 El sistema utilizará una **cámara experimental cerrada**, en la cual se colocará una planta joven de papa junto con su sustrato.
 
@@ -201,7 +201,7 @@ De esta manera, GREENPLANT AI busca generar una base tecnológica que permita es
 
 # 🎯 Objetivo General
 
-Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante **sensores, IoT y Machine Learning**, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
+Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante **sensores y IoT**, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
 
 ---
 
@@ -214,7 +214,6 @@ Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases 
 - Utilizar un microcontrolador **ESP32** para adquirir y gestionar los datos obtenidos por los sensores.
 - Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
 - Generar un conjunto de datos para el análisis de las variables registradas.
-- Aplicar técnicas de **Machine Learning** para identificar patrones y relaciones entre las variables.
 - Comparar los resultados obtenidos durante diferentes ensayos del cultivo de papa.
 - Generar información que facilite el análisis experimental del comportamiento del cultivo.
 
