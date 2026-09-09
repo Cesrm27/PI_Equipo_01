@@ -218,7 +218,7 @@ El sistema busca transformar las lecturas individuales de los sensores en **dato
 <p>
 De esta manera, GREENPLANT AI busca generar una base tecnológica para el <strong>estudio experimental del cultivo de papa</strong>, permitiendo observar el comportamiento de NH₃ y CO₂ bajo condiciones controladas y generar información que pueda ser utilizada posteriormente para el análisis de los resultados.
 </p>
----
+
 ## 📚 Estudios que anteceden
 
 La propuesta se fundamenta en investigaciones relacionadas con la medición de gases en sistemas suelo-planta, el uso de cámaras cerradas y la volatilización de NH₃ asociada a la fertilización con urea.
