@@ -305,7 +305,6 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 > La selección definitiva de sensores dependerá de la **viabilidad técnica, disponibilidad y validación de los componentes** durante el desarrollo del prototipo.
 
 </div>
----
 
 # 📦 Cámara Experimental
 
