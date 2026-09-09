@@ -490,4 +490,4 @@ Los datos experimentales generados por GREENPLANT AI serán organizados para fac
 [9] Winsen Electronics, “MH-Z19C NDIR CO₂ Sensor for HVAC and IAQ,” Winsen Electronics, 2026.
 
 [10] Espressif Systems, “ESP32 Series Datasheet,” Espressif Systems, 2026.
----
+
