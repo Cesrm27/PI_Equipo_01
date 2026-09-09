@@ -301,9 +301,12 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | 💡 **Iluminación** | Medición de la intensidad de luz |
 | ⏱️ **Tiempo** | Registro temporal de cada medición |
 
-</div>
-> **Nota:** La selección definitiva de sensores dependerá de la viabilidad técnica, disponibilidad y validación de los componentes durante el desarrollo del prototipo.
+<div align="center">
 
+> ⚠️ **Nota importante:**  
+> La selección definitiva de sensores dependerá de la **viabilidad técnica, disponibilidad y validación de los componentes** durante el desarrollo del prototipo.
+
+</div>
 ---
 
 # 📦 Cámara Experimental
