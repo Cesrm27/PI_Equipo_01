@@ -301,8 +301,6 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 | 💡 **Iluminación** | Medición de la intensidad de luz |
 | ⏱️ **Tiempo** | Registro temporal de cada medición |
 
-<div align="center">
-
 > ⚠️ **Nota importante:**  
 > La selección definitiva de sensores dependerá de la **viabilidad técnica, disponibilidad y validación de los componentes** durante el desarrollo del prototipo.
 
@@ -333,9 +331,9 @@ La cámara permitirá mantener un volumen de medición definido y facilitar la i
 - 🌱 Espacio para una planta joven de papa.
 - 🔍 Tapa superior transparente.
 - 💡 Sistema de iluminación artificial.
-- 📡 Soportes para sensores.
+- 🔬 Soportes para sensores.
 - 🔌 Entradas organizadas para cables.
-- 🌬️ Sistema de ventilación.
+- 🚪 Sistema de ventilación.
 - 🛠️ Estructura diseñada para facilitar el montaje y desmontaje.
 - 🧹 Facilidad de limpieza entre ensayos.
 
