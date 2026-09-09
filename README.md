@@ -238,9 +238,11 @@ La propuesta se fundamenta en investigaciones relacionadas con la medición de g
 
 ### 🔎 Conclusión de los antecedentes
 
-Los estudios revisados muestran que existen bases científicas para estudiar los gases mediante cámaras cerradas y que las condiciones del suelo, la fertilización y las características del cultivo pueden influir en las mediciones de NH₃ y CO₂ [1]–[6].
+Los estudios revisados muestran que existen bases científicas para estudiar los gases mediante cámaras cerradas y que las condiciones del suelo, la fertilización y las características del cultivo pueden influir en las mediciones de NH₃ y CO₂.
 
+<p>
 A partir de estos antecedentes, GREENPLANT AI plantea integrar sensores, adquisición de datos y una cámara experimental para obtener información organizada que permita **medir, registrar, analizar y comparar** el comportamiento de estas variables durante los ensayos.
+<p>
 ---
 
 # 🎯 Objetivo General
