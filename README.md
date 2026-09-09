@@ -17,6 +17,7 @@
   <img src="https://img.shields.io/badge/Agricultura-Inteligente-66BB6A?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Sostenibilidad-ODS%2013-2E7D32?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/ODS%209-Innovación%20e%20Infraestructura-EA6A00?style=for-the-badge"/>
 </p>
 
 <br>
@@ -78,6 +79,7 @@ GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimen
 <p align="center">
   <img src="https://img.shields.io/badge/ODS%2013-Acción%20por%20el%20Clima-3F7E44?style=for-the-badge" />
   <img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ODS%209-Innovación%20e%20Infraestructura-EA6A00?style=for-the-badge" />
 </p>
 
 ## 🌱 ODS 13 · Acción por el Clima
@@ -93,6 +95,12 @@ GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyec
 <p>
 Mediante el monitoreo de <strong>NH₃, CO₂ y variables ambientales y del sustrato</strong>, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
 </p>
+
+## ⚙️ ODS 9 · Industria, Innovación e Infraestructura
+
+GREENPLANT AI se relaciona con el **ODS 9: Industria, Innovación e Infraestructura**, debido a que propone el desarrollo de una solución tecnológica basada en **IoT, sensores y un ESP32** para el monitoreo experimental del cultivo de papa.
+
+El proyecto integra **hardware, sensores, adquisición y registro de datos** para construir una herramienta tecnológica que permita realizar mediciones de **NH₃, CO₂ y variables ambientales y del sustrato**, fortaleciendo el uso de tecnologías de monitoreo e innovación aplicadas al ámbito agrícola.
 
 # 🌱 GREENPLANT AI
 
