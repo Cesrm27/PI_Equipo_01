@@ -181,7 +181,7 @@ Los datos obtenidos serán almacenados para posteriormente **analizarlos y compa
 
 ---
 
-# ⚠️ Problemática
+## ⚠️ Problemática
 
 La agricultura requiere información que permita comprender el comportamiento de los cultivos y las condiciones que influyen en su desarrollo. En particular, el cultivo de papa presenta diferentes procesos asociados al suelo, la planta y el ambiente que pueden ser estudiados mediante el seguimiento de variables físicas y gaseosas durante condiciones experimentales controladas.
 
@@ -243,7 +243,6 @@ Los estudios revisados muestran que existen bases científicas para estudiar los
 <p>
 A partir de estos antecedentes, GREENPLANT AI plantea integrar sensores, adquisición de datos y una cámara experimental para obtener información organizada que permita **medir, registrar, analizar y comparar** el comportamiento de estas variables durante los ensayos.
 <p>
----
 
 # 🎯 Objetivo General
 
