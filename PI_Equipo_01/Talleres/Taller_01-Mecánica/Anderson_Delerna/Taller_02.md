@@ -18,7 +18,6 @@ $$
 
 La gravedad fue aplicada en el **eje Z, en dirección vertical hacia abajo**, con el objetivo de representar el efecto del peso propio del modelo bajo condiciones normales de funcionamiento. Esta condición permite obtener una representación más cercana a las condiciones físicas reales a las que estaría sometida la estructura.
 
-> **Nota:** La aplicación de la gravedad en el eje Z representa el peso propio del modelo. No representa por sí sola una caída; para simular una caída sería necesario establecer una condición de impacto o una aceleración asociada al evento.
 
 ## Resultado de la simulación
 
