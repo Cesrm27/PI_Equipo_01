@@ -43,7 +43,7 @@
 
 <tr>
 <td><strong>PROYECTO:</strong></td>
-<td>GREENPLANT AI – Sistema inteligente para el monitoreo experimental del cultivo de papa y la detección de NH₃ y CO₂.</td>
+<td>GREENPLANT – Sistema inteligente para el monitoreo experimental del cultivo de papa y la detección de NH₃ y CO₂.</td>
 </tr>
 
 <tr>
