@@ -32,11 +32,7 @@ $$
 F_g=m\cdot g
 $$
 
-donde:
-
-* \(F_g\) = fuerza producida por la gravedad, en Newtons (N).
-* \(m\) = masa de la estructura, en kilogramos (kg).
-* \(g\) = aceleración gravitacional, \(9.81\;m/s^2\).
+donde \(F_g\) representa la fuerza producida por la gravedad, \(m\) la masa de la estructura y \(g\) la aceleración gravitacional.
 
 Por lo tanto, la gravedad permite representar en SimScale el efecto del **peso propio del modelo**, haciendo que el análisis sea más representativo de las condiciones físicas a las que estaría sometida la estructura.
 
@@ -82,6 +78,13 @@ Las zonas azules representan menores niveles de esfuerzo, mientras que las zonas
 
 La simulación permite evaluar virtualmente la respuesta mecánica de la estructura antes de fabricar el prototipo. De esta manera, se pueden identificar posibles zonas críticas y determinar si es necesario realizar modificaciones o incorporar refuerzos al diseño.
 
-## Enlace del modelo
+## Enlaces de los proyectos
 
-🔗 [Abrir proyecto en Onshape](https://cad.onshape.com/documents/7e5dfc0c5f8da095666567a1/w/43a58c234b1dbdfc2a86eaa6/e/9aea2794971a718a5ad29330)
+### Modelo 3D — Onshape
+
+🔗 [Abrir modelo 3D en Onshape](https://cad.onshape.com/documents/7e5dfc0c5f8da095666567a1/w/43a58c234b1dbdfc2a86eaa6/e/9aea2794971a718a5ad29330)
+
+### Simulación estructural — SimScale
+
+🔗 [Abrir simulación en SimScale](https://www.simscale.com/workbench/?pid=92064082848138490&mi=spec:b48d47d5-ee0e-4475-bc7d-2b305bf0916e%2Cservice:SIMULATION%2Cstrategy:1)
+
