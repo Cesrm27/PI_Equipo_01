@@ -88,19 +88,43 @@ GREENPLANT AI se relaciona con el **ODS 13: Acción por el Clima**, debido a que
 
 El proyecto utiliza **IoT y sensores** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
+### 🎯 Meta 13.3 · Educación y sensibilización sobre el cambio climático
+
+La **Meta 13.3** busca mejorar la educación, la sensibilización y la capacidad humana e institucional relacionada con la mitigación, adaptación y reducción de los efectos del cambio climático. :contentReference[oaicite:2]{index=2}
+
+GREENPLANT AI se relaciona con esta meta mediante la **generación de información experimental sobre gases y variables ambientales**, promoviendo el uso de tecnologías de monitoreo y el análisis de fenómenos relacionados con el ambiente y la actividad agrícola.
+
+---
+
 ## 🌾 ODS 2 · Hambre Cero
 
 GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyecto se enfoca en el **cultivo de papa** y busca generar información experimental sobre las condiciones que rodean su desarrollo.
 
-<p>
-Mediante el monitoreo de <strong>NH₃, CO₂ y variables ambientales y del sustrato</strong>, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
-</p>
+Mediante el monitoreo de **NH₃, CO₂ y variables ambientales y del sustrato**, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
+
+### 🎯 Meta 2.4 · Agricultura sostenible
+
+La **Meta 2.4** busca garantizar sistemas de producción de alimentos sostenibles y promover prácticas agrícolas resilientes que incrementen la productividad, ayuden a mantener los ecosistemas, fortalezcan la adaptación al cambio climático y mejoren progresivamente la calidad del suelo. :contentReference[oaicite:3]{index=3}
+
+GREENPLANT AI se relaciona con esta meta mediante el **estudio experimental del cultivo de papa**, considerando variables del suelo, condiciones ambientales y gases presentes durante los ensayos. La información obtenida puede contribuir al análisis de las condiciones asociadas al desarrollo del cultivo.
+
+---
 
 ## ⚙️ ODS 9 · Industria, Innovación e Infraestructura
 
 GREENPLANT AI se relaciona con el **ODS 9: Industria, Innovación e Infraestructura**, debido a que propone el desarrollo de una solución tecnológica basada en **IoT, sensores y un ESP32** para el monitoreo experimental del cultivo de papa.
 
 El proyecto integra **hardware, sensores, adquisición y registro de datos** para construir una herramienta tecnológica que permita realizar mediciones de **NH₃, CO₂ y variables ambientales y del sustrato**, fortaleciendo el uso de tecnologías de monitoreo e innovación aplicadas al ámbito agrícola.
+
+### 🎯 Meta 9.5 · Investigación científica e innovación tecnológica
+
+La **Meta 9.5** busca mejorar la investigación científica, fortalecer las capacidades tecnológicas y fomentar la innovación, incluyendo el incremento de las actividades de investigación y desarrollo. :contentReference[oaicite:4]{index=4}
+
+GREENPLANT AI se relaciona directamente con esta meta al desarrollar un **prototipo experimental basado en sensores, IoT y adquisición de datos**, orientado a la generación de información para el estudio del cultivo de papa.
+
+El proyecto integra conocimientos de **electrónica, programación, sensores, adquisición de datos y análisis experimental**, utilizando estas tecnologías para abordar una problemática relacionada con el monitoreo agrícola.
+
+---
 
 # 🌱 GREENPLANT AI
 
