@@ -28,7 +28,7 @@
 
 ---
 
-# 🌱 Simulación del funcionamiento de GREENPLANT AI
+# 🌱 Simulación del funcionamiento de GREENPLANT
 
 ```mermaid
 flowchart LR
