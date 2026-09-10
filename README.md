@@ -209,11 +209,13 @@ Los datos obtenidos serán almacenados para posteriormente **analizarlos y compa
 
 La agricultura requiere información que permita comprender el comportamiento de los cultivos y las condiciones que influyen en su desarrollo. En particular, el cultivo de papa presenta diferentes procesos asociados al suelo, la planta y el ambiente que pueden ser estudiados mediante el seguimiento de variables físicas y gaseosas durante condiciones experimentales controladas.
 
-Uno de los aspectos de interés es el comportamiento del **CO₂**, debido a que su concentración puede estar relacionada con procesos de respiración e intercambio gaseoso del sistema suelo-planta. Kusa et al. (2008) demostraron la utilidad de las cámaras cerradas para realizar mediciones relacionadas con los flujos de CO₂ en suelos, mientras que Baneschi et al. (2023) plantearon un procedimiento mediante cámaras cerradas para estudiar la respiración del suelo a partir de la evolución de la concentración de CO₂.
+Uno de los aspectos de interés es el comportamiento del **CO₂**, debido a que su concentración puede estar relacionada con procesos de respiración e intercambio gaseoso del sistema suelo-planta. Las cámaras cerradas han sido utilizadas para realizar mediciones relacionadas con los flujos de CO₂ en suelos agrícolas [1], mientras que también se han desarrollado procedimientos mediante cámaras cerradas para estudiar la respiración del suelo a partir de la evolución de la concentración de CO₂ [2].
 
-Por otro lado, la utilización de fertilizantes nitrogenados como la **urea** puede generar pérdidas de nitrógeno hacia la atmósfera mediante la volatilización de **NH₃**. Sunderlage y Cook (2018) señalaron que las propiedades del suelo y las condiciones de aplicación pueden influir en la volatilización de NH₃ proveniente de la urea. Asimismo, Klimczyk et al. (2021) estudiaron diferentes factores relacionados con las emisiones de NH₃ derivadas de la fertilización con urea.
+Por otro lado, la utilización de fertilizantes nitrogenados como la **urea** puede generar pérdidas de nitrógeno hacia la atmósfera mediante la volatilización de **NH₃**. Las propiedades del suelo y las condiciones de aplicación pueden influir en la volatilización de NH₃ proveniente de la urea [3]. Asimismo, se han estudiado diferentes factores relacionados con las emisiones de NH₃ derivadas de la fertilización con urea [4].
 
-Esta problemática también está presente específicamente en el cultivo de papa. Lee et al. (2024) analizaron la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo condiciones de fertilización con urea, mostrando la importancia de considerar las condiciones del suelo y del cultivo al estudiar estas emisiones. Además, Chatzitriantafyllou et al. (2026) destacan la importancia de evaluar la eficiencia de la fertilización nitrogenada en el cultivo de papa y las pérdidas de nitrógeno asociadas.
+Esta problemática también está presente específicamente en el cultivo de papa. Se ha analizado la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo condiciones de fertilización con urea, mostrando la importancia de considerar las condiciones del suelo y del cultivo al estudiar estas emisiones [5]. Además, se ha destacado la importancia de evaluar la eficiencia de la fertilización nitrogenada en el cultivo de papa y las pérdidas de nitrógeno asociadas [6].
+
+Asimismo, el CO₂ puede relacionarse con procesos respiratorios de los tejidos de papa, por lo que su comportamiento puede ser considerado como una variable de interés dentro del estudio experimental del cultivo [7].
 
 Sin embargo, estudiar simultáneamente las concentraciones de **NH₃ y CO₂** junto con variables ambientales y del sustrato requiere mantener condiciones experimentales controladas y registrar las mediciones de manera organizada. Una medición aislada de un gas no permite comprender por sí sola cómo se comporta el sistema durante el ensayo.
 
@@ -223,7 +225,7 @@ Ante esta necesidad, GREENPLANT AI propone una alternativa experimental orientad
 
 <div align="center">
 
-🔬 **Medir** → 💾 **Registrar** → 🧠 **Analizar** → 📊 **Comparar**
+🔬 **Medir** → 💾 **Registrar** → 🔍 **Analizar** → 📊 **Comparar**
 
 </div>
 
@@ -243,7 +245,7 @@ El sistema busca transformar las lecturas individuales de los sensores en **dato
 De esta manera, GREENPLANT AI busca generar una base tecnológica para el <strong>estudio experimental del cultivo de papa</strong>, permitiendo observar el comportamiento de NH₃ y CO₂ bajo condiciones controladas y generar información que pueda ser utilizada posteriormente para el análisis de los resultados.
 </p>
 
-## 📚 Estudios que anteceden
+### 📚 Estudios que anteceden
 
 La propuesta se fundamenta en investigaciones relacionadas con la medición de gases en sistemas suelo-planta, el uso de cámaras cerradas y la volatilización de NH₃ asociada a la fertilización con urea.
 
@@ -251,12 +253,12 @@ La propuesta se fundamenta en investigaciones relacionadas con la medición de g
 
 | Estudio | Aporte principal | Relación con nuestro proyecto |
 |:---|:---|:---|
-| **Kusa et al. (2008)** | Compararon métodos de cámara cerrada y gradiente de concentración para medir flujos de CO₂ y N₂O en suelos agrícolas. | Sustenta el uso de una **cámara cerrada** como base para realizar mediciones de gases en condiciones controladas. |
-| **Baneschi et al. (2023)** | Desarrollaron un protocolo con cámaras cerradas para medir la respiración del suelo mediante CO₂ y analizar la incertidumbre de las mediciones. | Sustenta la necesidad de controlar el **volumen de la cámara, el tiempo de medición y la calidad de los datos de CO₂**. |
-| **Perez-Trejo et al. (1981)** | Estudiaron el intercambio gaseoso y la respiración de tejidos de papa en relación con el CO₂. | Relaciona el **CO₂ con procesos respiratorios de la papa**, respaldando su inclusión como variable de estudio. |
-| **Lee et al. (2024)** | Evaluaron la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo fertilización con urea y otras fuentes nitrogenadas. | Sustenta el estudio del **NH₃ en papa bajo condiciones de fertilización**, considerando variables del suelo y ambientales. |
-| **Sunderlage y Cook (2018)** | Analizaron la influencia de propiedades del suelo sobre la volatilización de NH₃ proveniente de la urea. | Sustenta la importancia de controlar las **condiciones del sustrato** durante los ensayos con urea. |
-| **Chatzitriantafyllou et al. (2026)** | Revisaron estrategias de fertilización nitrogenada en papa y los problemas relacionados con la eficiencia del uso del nitrógeno y las pérdidas ambientales. | Refuerza la importancia de estudiar la **fertilización nitrogenada en el cultivo de papa** y generar información experimental. |
+| **Kusa et al. (2008)** | Compararon métodos de cámara cerrada y gradiente de concentración para medir flujos de CO₂ y N₂O en suelos agrícolas **[1]**. | Sustenta el uso de una **cámara cerrada** como base para realizar mediciones de gases en condiciones controladas. |
+| **Baneschi et al. (2023)** | Desarrollaron un protocolo con cámaras cerradas para medir la respiración del suelo mediante CO₂ y analizar la incertidumbre de las mediciones **[2]**. | Sustenta la necesidad de controlar el **volumen de la cámara, el tiempo de medición y la calidad de los datos de CO₂**. |
+| **Perez-Trejo et al. (1981)** | Estudiaron el intercambio gaseoso y la respiración de tejidos de papa en relación con el CO₂ **[7]**. | Relaciona el **CO₂ con procesos respiratorios de la papa**, respaldando su inclusión como variable de estudio. |
+| **Lee et al. (2024)** | Evaluaron la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo fertilización con urea y otras fuentes nitrogenadas **[5]**. | Sustenta el estudio del **NH₃ en papa bajo condiciones de fertilización**, considerando variables del suelo y ambientales. |
+| **Sunderlage y Cook (2018)** | Analizaron la influencia de propiedades del suelo sobre la volatilización de NH₃ proveniente de la urea **[3]**. | Sustenta la importancia de controlar las **condiciones del sustrato** durante los ensayos con urea. |
+| **Chatzitriantafyllou et al. (2026)** | Revisaron estrategias de fertilización nitrogenada en papa y los problemas relacionados con la eficiencia del uso del nitrógeno y las pérdidas ambientales **[6]**. | Refuerza la importancia de estudiar la **fertilización nitrogenada en el cultivo de papa** y generar información experimental. |
 
 </div>
 
