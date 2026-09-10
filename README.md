@@ -263,24 +263,6 @@ Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases 
 - Generar información que facilite el análisis experimental del comportamiento del cultivo.
 
 ---
-
-# 🚀 Meta a Largo Plazo
-
-La meta a largo plazo de **GREENPLANT AI** es evolucionar el prototipo experimental hacia una **plataforma tecnológica de monitoreo agrícola**, capaz de adaptarse a diferentes cultivos y condiciones experimentales.
-
-Se busca que, a partir de la experiencia obtenida con el cultivo de papa, el sistema pueda incorporar progresivamente:
-
-- 🌱 Adaptación a diferentes tipos de cultivos.
-- 📡 Integración de nuevos sensores y variables.
-- 💾 Ampliación de la base de datos experimentales.
-- 📊 Herramientas para el análisis y comparación de resultados.
-- 🌐 Acceso y visualización de los datos mediante plataformas digitales.
-- 🔬 Validación del sistema mediante diferentes condiciones y ensayos experimentales.
-
-De esta manera, GREENPLANT AI busca convertirse progresivamente en una **herramienta tecnológica para la investigación y monitoreo experimental agrícola**, permitiendo generar información que facilite el estudio de las condiciones de los cultivos y sus variables asociadas.
-
-> 🌱 **Visión a largo plazo:** pasar de un prototipo experimental enfocado en papa a una plataforma adaptable para el estudio de diferentes cultivos mediante sensores, IoT y análisis de datos.
-
 # 👤 Público Objetivo
 
 **GREENPLANT AI** estará dirigido principalmente a usuarios relacionados con el **estudio, producción y monitoreo agrícola**.
