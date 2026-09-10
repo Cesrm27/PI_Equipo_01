@@ -84,7 +84,7 @@ GREENPLANT busca obtener datos del cultivo de papa bajo condiciones experimental
 
 ## 🌱 ODS 13 · Acción por el Clima
 
-GREENPLANT AI se relaciona con el **ODS 13: Acción por el Clima**, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
+GREENPLANT se relaciona con el **ODS 13: Acción por el Clima**, debido a que busca contribuir al monitoreo y análisis experimental de gases asociados a actividades agrícolas.
 
 El proyecto utiliza **IoT y sensores** para generar información que permita estudiar el comportamiento de las variables medidas durante los ensayos.
 
@@ -92,13 +92,13 @@ El proyecto utiliza **IoT y sensores** para generar información que permita est
 
 La **Meta 13.3** busca mejorar la educación, la sensibilización y la capacidad humana e institucional relacionada con la mitigación, adaptación y reducción de los efectos del cambio climático.
 
-GREENPLANT AI se relaciona con esta meta mediante la **generación de información experimental sobre gases y variables ambientales**, promoviendo el uso de tecnologías de monitoreo y el análisis de fenómenos relacionados con el ambiente y la actividad agrícola.
+GREENPLANT se relaciona con esta meta mediante la **generación de información experimental sobre gases y variables ambientales**, promoviendo el uso de tecnologías de monitoreo y el análisis de fenómenos relacionados con el ambiente y la actividad agrícola.
 
 ---
 
 ## 🌾 ODS 2 · Hambre Cero
 
-GREENPLANT AI se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyecto se enfoca en el **cultivo de papa** y busca generar información experimental sobre las condiciones que rodean su desarrollo.
+GREENPLANT se relaciona con el **ODS 2: Hambre Cero**, debido a que el proyecto se enfoca en el **cultivo de papa** y busca generar información experimental sobre las condiciones que rodean su desarrollo.
 
 Mediante el monitoreo de **NH₃, CO₂ y variables ambientales y del sustrato**, el proyecto busca obtener datos que permitan analizar y comparar las condiciones del cultivo, contribuyendo al estudio de procesos relacionados con la producción agrícola.
 
@@ -106,13 +106,13 @@ Mediante el monitoreo de **NH₃, CO₂ y variables ambientales y del sustrato**
 
 La **Meta 2.4** busca garantizar sistemas de producción de alimentos sostenibles y promover prácticas agrícolas resilientes que incrementen la productividad, ayuden a mantener los ecosistemas, fortalezcan la adaptación al cambio climático y mejoren progresivamente la calidad del suelo.
 
-GREENPLANT AI se relaciona con esta meta mediante el **estudio experimental del cultivo de papa**, considerando variables del suelo, condiciones ambientales y gases presentes durante los ensayos. La información obtenida puede contribuir al análisis de las condiciones asociadas al desarrollo del cultivo.
+GREENPLANT se relaciona con esta meta mediante el **estudio experimental del cultivo de papa**, considerando variables del suelo, condiciones ambientales y gases presentes durante los ensayos. La información obtenida puede contribuir al análisis de las condiciones asociadas al desarrollo del cultivo.
 
 ---
 
 ## ⚙️ ODS 9 · Industria, Innovación e Infraestructura
 
-GREENPLANT AI se relaciona con el **ODS 9: Industria, Innovación e Infraestructura**, debido a que propone el desarrollo de una solución tecnológica basada en **IoT, sensores y un ESP32** para el monitoreo experimental del cultivo de papa.
+GREENPLANT se relaciona con el **ODS 9: Industria, Innovación e Infraestructura**, debido a que propone el desarrollo de una solución tecnológica basada en **IoT, sensores y un ESP32** para el monitoreo experimental del cultivo de papa.
 
 El proyecto integra **hardware, sensores, adquisición y registro de datos** para construir una herramienta tecnológica que permita realizar mediciones de **NH₃, CO₂ y variables ambientales y del sustrato**, fortaleciendo el uso de tecnologías de monitoreo e innovación aplicadas al ámbito agrícola.
 
@@ -120,19 +120,19 @@ El proyecto integra **hardware, sensores, adquisición y registro de datos** par
 
 La **Meta 9.5** busca mejorar la investigación científica, fortalecer las capacidades tecnológicas y fomentar la innovación, incluyendo el incremento de las actividades de investigación y desarrollo.
 
-GREENPLANT AI se relaciona directamente con esta meta al desarrollar un **prototipo experimental basado en sensores, IoT y adquisición de datos**, orientado a la generación de información para el estudio del cultivo de papa.
+GREENPLANT se relaciona directamente con esta meta al desarrollar un **prototipo experimental basado en sensores, IoT y adquisición de datos**, orientado a la generación de información para el estudio del cultivo de papa.
 
 El proyecto integra conocimientos de **electrónica, programación, sensores, adquisición de datos y análisis experimental**, utilizando estas tecnologías para abordar una problemática relacionada con el monitoreo agrícola.
 
 ---
 
-# 🌱 GREENPLANT AI
+# 🌱 GREENPLANT
 
 > **Una solución experimental orientada al monitoreo del cultivo de papa mediante sensores y adquisición de datos.**
 
 ## 🎯 Nuestro enfoque
 
-GREENPLANT AI busca desarrollar un **prototipo experimental para el cultivo de papa**, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
+GREENPLANT busca desarrollar un **prototipo experimental para el cultivo de papa**, utilizando una cámara cerrada, sensores y un sistema de adquisición de datos.
 
 El sistema permitirá registrar información relacionada con:
 
@@ -181,9 +181,9 @@ El sistema permitirá registrar información relacionada con:
 ---
 # 📌 Resumen del Proyecto
 
-## 🌱 ¿Qué es GREENPLANT AI?
+## 🌱 ¿Qué es GREENPLANT?
 
-**GREENPLANT AI** es un prototipo experimental orientado al **monitoreo del cultivo de papa**, mediante sensores y adquisición de datos.
+**GREENPLANT** es un prototipo experimental orientado al **monitoreo del cultivo de papa**, mediante sensores y adquisición de datos.
 
 El sistema utilizará una **cámara experimental cerrada**, en la cual se colocará una planta joven de papa junto con su sustrato.
 
@@ -221,7 +221,7 @@ Sin embargo, estudiar simultáneamente las concentraciones de **NH₃ y CO₂** 
 
 Por ello, el problema no consiste únicamente en detectar la presencia de NH₃ o CO₂, sino en **obtener información experimental que permita relacionar la concentración de estos gases con las condiciones del cultivo y observar su comportamiento a lo largo del tiempo**.
 
-Ante esta necesidad, GREENPLANT AI propone una alternativa experimental orientada a:
+Ante esta necesidad, GREENPLANT propone una alternativa experimental orientada a:
 
 <div align="center">
 
@@ -242,7 +242,7 @@ El sistema busca transformar las lecturas individuales de los sensores en **dato
 </div>
 
 <p>
-De esta manera, GREENPLANT AI busca generar una base tecnológica para el <strong>estudio experimental del cultivo de papa</strong>, permitiendo observar el comportamiento de NH₃ y CO₂ bajo condiciones controladas y generar información que pueda ser utilizada posteriormente para el análisis de los resultados.
+De esta manera, GREENPLANT busca generar una base tecnológica para el <strong>estudio experimental del cultivo de papa</strong>, permitiendo observar el comportamiento de NH₃ y CO₂ bajo condiciones controladas y generar información que pueda ser utilizada posteriormente para el análisis de los resultados.
 </p>
 
 ### 📚 Estudios que anteceden
@@ -267,7 +267,7 @@ La propuesta se fundamenta en investigaciones relacionadas con la medición de g
 Los estudios revisados muestran que existen bases científicas para estudiar los gases mediante cámaras cerradas y que las condiciones del suelo, la fertilización y las características del cultivo pueden influir en las mediciones de NH₃ y CO₂.
 
 <p>
-A partir de estos antecedentes, GREENPLANT AI plantea integrar sensores, adquisición de datos y una cámara experimental para obtener información organizada que permita **medir, registrar, analizar y comparar** el comportamiento de estas variables durante los ensayos.
+A partir de estos antecedentes, GREENPLANT plantea integrar sensores, adquisición de datos y una cámara experimental para obtener información organizada que permita **medir, registrar, analizar y comparar** el comportamiento de estas variables durante los ensayos.
 <p>
 
 # 🎯 Objetivo General
@@ -291,7 +291,7 @@ Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases 
 ---
 # 👤 Público Objetivo
 
-**GREENPLANT AI** estará dirigido principalmente a usuarios relacionados con el **estudio, producción y monitoreo agrícola**.
+**GREENPLANT** estará dirigido principalmente a usuarios relacionados con el **estudio, producción y monitoreo agrícola**.
 
 ### 👨‍🌾 Agricultores
 Interesados en conocer mejor las condiciones de sus cultivos.
@@ -311,7 +311,7 @@ Para actividades de investigación y experimentación.
 
 # 🧪 Variables y Gases a Monitorear
 
-GREENPLANT AI utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
+GREENPLANT utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
 
 <div align="center">
 
@@ -333,7 +333,7 @@ GREENPLANT AI utilizará diferentes sensores para obtener información del ambie
 
 # 📦 Cámara Experimental
 
-GREENPLANT AI contará con una **cámara experimental cerrada** destinada a realizar mediciones controladas del cultivo de papa.
+GREENPLANT contará con una **cámara experimental cerrada** destinada a realizar mediciones controladas del cultivo de papa.
 
 La cámara permitirá mantener un volumen de medición definido y facilitar la instalación de los sensores.
 
@@ -366,7 +366,7 @@ La cámara permitirá mantener un volumen de medición definido y facilitar la i
 # ⚙️ Funcionamiento del Sistema
 
 <details>
-<summary>🌱 <strong>Ver cómo funcionará GREENPLANT AI</strong> ⬇️</summary>
+<summary>🌱 <strong>Ver cómo funcionará GREENPLANT</strong> ⬇️</summary>
 
 <br>
 
@@ -438,11 +438,11 @@ Los resultados de los ensayos podrán compararse para observar diferencias en el
 
 # 🧠 ¿Dónde está nuestra innovación?
 
-GREENPLANT AI no busca afirmar que los sensores, el ESP32 o las cámaras experimentales sean tecnologías nuevas.
+GREENPLANT no busca afirmar que los sensores, el ESP32 o las cámaras experimentales sean tecnologías nuevas.
 
 La propuesta de innovación está en **integrar sensores de gases, variables ambientales y variables del sustrato dentro de una cámara experimental**, generando un conjunto de datos que permita analizar y comparar las condiciones del cultivo.
 
-| Enfoque convencional | GREENPLANT AI |
+| Enfoque convencional | GREENPLANT |
 |----------------------|---------------|
 | 🌫️ Medición individual | 📡 Múltiples variables |
 | 🔢 Obtiene valores | 💾 Registra datos |
@@ -463,7 +463,7 @@ a:
 
 # 📊 Análisis de Datos
 
-Los datos experimentales generados por GREENPLANT AI serán organizados para facilitar su análisis y comparación.
+Los datos experimentales generados por GREENPLANT serán organizados para facilitar su análisis y comparación.
 
 ### 📋 El conjunto de datos podrá incluir:
 
