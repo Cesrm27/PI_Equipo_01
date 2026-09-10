@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20AI&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Monitoreo%20Experimental%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Monitoreo%20Experimental%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
@@ -70,7 +70,7 @@ flowchart LR
 
 **Cultivo → Cámara → Sensores → ESP32 → Datos → Análisis → Comparación**
 
-GREENPLANT AI busca obtener datos del cultivo de papa bajo condiciones experimentales controladas para posteriormente analizarlos y encontrar patrones relacionados con las variables medidas.
+GREENPLANT busca obtener datos del cultivo de papa bajo condiciones experimentales controladas para posteriormente analizarlos y encontrar patrones relacionados con las variables medidas.
 
 ---
 
