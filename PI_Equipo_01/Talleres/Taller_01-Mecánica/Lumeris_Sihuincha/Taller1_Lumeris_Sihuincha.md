@@ -28,21 +28,21 @@ Los pequeños agujeros ubicados en la pieza están diseñados para recibir los *
 
 Para el análisis estructural se consideró **PLA (ácido poliláctico)** como material de la pieza, debido a que es el material previsto para su fabricación mediante impresión 3D.
 
-El PLA presenta propiedades mecánicas adecuadas para prototipos y piezas de fijación sometidas a cargas moderadas. Para la simulación se utilizan sus propiedades mecánicas, como el módulo de elasticidad, coeficiente de Poisson y densidad, necesarias para determinar la respuesta de la pieza frente a las cargas aplicadas.
+El PLA presenta propiedades mecánicas adecuadas para prototipos y piezas de fijación sometidas a cargas moderadas. Para la simulación se consideran sus propiedades mecánicas, como el módulo de elasticidad, coeficiente de Poisson y densidad, necesarias para determinar la respuesta de la pieza frente a las cargas aplicadas.
 
 ---
 
 ## Condiciones de carga y gravedad
 
-Para representar las condiciones físicas a las que estaría sometida la pieza, se consideró la **gravedad terrestre**, utilizando:
+Para representar las condiciones físicas a las que estaría sometida la pieza, se consideró la **gravedad terrestre**, utilizando una aceleración de:
 
 $$
 g = 9.81\;m/s^2
 $$
 
-La dirección de la gravedad se estableció **verticalmente hacia abajo**, en dirección al centro de la Tierra. Esta condición representa el peso propio de la pieza.
+La gravedad se estableció en el **eje Z, en dirección vertical hacia abajo**, es decir, hacia el centro de la Tierra. Esta condición representa el efecto del peso propio de la pieza durante el análisis.
 
-La fuerza producida por la gravedad se calcula mediante la expresión:
+La fuerza producida por la gravedad se calcula mediante:
 
 $$
 F_g=m\cdot g
@@ -64,22 +64,22 @@ Por lo tanto, la gravedad permite considerar el efecto real del peso propio de l
 
 ### Fuerza aplicada
 
-Además del peso propio, se consideró una **carga externa aplicada sobre la cara opuesta al extremo fijo**. Esta condición representa una presión o fuerza externa que podría recibir la pieza durante su funcionamiento.
+Además del peso propio, se consideró una **carga externa aplicada sobre la cara opuesta al extremo fijo**. Esta condición representa una fuerza externa que podría recibir la pieza durante su funcionamiento, manipulación o montaje.
 
 La aplicación de esta fuerza permite evaluar cómo se distribuyen los esfuerzos y desplazamientos desde la zona de aplicación hacia los puntos de fijación.
 
-La justificación física de la carga se basa en la segunda ley de Newton:
+La justificación física de la carga se basa en la **segunda ley de Newton**:
 
 $$
 F=m\cdot a
 $$
 
-La fuerza aplicada produce una respuesta mecánica en la pieza y genera esfuerzos internos que deben ser soportados por la geometría y por las zonas de fijación.
+Esta relación permite comprender que una fuerza aplicada sobre la pieza genera una respuesta mecánica y esfuerzos internos que deben ser soportados por la geometría y por las zonas de fijación.
 
 En conjunto, las condiciones consideradas son:
 
 1. **Soporte fijo:** representa la zona donde la pieza se encuentra asegurada mediante los tornillos.
-2. **Gravedad:** \(9.81\;m/s^2\), dirigida verticalmente hacia abajo, para representar el peso propio.
+2. **Gravedad:** \(9.81\;m/s^2\), aplicada en el eje Z y dirigida verticalmente hacia abajo, para representar el peso propio.
 3. **Carga externa:** aplicada sobre la cara opuesta al extremo fijo para evaluar la resistencia de la pieza ante una acción externa.
 
 ---
@@ -110,18 +110,55 @@ Los valores obtenidos son extremadamente pequeños. A una frecuencia de **0 Hz**
 
 ---
 
-## Conclusión del análisis
+## Justificación de las fuerzas empleadas
 
-El modelado tridimensional de la pieza de fijación fue realizado en **Onshape**, mientras que las condiciones de simulación y el análisis de respuesta se realizaron considerando las propiedades del **PLA**.
+Las fuerzas consideradas en el análisis tienen como objetivo representar condiciones físicas que la pieza podría experimentar durante su funcionamiento.
 
-Se consideró la acción de la gravedad con una aceleración de \(9.81\;m/s^2\) en dirección vertical hacia abajo, representando el peso propio de la pieza. Asimismo, se aplicó una carga externa sobre la cara opuesta a la zona fija con el propósito de evaluar la respuesta de la estructura ante una acción externa.
+La **gravedad** se estableció con un valor de \(9.81\;m/s^2\) y se aplicó en el **eje Z, en dirección vertical hacia abajo**, para representar el peso propio de la pieza.
 
-La combinación de las restricciones, la gravedad y la carga aplicada permite estudiar el comportamiento de la pieza y determinar las zonas donde se presentan mayores desplazamientos o variaciones de respuesta.
+Matemáticamente, el peso se determina mediante:
+
+$$
+F_g=m\cdot g
+$$
+
+Por ejemplo, para una masa de \(0.10\;kg\):
+
+$$
+F_g=0.10(9.81)=0.981\;N
+$$
+
+Por otro lado, la **carga externa aplicada sobre la cara opuesta al extremo fijo** permite evaluar la respuesta de la pieza frente a una acción externa. Esta condición resulta importante porque una fuerza sobre una pieza fijada puede generar esfuerzos y desplazamientos, especialmente en la zona de transición entre la parte fija y la parte sometida a carga.
+
+La aplicación conjunta de la gravedad y la carga externa permite realizar un análisis más representativo del comportamiento de la pieza, considerando tanto su peso propio como una posible acción externa durante su manipulación, montaje o funcionamiento.
 
 ---
 
-## Modelado en Onshape
+## Conclusión del análisis
+
+El modelado tridimensional de la pieza de fijación fue realizado en **Onshape**, mientras que las condiciones de simulación y el análisis de respuesta fueron realizados considerando las propiedades del **PLA**.
+
+Se consideró la acción de la gravedad con una aceleración de \(9.81\;m/s^2\), aplicada en el **eje Z y dirigida verticalmente hacia abajo**, representando el peso propio de la pieza. Asimismo, se aplicó una carga externa sobre la cara opuesta a la zona fija con el propósito de evaluar la respuesta de la estructura ante una acción externa.
+
+La combinación de las restricciones, la gravedad y la carga aplicada permite estudiar el comportamiento de la pieza y determinar las zonas donde se presentan mayores desplazamientos o variaciones de respuesta.
+
+Este análisis permite identificar posibles zonas críticas y realizar modificaciones en el diseño antes de la fabricación del prototipo mediante impresión 3D.
+
+---
+
+## Enlaces
+
+### Modelado en Onshape
 
 El diseño tridimensional de la pieza fue desarrollado en **Onshape**.
 
-**Link:** https://cad.onshape.com/documents/70658c4b5d3fe9a19752c02d/w/dce491f4056c340a6e6822a1/e/b34eb9c8975484f3f167059e?renderMode=0&uiState=6a9106726d662ac4fef301d1
+**Link Onshape:**
+https://cad.onshape.com/documents/70658c4b5d3fe9a19752c02d/w/dce491f4056c340a6e6822a1/e/b34eb9c8975484f3f167059e?renderMode=0&uiState=6a9106726d662ac4fef301d1
+
+### Simulación en SimScale
+
+El análisis y la simulación de la pieza fueron realizados en **SimScale**, donde se establecieron las condiciones de carga, gravedad y material para evaluar su comportamiento.
+
+**Link SimScale:**
+https://www.simscale.com/workbench/?pid=4827171381134773697&mi=spec:fff4a09f-cdce-4fa1-9488-b7866039988f%2Cservice:SIMULATION%2Cstrategy:1
+
