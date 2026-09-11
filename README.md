@@ -311,25 +311,40 @@ Para actividades de investigación y experimentación.
 
 # 🧪 Variables y Gases a Monitorear
 
-GREENPLANT utilizará diferentes sensores para obtener información del ambiente, del sustrato y de los gases presentes dentro de la cámara.
+GREENPLANT utilizará diferentes sensores para obtener información de los gases, del ambiente y del sustrato presentes dentro de la cámara experimental. La selección de estas variables responde a la necesidad de relacionar las concentraciones de **NH₃ y CO₂** con las condiciones en las que se desarrolla el ensayo.
 
 <div align="center">
 
-| Variable | Función |
-|---|---|
-| 🧂 **NH₃** | Monitoreo de amoniaco gaseoso |
-| 🌫️ **CO₂** | Monitoreo de dióxido de carbono gaseoso |
-| 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara |
-| 💧 **Humedad ambiental** | Medición de la humedad relativa |
-| 🌡️ **Temperatura del suelo** | Caracterización de las condiciones del sustrato |
-| 💧 **Humedad del suelo** | Medición de humedad del sustrato |
-| 💡 **Iluminación** | Medición de la intensidad de luz |
-| ⏱️ **Tiempo** | Registro temporal de cada medición |
-
-> ⚠️ **Nota importante:**  
-> La selección definitiva de sensores dependerá de la **viabilidad técnica, disponibilidad y validación de los componentes** durante el desarrollo del prototipo.
+| Variable | Función | Justificación y fuente |
+|:---|:---|:---|
+| 🧪 **NH₃** | Monitoreo de amoníaco gaseoso | Se selecciona debido a que la aplicación de fertilizantes nitrogenados como la urea puede generar volatilización de NH₃, cuya magnitud depende de las condiciones del suelo y del ambiente **[3], [4], [5]**. |
+| 🌫️ **CO₂** | Monitoreo de dióxido de carbono gaseoso | Se selecciona porque el CO₂ está relacionado con procesos de respiración e intercambio gaseoso del sistema suelo-planta y puede ser estudiado mediante cámaras cerradas **[1], [2], [7]**. |
+| 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara | Se considera una variable de control porque la temperatura puede influir en los procesos relacionados con la volatilización de NH₃ y en el comportamiento fisiológico del cultivo **[4], [5]**. |
+| 💧 **Humedad ambiental** | Medición de la humedad relativa | Se incluye para caracterizar las condiciones ambientales de la cámara y mantener un registro de las condiciones en las que se realizan las mediciones. |
+| 🌡️ **Temperatura del suelo** | Caracterización de las condiciones térmicas del sustrato | Se incluye debido a que la temperatura del suelo puede influir en los procesos de transformación y volatilización asociados al nitrógeno aplicado al sustrato **[4], [5]**. |
+| 💧 **Humedad del suelo** | Medición de la humedad del sustrato | Se incluye debido a que el contenido de agua del suelo puede influir en la volatilización de NH₃ y constituye una condición importante para interpretar los resultados del ensayo **[3], [4], [5]**. |
+| 💡 **Iluminación** | Medición de la intensidad de luz | Se incluye para caracterizar las condiciones de iluminación de la planta, debido a que la intensidad lumínica influye en la fotosíntesis y el intercambio de CO₂ en el cultivo de papa **[7], [12]**. |
+| ⏱️ **Tiempo** | Registro temporal de cada medición | Se incluye para observar la evolución de las concentraciones de NH₃ y CO₂ y de las demás variables durante el ensayo, permitiendo comparar su comportamiento a lo largo del tiempo **[1], [2]**. |
 
 </div>
+
+### 🔧 Selección de los componentes
+
+La selección de los sensores y componentes se realiza considerando su **principio de medición, rango de operación, compatibilidad con el sistema de adquisición y disponibilidad para la implementación del prototipo**.
+
+<div align="center">
+
+| Componente | Variable asociada | Justificación de selección | Fuente |
+|:---|:---|:---|:---:|
+| **ME3-NH₃** | NH₃ | Sensor electroquímico diseñado específicamente para detectar amoníaco. Presenta un rango de medición de **0–100 ppm**, resolución de **0.5 ppm** y tiempo de respuesta T90 ≤ 90 s, características que permiten utilizarlo para el monitoreo experimental de NH₃ **[8]**. | **[8]** |
+| **MH-Z19C** | CO₂ | Sensor NDIR diseñado para la detección de CO₂. Dispone de salida UART/PWM, compensación de temperatura y rangos de medición que incluyen **400–2000, 400–5000 y 400–10000 ppm**, según la configuración **[9]**. | **[9]** |
+| **BME280** | Temperatura y humedad ambiental | Permite obtener temperatura y humedad relativa mediante un mismo sensor y dispone de interfaces **I²C y SPI**, facilitando su integración con el sistema de adquisición **[11]**. | **[11]** |
+| **ESP32** | Adquisición de datos | Se utiliza como controlador principal debido a que dispone de interfaces de comunicación y periféricos adecuados para integrar sensores y procesar sus lecturas. El ESP32 incorpora ADC, UART, I²C, SPI y conectividad inalámbrica, facilitando la adquisición y transmisión de datos **[10]**. | **[10]** |
+
+</div>
+
+> ⚠️ **Nota importante:**  
+> La selección definitiva de sensores para **temperatura del suelo, humedad del suelo e iluminación** dependerá de la **viabilidad técnica, disponibilidad, compatibilidad y validación de los componentes** durante el desarrollo del prototipo.
 
 # 📦 Cámara Experimental
 
@@ -515,4 +530,8 @@ Los datos experimentales generados por GREENPLANT serán organizados para facili
 [9] Winsen Electronics, “MH-Z19C NDIR CO₂ Sensor for HVAC and IAQ,” Winsen Electronics, 2026.
 
 [10] Espressif Systems, “ESP32 Series Datasheet,” Espressif Systems, 2026.
+
+[11] Bosch Sensortec, “BME280: Combined humidity, pressure and temperature sensor,” Bosch Sensortec, Datasheet.
+
+[12] V. I. Chikov, A. L. Mikhailov, O. A. Timofeeva, and L. A. Khamidullina, “Photosynthetic carbon metabolism in potato leaves under changes in light intensity,” Russian Journal of Plant Physiology, vol. 63, no. 1, pp. 70–76, 2016, doi: 10.1134/S1021443716010040.
 
