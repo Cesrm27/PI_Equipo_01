@@ -2,7 +2,7 @@
 
 IntroducciónIntroducciónIntroducción
 
-En este taller trabajamos con un modelo de regresión lineal, que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad).En este taller trabajamos con un modelo de regresión lineal, que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad).En este taller trabajamos con un modelo de regresión lineal, que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad).
+En este taller trabajamos con un modelo de regresión lineal, que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad).En este taller trabajamos con un modelo de En este taller trabajamos con un modelo de regresión linealregresión lineal, que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad)., que es una técnica que sirve para predecir un valor numérico (en este caso, el consumo de energía) a partir de otras variables que lo pueden explicar (temperatura, horas de operación, carga y humedad).
 
 Primero exploramos los datos con gráficos y estadísticas para entender cómo se comportan. Luego entrenamos un modelo que aprende una fórmula matemática para predecir el consumo de energía, y revisamos qué tan bien funciona esa predicción. Finalmente, comparamos ese modelo con datos inventados y con otro tipo de modelo (un árbol de decisión), para confirmar si el modelo realmente detecta qué variables importan y cuáles no.Primero exploramos los datos con gráficos y estadísticas para entender cómo se comportan. Luego entrenamos un modelo que aprende una fórmula matemática para predecir el consumo de energía, y revisamos qué tan bien funciona esa predicción. Finalmente, comparamos ese modelo con datos inventados y con otro tipo de modelo (un árbol de decisión), para confirmar si el modelo realmente detecta qué variables importan y cuáles no.Primero exploramos los datos con gráficos y estadísticas para entender cómo se comportan. Luego entrenamos un modelo que aprende una fórmula matemática para predecir el consumo de energía, y revisamos qué tan bien funciona esa predicción. Finalmente, comparamos ese modelo con datos inventados y con otro tipo de modelo (un árbol de decisión), para confirmar si el modelo realmente detecta qué variables importan y cuáles no.
 
@@ -18,7 +18,9 @@ df = pd.read_csv("/Data_PI_regresion.csv")df = pd.read_csv("/Data_PI_regresion.c
 df.head()df.head()df.head()
 ```
 
-![Imagen del taller 11](imagenes/imagen_18.png)
+imagen:imagen:imagen:
+
+![Imagen del taller](imagenes/imagen_4.png)
 
 > **Aprendí:** Que antes de trabajar con datos hay que "traer" las herramientas necesarias: numpy y pandas para manejar números y tablas, y matplotlib/seaborn para hacer gráficos. Luego cargamos el archivo con los datos (temperatura, horas de operación, carga, humedad y consumo de energía) y vimos las primeras filas para saber cómo se ven.Aprendí:Aprendí: Que antes de trabajar con datos hay que "traer" las herramientas necesarias: numpy y pandas para manejar números y tablas, y matplotlib/seaborn para hacer gráficos. Luego cargamos el archivo con los datos (temperatura, horas de operación, carga, humedad y consumo de energía) y vimos las primeras filas para saber cómo se ven. Que antes de trabajar con datos hay que "traer" las herramientas necesarias: numpy y pandas para manejar números y tablas, y matplotlib/seaborn para hacer gráficos. Luego cargamos el archivo con los datos (temperatura, horas de operación, carga, humedad y consumo de energía) y vimos las primeras filas para saber cómo se ven.
 
@@ -30,9 +32,11 @@ df.describe().round(1)df.describe().round(1)df.describe().round(1)
 df.columnsdf.columnsdf.columns
 ```
 
-![Imagen del taller 13](imagenes/imagen_12.png)
+Imagen:Imagen:Imagen:
 
-> **Aprendí:** Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. describe() me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y columns solo me mostró los nombres de las columnas.Aprendí:Aprendí: Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. describe() me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. describe() me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y columnscolumns solo me mostró los nombres de las columnas. solo me mostró los nombres de las columnas.
+![Imagen del taller](imagenes/imagen_1.png)
+
+> **Aprendí:** Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. describe() me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y columns solo me mostró los nombres de las columnas.Aprendí:Aprendí: Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. Que antes de hacer cualquier modelo hay que revisar los datos: cuántas filas y columnas tiene la tabla, si falta información, y de qué tipo es cada dato. describe()describe() me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y me dio un resumen rápido (promedio, mínimo, máximo) de cada variable, y columnscolumns solo me mostró los nombres de las columnas. solo me mostró los nombres de las columnas.
 
 ## Bloque 3: Graficar y explorar visualmente los datosBloque 3: Graficar y explorar visualmente los datosBloque 3: Graficar y explorar visualmente los datos
 
@@ -42,11 +46,9 @@ df["Consumo_Energia"].plot.hist(bins=25, figsize=(8,4))df["Consumo_Energia"].plo
 df["Consumo_Energia"].plot.density()df["Consumo_Energia"].plot.density()df["Consumo_Energia"].plot.density()
 ```
 
-![Imagen del taller 14](imagenes/imagen_5.png)
+imagen:imagen:imagen:
 
-![Imagen del taller 6](imagenes/imagen_20.png)
-
-![Imagen del taller 17](imagenes/imagen_2.png)
+![Imagen del taller](imagenes/imagen_6.png)
 
 > **Aprendí:** Que los gráficos ayudan a "ver" los datos antes de modelarlos. El pairplot compara todas las variables entre sí para detectar relaciones a simple vista. El histograma me mostró cómo se distribuyen los valores de consumo de energía (si son bajos, altos o parejos), y el gráfico de densidad es una versión más suave de ese mismo histograma.Aprendí:Aprendí: Que los gráficos ayudan a "ver" los datos antes de modelarlos. El Que los gráficos ayudan a "ver" los datos antes de modelarlos. El pairplotpairplot compara todas las variables entre sí para detectar relaciones a simple vista. El histograma me mostró cómo se distribuyen los valores de consumo de energía (si son bajos, altos o parejos), y el gráfico de densidad es una versión más suave de ese mismo histograma. compara todas las variables entre sí para detectar relaciones a simple vista. El histograma me mostró cómo se distribuyen los valores de consumo de energía (si son bajos, altos o parejos), y el gráfico de densidad es una versión más suave de ese mismo histograma.
 
@@ -58,19 +60,19 @@ numeric_df.corr().round(4)numeric_df.corr().round(4)numeric_df.corr().round(4)
 
 ```python
 plt.figure(figsize=(10,7))plt.figure(figsize=(10,7))plt.figure(figsize=(10,7))
-sns.heatmap(numeric_df.corr(), annot=True, linewidths=2)sns.heatmap(numeric_df.corr(), annot=True, linewidths=2)sns.heatmap(numeric_df.corr(), annot=True, linewidths=2)
+sns.heatmap(numeric_df.corr(), annot = True, linewidths=2)sns.heatmap(numeric_df.corr(), annot = True, linewidths=2)sns.heatmap(numeric_df.corr(), annot = True, linewidths=2)
 ```
 
-![Imagen del taller 16](imagenes/imagen_23.png)
+imagen:imagen:imagen:
 
-![Imagen del taller 19](imagenes/imagen_8.png)
+![Imagen del taller](imagenes/imagen_7.png)
 
-> **Aprendí:** Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El heatmap convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía.Aprendí:Aprendí: Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El heatmap convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía. Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El heatmap convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía.
+> **Aprendí:** Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El heatmap convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía.Aprendí:Aprendí: Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El Que la correlación mide qué tan relacionadas están dos variables: un valor cercano a 1 significa que suben y bajan juntas, y uno cercano a 0 significa que no tienen relación. El heatmapheatmap convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía. convierte esos números en un mapa de colores, así es más fácil identificar de un vistazo qué variables están más conectadas con el consumo de energía.
 
 ## Bloque 5: Separar variables y preparar los datos para el modeloBloque 5: Separar variables y preparar los datos para el modeloBloque 5: Separar variables y preparar los datos para el modelo
 
 ```python
-l_column = list(df.columns)l_column = list(df.columns)l_column = list(df.columns)
+l_column= list(df.columns)l_column= list(df.columns)l_column= list(df.columns)
 len_feature = len(l_column)len_feature = len(l_column)len_feature = len(l_column)
 x = df[l_column[0:len_feature-1]]x = df[l_column[0:len_feature-1]]x = df[l_column[0:len_feature-1]]
 y = df[l_column[len_feature-1]]y = df[l_column[len_feature-1]]y = df[l_column[len_feature-1]]
@@ -78,9 +80,11 @@ from sklearn.model_selection import train_test_splitfrom sklearn.model_selection
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=123)x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=123)x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=123)
 ```
 
-![Imagen del taller 18](imagenes/imagen_24.png)
+imagen:imagen:imagen:
 
-> **Aprendí:** Que para entrenar un modelo hay que separar los datos en dos partes: x son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y y es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó.Aprendí:Aprendí: Que para entrenar un modelo hay que separar los datos en dos partes: Que para entrenar un modelo hay que separar los datos en dos partes: xx son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y y es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó. son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y y es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó.
+![Imagen del taller](imagenes/imagen_3.png)
+
+> **Aprendí:** Que para entrenar un modelo hay que separar los datos en dos partes: x son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y y es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó.Aprendí:Aprendí: Que para entrenar un modelo hay que separar los datos en dos partes: Que para entrenar un modelo hay que separar los datos en dos partes: xx son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y son las variables que "explican" el resultado (temperatura, horas, carga, humedad) y yy es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó. es lo que queremos predecir (consumo de energía). Además, hay que dividir los datos en un grupo para entrenar el modelo (70%) y otro para probarlo (30%) con datos que el modelo no vio antes, así se sabe si realmente aprendió o solo memorizó.
 
 ## Bloque 6: Entrenar el modelo de regresión linealBloque 6: Entrenar el modelo de regresión linealBloque 6: Entrenar el modelo de regresión lineal
 
@@ -91,11 +95,9 @@ lm = LinearRegression()lm = LinearRegression()lm = LinearRegression()
 lm.fit(x_train, y_train)lm.fit(x_train, y_train)lm.fit(x_train, y_train)
 print("El termino de interseccion del modelo lineal", lm.intercept_)print("El termino de interseccion del modelo lineal", lm.intercept_)print("El termino de interseccion del modelo lineal", lm.intercept_)
 print("Los coeficientes del modelo lineal:", lm.coef_)print("Los coeficientes del modelo lineal:", lm.coef_)print("Los coeficientes del modelo lineal:", lm.coef_)
-cdf = pd.DataFrame(lm.coef_, x.columns, columns=["Coeficientes"])cdf = pd.DataFrame(lm.coef_, x.columns, columns=["Coeficientes"])cdf = pd.DataFrame(lm.coef_, x.columns, columns=["Coeficientes"])
+cdf = pd.DataFrame(lm.coef_,x.columns,columns=["Coeficientes"])cdf = pd.DataFrame(lm.coef_,x.columns,columns=["Coeficientes"])cdf = pd.DataFrame(lm.coef_,x.columns,columns=["Coeficientes"])
 cdfcdfcdf
 ```
-
-![Imagen del taller 21](imagenes/imagen_15.png)
 
 > **Aprendí:** Que un modelo de regresión lineal básicamente arma una fórmula donde cada variable tiene un "peso" (coeficiente) que indica cuánto influye en el resultado. Al entrenarlo (fit), el modelo calcula esos pesos automáticamente. La tabla de coeficientes me permitió ver, por ejemplo, qué tanto influye la temperatura o la humedad en el consumo de energía.Aprendí:Aprendí: Que un modelo de regresión lineal básicamente arma una fórmula donde cada variable tiene un "peso" (coeficiente) que indica cuánto influye en el resultado. Al entrenarlo ( Que un modelo de regresión lineal básicamente arma una fórmula donde cada variable tiene un "peso" (coeficiente) que indica cuánto influye en el resultado. Al entrenarlo (fitfit), el modelo calcula esos pesos automáticamente. La tabla de coeficientes me permitió ver, por ejemplo, qué tanto influye la temperatura o la humedad en el consumo de energía.), el modelo calcula esos pesos automáticamente. La tabla de coeficientes me permitió ver, por ejemplo, qué tanto influye la temperatura o la humedad en el consumo de energía.
 
@@ -123,10 +125,6 @@ cdf['t-statistic'] = cdf['Coefficients'] / cdf['Standard Error']cdf['t-statistic
 cdfcdfcdf
 ```
 
-![Imagen del taller 20](imagenes/imagen_4.png)
-
-![Imagen del taller 23](imagenes/imagen_19.png)
-
 > **Aprendí:** Que no basta con tener los coeficientes, también hay que saber si son confiables. Calculando el "error estándar" y el "t-statistic" de cada variable pude ver cuáles realmente influyen de forma importante en el consumo de energía y cuáles podrían no aportar mucho.Aprendí:Aprendí: Que no basta con tener los coeficientes, también hay que saber si son confiables. Calculando el "error estándar" y el "t-statistic" de cada variable pude ver cuáles realmente influyen de forma importante en el consumo de energía y cuáles podrían no aportar mucho. Que no basta con tener los coeficientes, también hay que saber si son confiables. Calculando el "error estándar" y el "t-statistic" de cada variable pude ver cuáles realmente influyen de forma importante en el consumo de energía y cuáles podrían no aportar mucho.
 
 ## Bloque 8: Graficar cada variable contra el consumo de energíaBloque 8: Graficar cada variable contra el consumo de energíaBloque 8: Graficar cada variable contra el consumo de energía
@@ -140,18 +138,13 @@ gs = gridspec.GridSpec(2, 2)gs = gridspec.GridSpec(2, 2)gs = gridspec.GridSpec(2
 ax0 = plt.subplot(gs[0])ax0 = plt.subplot(gs[0])ax0 = plt.subplot(gs[0])
 ax0.scatter(x[l[0]], y)ax0.scatter(x[l[0]], y)ax0.scatter(x[l[0]], y)
 ax0.set_title(l[0] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax0.set_title(l[0] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax0.set_title(l[0] + " vs. Consumo_Energia", fontdict={'fontsize': 20})
-ax1 = plt.subplot(gs[1])ax1 = plt.subplot(gs[1])ax1 = plt.subplot(gs[1])
-ax1.scatter(x[l[1]], y)ax1.scatter(x[l[1]], y)ax1.scatter(x[l[1]], y)
-ax1.set_title(l[1] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax1.set_title(l[1] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax1.set_title(l[1] + " vs. Consumo_Energia", fontdict={'fontsize': 20})
-ax2 = plt.subplot(gs[2])ax2 = plt.subplot(gs[2])ax2 = plt.subplot(gs[2])
-ax2.scatter(x[l[2]], y)ax2.scatter(x[l[2]], y)ax2.scatter(x[l[2]], y)
-ax2.set_title(l[2] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax2.set_title(l[2] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax2.set_title(l[2] + " vs. Consumo_Energia", fontdict={'fontsize': 20})
-ax3 = plt.subplot(gs[3])ax3 = plt.subplot(gs[3])ax3 = plt.subplot(gs[3])
-ax3.scatter(x[l[3]], y)ax3.scatter(x[l[3]], y)ax3.scatter(x[l[3]], y)
-ax3.set_title(l[3] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax3.set_title(l[3] + " vs. Consumo_Energia", fontdict={'fontsize': 20})ax3.set_title(l[3] + " vs. Consumo_Energia", fontdict={'fontsize': 20})
 ```
 
-![Imagen del taller 22](imagenes/imagen_21.png)
+# ... (se repite para las otras 3 variables)# ... (se repite para las otras 3 variables)# ... (se repite para las otras 3 variables)
+
+imagen:imagen:imagen:
+
+![Imagen del taller](imagenes/imagen_2.png)
 
 > **Aprendí:** Que graficar cada variable por separado contra el resultado (consumo de energía) ayuda a ver visualmente si existe una relación clara (una tendencia) o si los puntos están totalmente dispersos sin ningún patrón.Aprendí:Aprendí: Que graficar cada variable por separado contra el resultado (consumo de energía) ayuda a ver visualmente si existe una relación clara (una tendencia) o si los puntos están totalmente dispersos sin ningún patrón. Que graficar cada variable por separado contra el resultado (consumo de energía) ayuda a ver visualmente si existe una relación clara (una tendencia) o si los puntos están totalmente dispersos sin ningún patrón.
 
@@ -166,20 +159,20 @@ plt.ylabel("Consumo de energía predicho", fontsize=18)plt.ylabel("Consumo de en
 plt.scatter(x=y, y=predictions)plt.scatter(x=y, y=predictions)plt.scatter(x=y, y=predictions)
 ```
 
-![Imagen del taller 25](imagenes/imagen_1.png)
-
 > **Aprendí:** Que una forma sencilla de evaluar un modelo es comparar lo que predijo contra el valor real en un gráfico. Si los puntos forman una línea diagonal de 45°, significa que el modelo predice bastante bien.Aprendí:Aprendí: Que una forma sencilla de evaluar un modelo es comparar lo que predijo contra el valor real en un gráfico. Si los puntos forman una línea diagonal de 45°, significa que el modelo predice bastante bien. Que una forma sencilla de evaluar un modelo es comparar lo que predijo contra el valor real en un gráfico. Si los puntos forman una línea diagonal de 45°, significa que el modelo predice bastante bien.
 
 ## Bloque 10: Revisar los errores del modelo (residuos)Bloque 10: Revisar los errores del modelo (residuos)Bloque 10: Revisar los errores del modelo (residuos)
 
 ```python
-n plt.figure(figsize=(10, 7)) plt.title("Histograma de residuos para verificar la normalidad", fontsize=25) sns.histplot((y - predictions), kde=True)n plt.figure(figsize=(10, 7)) plt.title("Histograma de residuos para verificar la normalidad", fontsize=25) sns.histplot((y - predictions), kde=True)nplt.figure(figsize=(10, 7))plt.title("Histograma de residuos para verificar la normalidad", fontsize=25)sns.histplot((y - predictions), kde=True)
-plt.figure(figsize=(10, 7)) plt.title("Valores residuales vs. predichos\n", fontsize=25) plt.scatter(x=predictions, y=y - predictions)plt.figure(figsize=(10, 7)) plt.title("Valores residuales vs. predichos\n", fontsize=25) plt.scatter(x=predictions, y=y - predictions)plt.figure(figsize=(10, 7))plt.title("Valores residuales vs. predichos\n", fontsize=25)plt.scatter(x=predictions, y=y - predictions)
+plt.figure(figsize=(10, 7))plt.figure(figsize=(10, 7))plt.figure(figsize=(10, 7))
+plt.title("Histograma de residuos para verificar la normalidad", fontsize=25)plt.title("Histograma de residuos para verificar la normalidad", fontsize=25)plt.title("Histograma de residuos para verificar la normalidad", fontsize=25)
+sns.histplot((y - predictions), kde=True)sns.histplot((y - predictions), kde=True)sns.histplot((y - predictions), kde=True)
+plt.figure(figsize=(10, 7))plt.figure(figsize=(10, 7))plt.figure(figsize=(10, 7))
+plt.title("Valores residuales vs. predichos\n", fontsize=25)plt.title("Valores residuales vs. predichos\n", fontsize=25)plt.title("Valores residuales vs. predichos\n", fontsize=25)
+plt.scatter(x=predictions, y=y - predictions)plt.scatter(x=predictions, y=y - predictions)plt.scatter(x=predictions, y=y - predictions)
 ```
 
-![Imagen del taller 24](imagenes/imagen_17.png)
-
-> **Aprendí:** Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo.AprendíAprendí: Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo.: Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo.
+> **Aprendí:** Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo.Aprendí:Aprendí: Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo. Que el "residuo" es la diferencia entre el valor real y el predicho, es decir, el error del modelo. El histograma me sirvió para comprobar que esos errores se comportan como una campana (lo cual es buena señal), y el segundo gráfico me sirvió para verificar que el error no cambia de forma rara según el valor predicho, sino que se mantiene parejo.
 
 ## Bloque 11: Crear datos inventados para poner a prueba los modelosBloque 11: Crear datos inventados para poner a prueba los modelosBloque 11: Crear datos inventados para poner a prueba los modelos
 
@@ -202,10 +195,6 @@ df = pd.concat([df1, df2], axis=1)df = pd.concat([df1, df2], axis=1)df = pd.conc
 df.head(10)df.head(10)df.head(10)
 ```
 
-![Imagen del taller 1](imagenes/imagen_7.png)
-
-![Imagen del taller 3](imagenes/imagen_6.png)
-
 > **Aprendí:** Que se pueden crear datos falsos a propósito, donde ya sabemos de antemano la respuesta correcta. En este caso se generaron 6 variables, pero solo 3 de ellas realmente influyen en el resultado. Esto sirve para comprobar si un modelo es capaz de "descubrir" por sí solo cuáles variables importan y cuáles no.Aprendí:Aprendí: Que se pueden crear datos falsos a propósito, donde ya sabemos de antemano la respuesta correcta. En este caso se generaron 6 variables, pero solo 3 de ellas realmente influyen en el resultado. Esto sirve para comprobar si un modelo es capaz de "descubrir" por sí solo cuáles variables importan y cuáles no. Que se pueden crear datos falsos a propósito, donde ya sabemos de antemano la respuesta correcta. En este caso se generaron 6 variables, pero solo 3 de ellas realmente influyen en el resultado. Esto sirve para comprobar si un modelo es capaz de "descubrir" por sí solo cuáles variables importan y cuáles no.
 
 ## Bloque 12: Graficar las variables inventadasBloque 12: Graficar las variables inventadasBloque 12: Graficar las variables inventadas
@@ -219,18 +208,6 @@ plt.xlabel('Feature:' + col, fontsize=12) plt.xlabel('Feature:' + col, fontsize=
 plt.ylabel('Output: y', fontsize=12) plt.ylabel('Output: y', fontsize=12) plt.ylabel('Output: y', fontsize=12)
 plt.scatter(df[col], df['y'], c='red', s=50, alpha=0.6) plt.scatter(df[col], df['y'], c='red', s=50, alpha=0.6) plt.scatter(df[col], df['y'], c='red', s=50, alpha=0.6)
 ```
-
-![Imagen del taller 2](imagenes/imagen_22.png)
-
-![Imagen del taller 5](imagenes/imagen_9.png)
-
-![Imagen del taller 4](imagenes/imagen_16.png)
-
-![Imagen del taller 8](imagenes/imagen_3.png)
-
-![Imagen del taller 7](imagenes/imagen_13.png)
-
-![Imagen del taller 10](imagenes/imagen_10.png)
 
 > **Aprendí:** Que graficando cada variable inventada contra el resultado se puede ver a simple vista cuáles muestran algún patrón (las que sí influyen) y cuáles se ven totalmente dispersas (las que no influyen).Aprendí:Aprendí: Que graficando cada variable inventada contra el resultado se puede ver a simple vista cuáles muestran algún patrón (las que sí influyen) y cuáles se ven totalmente dispersas (las que no influyen). Que graficando cada variable inventada contra el resultado se puede ver a simple vista cuáles muestran algún patrón (las que sí influyen) y cuáles se ven totalmente dispersas (las que no influyen).
 
@@ -249,8 +226,6 @@ plt.scatter(x=y_test, y=test_pred)plt.scatter(x=y_test, y=test_pred)plt.scatter(
 
 print("Mean square error (MSE):", metrics.mean_squared_error(y_test, test_pred))print("Mean square error (MSE):", metrics.mean_squared_error(y_test, test_pred))print("Mean square error (MSE):", metrics.mean_squared_error(y_test, test_pred))
 
-![Imagen del taller 9](imagenes/imagen_11.png)
-
 > **Aprendí:** Que existe otro tipo de modelo, el árbol de decisión, que en vez de usar una fórmula lineal va haciendo preguntas tipo "sí o no" para llegar a una predicción. Lo entrené con los datos inventados, lo probé, y medí su error (MSE) para saber qué tan bien predice.Aprendí:Aprendí: Que existe otro tipo de modelo, el árbol de decisión, que en vez de usar una fórmula lineal va haciendo preguntas tipo "sí o no" para llegar a una predicción. Lo entrené con los datos inventados, lo probé, y medí su error (MSE) para saber qué tan bien predice. Que existe otro tipo de modelo, el árbol de decisión, que en vez de usar una fórmula lineal va haciendo preguntas tipo "sí o no" para llegar a una predicción. Lo entrené con los datos inventados, lo probé, y medí su error (MSE) para saber qué tan bien predice.
 
 ## Bloque 14: Ver qué tan importante fue cada variable para el árbolBloque 14: Ver qué tan importante fue cada variable para el árbolBloque 14: Ver qué tan importante fue cada variable para el árbol
@@ -266,7 +241,9 @@ plt.ylabel("Características\n", fontsize=20) plt.ylabel("Características\n", f
 plt.barh(range(n_features, 0, -1), width=tree_model.feature_importances_, height=0.5) plt.barh(range(n_features, 0, -1), width=tree_model.feature_importances_, height=0.5) plt.barh(range(n_features, 0, -1), width=tree_model.feature_importances_, height=0.5)
 ```
 
-![Imagen del taller 12](imagenes/imagen_25.png)
+imagen:imagen:imagen:
+
+![Imagen del taller](imagenes/imagen_5.png)
 
 > **Aprendí:** Que el árbol de decisión puede decirnos qué tanto usó cada variable para hacer sus predicciones. Al ver el gráfico de barras, pude comprobar que el modelo sí detectó correctamente que solo 3 variables eran importantes, justo las mismas que se habían marcado como "informativas" al crear los datos inventados.Aprendí:Aprendí: Que el árbol de decisión puede decirnos qué tanto usó cada variable para hacer sus predicciones. Al ver el gráfico de barras, pude comprobar que el modelo sí detectó correctamente que solo 3 variables eran importantes, justo las mismas que se habían marcado como "informativas" al crear los datos inventados. Que el árbol de decisión puede decirnos qué tanto usó cada variable para hacer sus predicciones. Al ver el gráfico de barras, pude comprobar que el modelo sí detectó correctamente que solo 3 variables eran importantes, justo las mismas que se habían marcado como "informativas" al crear los datos inventados.
 
@@ -285,14 +262,8 @@ stat_result = stat_model.fit()stat_result = stat_model.fit()stat_result = stat_m
 
 print(stat_result.summary())print(stat_result.summary())print(stat_result.summary())
 
-![Imagen del taller 15](imagenes/imagen_14.png)
-
-> **Aprendí:** Que existe una librería (statsmodels) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión.Aprendí:Aprendí: Que existe una librería ( Que existe una librería (statsmodelsstatsmodels) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión.) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión.
+> **Aprendí:** Que existe una librería (statsmodels) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión.Aprendí:Aprendí: Que existe una librería (statsmodels) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión. Que existe una librería (statsmodels) que da un reporte más detallado y formal de una regresión lineal, mostrando qué tan bien explica el modelo los datos (R²) y si cada variable es estadísticamente significativa o no. El reporte confirmó que solo 3 de las 6 variables inventadas eran realmente importantes, coincidiendo con lo visto en el árbol de decisión.
 
 Conclusión generalConclusión generalConclusión general
 
 En este taller aprendí a explorar datos, entrenar un modelo de regresión lineal, evaluar qué tan bien predice (con gráficos de residuos y comparaciones real vs. predicho), y a comprobar con datos inventados si un modelo (lineal o árbol de decisión) es capaz de identificar correctamente qué variables realmente influyen en un resultado.En este taller aprendí a explorar datos, entrenar un modelo de regresión lineal, evaluar qué tan bien predice (con gráficos de residuos y comparaciones real vs. predicho), y a comprobar con datos inventados si un modelo (lineal o árbol de decisión) es capaz de identificar correctamente qué variables realmente influyen en un resultado.En este taller aprendí a explorar datos, entrenar un modelo de regresión lineal, evaluar qué tan bien predice (con gráficos de residuos y comparaciones real vs. predicho), y a comprobar con datos inventados si un modelo (lineal o árbol de decisión) es capaz de identificar correctamente qué variables realmente influyen en un resultado.
-
-## Lo que más me gustó del taller (Reflexión personal)
-
-## Lo que más me gustó y me pareció más interesante de todo el laboratorio fue programar nosotros mismos el cálculo del error estándar y el estadístico t en el Bloque 7. Casi siempre en machine learning uno simplemente llama a una función que entrena el modelo y toma las respuestas como una caja negra sin saber qué pasa detrás; pero deducir a mano la varianza residual, dividirla entre la dispersión de cada variable y sacar el t-statistic me hizo entender exactamente cómo la matemática valida si una variable sirve o si solo es ruido. Ver esa conexión tan limpia entre el código de Python y la teoría estadística pura fue, sin duda, la parte más gratificante de toda la práctica.Lo que más me gustó y me pareció más interesante de todo el laboratorio fue programar nosotros mismos el cálculo del error estándar y el estadístico t en el Bloque 7. Casi siempre en machine learning uno simplemente llama a una función que entrena el modelo y toma las respuestas como una caja negra sin saber qué pasa detrás; pero deducir a mano la varianza residual, dividirla entre la dispersión de cada variable y sacar el t-statistic me hizo entender exactamente cómo la matemática valida si una variable sirve o si solo es ruido. Ver esa conexión tan limpia entre el código de Python y la teoría estadística pura fue, sin duda, la parte más gratificante de toda la práctica.Lo que más me gustó y me pareció más interesante de todo el laboratorio fue programar nosotros mismos el cálculo del error estándar y el estadístico t en el Bloque 7. Casi siempre en machine learning uno simplemente llama a una función que entrena el modelo y toma las respuestas como una caja negra sin saber qué pasa detrás; pero deducir a mano la varianza residual, dividirla entre la dispersión de cada variable y sacar el t-statistic me hizo entender exactamente cómo la matemática valida si una variable sirve o si solo es ruido. Ver esa conexión tan limpia entre el código de Python y la teoría estadística pura fue, sin duda, la parte más gratificante de toda la práctica.
