@@ -135,9 +135,6 @@ Esto permite identificar cuáles variables tienen mayor participación en las de
 
 ## Imágenes del documento
 
-Las imágenes utilizadas en el documento se conservan en la carpeta `imagenes/`.
-
-
 ### Imagen 1
 
 ![Imagen 1](imagenes/imagen_1.png)
