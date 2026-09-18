@@ -198,7 +198,7 @@ Por otro lado, se observaron pequeñas diferencias entre los coeficientes obteni
 
 En conjunto, los resultados obtenidos mediante el análisis exploratorio, la regresión lineal, el estudio de los residuos y el modelo OLS muestran un comportamiento consistente de las variables analizadas. Sin embargo, estos resultados corresponden únicamente al conjunto de datos del año 2023, por lo que el análisis podría ampliarse incorporando otro período para realizar una comparación temporal.
 
-# 7. Conclusiones
+## 7. Conclusiones
 
 1. Se realizó un análisis de regresión lineal utilizando datos de calidad del aire de California y se seleccionó Daily AQI Value como variable independiente y Daily Max 1-hour NO2 Concentration como variable dependiente.
 
@@ -210,7 +210,7 @@ En conjunto, los resultados obtenidos mediante el análisis exploratorio, la reg
 
 5. El análisis OLS complementó la evaluación mediante coeficientes, errores estándar, estadísticos t, valores p e intervalos de confianza.
 
-# 8. Referencias
+## 8. Referencias
 
 [1] U.S. Environmental Protection Agency, “Download Daily Data,” U.S. EPA. [En línea]. Disponible en: https://www.epa.gov/outdoor-air-quality-data/download-daily-data. [Accedido: 17-sep-2026].
 
