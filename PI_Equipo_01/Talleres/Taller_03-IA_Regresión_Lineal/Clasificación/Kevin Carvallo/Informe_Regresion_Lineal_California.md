@@ -198,17 +198,17 @@ Por otro lado, se observaron pequeñas diferencias entre los coeficientes obteni
 
 En conjunto, los resultados obtenidos mediante el análisis exploratorio, la regresión lineal, el estudio de los residuos y el modelo OLS muestran un comportamiento consistente de las variables analizadas. Sin embargo, estos resultados corresponden únicamente al conjunto de datos del año 2023, por lo que el análisis podría ampliarse incorporando otro período para realizar una comparación temporal.
 
-## 7. Conclusiones
+# 7. Conclusiones
 
-# 1. Se realizó un análisis de regresión lineal utilizando datos de calidad del aire de California y se seleccionó Daily AQI Value como variable independiente y Daily Max 1-hour NO2 Concentration como variable dependiente.
+1. Se realizó un análisis de regresión lineal utilizando datos de calidad del aire de California y se seleccionó Daily AQI Value como variable independiente y Daily Max 1-hour NO2 Concentration como variable dependiente.
 
-# 2. El análisis exploratorio permitió revisar la distribución de la concentración de NO₂ y visualizar la relación entre las variables mediante gráficos de dispersión, pairplot, histograma y mapa de calor.
+2. El análisis exploratorio permitió revisar la distribución de la concentración de NO₂ y visualizar la relación entre las variables mediante gráficos de dispersión, pairplot, histograma y mapa de calor.
 
-# 3. El modelo de regresión lineal entrenado con el 70 % de los datos obtuvo un intercepto de 0.70534 y un coeficiente de 1.05084.
+3. El modelo de regresión lineal entrenado con el 70 % de los datos obtuvo un intercepto de 0.70534 y un coeficiente de 1.05084.
 
-# 4. En el conjunto de prueba se obtuvo un MSE de 0.32883 y un R² de 0.99705, resultados que permiten describir el comportamiento del modelo sobre los datos utilizados.
+4. En el conjunto de prueba se obtuvo un MSE de 0.32883 y un R² de 0.99705, resultados que permiten describir el comportamiento del modelo sobre los datos utilizados.
 
-# 5. El análisis OLS complementó la evaluación mediante coeficientes, errores estándar, estadísticos t, valores p e intervalos de confianza.
+5. El análisis OLS complementó la evaluación mediante coeficientes, errores estándar, estadísticos t, valores p e intervalos de confianza.
 
 # 8. Referencias
 
