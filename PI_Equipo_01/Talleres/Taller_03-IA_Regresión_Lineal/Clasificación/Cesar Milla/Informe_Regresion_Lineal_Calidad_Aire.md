@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="images/imagen_01.png" alt="Universidad Peruana Cayetano Heredia" width="520">
+<img src="images/image1.png" alt="Universidad Peruana Cayetano Heredia" width="520">
 
 **FACULTAD DE CIENCIAS E INGENIERÍA**  
 **CURSO: PROYECTO INTEGRADOR**  
@@ -123,7 +123,7 @@ plt.show()
 
 <div align="center">
 
-<img src="images/imagen_02.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image2.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -172,7 +172,7 @@ plt.show()
 
 <div align="center">
 
-<img src="images/imagen_03.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image3.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -198,7 +198,7 @@ plt.show()
 
 <div align="center">
 
-<img src="images/imagen_04.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image4.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -275,7 +275,7 @@ plt.show()
 
 <div align="center">
 
-<img src="images/imagen_05.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image5.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -312,7 +312,7 @@ plt.show()
 
 <div align="center">
 
-<img src="images/imagen_06.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image6.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -353,7 +353,7 @@ print(stat_result.summary())
 
 <div align="center">
 
-<img src="images/imagen_07.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image7.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 
@@ -365,7 +365,7 @@ El experimento con datos artificiales permite contrastar lo que se conoce al gen
 
 <div align="center">
 
-<img src="images/imagen_08.png" alt="Imagen del informe" style="max-width: 100%;">
+<img src="images/image8.png" alt="Imagen del informe" style="max-width: 100%;">
 
 </div>
 

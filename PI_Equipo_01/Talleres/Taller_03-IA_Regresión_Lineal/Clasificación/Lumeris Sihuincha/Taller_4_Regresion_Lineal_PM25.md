@@ -28,11 +28,11 @@
 
 ------------------------------------------------------------------------
 
-"Año de la Esperanza y el Fortalecimiento de la Democracia"
+<p align="center"><em>"Año de la Esperanza y el Fortalecimiento de la Democracia"</em></p>
 
-::: {align="center"}
-`<img src="images/image1.png" alt="image1.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image1.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 Introducción a IA
 
@@ -148,9 +148,9 @@ df = pd.read_csv("/content/PM25_Hawaii_2022.csv.csv")
 df.head()
 ```
 
-::: {align="center"}
-`<img src="images/image2.png" alt="image2.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image2.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que lo primero es traer las librerías necesarias (numpy y
 > pandas para manejar datos, matplotlib y seaborn para graficar) y
@@ -163,26 +163,26 @@ df.head()
 df.columns
 ```
 
-::: {align="center"}
-`<img src="images/image3.png" alt="image3.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image3.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 ``` python
 df.describe().round(2)
 ```
 
-::: {align="center"}
-`<img src="images/image4.png" alt="image4.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image4.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 ``` python
 df.info(verbose=True)
 df.describe().round(1)
 ```
 
-::: {align="center"}
-`<img src="images/image5.png" alt="image5.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image5.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que antes de modelar hay que conocer los datos.
 > Con columns vi los nombres de las 22 variables del archivo (fecha,
@@ -199,9 +199,9 @@ df.describe().round(1)
 sns.pairplot(df)
 ```
 
-::: {align="center"}
-`<img src="images/image6.png" alt="image6.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image6.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que el pairplot compara todas las variables numéricas
 > entre sí en una sola cuadrícula de gráficos, para detectar a simple
@@ -220,13 +220,13 @@ figsize=(8,4)
 
 df\["Daily Mean PM2.5 Concentration"\].plot.density()
 
-::: {align="center"}
-`<img src="images/image7.png" alt="image7.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image7.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
-::: {align="center"}
-`<img src="images/image8.png" alt="image8.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image8.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** El histograma muestra que la mayoría
 > de los días tienen una concentración de PM2.5 baja, concentrada entre
@@ -255,13 +255,13 @@ linewidths=2
 )
 ```
 
-::: {align="center"}
-`<img src="images/image9.png" alt="image9.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image9.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
-::: {align="center"}
-`<img src="images/image10.png" alt="image10.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image10.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** En el mapa de calor, la variable
 > "Daily Mean PM2.5 Concentration" tiene correlaciones muy bajas o
@@ -292,9 +292,9 @@ x, y, test_size=0.3, random_state=123
 )
 ```
 
-::: {align="center"}
-`<img src="images/image11.png" alt="image11.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image11.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que convertí la fecha en un número simple: "Day"
 > representa cuántos días han pasado desde el primer registro (día 0,
@@ -323,9 +323,9 @@ Intercepto: 3.92
 
 Coeficiente de "Day": -0.00186
 
-::: {align="center"}
-`<img src="images/image12.png" alt="image12.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image12.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que el modelo aprendió una fórmula donde el PM2.5 empieza
 > en, aproximadamente, 3.92 y baja muy levemente (-0.00186) por cada día
@@ -345,9 +345,9 @@ print("Tipo del objeto predicho:", type(predictions))
 print("Tamaño del objeto predicho:", predictions.shape)
 ```
 
-::: {align="center"}
-`<img src="images/image13.png" alt="image13.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image13.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Aprendí:** Que organicé el coeficiente en una tabla para verlo más
 > claro, y luego generé las 6024 predicciones del modelo (una por cada
@@ -363,9 +363,9 @@ plt.ylabel("PM2.5 predicho", fontsize=18)
 plt.scatter(y, predictions)
 ```
 
-::: {align="center"}
-`<img src="images/image14.png" alt="image14.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image14.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** Si el modelo predijera bien, los
 > puntos deberían formar una línea diagonal ascendente (a mayor valor
@@ -377,9 +377,9 @@ plt.scatter(y, predictions)
 para predecir ("Day"), y esa variable casi no influye en el resultado.
 Esto se confirma con el resumen estadístico (resultado.summary()):
 
-::: {align="center"}
-`<img src="images/image15.png" alt="image15.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image15.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 R-squared: 0.010
 
@@ -447,9 +447,9 @@ plt.legend()
 plt.show()
 ```
 
-::: {align="center"}
-`<img src="images/image16.png" alt="image16.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image16.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** Los puntos azules (datos reales)
 > están muy dispersos a lo largo de todo el año, sin ningún patrón claro
@@ -473,9 +473,9 @@ plt.ylabel("Densidad", fontsize=18)
 sns.histplot((y - predictions), kde=True)
 ```
 
-::: {align="center"}
-`<img src="images/image17.png" alt="image17.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image17.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** Los residuos (diferencia entre el
 > valor real y el predicho) tienen forma de campana, pero no
@@ -499,9 +499,9 @@ plt.ylabel("Residuos", fontsize=18)
 plt.scatter(predictions, y - predictions)
 ```
 
-::: {align="center"}
-`<img src="images/image18.png" alt="image18.png" style="max-width:100%; height:auto;">`{=html}
-:::
+<p align="center">
+  <img src="images/image18.png" alt="image1.png" style="max-width:100%; height:auto;">
+</p>
 
 > **Interpretación de la gráfica:** Los residuos deberían idealmente
 > formar una franja pareja alrededor del cero, sin ningún patrón. Aquí
