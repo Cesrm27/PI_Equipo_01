@@ -30,7 +30,7 @@ El análisis de estos modelos permite comprender desde los fundamentos de una ne
 
 Es un tipo de red neuronal que permite a una computadora analizar imágenes y encontrar características importantes dentro de ellas. Su funcionamiento ayuda a reconocer patrones como formas, colores o detalles que permiten identificar y clasificar objetos.
 
-Creación del modelo CNN desde cero
+### 1. Creación del modelo CNN desde cero
 
 Código:
 
@@ -52,7 +52,7 @@ Linear: realiza la clasificación final según el número de clases.
 
 El modelo creado aprende directamente desde las imágenes del dataset sin utilizar conocimientos previos.
 
-Funciones para evaluar y entrenar el modelo
+### 2. Funciones para evaluar y entrenar el modelo
 
 ![Imagen](./images/imagen_02.png)
 
@@ -68,7 +68,7 @@ logits_to_probs() convierte las salidas de la red en probabilidades para poder r
 
 Estas funciones permiten conocer si el modelo está aprendiendo correctamente.
 
-Entrenamiento de la CNN
+### 3. Entrenamiento de la CNN
 
 ![Imagen](./images/imagen_03.png)
 
@@ -84,17 +84,17 @@ epochs indica cuántas veces la red revisará todo el conjunto de datos.
 
 Durante cada época se calcula el rendimiento del modelo mediante accuracy y ROC-AUC.
 
-Imagen:
+3.1 Imagen:
 
 ![Imagen](./images/imagen_04.png)
 
-Interpretación:
+### Interpretación:
 
 Se observa una ligera disminución del error durante el entrenamiento. Esto indica que la red está aprendiendo progresivamente a reconocer patrones en las imágenes, aunque la reducción no es muy grande.
 
 Una pérdida cercana a 0.69 al inicio indica que el modelo comienza casi sin conocimiento y realiza predicciones similares al azar. Al disminuir con las épocas, significa que la CNN está ajustando sus parámetros para mejorar sus predicciones.
 
-Data Augmentation
+### 4. Data Augmentation
 
 ![Imagen](./images/imagen_05.png)
 
@@ -112,7 +112,7 @@ Su objetivo es crear variaciones de las imágenes originales para que la CNN apr
 
 ![Imagen](./images/imagen_06.png)
 
-Interpretación:
+### Interpretación:
 
 Los resultados muestran que la CNN está aprendiendo correctamente, ya que:
 
@@ -124,7 +124,7 @@ El ROC-AUC mejora de 0.6870 a 0.7031.
 
 Esto indica que el modelo empieza a extraer características útiles de las imágenes y logra realizar mejores clasificaciones después del entrenamiento. Sin embargo, todavía existe margen de mejora mediante técnicas como data augmentation, ajuste de parámetros o utilizando modelos preentrenados mediante transfer learning.
 
-Transfer Learning con ResNet18
+### 5. Transfer Learning con ResNet18
 
 ![Imagen](./images/imagen_07.png)
 
@@ -144,7 +144,7 @@ Después se reemplaza la última capa (fc) para adaptarla a las clases del datas
 
 Esto permite obtener mejores resultados con menos datos y menor tiempo de entrenamiento.
 
-Grad-CAM para interpretar la CNN
+### 6. Grad-CAM para interpretar la CNN
 
 ![Imagen](./images/imagen_08.png)
 
