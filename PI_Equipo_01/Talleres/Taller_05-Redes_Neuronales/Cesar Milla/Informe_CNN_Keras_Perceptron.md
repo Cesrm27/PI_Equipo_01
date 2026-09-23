@@ -48,17 +48,21 @@ Una CNN es una red neuronal especialmente útil para trabajar con imágenes. En 
 
 1.1. ¿Qué aprendí de la CNN?
 
-Una imagen puede procesarse por etapas: primero se extraen características y después se realiza la clasificación.
+- Una imagen puede procesarse por etapas: primero se extraen características y después se realiza la clasificación.
 
-Las capas Conv2D aprenden patrones visuales, mientras que MaxPool reduce el tamaño de la representación y conserva información relevante.
+- Las capas Conv2D aprenden patrones visuales, mientras que MaxPool reduce el tamaño de la representación y conserva información relevante.
 
-El entrenamiento se evalúa con métricas como accuracy y ROC-AUC; no basta con observar solamente la pérdida de entrenamiento.
+- El entrenamiento se evalúa con métricas como accuracy y ROC-AUC; no basta con observar solamente la pérdida de entrenamiento.
 
-El aumento de datos (data augmentation) modifica las imágenes de entrenamiento para mejorar la capacidad de generalización.
+- El aumento de datos (data augmentation) modifica las imágenes de entrenamiento para mejorar la capacidad de generalización.
 
-El transfer learning permite reutilizar un modelo ya entrenado. En el cuaderno, ResNet18 obtuvo un rendimiento claramente mayor que la CNN entrenada desde cero.
+- El transfer learning permite reutilizar un modelo ya entrenado. En el cuaderno, ResNet18 obtuvo un rendimiento claramente mayor que la CNN entrenada desde cero.
 
-1.2. Códigos más importantes del cuaderno
+1.2. ¿Por qué es importante usar CNN?
+
+Las Redes Neuronales Convolucionales son importantes porque permiten analizar imágenes y reconocer patrones visuales de manera automática. Mediante filtros, convoluciones y capas de pooling, pueden identificar características relevantes como formas, bordes o texturas, por lo que son muy útiles en tareas de clasificación de imágenes.
+
+1.3. Códigos más importantes del cuaderno
 
 Código 1. Creación de los conjuntos de entrenamiento, validación y prueba (celda 16)
 
@@ -102,9 +106,9 @@ Código 6. Resumen comparativo de resultados (celda 52)
 
 > **Interpretación: Este fragmento compara las tres estrategias evaluadas en el cuaderno: CNN desde cero, CNN con augmentation y transfer learning con ResNet. De acuerdo con la salida obtenida, el transfer learning alcanzó el mejor resultado.**
 
-1.3. Gráficas obtenidas
+1.4. Gráficas obtenidas
 
-#### 1.3.1 Curvas de entrenamiento
+#### 1.4.1 Curvas de entrenamiento
 
 ![Imagen original](images/image27.png)
 
@@ -112,7 +116,7 @@ Código 6. Resumen comparativo de resultados (celda 52)
 
 > **Interpretación: Se observa que, a medida que avanzan las épocas, la pérdida disminuye y la exactitud de validación mejora, lo que indica que la CNN está aprendiendo progresivamente a diferenciar las imágenes de glass y plastic. Sin embargo, el ROC-AUC se mantiene en valores moderados, por lo que el modelo todavía presenta limitaciones para clasificar ambas clases con alta precisión.**
 
-1.3.2. Matriz de confusión
+1.4.2. Matriz de confusión
 
 ![Imagen original](images/image28.png)
 
@@ -124,17 +128,20 @@ Keras permite construir y entrenar redes neuronales con una sintaxis más direct
 
 2.1. ¿Qué aprendí de Keras?
 
-Keras facilita la construcción de modelos mediante Sequential y capas Dense.
+- Keras facilita la construcción de modelos mediante Sequential y capas Dense.
 
-Antes del entrenamiento, los datos deben transformarse a una representación numérica que la red pueda procesar.
+- Antes del entrenamiento, los datos deben transformarse a una representación numérica que la red pueda procesar.
 
-La función sigmoid es adecuada para producir una salida entre 0 y 1 en una clasificación binaria.
+- La función sigmoid es adecuada para producir una salida entre 0 y 1 en una clasificación binaria.
 
-El conjunto de validación permite detectar sobreajuste al comparar la pérdida de entrenamiento con la pérdida de validación.
+- El conjunto de validación permite detectar sobreajuste al comparar la pérdida de entrenamiento con la pérdida de validación.
 
-La regularización y Dropout son estrategias utilizadas en el cuaderno para intentar reducir el sobreajuste.
+- La regularización y Dropout son estrategias utilizadas en el cuaderno para intentar reducir el sobreajuste.
 
-2.2. Códigos más importantes del cuaderno
+2.2. ¿Por qué es importante usarlo?
+Keras es importante porque facilita la construcción, entrenamiento y evaluación de redes neuronales mediante una estructura sencilla y organizada. Permite definir capas, funciones de activación, optimizadores y procesos de entrenamiento con menos código, ayudando a implementar modelos de aprendizaje profundo de forma más práctica.
+
+2.3. Códigos más importantes del cuaderno
 
 Código 7. Carga del dataset IMDB (celda 66)
 
@@ -182,27 +189,27 @@ Código 13. Evaluación del modelo (celda 88)
 
 > **Interpretación: Esta instrucción evalúa el modelo con el conjunto de prueba. La salida registrada en el cuaderno fue una pérdida aproximada de 0.6056 y una accuracy aproximada de 0.8611, equivalente a 86.11 %.**
 
-2.3. Gráficos obtenidos
+2.4. Gráficos obtenidos
 
 ![Imagen original](images/image30.png)
 
-2.3.1. Curvas de pérdida durante el entrenamiento y validación
+2.4.1. Curvas de pérdida durante el entrenamiento y validación
 
 > **Interpretación: Se observa que la pérdida de entrenamiento disminuye de forma continua hasta valores muy bajos, mientras que la pérdida de validación disminuye solo al inicio y luego comienza a aumentar. Esto indica que el modelo aprende muy bien los datos de entrenamiento, pero después de aproximadamente 4 a 6 épocas empieza a presentar sobreajuste (overfitting), ya que pierde capacidad para generalizar correctamente con datos nuevos.**
 
-2.3.2. Curvas de pérdida en validación para arquitecturas de diferente capacidad
+2.4.2. Curvas de pérdida en validación para arquitecturas de diferente capacidad
 
 ![Imagen original](images/image13.png)
 
 > **Interpretación: El gráfico compara la pérdida de validación a lo largo de 20 épocas entre el modelo base (original) y una versión de menor capacidad. En las curvas se observa que el modelo original empieza a sobreajustarse tempranamente a partir de la época 4 o 6, punto en el que su error se dispara de forma pronunciada. Por el contrario, el modelo reducido (smaller) mantiene una curva de pérdida mucho más estable, alcanzando un mínimo global más bajo y retrasando el sobreajuste hasta aproximadamente la época 12 o 13, lo que demuestra que reducir la complejidad de la arquitectura ayuda a regularizar la red y mejora su capacidad de generalización sobre el conjunto de datos.**
 
-2.3.3. Comparativa de convergencia y generalización: Modelo regularizado vs. Modelo original
+2.4.3. Comparativa de convergencia y generalización: Modelo regularizado vs. Modelo original
 
 ![Imagen original](images/image6.png)
 
 > **Interpretación: La gráfica ilustra el efecto de la regularización en la función de pérdida a lo largo de 20 épocas. Mientras que la pérdida de entrenamiento (regularization - train) decrece de forma continua hasta valores cercanos a cero, la pérdida de validación (regularization - validation) alcanza su punto óptimo en torno a la época 5 (~0.33) para luego comenzar a ascender, lo que evidencia el inicio del sobreajuste (overfitting). No obstante, al contrastar esta curva con la del modelo base sin regularizar (original), se aprecia que la regularización logra ralentizar la degradación del rendimiento en las épocas avanzadas, manteniendo el error de validación predominantemente por debajo del modelo original (que supera 0.55 al final). Esto confirma que, si bien la técnica atenúa el sobreajuste al penalizar la complejidad del modelo, resulta necesario aplicar estrategias complementarias como la detención temprana (early stopping) cerca de la época 5 para conservar el mejor punto de generalización.**
 
-2.3.4. Comparación de la pérdida de validación entre el modelo con Dropout y el modelo base
+2.4.4. Comparación de la pérdida de validación entre el modelo con Dropout y el modelo base
 
 ![Imagen original](images/image31.png)
 
@@ -224,7 +231,11 @@ Con una función escalón, el Perceptrón puede producir decisiones binarias com
 
 Un solo Perceptrón puede representar problemas linealmente separables como AND u OR, pero el cuaderno muestra que XOR requiere más de una neurona o una capa adicional.
 
-3.2. Códigos más importantes del cuaderno
+3.2. ¿Por qué es importante usarlo?
+
+El Perceptrón es importante porque representa uno de los modelos más básicos de una neurona artificial y permite comprender cómo una red neuronal procesa entradas, aplica pesos y genera una salida. Su estudio ayuda a entender los fundamentos del aprendizaje supervisado y de modelos neuronales más complejos.
+
+3.3. Códigos más importantes del cuaderno
 
 Código 14. Funciones de activación y función del Perceptrón (celda 110)
 
@@ -256,15 +267,15 @@ Código 18. Configuración tipo OR (celda 124)
 
 > **Interpretación: Con los pesos [2, 1] y bias -0.5, la salida es 1 cuando al menos una de las entradas vale 1. Esto muestra cómo el cambio de pesos y sesgo modifica la frontera de decisión del Perceptrón.**
 
-3.3. Gráficos obtenidos
+3.4. Gráficos obtenidos
 
-3.3.1. Representación en el espacio de características de los hiperplanos de decisión para funciones lógicas AND y OR
+3.4.1. Representación en el espacio de características de los hiperplanos de decisión para funciones lógicas AND y OR
 
 ![Imagen original](images/image1.png)
 
 > **Interpretación: La figura representa el espacio de entradas bidimensional correspondientes a las combinaciones booleanas (0,0), (0,1), (1,0) y (1,1). Se ilustra la capacidad de un perceptrón simple para resolver problemas linealmente separables mediante la definición de hiperplanos o líneas de decisión. La línea roja delimita la función lógica OR, separando el punto (0,0) (salida 0) de las tres combinaciones restantes que activan la salida (valor 1). Por su parte, la línea verde corresponde a la compuerta AND, aislando de manera exclusiva al punto (1,1) (único con salida 1) del resto de los pares de entrada. Este comportamiento gráfico evidencia que ambas funciones pueden ser aprendidas directamente por una sola neurona artificial, al existir fronteras lineales capaces de clasificar correctamente ambas clases sin requerir capas ocultas.**
 
-3.3.2. Fronteras de decisión lineales combinadas para la clasificación de la función lógica XOR
+3.4.2. Fronteras de decisión lineales combinadas para la clasificación de la función lógica XOR
 
 ![Imagen original](images/image19.png)
 
