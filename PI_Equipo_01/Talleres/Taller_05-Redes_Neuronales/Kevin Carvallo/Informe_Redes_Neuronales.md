@@ -203,7 +203,7 @@ En este caso, las zonas con mayor intensidad en el mapa de calor se concentran p
 
 Además, la comparación entre la imagen original y la superposición facilita interpretar el resultado de una manera más sencilla, ya que permite observar directamente dónde se concentra la atención del modelo. Por ello, pude comprender que Grad-CAM no solo muestra qué clase predice la CNN, sino que también ayuda a analizar el motivo visual de esa predicción, haciendo que el comportamiento del modelo sea más comprensible.
 
-Clasificación binaria utilizando Keras
+### 6. Clasificación binaria utilizando Keras
 
 En la segunda parte de la actividad se trabajó con Keras para desarrollar una red neuronal orientada a la clasificación de reseñas de películas.
 
