@@ -166,7 +166,7 @@ Las CNN son importantes porque permiten que las computadoras puedan analizar im�
 
 En este caso, la CNN permite clasificar residuos mediante imágenes, ayudando a automatizar procesos de separación y reciclaje. Además, técnicas como Transfer Learning permiten desarrollar modelos eficientes incluso cuando se dispone de una cantidad limitada de datos.
 
-## Keras
+## 2. Clasificación binaria con Keras
 
 ### 1. Importación de librerías y carga del dataset IMDB
 
