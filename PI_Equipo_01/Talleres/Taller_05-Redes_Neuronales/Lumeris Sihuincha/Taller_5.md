@@ -26,7 +26,7 @@ En este trabajo se estudian tres conceptos fundamentales relacionados con las re
 
 El análisis de estos modelos permite comprender desde los fundamentos de una neurona artificial hasta la implementación de arquitecturas más avanzadas. Además, permite identificar qué tipo de modelo resulta más adecuado según las características del problema y los datos disponibles.
 
-## CNN
+## 1. CNN — Redes Neuronales Convolucionales
 
 Es un tipo de red neuronal que permite a una computadora analizar imágenes y encontrar características importantes dentro de ellas. Su funcionamiento ayuda a reconocer patrones como formas, colores o detalles que permiten identificar y clasificar objetos.
 
