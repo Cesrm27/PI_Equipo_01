@@ -6,4 +6,4 @@ Se evaluaron los modelos mediante **Accuracy, Precision, Recall, F1-score, ROC-A
 
 Finalmente, se utilizó **Grad-CAM** para analizar visualmente las regiones de las imágenes que tuvieron mayor influencia en las predicciones del modelo.
 
-La actividad permitió comparar diferentes técnicas de Deep Learning y comprender mejor el proceso de **entrenamiento, evaluación e interpretabilidad de modelos de clasificación de imágenes**.
+La actividad me permitió comparar diferentes técnicas de Deep Learning y comprender mejor el proceso de **entrenamiento, evaluación e interpretabilidad de modelos de clasificación de imágenes**.
