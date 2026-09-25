@@ -1,1 +1,15 @@
+# CNN y Transfer Learning con BloodMNIST
 
+[svg](https://github.com/Cesrm27/PI_Equipo_01#cnn-y-transfer-learning-con-bloodmnist)
+
+En este taller se desarrolló un modelo de clasificación de imágenes médicas utilizando el dataset **BloodMNIST**, perteneciente a la colección **MedMNIST**. BloodMNIST contiene imágenes microscópicas de células sanguíneas y originalmente está organizado en ocho clases. En este proyecto se trabajó con una adaptación del dataset para realizar una tarea de **clasificación binaria de dos clases**.
+
+Se implementó una **CNN desde cero** para realizar la clasificación de las imágenes y posteriormente se aplicó **Transfer Learning utilizando ResNet18**, incluyendo una etapa de entrenamiento y una etapa de **Fine-Tuning** para adaptar el modelo al problema específico.
+
+Durante el desarrollo se evaluó el comportamiento de los modelos mediante métricas como **Accuracy y ROC-AUC**, además del seguimiento de las curvas de **Training Loss y Validation Loss** durante el entrenamiento.
+
+También se experimentó con diferentes estrategias de entrenamiento, incluyendo **Data Augmentation, Batch Normalization, Dropout y Learning Rate**, con el objetivo de analizar su efecto sobre el aprendizaje y la capacidad de generalización del modelo.
+
+Finalmente, se compararon las estrategias de **CNN desde cero y Transfer Learning con ResNet18**, analizando sus curvas de entrenamiento, métricas de validación y comportamiento del Learning Rate.
+
+El taller permitió aplicar técnicas de **Deep Learning y Transfer Learning** a imágenes médicas, además de comprender el proceso de entrenamiento, validación y comparación de modelos de clasificación de imágenes.
