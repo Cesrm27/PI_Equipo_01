@@ -1,89 +1,97 @@
-<div align="center">
+# Monitoreo de temperatura y humedad con ESP32, DHT11, MQTT y Node-RED
 
-# 🌡️ Monitoreo de temperatura y humedad con ESP32, DHT11, MQTT y Node-RED
-
-### Taller de Internet de las Cosas (IoT)
-
-**ESP32 · DHT11 · MQTT · JSON · Node-RED Dashboard 2.0**
-
-</div>
+## Taller de Internet de las Cosas (IoT)
 
 ---
 
-## 📋 Información del proyecto
+## Información del proyecto
 
 | Campo | Detalle |
 |---|---|
 | **Curso** | Proyecto Integrador |
-| **Actividad** | Visualización de datos del sensor DHT11 en Node-RED |
-| **Plataforma** | ESP32 + MQTT + Node-RED Dashboard 2.0 |
+| **Actividad** | Mostrar en Node-RED los datos de un sensor DHT11 |
+| **Herramientas** | ESP32, MQTT y Node-RED Dashboard 2.0 |
+| **Integrante** | Shedira Lumeris Sihuincha Palacin |
 | **Fecha** | 01/10/2026 |
 | **Institución** | Universidad Peruana Cayetano Heredia |
 
 ---
 
-## 📑 Contenido
+## Contenido
 
 - [1. Introducción](#1-introducción)
 - [2. Objetivos](#2-objetivos)
 - [3. Materiales y herramientas](#3-materiales-y-herramientas)
-- [4. Arquitectura de la solución](#4-arquitectura-de-la-solución)
-- [5. Conexiones utilizadas](#5-conexiones-utilizadas)
-- [6. Configuración MQTT](#6-configuración-mqtt)
-- [7. Código implementado en el ESP32](#7-código-implementado-en-el-esp32)
-- [8. Configuración del flujo en Node-RED](#8-configuración-del-flujo-en-node-red)
+- [4. Cómo funciona el sistema](#4-cómo-funciona-el-sistema)
+- [5. Conexiones del circuito](#5-conexiones-del-circuito)
+- [6. Configuración de MQTT](#6-configuración-de-mqtt)
+- [7. Código del ESP32](#7-código-del-esp32)
+- [8. Flujo en Node-RED](#8-flujo-en-node-red)
 - [9. Evidencias y resultados](#9-evidencias-y-resultados)
-- [10. Análisis del funcionamiento](#10-análisis-del-funcionamiento)
+- [10. Explicación del funcionamiento](#10-explicación-del-funcionamiento)
 - [11. Conclusiones](#11-conclusiones)
 
 ---
 
 ## 1. Introducción
 
-En esta práctica se implementó un sistema básico de **Internet de las Cosas (IoT)** para adquirir, transmitir y visualizar variables ambientales en tiempo real.
+En esta práctica, la estudiante armó un sistema de Internet de las Cosas (IoT) que mide la temperatura y la humedad del ambiente y las muestra en una página web casi en tiempo real.
 
-Un sensor **DHT11** conectado al **ESP32** midió la temperatura y la humedad relativa del ambiente. Posteriormente, el microcontrolador publicó ambas variables mediante el protocolo **MQTT** hacia un broker remoto. **Node-RED** se utilizó como plataforma de integración y visualización, donde los datos fueron procesados y mostrados mediante indicadores y una gráfica.
+Un sensor **DHT11** conectado a una placa **ESP32** mide ambos valores. La placa los envía por internet usando **MQTT**, un sistema de mensajes muy liviano que funciona como un buzón: unos dispositivos dejan mensajes y otros los reciben. Esos mensajes pasan por un servidor intermedio llamado "broker". Luego, **Node-RED**, un programa que permite armar flujos de datos de forma visual, recibe la información y la muestra en indicadores y en una gráfica.
 
-Además del monitoreo, el flujo incluyó un control bidireccional: desde el dashboard de Node-RED se podía enviar un comando MQTT para encender o apagar el LED integrado del ESP32. De esta manera, la actividad permitió integrar:
+Además de ver los datos, el sistema permite dar órdenes. Desde el panel de Node-RED se puede encender o apagar el LED que trae la placa, enviando un mensaje por MQTT.
 
-- adquisición de datos;
-- mensajería IoT;
-- visualización web;
-- actuación remota.
+En resumen, la práctica reunió cuatro ideas:
+
+| Idea | Cómo se aplicó |
+|---|---|
+| Medir | El sensor DHT11 toma la temperatura y la humedad. |
+| Enviar | La placa manda los datos por MQTT. |
+| Mostrar | Node-RED los presenta en un panel web. |
+| Controlar | Desde el panel se enciende y apaga el LED de la placa. |
 
 ---
 
 ## 2. Objetivos
 
-### 🎯 Objetivo general
+### Objetivo general
 
-Implementar un sistema IoT capaz de medir temperatura y humedad con un sensor DHT11 conectado a un ESP32, transmitir los datos por MQTT y visualizarlos en un dashboard desarrollado en Node-RED.
+Armar un sistema IoT que mida la temperatura y la humedad con un sensor DHT11 y una ESP32, envíe los datos por MQTT y los muestre en un panel creado con Node-RED.
 
-### ✅ Objetivos específicos
+### Objetivos específicos
 
-- Configurar el ESP32 para conectarse a una red WiFi y a un broker MQTT remoto.
-- Leer periódicamente la temperatura y la humedad relativa proporcionadas por el sensor DHT11.
-- Empaquetar las mediciones en formato JSON y publicarlas en un topic MQTT.
-- Recibir los datos en Node-RED y separar las variables para su representación en indicadores y gráficas.
-- Enviar desde Node-RED comandos de encendido y apagado hacia el LED del ESP32 mediante un segundo topic MQTT.
+- Conectar la ESP32 a una red WiFi y a un servidor MQTT en internet.
+- Leer cada cierto tiempo la temperatura y la humedad que entrega el sensor.
+- Agrupar las dos medidas en un solo mensaje (formato JSON) y enviarlo por MQTT.
+- Recibir los datos en Node-RED y mostrarlos en indicadores y en una gráfica.
+- Enviar desde Node-RED una orden de encendido o apagado al LED de la placa.
 
 ---
 
 ## 3. Materiales y herramientas
 
-| Recurso | Uso |
+| Recurso | Para qué se usó |
 |---|---|
-| **ESP32** | Adquisición, procesamiento y transmisión de datos |
-| **DHT11** | Medición de temperatura y humedad relativa |
-| **Cables Dupont** | Conexión entre sensor y ESP32 |
-| **Protoboard** | Montaje del circuito |
-| **Arduino IDE** | Programación del ESP32 |
-| **Node-RED** | Procesamiento y visualización de datos |
-| **Node-RED Dashboard 2.0** | Interfaz gráfica web |
-| **Broker MQTT** | Intercambio de mensajes entre ESP32 y Node-RED |
-| **WiFi** | Acceso a la red e Internet |
+| **ESP32** | Leer el sensor y enviar los datos. |
+| **Sensor DHT11** | Medir temperatura y humedad. |
+| **Cables Dupont** | Unir el sensor con la placa. |
+| **Protoboard** | Armar el circuito sin soldar. |
+| **Arduino IDE** | Programar la ESP32. |
+| **Node-RED** | Recibir los datos y armar el panel. |
+| **Node-RED Dashboard 2.0** | Crear la página web con los indicadores. |
+| **Broker MQTT** | Servidor que reparte los mensajes entre la ESP32 y Node-RED. |
+| **Red WiFi** | Dar acceso a internet a la placa. |
 
-### 📚 Librerías utilizadas en Arduino
+### Librerías usadas en Arduino
+
+Una librería es un conjunto de funciones ya hechas que se agregan al programa para no escribirlas desde cero.
+
+| Librería | Para qué sirve |
+|---|---|
+| `WiFi.h` | Conectar la placa a la red WiFi. |
+| `PubSubClient.h` | Enviar y recibir mensajes MQTT. |
+| `ArduinoJson.h` | Armar el mensaje con los datos en formato JSON. |
+| `DHT.h` | Leer el sensor DHT11. |
 
 ```cpp
 #include <WiFi.h>
@@ -94,56 +102,56 @@ Implementar un sistema IoT capaz de medir temperatura y humedad con un sensor DH
 
 ---
 
-## 4. Arquitectura de la solución
+## 4. Cómo funciona el sistema
 
-El sistema sigue un flujo de comunicación desde el sensor físico hasta la interfaz web.
+El dato recorre este camino, desde el sensor hasta la pantalla:
 
 ```mermaid
 flowchart LR
     A[DHT11] --> B[ESP32]
     B -->|JSON / MQTT| C[Broker MQTT]
     C --> D[Node-RED]
-    D --> E[Gauge Temperatura]
-    D --> F[Gauge Humedad]
+    D --> E[Indicador de temperatura]
+    D --> F[Indicador de humedad]
     D --> G[Gráfica]
     D -->|ON / OFF| C
     C -->|Topic LED| B
     B --> H[LED GPIO 2]
 ```
 
-### Flujo principal
+Dicho de forma simple:
 
 ```text
-DHT11 → ESP32 → MQTT → Node-RED → Gauge / Chart / Control LED
+DHT11 → ESP32 → MQTT → Node-RED → Indicadores, gráfica y control del LED
 ```
 
-El DHT11 obtiene las variables ambientales, el ESP32 las organiza en formato JSON y las publica mediante MQTT. Node-RED recibe el mensaje y actualiza los elementos del dashboard.
+El sensor mide, la ESP32 prepara el mensaje y lo envía por MQTT, y Node-RED lo recibe y actualiza el panel. El camino inverso también existe: cuando se presiona el interruptor del panel, la orden viaja por MQTT hasta la ESP32, que enciende o apaga el LED.
 
 ---
 
-## 5. Conexiones utilizadas
+## 5. Conexiones del circuito
 
-| Elemento | Pin / conexión | Función |
+| Elemento | Conexión | Para qué sirve |
 |---|---|---|
-| DHT11 - VCC | 3.3 V | Alimentación |
-| DHT11 - GND | GND | Referencia eléctrica |
-| DHT11 - DATA | GPIO 4 | Lectura digital de temperatura y humedad |
-| LED integrado | GPIO 2 | Actuador controlado desde Node-RED |
+| DHT11 - VCC | 3.3 V | Darle energía al sensor. |
+| DHT11 - GND | GND | Cerrar el circuito eléctrico. |
+| DHT11 - DATA | GPIO 4 | Enviar a la placa la temperatura y la humedad. |
+| LED integrado | GPIO 2 | Es el LED que se enciende y apaga desde Node-RED. |
 
 ---
 
-## 6. Configuración MQTT
+## 6. Configuración de MQTT
 
-El ESP32 se configuró como cliente MQTT. Para el intercambio de información se utilizaron dos topics.
+En MQTT, los mensajes se envían a "topics", que son como etiquetas o nombres de canal. Quien quiere recibir un mensaje se suscribe al topic correspondiente. En esta práctica se usaron dos:
 
-| Topic | Sentido | Contenido |
+| Topic | Hacia dónde va | Qué contiene |
 |---|---|---|
-| `equipo01/sensor/datos` | ESP32 → Node-RED | JSON con dispositivo, temperatura y humedad |
-| `equipo01/actuadores/led` | Node-RED → ESP32 | Comando `ON` o `OFF` |
+| `equipo01/sensor/datos` | De la ESP32 a Node-RED | Nombre del dispositivo, temperatura y humedad. |
+| `equipo01/actuadores/led` | De Node-RED a la ESP32 | La orden `ON` (encender) u `OFF` (apagar). |
 
-### 📦 Formato de los datos
+### Formato de los datos
 
-El ESP32 publica un objeto JSON similar a:
+La ESP32 envía un mensaje en formato JSON, que es una forma ordenada de escribir datos con nombre y valor. Por ejemplo:
 
 ```json
 {
@@ -153,11 +161,13 @@ El ESP32 publica un objeto JSON similar a:
 }
 ```
 
-Esto permite transportar varias variables dentro de un único mensaje MQTT.
+Así, un solo mensaje lleva las dos medidas juntas.
 
 ---
 
-## 7. Código implementado en el ESP32
+## 7. Código del ESP32
+
+> Nota: en este informe, los datos de acceso a la red WiFi y al servidor MQTT se reemplazaron por texto de ejemplo, para no dejar a la vista información privada.
 
 ```cpp
 #include <WiFi.h>
@@ -167,16 +177,16 @@ Esto permite transportar varias variables dentro de un único mensaje MQTT.
 
 // ================= CONFIGURACIÓN WIFI =================
 
-const char* WIFI_SSID = "GalaxyA04s";
-const char* WIFI_PASS = "12345678";
+const char* WIFI_SSID = "NOMBRE_DE_LA_RED";
+const char* WIFI_PASS = "CLAVE_DE_LA_RED";
 
 // ================= CONFIGURACIÓN MQTT =================
 
 const char* MQTT_SERVER = "mqtt.rcr-labs.com";
 const int MQTT_PORT = 1883;
 
-const char* MQTT_USER = "alumno";
-const char* MQTT_PASSWORD = "UPCH2026";
+const char* MQTT_USER = "USUARIO_MQTT";
+const char* MQTT_PASSWORD = "CLAVE_MQTT";
 
 const char* CLIENT_ID = "ESP32_Equipo01";
 
@@ -338,118 +348,110 @@ void loop() {
 }
 ```
 
+### Qué hace cada parte del código
+
+| Parte del código | Qué hace, en palabras simples |
+|---|---|
+| `WIFI_SSID` y `WIFI_PASS` | Nombre y clave de la red WiFi a la que se conecta la placa. |
+| `MQTT_SERVER`, `MQTT_USER`, `MQTT_PASSWORD` | Datos para entrar al servidor MQTT (dirección, usuario y clave). |
+| `TOPIC_PUB` | Topic donde la placa deja los datos del sensor. |
+| `TOPIC_SUB` | Topic donde la placa espera las órdenes para el LED. |
+| `DHTPIN 4` y `DHTTYPE DHT11` | Indican que el sensor está en el terminal 4 y que es del modelo DHT11. |
+| `setupWiFi()` | Conecta la placa a la red y espera hasta lograrlo. |
+| `callback()` | Se ejecuta cuando llega una orden: si el mensaje es `ON` enciende el LED y si es `OFF` lo apaga. |
+| `reconnect()` | Si se pierde la conexión con el servidor MQTT, vuelve a conectarse y a suscribirse al topic del LED. |
+| `intervaloEnvio = 5000` | Hace que se tome y envíe una medición cada 5 segundos. |
+| `isnan(...)` | Revisa que las lecturas sean números válidos. Si el sensor falla, avisa del error y no envía nada. |
+| `doc["temperatura"] = ...` | Guarda cada medida dentro del mensaje JSON. |
+| `client.publish(...)` | Envía el mensaje al servidor MQTT. |
+
 ---
 
-## 8. Configuración del flujo en Node-RED
+## 8. Flujo en Node-RED
 
-En Node-RED se añadió un nodo **MQTT In** suscrito al topic:
+En Node-RED, la estudiante agregó un nodo **MQTT In** suscrito al topic donde la ESP32 deja sus datos:
 
 ```text
 equipo01/sensor/datos
 ```
 
-El mensaje recibido se procesó para separar las variables provenientes del JSON.
+Cuando llega un mensaje, otros nodos separan cada valor del JSON (temperatura, humedad y nombre del dispositivo) y cada uno se manda al elemento del panel que le corresponde.
 
-### Componentes principales del flujo
+### Partes del flujo
 
-- **MQTT In:** recibe los datos publicados por el ESP32.
-- **Nodos de procesamiento:** separan temperatura, humedad e identificador del dispositivo.
-- **Gauge de temperatura:** presenta la temperatura en °C.
-- **Gauge de humedad:** presenta la humedad relativa en %.
-- **Chart:** representa la evolución de las mediciones en el tiempo.
-- **Texto:** muestra el identificador del ESP32.
-- **Switch LED:** envía `ON` u `OFF`.
-- **MQTT Out:** publica el comando en `equipo01/actuadores/led`.
+| Elemento | Qué hace |
+|---|---|
+| **MQTT In** | Recibe los datos que publica la ESP32. |
+| **Nodos de procesamiento** | Separan la temperatura, la humedad y el nombre del dispositivo. |
+| **Indicador de temperatura (gauge)** | Muestra la temperatura en °C. |
+| **Indicador de humedad (gauge)** | Muestra la humedad relativa en %. |
+| **Gráfica (chart)** | Muestra cómo cambian las medidas con el tiempo. |
+| **Texto** | Muestra el nombre del dispositivo que envía los datos. |
+| **Interruptor del LED (switch)** | Permite elegir entre `ON` y `OFF`. |
+| **MQTT Out** | Envía la orden al topic `equipo01/actuadores/led`. |
 
-### 🧩 Flujo implementado
-
-<div align="center">
+### Flujo armado en Node-RED
 
 <img src="imagenes/flujo_nodered.png" alt="Flujo de Node-RED" width="900">
 
-*Figura 1. Flujo desarrollado en Node-RED para recepción, procesamiento, visualización y control mediante MQTT.*
-
-</div>
+*Figura 1. Flujo de Node-RED que recibe los datos, los separa, los muestra en el panel y permite controlar el LED por MQTT.*
 
 ---
 
 ## 9. Evidencias y resultados
 
-Durante las pruebas, el dashboard recibió correctamente la información transmitida por el ESP32.
+Durante las pruebas, el panel recibió sin problemas los datos enviados por la ESP32. Las capturas muestran estos valores:
 
-Las capturas muestran valores de:
+| Variable | Valor observado |
+|---|---|
+| Temperatura | Alrededor de 27.5 °C |
+| Humedad relativa | Entre 57 % y 58 % |
 
-- 🌡️ **Temperatura:** aproximadamente **27.5 °C**
-- 💧 **Humedad relativa:** aproximadamente **57-58 %**
+La gráfica permitió ver cómo las medidas iban cambiando con el paso del tiempo.
 
-La gráfica permitió observar cómo las mediciones cambiaban a lo largo del tiempo.
-
-### 📊 Dashboard de Node-RED
-
-<div align="center">
+### Panel de Node-RED
 
 <img src="imagenes/dashboard_nodered.png" alt="Dashboard Node-RED" width="850">
 
-*Figura 2. Dashboard con los indicadores de temperatura y humedad relativa.*
+*Figura 2. Panel con los indicadores de temperatura y humedad relativa.*
 
-</div>
-
-### 🔧 Montaje completo
-
-<div align="center">
+### Montaje completo
 
 <img src="imagenes/montaje_completo.png" alt="Montaje del ESP32 y dashboard" width="650">
 
-*Figura 3. Prueba integral del sistema con el ESP32 conectado y el dashboard en ejecución.*
+*Figura 3. Prueba completa del sistema, con la ESP32 conectada y el panel funcionando.*
 
-</div>
-
-### 💧 Visualización de humedad y gráfica
-
-<div align="center">
+### Humedad y gráfica
 
 <img src="imagenes/dashboard_humedad.png" alt="Dashboard de humedad" width="520">
 
-*Figura 4. Visualización de humedad relativa y evolución de las mediciones.*
+*Figura 4. Indicador de humedad relativa y gráfica de las medidas.*
 
-</div>
-
-### 📡 ESP32 conectado al dashboard
-
-<div align="center">
+### ESP32 y panel
 
 <img src="imagenes/esp32_dashboard.png" alt="ESP32 y dashboard" width="520">
 
-*Figura 5. ESP32 conectado mientras Node-RED presenta los datos recibidos.*
+*Figura 5. ESP32 conectada mientras Node-RED muestra los datos que recibe.*
 
-</div>
-
-### 🌡️ Sensor DHT11 y ESP32
-
-<div align="center">
+### Sensor DHT11 y ESP32
 
 <img src="imagenes/dht11_esp32_dashboard.png" alt="DHT11, ESP32 y dashboard" width="520">
 
-*Figura 6. Sensor DHT11 y ESP32 utilizados durante la prueba.*
-
-</div>
+*Figura 6. Sensor DHT11 y ESP32 usados durante la prueba.*
 
 ---
 
-## 10. Análisis del funcionamiento
+## 10. Explicación del funcionamiento
 
-El sensor DHT11 entrega al ESP32 dos variables digitales:
+### Cómo se envían los datos
 
-1. **Temperatura**
-2. **Humedad relativa**
-
-Cada **5 segundos**, el programa ejecuta una nueva lectura:
+El sensor DHT11 entrega a la ESP32 dos datos: la temperatura y la humedad relativa. El programa toma una nueva medición cada 5 segundos:
 
 ```cpp
 const long intervaloEnvio = 5000;
 ```
 
-Posteriormente se verifica que los valores sean válidos:
+Antes de enviarla, comprueba que las lecturas sean válidas. Si el sensor falló, muestra un aviso y espera a la siguiente medición:
 
 ```cpp
 if (isnan(temperatura) || isnan(humedad)) {
@@ -458,7 +460,7 @@ if (isnan(temperatura) || isnan(humedad)) {
 }
 ```
 
-Los datos se organizan en un objeto JSON:
+Si todo está bien, junta los datos en un mensaje JSON:
 
 ```cpp
 doc["dispositivo"] = CLIENT_ID;
@@ -466,73 +468,44 @@ doc["temperatura"] = temperatura;
 doc["humedad"] = humedad;
 ```
 
-Finalmente, el objeto se serializa y se publica mediante MQTT:
+Y lo envía por MQTT:
 
 ```cpp
 serializeJson(doc, jsonBuffer);
 client.publish(TOPIC_PUB, jsonBuffer);
 ```
 
-Node-RED recibe el mensaje, identifica las propiedades y dirige cada valor hacia el elemento correspondiente del dashboard.
+Node-RED recibe el mensaje, separa cada valor y lo lleva al indicador que le corresponde en el panel.
 
-### 🔄 Comunicación bidireccional
+### Cómo se controla el LED
 
-El sistema no solamente recibe información del ESP32. Node-RED también puede enviar comandos al dispositivo:
+El camino también funciona en sentido contrario. Desde Node-RED se puede mandar una orden a la placa:
 
 ```text
 Node-RED → MQTT → ESP32 → LED
 ```
 
-Cuando el ESP32 recibe:
+| Mensaje recibido | Qué hace la ESP32 | Línea de código |
+|---|---|---|
+| `ON` | Enciende el LED. | `digitalWrite(2, HIGH);` |
+| `OFF` | Apaga el LED. | `digitalWrite(2, LOW);` |
 
-```text
-ON
-```
-
-ejecuta:
-
-```cpp
-digitalWrite(2, HIGH);
-```
-
-Y cuando recibe:
-
-```text
-OFF
-```
-
-ejecuta:
-
-```cpp
-digitalWrite(2, LOW);
-```
-
-Esto demuestra una comunicación IoT **bidireccional**: el ESP32 funciona tanto como emisor de datos como receptor de órdenes.
+Por eso la comunicación es en los dos sentidos: la ESP32 envía datos y también recibe órdenes.
 
 ---
 
 ## 11. Conclusiones
 
-1. Se logró integrar correctamente el sensor **DHT11** con el **ESP32** para obtener mediciones periódicas de temperatura y humedad.
+1. La estudiante logró conectar el sensor **DHT11** a la **ESP32** y obtener medidas de temperatura y humedad cada pocos segundos.
 
-2. El protocolo **MQTT** permitió transmitir las mediciones desde el ESP32 hacia Node-RED mediante un esquema ligero basado en publicación y suscripción.
+2. **MQTT** permitió enviar los datos desde la ESP32 hasta Node-RED de forma sencilla y liviana, usando el sistema de topics.
 
-3. El uso de **JSON** facilitó el envío simultáneo de varias variables dentro de un mismo mensaje.
+3. Usar el formato **JSON** permitió enviar varias medidas juntas en un solo mensaje, lo que ordenó mejor la información.
 
-4. **Node-RED Dashboard 2.0** permitió representar los datos mediante indicadores visuales y una gráfica temporal.
+4. **Node-RED Dashboard 2.0** hizo posible mostrar los datos en indicadores y en una gráfica fácil de leer.
 
-5. El segundo topic MQTT permitió incorporar el control remoto del LED, demostrando una comunicación bidireccional entre **Node-RED y el ESP32**.
+5. Con un segundo topic se pudo controlar el LED desde el panel, de modo que la ESP32 no solo envía información, sino que también recibe y cumple órdenes.
 
 ---
 
-<div align="center">
-
-### 🚀 Tecnologías utilizadas
-
-`ESP32` · `DHT11` · `WiFi` · `MQTT` · `ArduinoJson` · `Node-RED` · `Dashboard 2.0`
-
-<br>
-
-**Taller de Internet de las Cosas (IoT)**
-
-</div>
+**Tecnologías utilizadas:** ESP32, DHT11, WiFi, MQTT, ArduinoJson, Node-RED, Dashboard 2.0
