@@ -283,8 +283,8 @@ El programa completo utilizado para el servidor web del ESP32 es el siguiente. L
 #include <WiFi.h>
 #include <WebServer.h>
 
-const char* ssid = "TU_WIFI";
-const char* password = "TU_PASSWORD";
+const char* ssid = "GalaxyA04s";
+const char* password = "1234578";
 
 WebServer server(80);
 
@@ -558,8 +558,8 @@ El siguiente programa toma diez muestras del potenciómetro, calcula el promedio
 #include <WiFi.h>
 #include <ThingSpeak.h>
 
-const char* ssid = "TU_WIFI";
-const char* password = "TU_PASSWORD";
+const char* ssid = "GalaxyA04s";
+const char* password = "12345678";
 
 unsigned long channelID = 3515248;
 const char* writeAPIKey = "TU_WRITE_API_KEY";
@@ -813,8 +813,8 @@ En este ejemplo se emplea la lectura analógica del MQ-2 y se realiza el envío 
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "TU_WIFI";
-const char* password = "TU_PASSWORD";
+const char* ssid = "GalaxyA04s";
+const char* password = "12345678";
 
 String apiKey = "TU_API_KEY";
 const int MQ2_PIN = 34;
@@ -1079,12 +1079,12 @@ Este programa consulta un valor booleano almacenado en Firebase y lo utiliza par
 #include <WiFiClientSecure.h>
 #include <FirebaseClient.h>
 
-#define WIFI_SSID "TU_WIFI"
-#define WIFI_PASSWORD "TU_PASSWORD"
-#define API_KEY "TU_API_KEY"
-#define DATABASE_URL "TU_DATABASE_URL"
-#define USER_EMAIL "TU_USER_EMAIL"
-#define USER_PASSWORD "TU_USER_PASSWORD"
+#define WIFI_SSID "GalaxyA04s"
+#define WIFI_PASSWORD "12345678"
+#define API_KEY "AIzaSyCcdAz6bHU8lUTx7LG4V63vbg4-Fgw3efs"
+#define DATABASE_URL "https://talleriot-c670f-default-rtdb.firebaseio.com/"
+#define USER_EMAIL "esp32@talleriot.com"
+#define USER_PASSWORD "Esp32Proyecto2026"
 
 #define LED_PIN 2
 
