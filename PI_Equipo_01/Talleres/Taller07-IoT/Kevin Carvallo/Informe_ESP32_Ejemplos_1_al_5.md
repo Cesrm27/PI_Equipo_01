@@ -139,7 +139,7 @@ void loop() {
 
 int potPin = 34;
 
-La variable potPin almacena el número del GPIO donde se encuentra la
+- La variable potPin almacena el número del GPIO donde se encuentra la
 señal del potenciómetro. Se utiliza int porque el número de pin es un
 valor entero. La importancia de esta variable es que permite que el
 resto del programa no tenga que escribir repetidamente el número 34:
@@ -148,7 +148,7 @@ ese GPIO.
 
 ### Bloque 2: Inicialización del Monitor Serial
 
-setup() se ejecuta una sola vez al iniciar o reiniciar el ESP32.
+- setup() se ejecuta una sola vez al iniciar o reiniciar el ESP32.
 Serial.begin(115200) inicializa la comunicación serial a 115200 baudios.
 Esta comunicación permite observar en el Monitor Serial los resultados
 calculados por el programa. El valor 115200 corresponde a la velocidad
@@ -164,7 +164,7 @@ suma += valor;
 delay(50);  
 }
 
-En cada ejecución de loop(), la variable suma comienza en cero. El ciclo
+- En cada ejecución de loop(), la variable suma comienza en cero. El ciclo
 for se repite diez veces, por lo que analogRead(potPin) se ejecuta diez
 veces. Cada lectura se almacena temporalmente en valor y se acumula
 mediante suma += valor. La instrucción delay(50) introduce 50 ms entre
@@ -175,7 +175,7 @@ instante y establece un pequeño intervalo entre ellas.
 
 float promedioADC = suma / 10.0;
 
-Después de reunir las diez muestras, el programa divide la suma entre
+- Después de reunir las diez muestras, el programa divide la suma entre
 10.0. El uso de 10.0 hace que la operación se realice como cálculo de
 punto flotante, permitiendo conservar decimales en el promedio. El
 resultado representa el valor medio de las lecturas digitales entregadas
@@ -185,7 +185,7 @@ por el ADC durante esa ventana de muestreo.
 
 float voltaje = (promedioADC \* 3.3) / 4095.0;
 
-Esta expresión aplica una conversión lineal basada en una referencia de
+- Esta expresión aplica una conversión lineal basada en una referencia de
 3.3 V y un rango ADC de 0 a 4095. El término promedioADC \* 3.3 escala
 la lectura digital al rango de voltaje, y la división entre 4095
 normaliza el resultado respecto al máximo digital utilizado por el
@@ -200,7 +200,7 @@ Serial.print(" \| Voltaje promedio: ");
 Serial.print(voltaje, 3);  
 Serial.println(" V");
 
-El programa construye una línea de salida que muestra primero el
+- El programa construye una línea de salida que muestra primero el
 promedio ADC y luego el voltaje promedio. El parámetro 3 de
 Serial.print(voltaje, 3) solicita tres cifras decimales. Esto facilita
 comparar lecturas entre ciclos.
@@ -209,7 +209,7 @@ comparar lecturas entre ciclos.
 
 delay(500);
 
-Al final de loop(), el ESP32 espera 500 ms antes de comenzar el
+- Al final de loop(), el ESP32 espera 500 ms antes de comenzar el
 siguiente grupo de diez lecturas. Por ello, el sistema no imprime
 resultados de forma continua sin pausa, sino que genera una nueva
 estimación aproximadamente cada medio segundo, además del tiempo
@@ -397,7 +397,7 @@ void loop() {
 \#include \<WiFi.h\>  
 \#include \<WebServer.h\>
 
-WiFi.h proporciona las funciones necesarias para que el ESP32 se conecte
+- WiFi.h proporciona las funciones necesarias para que el ESP32 se conecte
 a una red inalámbrica. WebServer.h proporciona la infraestructura para
 crear un servidor HTTP y asociar rutas del navegador con funciones del
 programa.
@@ -409,7 +409,7 @@ const char\* password = "…";
   
 WebServer server(80);
 
-ssid y password almacenan los datos necesarios para solicitar acceso a
+- ssid y password almacenan los datos necesarios para solicitar acceso a
 la red WiFi. En este informe se omiten los valores reales por tratarse
 de credenciales. WebServer server(80) crea un objeto servidor que
 escucha solicitudes HTTP en el puerto 80, el puerto convencional para
@@ -427,7 +427,7 @@ html += WiFi.localIP().toString();
 server.send(200, "text/html", html);  
 }
 
-handleRoot() se ejecuta cuando el navegador solicita la ruta raíz /. La
+- handleRoot() se ejecuta cuando el navegador solicita la ruta raíz /. La
 variable html contiene la página HTML completa, incluyendo estructura,
 texto y estilos CSS. La técnica R"rawliteral(... )rawliteral" permite
 escribir un bloque largo de texto sin tener que escapar continuamente
@@ -438,7 +438,7 @@ que el contenido enviado es HTML.
 
 ### Bloque 4: Estilos de la página
 
-Dentro del HTML se utiliza CSS para crear una tarjeta central, fondo
+- Dentro del HTML se utiliza CSS para crear una tarjeta central, fondo
 degradado, tipografía, bordes, sombras y un bloque visual para el estado
 del servidor. Este bloque no controla el hardware; su función es mejorar
 la presentación de la información que el ESP32 entrega al navegador.
@@ -453,7 +453,7 @@ delay(500);
 Serial.print(".");  
 }
 
-Primero se inicia el Monitor Serial. Luego WiFi.begin() comienza el
+- Primero se inicia el Monitor Serial. Luego WiFi.begin() comienza el
 proceso de asociación a la red. El while mantiene al programa esperando
 mientras el estado no sea WL_CONNECTED. Cada 500 ms se imprime un punto,
 de modo que el usuario puede observar que el ESP32 todavía está
@@ -469,7 +469,7 @@ server.on("/", handleRoot);
 server.begin();  
 Serial.println("Servidor web iniciado");
 
-Una vez establecida la conexión, WiFi.localIP() obtiene la dirección IP
+- Una vez establecida la conexión, WiFi.localIP() obtiene la dirección IP
 asignada por la red. server.on("/", handleRoot) relaciona la ruta raíz
 con la función handleRoot. server.begin() inicia realmente el servidor
 para aceptar solicitudes.
@@ -480,7 +480,7 @@ void loop() {
 server.handleClient();  
 }
 
-handleClient() revisa continuamente si existe una solicitud de un
+- handleClient() revisa continuamente si existe una solicitud de un
 navegador y, cuando corresponde, ejecuta la función asociada a la ruta
 solicitada. Por ello, el loop() no realiza cálculos periódicos: su tarea
 principal es mantener disponible el servidor web.
@@ -634,7 +634,7 @@ const char\* writeAPIKey = "…";
 WiFiClient client;  
 int potPin = 34;
 
-WiFi.h permite la conexión inalámbrica y ThingSpeak.h proporciona
+- WiFi.h permite la conexión inalámbrica y ThingSpeak.h proporciona
 funciones de alto nivel para preparar y enviar datos al canal. channelID
 identifica el canal donde se almacenan los datos y writeAPIKey autoriza
 la escritura. WiFiClient representa el cliente de red que utiliza la
@@ -652,7 +652,7 @@ Serial.println("WiFi conectado");
 Serial.println(WiFi.localIP());  
 ThingSpeak.begin(client);
 
-El programa espera a que el ESP32 se conecte a la red antes de iniciar
+- El programa espera a que el ESP32 se conecte a la red antes de iniciar
 la comunicación con ThingSpeak. Después muestra la IP asignada y ejecuta
 ThingSpeak.begin(client), que vincula la biblioteca con el cliente de
 red.
@@ -667,7 +667,7 @@ delay(50);
 }  
 float promedioADC = suma / 10.0;
 
-Este bloque repite la estrategia del ejemplo 1. Se toman diez muestras,
+- Este bloque repite la estrategia del ejemplo 1. Se toman diez muestras,
 se acumulan y se calcula un promedio. La finalidad es evitar que una
 única lectura instantánea sea la que se envíe a la nube.
 
@@ -675,7 +675,7 @@ se acumulan y se calcula un promedio. La finalidad es evitar que una
 
 float voltaje = (promedioADC \* 3.3) / 4095.0;
 
-El promedio ADC se transforma a una estimación de voltaje utilizando el
+- El promedio ADC se transforma a una estimación de voltaje utilizando el
 rango de 0 a 4095 y una referencia de 3.3 V, tal como está definido por
 la fórmula del programa.
 
@@ -684,7 +684,7 @@ la fórmula del programa.
 ThingSpeak.setField(1, voltaje);  
 int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
 
-ThingSpeak.setField(1, voltaje) coloca el valor calculado en el Field 1
+- ThingSpeak.setField(1, voltaje) coloca el valor calculado en el Field 1
 del canal. Luego writeFields() utiliza el channelID y la Write API Key
 para realizar el envío. La función devuelve un código de respuesta que
 se almacena en respuesta.
@@ -698,7 +698,7 @@ Serial.print("Error al enviar. Codigo HTTP: ");
 Serial.println(respuesta);  
 }
 
-El código comprueba si la operación terminó con respuesta 200. En las
+- El código comprueba si la operación terminó con respuesta 200. En las
 evidencias aparece repetidamente “Dato enviado correctamente a
 ThingSpeak”, por lo que durante la captura las escrituras se realizaron
 correctamente.
@@ -707,7 +707,7 @@ correctamente.
 
 delay(15000);
 
-La espera de 15 000 ms equivale a 15 segundos. Por tanto, el programa
+- La espera de 15 000 ms equivale a 15 segundos. Por tanto, el programa
 intenta realizar un nuevo envío aproximadamente cada 15 s, además del
 tiempo necesario para ejecutar la lectura, conversión y comunicación.
 
@@ -865,7 +865,7 @@ void loop() {
 \#include \<WiFi.h\>  
 \#include \<HTTPClient.h\>
 
-WiFi.h habilita la conexión inalámbrica del ESP32. HTTPClient.h permite
+- WiFi.h habilita la conexión inalámbrica del ESP32. HTTPClient.h permite
 construir y ejecutar una solicitud HTTP desde la placa. En este ejemplo
 no se utiliza la biblioteca ThingSpeak.h: la comunicación se realiza
 directamente mediante una URL del servicio de actualización de
@@ -878,7 +878,7 @@ const char\* password = "…";
 String apiKey = "…";  
 const int MQ2_PIN = 34;
 
-ssid y password contienen las credenciales de red; apiKey identifica la
+- ssid y password contienen las credenciales de red; apiKey identifica la
 autorización de escritura del canal; MQ2_PIN indica el GPIO utilizado
 para la señal analógica del MQ-2. La variable apiKey es String porque se
 concatena posteriormente con otros fragmentos de texto para formar una
@@ -896,7 +896,7 @@ Serial.print(".");
 }  
 Serial.println("\nWiFi conectado");
 
-El programa inicia el Monitor Serial, establece el GPIO 34 como entrada
+- El programa inicia el Monitor Serial, establece el GPIO 34 como entrada
 y solicita la conexión WiFi. El while bloquea el avance hasta que el
 estado sea WL_CONNECTED. Esto garantiza que, al llegar al envío, el
 ESP32 tenga una conexión de red disponible.
@@ -908,7 +908,7 @@ int valorMQ2 = analogRead(MQ2_PIN);
 Serial.print("Valor MQ-2: ");  
 Serial.println(valorMQ2);
 
-analogRead() toma la señal analógica del GPIO 34 y la convierte en un
+- analogRead() toma la señal analógica del GPIO 34 y la convierte en un
 número digital mediante el ADC del ESP32. Ese número se almacena en
 valorMQ2 y se imprime. Es fundamental interpretar correctamente este
 dato: en este programa es una lectura ADC del sensor, no una
@@ -922,7 +922,7 @@ if (WiFi.status() == WL_CONNECTED) {
 ...  
 }
 
-Antes de intentar el envío, el programa comprueba nuevamente el estado
+- Antes de intentar el envío, el programa comprueba nuevamente el estado
 de WiFi. Si la conexión no está activa, el bloque HTTP no se ejecuta y
 el programa continúa hasta la siguiente iteración.
 
@@ -933,7 +933,7 @@ HTTPClient http;
 String url = "https://api.thingspeak.com/update?api_key="  
 + apiKey + "&field1=" + String(valorMQ2);
 
-HTTPClient representa el cliente HTTP. La URL se construye concatenando
+- HTTPClient representa el cliente HTTP. La URL se construye concatenando
 cuatro partes funcionales: la dirección del endpoint de actualización de
 ThingSpeak, el parámetro api_key, el valor de la API Key y el parámetro
 field1 con el valor leído del MQ-2. String(valorMQ2) convierte el número
@@ -947,7 +947,7 @@ int respuesta = http.GET();
 Serial.print("Respuesta ThingSpeak: ");  
 Serial.println(respuesta);
 
-http.begin(url) prepara la conexión usando la URL construida. http.GET()
+- http.begin(url) prepara la conexión usando la URL construida. http.GET()
 ejecuta una solicitud HTTP GET. El valor devuelto se almacena en
 respuesta. En la evidencia del Monitor Serial se observa “Respuesta
 ThingSpeak: 200” de forma repetida, lo que indica que las solicitudes
@@ -958,7 +958,7 @@ fueron aceptadas correctamente durante la captura.
 http.end();  
 delay(15000);
 
-http.end() finaliza la comunicación HTTP de esa iteración. delay(15000)
+- http.end() finaliza la comunicación HTTP de esa iteración. delay(15000)
 establece una espera de 15 segundos antes de volver a leer el sensor y
 realizar otro envío.
 
@@ -1178,7 +1178,7 @@ void loop() {
 \#include \<WiFiClientSecure.h\>  
 \#include \<FirebaseClient.h\>
 
-Las dos directivas ENABLE_USER_AUTH y ENABLE_DATABASE habilitan las
+- Las dos directivas ENABLE_USER_AUTH y ENABLE_DATABASE habilitan las
 capacidades de autenticación y base de datos utilizadas por la
 biblioteca. WiFi.h gestiona la red, WiFiClientSecure permite
 comunicación segura mediante TLS/SSL y FirebaseClient proporciona la
@@ -1194,7 +1194,7 @@ integración con Firebase.
 \#define USER_PASSWORD "…"  
 \#define LED_PIN 2
 
-Este bloque concentra parámetros de conexión. WIFI_SSID y WIFI_PASSWORD
+- Este bloque concentra parámetros de conexión. WIFI_SSID y WIFI_PASSWORD
 identifican la red; API_KEY identifica el proyecto de Firebase;
 DATABASE_URL indica la base de datos Realtime Database; USER_EMAIL y
 USER_PASSWORD corresponden al usuario utilizado por Firebase
@@ -1210,7 +1210,7 @@ using AsyncClient = AsyncClientClass;
 AsyncClient async_client(ssl_client);  
 RealtimeDatabase Database;
 
-UserAuth agrupa los datos necesarios para autenticarse. FirebaseApp
+- UserAuth agrupa los datos necesarios para autenticarse. FirebaseApp
 representa la aplicación conectada a Firebase. ssl_client proporciona el
 cliente de red seguro y async_client permite las operaciones de la
 biblioteca. Database representa la interfaz con Realtime Database.
@@ -1232,7 +1232,7 @@ Serial.println(aResult.error().message());
 }  
 }
 
-ultimoTiempo registra la referencia temporal de la última lectura y
+- ultimoTiempo registra la referencia temporal de la última lectura y
 intervalo fija un periodo de 1000 ms. El callback processData() revisa
 los resultados de las operaciones de Firebase. Si no existe un resultado
 válido, retorna; si existe un error, muestra su mensaje en el Monitor
@@ -1244,7 +1244,7 @@ comunicación con Firebase.
 pinMode(LED_PIN, OUTPUT);  
 digitalWrite(LED_PIN, LOW);
 
-pinMode configura GPIO 2 como salida digital. digitalWrite(..., LOW)
+- pinMode configura GPIO 2 como salida digital. digitalWrite(..., LOW)
 establece el LED inicialmente apagado. Esta inicialización evita dejar
 el pin en un estado indeterminado al arrancar.
 
@@ -1257,7 +1257,7 @@ Serial.print(".");
 delay(500);  
 }
 
-El ESP32 intenta asociarse a la red y permanece en el while hasta que el
+- El ESP32 intenta asociarse a la red y permanece en el while hasta que el
 estado sea WL_CONNECTED. La impresión de puntos permite observar el
 proceso de conexión. Una vez conectado, se imprime la IP local.
 
@@ -1276,7 +1276,7 @@ processData,
 app.getApp\<RealtimeDatabase\>(Database);  
 Database.url(DATABASE_URL);
 
-ssl_client.setInsecure() configura el cliente TLS para no validar el
+- ssl_client.setInsecure() configura el cliente TLS para no validar el
 certificado del servidor. En un sistema de producción, esta decisión
 debería revisarse desde el punto de vista de seguridad. initializeApp()
 configura la aplicación Firebase y la autenticación;
@@ -1297,7 +1297,7 @@ if (app.ready())
 }  
 }
 
-app.loop() mantiene las tareas internas de Firebase actualizadas.
+- app.loop() mantiene las tareas internas de Firebase actualizadas.
 millis() devuelve el tiempo transcurrido desde el arranque sin bloquear
 el programa. La condición compara el tiempo actual con ultimoTiempo y
 permite ejecutar la lectura aproximadamente cada segundo. app.ready()
@@ -1313,7 +1313,7 @@ async_client,
 Serial.print("Estado recibido: ");  
 Serial.println(estado ? "true" : "false");
 
-Database.get\<bool\>() solicita el valor booleano almacenado en el nodo
+- Database.get\<bool\>() solicita el valor booleano almacenado en el nodo
 /estado. El resultado se guarda en estado, que solamente puede
 representar true o false. El operador ternario se utiliza para imprimir
 la palabra correspondiente en el Monitor Serial.
@@ -1331,7 +1331,7 @@ digitalWrite(LED_PIN, LOW);
 Serial.println("LED APAGADO");  
 }
 
-Este es el bloque que conecta el dato de la nube con el circuito físico.
+- Este es el bloque que conecta el dato de la nube con el circuito físico.
 Si estado es true, GPIO 2 pasa a HIGH y el LED se enciende. Si es false,
 GPIO 2 pasa a LOW y el LED se apaga. Por tanto, la decisión tomada en
 Firebase se convierte directamente en una acción eléctrica sobre el pin
@@ -1345,7 +1345,7 @@ async_client,
 estado  
 );
 
-Después de actuar sobre el LED, el ESP32 escribe el mismo estado en
+- Después de actuar sobre el LED, el ESP32 escribe el mismo estado en
 /estado_esp32. Esto permite que la base de datos conserve una
 confirmación del estado procesado por el dispositivo.
 
