@@ -91,6 +91,38 @@ style="width:5.9in;height:7.86667in" />
 *Figura 1. Evidencia del potenciómetro, ESP32, protoboard y Monitor
 Serial.*
 
+
+**Código empleado**
+
+```cpp
+const int POT_PIN = 34;
+const int MUESTRAS = 10;
+
+void setup() {
+    Serial.begin(115200);
+}
+
+void loop() {
+    long acumulado = 0;
+
+    for (int i = 0; i < MUESTRAS; i++) {
+        acumulado += analogRead(POT_PIN);
+        delay(40);
+    }
+
+    float adcPromedio = acumulado / (float)MUESTRAS;
+    float voltaje = (adcPromedio * 3.3) / 4095.0;
+
+    Serial.print("ADC promedio: ");
+    Serial.print(adcPromedio);
+    Serial.print(" | Voltaje: ");
+    Serial.print(voltaje, 3);
+    Serial.println(" V");
+
+    delay(500);
+}
+```
+
 ## 2.4 Explicación del código por bloques
 
 ### Bloque 1: Selección del GPIO analógico
