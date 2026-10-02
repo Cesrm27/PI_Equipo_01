@@ -1,14 +1,37 @@
-**INFORME TÉCNICO DE TALLER IoT**
+<div align="center">
 
-**ESP32, sensores, WiFi y plataformas IoT**
+# TALLER DE INTERNET DE LAS COSAS (IoT) · ESP32
 
-Ejemplos 1 al 5  
-Lectura analógica · Servidor web · ThingSpeak · MQ-2 · Firebase
+### INFORME DE LABORATORIO
 
-Documento elaborado a partir de los códigos y evidencias
-proporcionados.  
-El análisis distingue entre lo que demuestra el código y lo que puede
-observarse directamente en las evidencias.
+**Prácticas con ESP32, sensores, WiFi y servicios en la nube**
+
+</div>
+
+| **Datos del informe** | **Información** |
+|---|---|
+| **Curso** | Proyecto Integrador |
+| **Estudiante** | Kevin Esty Carvallo Neciosup |
+| **Docentes** | Umbert Lewis De La Cruz Rodriguez, Maria Rejas, Harry Rivera, Renzo Chan |
+| **Fecha** | 01/10/2026 |
+| **Institución** | Universidad Peruana Cayetano Heredia |
+
+---
+
+## 📑 Contenido
+
+- [1. Consideraciones generales](#1-consideraciones-generales)
+- [2. Ejemplo 1: Lectura de un potenciómetro con ESP32](#2-ejemplo-1-lectura-de-un-potenciómetro-con-esp32)
+- [3. Ejemplo 2: Scanner WiFi / servidor web con ESP32](#3-ejemplo-2-scanner-wifi--servidor-web-con-esp32)
+- [4. Ejemplo 3: Envío de datos a ThingSpeak](#4-ejemplo-3-envío-de-datos-a-thingspeak)
+- [5. Ejemplo 4: Envío de datos del sensor MQ-2 a ThingSpeak](#5-ejemplo-4-envío-de-datos-del-sensor-mq-2-a-thingspeak)
+- [6. Ejemplo 5: Control remoto de un LED mediante ESP32 y Firebase](#6-ejemplo-5-control-remoto-de-un-led-mediante-esp32-y-firebase)
+- [7. Integración y comparación de los cinco ejemplos](#7-integración-y-comparación-de-los-cinco-ejemplos)
+- [8. Resultados](#8-resultados)
+- [9. Análisis](#9-análisis)
+- [10. Conclusiones](#10-conclusiones)
+
+---
 
 # 1. Consideraciones generales
 
@@ -67,6 +90,43 @@ style="width:5.9in;height:7.86667in" />
 
 *Figura 1. Evidencia del potenciómetro, ESP32, protoboard y Monitor
 Serial.*
+
+### Código empleado
+
+El siguiente es el código empleado para realizar la lectura promediada del potenciómetro y convertir el valor ADC a voltaje. La captura se incorpora como evidencia visual y el bloque de código se incluye para facilitar su revisión línea por línea. En la evidencia proporcionada también se observa este bloque de código en el editor.
+
+<img src="imagenes/codigo_ejemplo_01.png" alt="Código empleado del Ejemplo 1" width="850" />
+
+*Figura. Código empleado para el Ejemplo 1: lectura promediada del potenciómetro.*
+
+```cpp
+const int POT_PIN = 34;
+const int MUESTRAS = 10;
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  long acumulado = 0;
+
+  for (int i = 0; i < MUESTRAS; i++) {
+    acumulado += analogRead(POT_PIN);
+    delay(40);
+  }
+
+  float adcPromedio = acumulado / (float)MUESTRAS;
+  float voltaje = (adcPromedio * 3.3) / 4095.0;
+
+  Serial.print("ADC promedio: ");
+  Serial.print(adcPromedio);
+  Serial.print(" | Voltaje: ");
+  Serial.print(voltaje, 3);
+  Serial.println(" V");
+
+  delay(500);
+}
+```
 
 ## 2.4 Explicación del código por bloques
 
@@ -219,6 +279,115 @@ style="width:5.7in;height:3.20269in" />
 
 *Figura 2. Página web generada por el ESP32; la evidencia muestra la IP
 10.175.204.80.*
+
+### Código empleado
+
+El programa completo utilizado para el servidor web del ESP32 es el siguiente. Las credenciales se representan como marcadores para no publicar datos de acceso.
+
+```cpp
+#include <WiFi.h>
+#include <WebServer.h>
+
+const char* ssid = "TU_WIFI";
+const char* password = "TU_PASSWORD";
+
+WebServer server(80);
+
+void handleRoot() {
+  String html = R"rawliteral(
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 - Proyecto Integrador</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      width: 90%;
+      max-width: 500px;
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h1 { margin-bottom: 10px; font-size: 30px; }
+    p { color: #d8e6eb; font-size: 17px; }
+    .estado {
+      margin: 25px 0;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(0, 200, 120, 0.2);
+      border: 1px solid rgba(0, 255, 150, 0.4);
+    }
+    .ip { font-size: 22px; font-weight: bold; color: #66e3a4; }
+    .footer { margin-top: 25px; font-size: 13px; color: #b8c9ce; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>ESP32</h1>
+    <p>Servidor Web</p>
+    <div class="estado">
+      <h2>✓ Hola Kevin, servidor funcionando</h2>
+      <p>Conexión WiFi establecida correctamente.</p>
+    </div>
+    <p>Dirección IP del ESP32:</p>
+    <div class="ip">
+)rawliteral";
+
+  html += WiFi.localIP().toString();
+
+  html += R"rawliteral(
+    </div>
+    <div class="footer">
+      Proyecto Integrador · ESP32
+    </div>
+  </div>
+</body>
+</html>
+)rawliteral";
+
+  server.send(200, "text/html", html);
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando a WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+  Serial.print("Direccion IP: ");
+  Serial.println(WiFi.localIP());
+
+  server.on("/", handleRoot);
+  server.begin();
+
+  Serial.println("Servidor web iniciado");
+}
+
+void loop() {
+  server.handleClient();
+}
+```
 
 ## 3.4 Explicación del código por bloques
 
@@ -385,6 +554,75 @@ style="width:5.9in;height:2.70908in" />
 
 *Figura 4. Montaje del potenciómetro utilizado para el envío a
 ThingSpeak.*
+
+### Código empleado
+
+El siguiente programa toma diez muestras del potenciómetro, calcula el promedio, convierte el resultado a voltaje y lo publica en el **Field 1** de ThingSpeak.
+
+```cpp
+#include <WiFi.h>
+#include <ThingSpeak.h>
+
+const char* ssid = "TU_WIFI";
+const char* password = "TU_PASSWORD";
+
+unsigned long channelID = 3515248;
+const char* writeAPIKey = "TU_WRITE_API_KEY";
+
+WiFiClient client;
+int potPin = 34;
+
+void setup() {
+  Serial.begin(115200);
+
+  WiFi.begin(ssid, password);
+
+  Serial.print("Conectando a WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+  Serial.print("IP del ESP32: ");
+  Serial.println(WiFi.localIP());
+
+  ThingSpeak.begin(client);
+}
+
+void loop() {
+  long suma = 0;
+
+  for (int i = 0; i < 10; i++) {
+    int valor = analogRead(potPin);
+    suma += valor;
+    delay(50);
+  }
+
+  float promedioADC = suma / 10.0;
+  float voltaje = (promedioADC * 3.3) / 4095.0;
+
+  Serial.print("ADC promedio: ");
+  Serial.print(promedioADC);
+  Serial.print(" | Voltaje: ");
+  Serial.print(voltaje, 3);
+  Serial.println(" V");
+
+  ThingSpeak.setField(1, voltaje);
+
+  int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
+
+  if (respuesta == 200) {
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+  } else {
+    Serial.print("Error al enviar. Codigo HTTP: ");
+    Serial.println(respuesta);
+  }
+
+  delay(15000);
+}
+```
 
 ## 4.3 Explicación del código por bloques
 
@@ -571,6 +809,60 @@ style="width:6.3in;height:3.54563in" />
 
 *Figura 7. Evidencia del montaje físico del sensor MQ-2 y del canal de
 ThingSpeak.*
+
+### Código empleado
+
+En este ejemplo se emplea la lectura analógica del MQ-2 y se realiza el envío directo a ThingSpeak mediante una solicitud HTTP GET.
+
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+const char* ssid = "TU_WIFI";
+const char* password = "TU_PASSWORD";
+
+String apiKey = "TU_API_KEY";
+const int MQ2_PIN = 34;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(MQ2_PIN, INPUT);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("\nWiFi conectado");
+}
+
+void loop() {
+  int valorMQ2 = analogRead(MQ2_PIN);
+
+  Serial.print("Valor MQ-2: ");
+  Serial.println(valorMQ2);
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    String url = "https://api.thingspeak.com/update?api_key="
+                 + apiKey + "&field1=" + String(valorMQ2);
+
+    http.begin(url);
+
+    int respuesta = http.GET();
+
+    Serial.print("Respuesta ThingSpeak: ");
+    Serial.println(respuesta);
+
+    http.end();
+  }
+
+  delay(15000);
+}
+```
 
 ## 5.4 Explicación del código por bloques
 
@@ -779,6 +1071,107 @@ encendido, conectado al ESP32. El programa controla el estado eléctrico
 del GPIO mediante digitalWrite(). La resistencia en serie no se
 identifica de forma inequívoca en la evidencia proporcionada, por lo que
 no se afirma un valor concreto.
+
+### Código empleado
+
+Este programa consulta un valor booleano almacenado en Firebase y lo utiliza para controlar el LED del GPIO 2. También registra en Firebase el estado que el ESP32 ejecutó. Las credenciales se muestran como marcadores.
+
+```cpp
+#define ENABLE_USER_AUTH
+#define ENABLE_DATABASE
+
+#include <WiFi.h>
+#include <WiFiClientSecure.h>
+#include <FirebaseClient.h>
+
+#define WIFI_SSID "TU_WIFI"
+#define WIFI_PASSWORD "TU_PASSWORD"
+#define API_KEY "TU_API_KEY"
+#define DATABASE_URL "TU_DATABASE_URL"
+#define USER_EMAIL "TU_USER_EMAIL"
+#define USER_PASSWORD "TU_USER_PASSWORD"
+
+#define LED_PIN 2
+
+UserAuth user_auth(API_KEY, USER_EMAIL, USER_PASSWORD);
+FirebaseApp app;
+WiFiClientSecure ssl_client;
+using AsyncClient = AsyncClientClass;
+AsyncClient async_client(ssl_client);
+RealtimeDatabase Database;
+
+unsigned long ultimoTiempo = 0;
+const unsigned long intervalo = 1000;
+
+void processData(AsyncResult &aResult) {
+  if (!aResult.isResult()) return;
+
+  if (aResult.isError()) {
+    Serial.print("Firebase error: ");
+    Serial.println(aResult.error().message());
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+  Serial.print("IP del ESP32: ");
+  Serial.println(WiFi.localIP());
+
+  ssl_client.setInsecure();
+
+  initializeApp(
+    async_client,
+    app,
+    getAuth(user_auth),
+    processData,
+    "authTask"
+  );
+
+  app.getApp<RealtimeDatabase>(Database);
+  Database.url(DATABASE_URL);
+
+  Serial.println("Firebase iniciado");
+}
+
+void loop() {
+  app.loop();
+
+  if (millis() - ultimoTiempo >= intervalo) {
+    ultimoTiempo = millis();
+
+    if (app.ready()) {
+      bool estado = Database.get<bool>(async_client, "/estado");
+
+      Serial.print("Estado recibido: ");
+      Serial.println(estado ? "true" : "false");
+
+      if (estado) {
+        digitalWrite(LED_PIN, HIGH);
+        Serial.println("LED ENCENDIDO");
+      } else {
+        digitalWrite(LED_PIN, LOW);
+        Serial.println("LED APAGADO");
+      }
+
+      Database.set<bool>(async_client, "/estado_esp32", estado);
+    }
+  }
+}
+```
 
 ## 6.4 Explicación del código por bloques
 
