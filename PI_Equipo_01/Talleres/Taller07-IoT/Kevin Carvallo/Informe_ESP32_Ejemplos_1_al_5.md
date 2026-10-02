@@ -181,13 +181,6 @@ suficiente precisión todos los valores ADC de cada línea, por lo que no
 se inventa una serie numérica completa. Lo que sí puede afirmarse es que
 la salida observada es estable alrededor de 3.30 V durante la captura.
 
-## 2.7 Interpretación de la gráfica
-
-En este ejemplo no se observa una gráfica de ThingSpeak asociada al
-programa. La salida principal es el Monitor Serial. Por ello, la
-interpretación se centra en la estabilidad del valor calculado y en la
-relación entre el movimiento del potenciómetro, la lectura ADC y el
-voltaje estimado.
 
 # 3. EJEMPLO 2: Scanner WiFi / servidor web con ESP32
 
