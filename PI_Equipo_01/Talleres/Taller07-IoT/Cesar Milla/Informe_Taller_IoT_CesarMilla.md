@@ -607,16 +607,3 @@ Por seguridad, el informe no incluye contraseñas de WiFi, claves de usuarios ni
 4.  La misma arquitectura de adquisición y transmisión puede reutilizarse con diferentes sensores, modificando principalmente la forma en que se interpreta la señal obtenida.
 
 5.  Firebase Realtime Database permitió implementar un esquema de control remoto en el que una página web envía una orden a la nube y el ESP32 la convierte en una acción física sobre un LED.
-
-
----
-
-# 10. Recomendaciones
-
-- No publicar en capturas o informes las contraseñas de redes WiFi, API Keys de escritura o credenciales de usuarios.
-
-- Verificar que el GPIO seleccionado admita el tipo de señal requerido y respetar los niveles eléctricos de 3.3 V del ESP32.
-
-- Mantener intervalos adecuados de envío para evitar exceder límites de las plataformas en la nube.
-
-- Antes de la entrega final, incorporar como evidencia las fotografías del montaje, capturas del monitor serial y gráficos obtenidos en cada servicio.
