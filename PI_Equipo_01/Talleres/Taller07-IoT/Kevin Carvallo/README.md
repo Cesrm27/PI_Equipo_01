@@ -1,1 +1,0 @@
-# TALLER 07-IoT
