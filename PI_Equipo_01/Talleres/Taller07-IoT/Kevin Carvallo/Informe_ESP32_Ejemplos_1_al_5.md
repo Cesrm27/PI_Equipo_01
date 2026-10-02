@@ -562,7 +562,7 @@ const char* ssid = "GalaxyA04s";
 const char* password = "12345678";
 
 unsigned long channelID = 3515248;
-const char* writeAPIKey = "TU_WRITE_API_KEY";
+const char* writeAPIKey = "BNU5ZQ3GHU1X1O49";
 
 WiFiClient client;
 int potPin = 34;
@@ -816,7 +816,7 @@ En este ejemplo se emplea la lectura analógica del MQ-2 y se realiza el envío 
 const char* ssid = "GalaxyA04s";
 const char* password = "12345678";
 
-String apiKey = "TU_API_KEY";
+String apiKey = "1NNJ4UQJU2CYUT6M";
 const int MQ2_PIN = 34;
 
 void setup() {
