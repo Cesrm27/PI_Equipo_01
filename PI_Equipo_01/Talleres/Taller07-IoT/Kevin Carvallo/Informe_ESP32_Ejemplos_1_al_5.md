@@ -685,26 +685,26 @@ realizar otro envío.
 
 ## 5.5 Funcionamiento completo del sistema
 
-26. El MQ-2 produce una señal eléctrica asociada a las condiciones
+- El MQ-2 produce una señal eléctrica asociada a las condiciones
     detectadas por el sensor.
 
-27. La señal llega al GPIO 34 del ESP32.
+- La señal llega al GPIO 34 del ESP32.
 
-28. El ADC convierte la señal a un valor digital almacenado en valorMQ2.
+- El ADC convierte la señal a un valor digital almacenado en valorMQ2.
 
-29. El valor se muestra en el Monitor Serial.
+- El valor se muestra en el Monitor Serial.
 
-30. Si WiFi está conectado, el ESP32 construye una URL con la API Key y
+- Si WiFi está conectado, el ESP32 construye una URL con la API Key y
     el valor en Field 1.
 
-31. HTTPClient ejecuta una solicitud GET al endpoint de ThingSpeak.
+- HTTPClient ejecuta una solicitud GET al endpoint de ThingSpeak.
 
-32. ThingSpeak responde y el código de respuesta se muestra en el
+- ThingSpeak responde y el código de respuesta se muestra en el
     Monitor Serial.
 
-33. El canal almacena el dato y lo representa en la gráfica.
+- El canal almacena el dato y lo representa en la gráfica.
 
-34. Después de 15 s se repite el ciclo.
+- Después de 15 s se repite el ciclo.
 
 ## 5.6 Interpretación de las salidas
 
@@ -971,26 +971,26 @@ confirmación del estado procesado por el dispositivo.
 
 ## 6.5 Funcionamiento completo del sistema
 
-35. El ESP32 inicia el GPIO del LED como salida y lo deja apagado.
+- El ESP32 inicia el GPIO del LED como salida y lo deja apagado.
 
-36. Se conecta a la red WiFi.
+- Se conecta a la red WiFi.
 
-37. Se inicializa la autenticación con Firebase.
+- Se inicializa la autenticación con Firebase.
 
-38. Se configura el acceso a Realtime Database.
+- Se configura el acceso a Realtime Database.
 
-39. El loop mantiene activa la comunicación con Firebase.
+- El loop mantiene activa la comunicación con Firebase.
 
-40. Cada aproximadamente 1 segundo, si la aplicación está lista, se
+- Cada aproximadamente 1 segundo, si la aplicación está lista, se
     consulta /estado.
 
-41. El valor true o false se recibe en la variable estado.
+- El valor true o false se recibe en la variable estado.
 
-42. true enciende el LED; false lo apaga.
+- true enciende el LED; false lo apaga.
 
-43. El ESP32 registra el resultado en /estado_esp32.
+- El ESP32 registra el resultado en /estado_esp32.
 
-44. La interfaz web y Firebase permiten visualizar/controlar el estado
+- La interfaz web y Firebase permiten visualizar/controlar el estado
     remoto.
 
 ## 6.6 Interpretación de las salidas y evidencias
@@ -1119,56 +1119,27 @@ en el dispositivo y el dispositivo confirma su estado de regreso.
 
 # 10. Conclusiones
 
-45. El ESP32 puede adquirir señales analógicas mediante sus entradas ADC
+- El ESP32 puede adquirir señales analógicas mediante sus entradas ADC
     y convertirlas en datos digitales procesables por el programa.
 
-46. El uso de varias muestras y un promedio permite obtener una lectura
+- El uso de varias muestras y un promedio permite obtener una lectura
     más representativa que depender de una sola medición instantánea.
 
-47. La conexión WiFi permite ampliar el funcionamiento del ESP32 desde
+- La conexión WiFi permite ampliar el funcionamiento del ESP32 desde
     tareas locales hacia servidores y plataformas IoT.
 
-48. ThingSpeak permite almacenar y visualizar los valores enviados por
+- ThingSpeak permite almacenar y visualizar los valores enviados por
     el ESP32, facilitando la interpretación temporal mediante gráficas.
 
-49. El sensor MQ-2 del ejercicio 4 se trabajó como una fuente de lectura
+- El sensor MQ-2 del ejercicio 4 se trabajó como una fuente de lectura
     analógica; el valor observado es ADC y no una concentración de gas
     calibrada.
 
-50. Firebase permite implementar control remoto mediante variables
+- Firebase permite implementar control remoto mediante variables
     booleanas, de modo que un estado almacenado en la nube puede
     convertirse en una acción sobre un GPIO.
 
-51. Las evidencias demuestran la correspondencia entre código, circuito,
+- Las evidencias demuestran la correspondencia entre código, circuito,
     salida serial, comunicación de red y visualización o actuación
     final.
 
-# 11. Guía breve para defensa oral
-
-Si el profesor solicita explicar cada práctica, una respuesta técnica
-puede seguir esta secuencia:
-
-52. Indicar qué entrada o salida utiliza el ESP32.
-
-53. Explicar qué bloque del código adquiere o genera el dato.
-
-54. Describir cómo se procesa el dato antes de transmitirlo o mostrarlo.
-
-55. Explicar qué mecanismo de comunicación se utiliza: servidor HTTP,
-    ThingSpeak o Firebase.
-
-56. Interpretar exactamente qué muestra el Monitor Serial o la
-    evidencia.
-
-57. Relacionar el resultado con la gráfica o con la actuación física del
-    LED.
-
-58. Aclarar cualquier limitación de medición, como la ausencia de
-    calibración del MQ-2.
-
-# 12. Fuente de evidencias
-
-Código fuente, capturas de Arduino IDE, fotografías de los montajes,
-gráficas de ThingSpeak y evidencias de Firebase fueron tomados del
-material proporcionado para el taller. El documento base contiene 22
-páginas y los cinco ejemplos con sus respectivos códigos y evidencias.
