@@ -11,7 +11,6 @@
 | **Curso** | Proyecto Integrador |
 | **Actividad** | Mostrar en Node-RED los datos de un sensor DHT11 |
 | **Herramientas** | ESP32, MQTT y Node-RED Dashboard 2.0 |
-| **Integrante** | Shedira Lumeris Sihuincha Palacin |
 | **Fecha** | 01/10/2026 |
 | **Institución** | Universidad Peruana Cayetano Heredia |
 
