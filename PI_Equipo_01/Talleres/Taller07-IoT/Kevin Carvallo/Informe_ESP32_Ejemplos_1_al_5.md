@@ -95,31 +95,41 @@ Serial.*
 **Código empleado**
 
 ```cpp
-const int POT_PIN = 34;
-const int MUESTRAS = 10;
+int potPin = 34;
 
 void setup() {
-    Serial.begin(115200);
+  Serial.begin(115200);
 }
 
 void loop() {
-    long acumulado = 0;
 
-    for (int i = 0; i < MUESTRAS; i++) {
-        acumulado += analogRead(POT_PIN);
-        delay(40);
-    }
+  long suma = 0;
 
-    float adcPromedio = acumulado / (float)MUESTRAS;
-    float voltaje = (adcPromedio * 3.3) / 4095.0;
+  // Tomar 10 lecturas
+  for (int i = 0; i < 10; i++) {
 
-    Serial.print("ADC promedio: ");
-    Serial.print(adcPromedio);
-    Serial.print(" | Voltaje: ");
-    Serial.print(voltaje, 3);
-    Serial.println(" V");
+    int valor = analogRead(potPin);
 
-    delay(500);
+    suma += valor;
+
+    delay(50);
+  }
+
+  // Calcular promedio de las 10 lecturas
+  float promedioADC = suma / 10.0;
+
+  // Convertir el promedio a voltaje
+  float voltaje = (promedioADC * 3.3) / 4095.0;
+
+  Serial.print("Promedio ADC: ");
+  Serial.print(promedioADC);
+
+  Serial.print(" | Voltaje promedio: ");
+  Serial.print(voltaje, 3);
+
+  Serial.println(" V");
+
+  delay(500);
 }
 ```
 
@@ -137,10 +147,6 @@ cuando se ejecuta analogRead(potPin), el ESP32 sabe que debe consultar
 ese GPIO.
 
 ### Bloque 2: Inicialización del Monitor Serial
-
-void setup() {  
-Serial.begin(115200);  
-}
 
 setup() se ejecuta una sola vez al iniciar o reiniciar el ESP32.
 Serial.begin(115200) inicializa la comunicación serial a 115200 baudios.
