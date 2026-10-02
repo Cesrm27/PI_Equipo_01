@@ -1,919 +1,1174 @@
-# INFORME DE TALLER
+**INFORME TÉCNICO DE TALLER IoT**
 
-## ESP32, sensores, WiFi y plataformas IoT
+**ESP32, sensores, WiFi y plataformas IoT**
 
-**Análisis y explicación de los Ejemplos 01 al 05**
+Ejemplos 1 al 5  
+Lectura analógica · Servidor web · ThingSpeak · MQ-2 · Firebase
 
-*Documento convertido desde el informe en formato DOCX. Las evidencias visuales se encuentran en la carpeta `imagenes/`.*
+Documento elaborado a partir de los códigos y evidencias
+proporcionados.  
+El análisis distingue entre lo que demuestra el código y lo que puede
+observarse directamente en las evidencias.
 
-INFORME DE TALLER
-ESP32, sensores, WiFi y plataformas IoT
+# 1. Consideraciones generales
 
-Análisis y explicación de los Ejemplos 01 al 05
+El presente informe analiza cinco prácticas realizadas con un ESP32. El
+objetivo no es únicamente describir qué hace cada instrucción, sino
+relacionar el programa con el funcionamiento físico del circuito, la
+comunicación por WiFi y la visualización o almacenamiento de los
+resultados. La fuente principal de los códigos y evidencias es el
+documento del taller proporcionado, complementado con las fotografías
+incluidas en el material de trabajo.
 
-![Evidencia figura_01.png](imagenes/figura_01.png)
+Cuando una lectura corresponde a una entrada analógica, se diferencia
+explícitamente entre el valor digital obtenido por el ADC y una magnitud
+física calibrada. En particular, en el caso del MQ-2, el programa
+obtiene un valor ADC crudo; por tanto, no se interpreta como ppm de gas
+porque el código no contiene una calibración que permita realizar esa
+conversión.
 
-*Figura 1. Actividad del Ejemplo 01: lectura de un potenciómetro con ESP32.*
+Por seguridad y buenas prácticas, las credenciales de WiFi, API Keys y
+contraseñas que aparecen en el código original se describen
+funcionalmente en este informe, pero no se vuelven a publicar como datos
+de acceso.
 
-Curso / Taller de sistemas embebidos e IoT
-Plataforma: ESP32 + Arduino IDE
-Documento elaborado a partir de las evidencias, códigos e imágenes proporcionados.
+# 2. EJEMPLO 1: Lectura de un potenciómetro con ESP32
 
-# 1. Introducción
+## 2.1 Objetivo
 
-El presente informe documenta el desarrollo de cinco actividades prácticas realizadas con una placa ESP32. Las actividades muestran una progresión desde la lectura analógica de un potenciómetro hasta la comunicación con redes WiFi, la publicación de datos en ThingSpeak y la consulta remota de un estado para controlar un LED.
+El primer ejemplo busca obtener una señal analógica proveniente de un
+potenciómetro conectado al ESP32, realizar varias lecturas para reducir
+la variabilidad instantánea mediante un promedio y convertir ese
+resultado del dominio digital del ADC a un valor de voltaje estimado.
+Finalmente, el programa muestra ambos resultados en el Monitor Serial.
 
-En cada ejemplo se explica el propósito del código, la función de sus principales instrucciones, la forma en que se conecta el circuito, el comportamiento observado en el monitor serial y, cuando corresponde, la interpretación de las gráficas generadas en ThingSpeak. Las evidencias visuales se integran como respaldo del desarrollo práctico.
+## 2.2 Materiales y componentes
 
-# 2. Resumen de las actividades
+- ESP32 (DOIT ESP32 DEVKIT V1, según la evidencia del Arduino IDE).
 
-| Elemento | Descripción |
-| --- | --- |
-| Ejemplo 01 | Lectura de un potenciómetro, promedio de 10 muestras y conversión de ADC a voltaje. |
-| Ejemplo 02 | Conexión del ESP32 a una red WiFi y creación de un servidor web local para mostrar la IP. |
-| Ejemplo 03 | Lectura del potenciómetro y envío del voltaje a ThingSpeak mediante su librería. |
-| Ejemplo 04 | Lectura analógica del sensor MQ-2 y envío del valor a ThingSpeak mediante HTTP. |
-| Ejemplo 05 | Consulta de un campo de ThingSpeak y control de un LED del ESP32 según el valor recibido. |
-
-# 3. Ejemplo 01: Lectura de un potenciómetro con ESP32
-
-Objetivo: mejorar la lectura del potenciómetro tomando varias muestras, calcular un promedio para reducir variaciones instantáneas y convertir el resultado del ADC en un valor de voltaje.
-
-## 3.1. Componentes y conexión
-
-- ESP32 DevKit.
 - Potenciómetro.
+
 - Protoboard y cables de conexión.
-- Entrada analógica GPIO 34.
-El potenciómetro funciona como un divisor de tensión. Sus extremos se conectan a alimentación y tierra, mientras que el terminal central (cursor) se conecta al GPIO 34. Al girar el mando cambia la tensión aplicada a la entrada ADC del ESP32.
 
-![Evidencia figura_02.png](imagenes/figura_02.png)
+- Computadora con Arduino IDE.
 
-*Figura 2. Montaje físico del potenciómetro en la protoboard.*
+## 2.3 Conexión del circuito
 
-![Evidencia figura_03.png](imagenes/figura_03.png)
+El código define int potPin = 34, por lo que la señal que el programa
+lee está asociada al GPIO 34. Este GPIO se utiliza como entrada
+analógica. La fotografía evidencia el potenciómetro montado sobre la
+protoboard y conectado al ESP32. El código no documenta de forma
+explícita los rieles de alimentación, por lo que este informe no asigna
+números de pin adicionales que no puedan confirmarse con seguridad en la
+evidencia.
 
-*Figura 3. Evidencia del código y de las lecturas obtenidas en el monitor serial.*
+<img src="imagenes/media/image1.png"
+style="width:5.9in;height:7.86667in" />
 
-## 3.2. Código utilizado
+*Figura 1. Evidencia del potenciómetro, ESP32, protoboard y Monitor
+Serial.*
 
-```cpp
+## 2.4 Explicación del código por bloques
+
+### Bloque 1: Selección del GPIO analógico
+
 int potPin = 34;
-void setup() {
-```
 
-```cpp
-Serial.begin(115200);
+La variable potPin almacena el número del GPIO donde se encuentra la
+señal del potenciómetro. Se utiliza int porque el número de pin es un
+valor entero. La importancia de esta variable es que permite que el
+resto del programa no tenga que escribir repetidamente el número 34:
+cuando se ejecuta analogRead(potPin), el ESP32 sabe que debe consultar
+ese GPIO.
+
+### Bloque 2: Inicialización del Monitor Serial
+
+void setup() {  
+Serial.begin(115200);  
 }
-```
 
-```cpp
-void loop() {
-long suma = 0;
-```
+setup() se ejecuta una sola vez al iniciar o reiniciar el ESP32.
+Serial.begin(115200) inicializa la comunicación serial a 115200 baudios.
+Esta comunicación permite observar en el Monitor Serial los resultados
+calculados por el programa. El valor 115200 corresponde a la velocidad
+configurada tanto en el programa como en el Monitor Serial.
 
-```cpp
-// Tomar 10 lecturas
-for (int i = 0; i < 10; i++) {
-```
+### Bloque 3: Acumulación de diez lecturas
 
-```cpp
-int valor = analogRead(potPin);
-suma += valor;
-```
-
-```cpp
-delay(50);
+long suma = 0;  
+  
+for (int i = 0; i \< 10; i++) {  
+int valor = analogRead(potPin);  
+suma += valor;  
+delay(50);  
 }
-```
 
-```cpp
-// Calcular promedio de las 10 lecturas
+En cada ejecución de loop(), la variable suma comienza en cero. El ciclo
+for se repite diez veces, por lo que analogRead(potPin) se ejecuta diez
+veces. Cada lectura se almacena temporalmente en valor y se acumula
+mediante suma += valor. La instrucción delay(50) introduce 50 ms entre
+lecturas. Esto evita tomar las diez muestras prácticamente en el mismo
+instante y establece un pequeño intervalo entre ellas.
+
+### Bloque 4: Cálculo del promedio ADC
+
 float promedioADC = suma / 10.0;
-```
 
-```cpp
-// Convertir el promedio a voltaje
-float voltaje = (promedioADC * 3.3) / 4095.0;
-```
+Después de reunir las diez muestras, el programa divide la suma entre
+10.0. El uso de 10.0 hace que la operación se realice como cálculo de
+punto flotante, permitiendo conservar decimales en el promedio. El
+resultado representa el valor medio de las lecturas digitales entregadas
+por el ADC durante esa ventana de muestreo.
 
-```cpp
-Serial.print("Promedio ADC: ");
-Serial.print(promedioADC);
-```
+### Bloque 5: Conversión de ADC a voltaje
 
-```cpp
-Serial.print(" | Voltaje promedio: ");
-Serial.print(voltaje, 3);
-```
+float voltaje = (promedioADC \* 3.3) / 4095.0;
 
-```cpp
+Esta expresión aplica una conversión lineal basada en una referencia de
+3.3 V y un rango ADC de 0 a 4095. El término promedioADC \* 3.3 escala
+la lectura digital al rango de voltaje, y la división entre 4095
+normaliza el resultado respecto al máximo digital utilizado por el
+programa. El resultado es una estimación de voltaje según el modelo
+asumido en el código.
+
+### Bloque 6: Presentación de resultados
+
+Serial.print("Promedio ADC: ");  
+Serial.print(promedioADC);  
+Serial.print(" \| Voltaje promedio: ");  
+Serial.print(voltaje, 3);  
 Serial.println(" V");
+
+El programa construye una línea de salida que muestra primero el
+promedio ADC y luego el voltaje promedio. El parámetro 3 de
+Serial.print(voltaje, 3) solicita tres cifras decimales. Esto facilita
+comparar lecturas entre ciclos.
+
+### Bloque 7: Periodo entre grupos de mediciones
+
 delay(500);
-```
 
-```cpp
-}
-```
+Al final de loop(), el ESP32 espera 500 ms antes de comenzar el
+siguiente grupo de diez lecturas. Por ello, el sistema no imprime
+resultados de forma continua sin pausa, sino que genera una nueva
+estimación aproximadamente cada medio segundo, además del tiempo
+empleado en las diez muestras.
 
-## 3.3. Explicación del funcionamiento
+## 2.5 Funcionamiento completo del sistema
 
-1. Se define el GPIO 34 como entrada analógica mediante la variable potPin.
-1. En setup() se inicia la comunicación serial a 115200 baudios.
-1. En cada ciclo se realizan 10 lecturas con analogRead(potPin).
-1. Las diez lecturas se acumulan en suma y posteriormente se divide entre 10 para obtener promedioADC.
-1. El ADC del ESP32 utiliza una escala de 0 a 4095. Por ello, el promedio se convierte a voltios mediante (ADC × 3.3) / 4095.
-1. Finalmente, el valor promedio de ADC y el voltaje se muestran en el monitor serial.
-El promedio permite que pequeñas fluctuaciones eléctricas no se reflejen directamente como cambios bruscos en el valor mostrado. La resolución utilizada en la fórmula corresponde a un ADC de 12 bits, con 4096 niveles posibles (0–4095).
+1.  El potenciómetro modifica la señal eléctrica que llega a la entrada
+    analógica asociada al GPIO 34.
 
-## 3.4. Interpretación de las salidas
+2.  El ADC del ESP32 transforma esa señal analógica en un valor digital.
 
-En la evidencia del monitor serial se observan lecturas del ADC cercanas a la parte alta de su rango y valores de tensión próximos a 3.3 V. Esto indica que el cursor del potenciómetro se encontraba cerca del extremo de mayor tensión. Al girar el potenciómetro hacia el otro extremo, el ADC debe disminuir y el voltaje calculado debe acercarse a 0 V. Por tanto, existe una relación directa entre la posición del cursor, la lectura ADC y el voltaje mostrado.
+3.  El programa toma diez muestras consecutivas y las acumula.
 
-# 4. Ejemplo 02: Scanner WiFi / servidor web con ESP32
+4.  Se calcula el promedio de las diez muestras para obtener una lectura
+    más representativa que una sola muestra.
 
-Objetivo: conectar el ESP32 a una red WiFi utilizando un smartphone como punto de acceso y permitir que el usuario acceda desde un navegador a una página web alojada directamente en el ESP32.
+5.  El promedio ADC se transforma a voltaje mediante la fórmula definida
+    en el código.
 
-![Evidencia figura_04.png](imagenes/figura_04.png)
+6.  El resultado se muestra en el Monitor Serial con tres decimales.
 
-*Figura 4. Planteamiento de la actividad del Ejemplo 02.*
+7.  Después de 500 ms se repite el proceso.
 
-![Evidencia figura_05.png](imagenes/figura_05.png)
+## 2.6 Interpretación de las salidas
 
-*Figura 5. Evidencia de la carga del programa en el ESP32.*
+La evidencia del Monitor Serial muestra lecturas de voltaje alrededor de
+3.30 V en el momento capturado. La fotografía no permite leer con
+suficiente precisión todos los valores ADC de cada línea, por lo que no
+se inventa una serie numérica completa. Lo que sí puede afirmarse es que
+la salida observada es estable alrededor de 3.30 V durante la captura.
 
-![Evidencia figura_06.png](imagenes/figura_06.png)
+## 2.7 Interpretación de la gráfica
 
-*Figura 6. Página web mostrada desde la dirección IP del ESP32.*
+En este ejemplo no se observa una gráfica de ThingSpeak asociada al
+programa. La salida principal es el Monitor Serial. Por ello, la
+interpretación se centra en la estabilidad del valor calculado y en la
+relación entre el movimiento del potenciómetro, la lectura ADC y el
+voltaje estimado.
 
-## 4.1. Código utilizado
+# 3. EJEMPLO 2: Scanner WiFi / servidor web con ESP32
 
-```cpp
-#include <WiFi.h>
-#include <WebServer.h>
-```
+## 3.1 Objetivo
 
-```cpp
-const char* ssid = "GalaxyA04s";
-const char* password = "12345678";
-```
+El segundo ejemplo establece una conexión WiFi entre el ESP32 y una red
+configurada previamente y, una vez conectado, levanta un servidor web en
+el puerto 80. Cuando un navegador solicita la ruta raíz, el ESP32 genera
+una página HTML que informa que el servidor está funcionando y muestra
+la dirección IP asignada al dispositivo.
 
-```cpp
+Aunque el título del taller utiliza la expresión “Scanner WiFi”, el
+código proporcionado no realiza un escaneo de redes cercanas: utiliza
+WiFi.begin() para conectarse directamente a una red conocida y
+posteriormente actúa como servidor web.
+
+## 3.2 Materiales y componentes
+
+- ESP32.
+
+- Computadora o dispositivo con navegador web.
+
+- Red WiFi / hotspot utilizado en la práctica.
+
+- Cable USB para programar y alimentar el ESP32.
+
+## 3.3 Conexión y funcionamiento de red
+
+No existe un sensor externo en este programa. El ESP32 se conecta a la
+red WiFi mediante su módulo inalámbrico integrado. La evidencia muestra
+la placa conectada al equipo y, posteriormente, un navegador accediendo
+a la IP del ESP32.
+
+<img src="imagenes/media/image2.png"
+style="width:5.7in;height:3.20269in" />
+
+*Figura 2. Página web generada por el ESP32; la evidencia muestra la IP
+10.175.204.80.*
+
+## 3.4 Explicación del código por bloques
+
+### Bloque 1: Librerías
+
+\#include \<WiFi.h\>  
+\#include \<WebServer.h\>
+
+WiFi.h proporciona las funciones necesarias para que el ESP32 se conecte
+a una red inalámbrica. WebServer.h proporciona la infraestructura para
+crear un servidor HTTP y asociar rutas del navegador con funciones del
+programa.
+
+### Bloque 2: Credenciales de red y servidor
+
+const char\* ssid = "…";  
+const char\* password = "…";  
+  
 WebServer server(80);
-void handleRoot() {
-```
 
-```cpp
-String html = R"rawliteral(
-<!DOCTYPE html>
-```
+ssid y password almacenan los datos necesarios para solicitar acceso a
+la red WiFi. En este informe se omiten los valores reales por tratarse
+de credenciales. WebServer server(80) crea un objeto servidor que
+escucha solicitudes HTTP en el puerto 80, el puerto convencional para
+HTTP sin cifrado.
 
-```cpp
-<html lang="es">
-<head>
-```
+### Bloque 3: Función handleRoot()
 
-```cpp
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-
-```cpp
-<title>ESP32 - Proyecto Integrador</title>
-<style>
-```
-
-```cpp
-body {
-margin: 0;
-```
-
-```cpp
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-```
-
-```cpp
-color: white;
-display: flex;
-```
-
-```cpp
-justify-content: center;
-align-items: center;
-```
-
-```cpp
-min-height: 100vh;
+void handleRoot() {  
+String html = R"rawliteral(  
+...  
+)rawliteral";  
+  
+html += WiFi.localIP().toString();  
+...  
+server.send(200, "text/html", html);  
 }
-```
 
-```cpp
-.card {
-background: rgba(255, 255, 255, 0.12);
-```
+handleRoot() se ejecuta cuando el navegador solicita la ruta raíz /. La
+variable html contiene la página HTML completa, incluyendo estructura,
+texto y estilos CSS. La técnica R"rawliteral(... )rawliteral" permite
+escribir un bloque largo de texto sin tener que escapar continuamente
+las comillas. Posteriormente, html += WiFi.localIP().toString() inserta
+dinámicamente la IP asignada al ESP32. Finalmente, server.send(200,
+"text/html", html) devuelve al navegador un código HTTP 200 y especifica
+que el contenido enviado es HTML.
 
-```cpp
-backdrop-filter: blur(10px);
-width: 90%;
-```
+### Bloque 4: Estilos de la página
 
-```cpp
-max-width: 500px;
-padding: 35px;
-```
+Dentro del HTML se utiliza CSS para crear una tarjeta central, fondo
+degradado, tipografía, bordes, sombras y un bloque visual para el estado
+del servidor. Este bloque no controla el hardware; su función es mejorar
+la presentación de la información que el ESP32 entrega al navegador.
 
-```cpp
-border-radius: 20px;
-text-align: center;
-```
+### Bloque 5: Conexión WiFi en setup()
 
-```cpp
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+Serial.begin(115200);  
+WiFi.begin(ssid, password);  
+  
+while (WiFi.status() != WL_CONNECTED) {  
+delay(500);  
+Serial.print(".");  
 }
-```
 
-```cpp
-h1 { margin-bottom: 10px; font-size: 30px; }
-p { color: #d8e6eb; font-size: 17px; }
-```
+Primero se inicia el Monitor Serial. Luego WiFi.begin() comienza el
+proceso de asociación a la red. El while mantiene al programa esperando
+mientras el estado no sea WL_CONNECTED. Cada 500 ms se imprime un punto,
+de modo que el usuario puede observar que el ESP32 todavía está
+intentando conectarse.
 
-```cpp
-.estado {
-margin: 25px 0;
-```
+### Bloque 6: Inicio del servidor
 
-```cpp
-padding: 15px;
-border-radius: 12px;
-```
-
-```cpp
-background: rgba(0, 200, 120, 0.2);
-border: 1px solid rgba(0, 255, 150, 0.4);
-```
-
-```cpp
-}
-.ip {
-```
-
-```cpp
-font-size: 22px;
-font-weight: bold;
-```
-
-```cpp
-color: #66e3a4;
-}
-```
-
-```cpp
-.footer {
-margin-top: 25px;
-```
-
-```cpp
-font-size: 13px;
-color: #b8c9ce;
-```
-
-```cpp
-}
-</style>
-```
-
-```cpp
-</head>
-<body>
-```
-
-```cpp
-<div class="card">
-<h1>ESP32</h1>
-```
-
-```cpp
-<p>Servidor Web</p>
-<div class="estado">
-```
-
-```cpp
-<h2>✓Hola Kevin Servidor funcionando</h2>
-<p>Conexión WiFi establecida correctamente.</p>
-```
-
-```cpp
-</div>
-<p>Dirección IP del ESP32:</p>
-```
-
-```cpp
-<div class="ip">
-)rawliteral";
-```
-
-```cpp
-html += WiFi.localIP().toString();
-html += R"rawliteral(
-```
-
-```cpp
-</div>
-<div class="footer">
-```
-
-```cpp
-Proyecto Integrador · ESP32
-</div>
-```
-
-```cpp
-</div>
-</body>
-```
-
-```cpp
-</html>
-)rawliteral";
-```
-
-```cpp
-server.send(200, "text/html", html);
-}
-```
-
-```cpp
-void setup() {
-Serial.begin(115200);
-```
-
-```cpp
-WiFi.begin(ssid, password);
-Serial.print("Conectando a WiFi");
-```
-
-```cpp
-while (WiFi.status() != WL_CONNECTED) {
-delay(500);
-```
-
-```cpp
-Serial.print(".");
-}
-```
-
-```cpp
-Serial.println();
-Serial.println("WiFi conectado");
-```
-
-```cpp
-Serial.print("Direccion IP: ");
-Serial.println(WiFi.localIP());
-```
-
-```cpp
-server.on("/", handleRoot);
-server.begin();
-```
-
-```cpp
+Serial.println("WiFi conectado");  
+Serial.print("Direccion IP: ");  
+Serial.println(WiFi.localIP());  
+  
+server.on("/", handleRoot);  
+server.begin();  
 Serial.println("Servidor web iniciado");
+
+Una vez establecida la conexión, WiFi.localIP() obtiene la dirección IP
+asignada por la red. server.on("/", handleRoot) relaciona la ruta raíz
+con la función handleRoot. server.begin() inicia realmente el servidor
+para aceptar solicitudes.
+
+### Bloque 7: Atención de clientes
+
+void loop() {  
+server.handleClient();  
 }
-```
 
-```cpp
-void loop() {
-server.handleClient();
-```
+handleClient() revisa continuamente si existe una solicitud de un
+navegador y, cuando corresponde, ejecuta la función asociada a la ruta
+solicitada. Por ello, el loop() no realiza cálculos periódicos: su tarea
+principal es mantener disponible el servidor web.
 
-```cpp
-}
-```
+## 3.5 Funcionamiento completo del sistema
 
-## 4.2. Explicación del funcionamiento
+8.  El ESP32 se inicia y configura la comunicación serial.
 
-1. WiFi.h proporciona las funciones necesarias para conectar el ESP32 a la red inalámbrica.
-1. WebServer.h permite levantar un servidor HTTP en el puerto 80.
-1. WiFi.begin(ssid, password) inicia la conexión con la red configurada.
-1. El while mantiene el programa esperando hasta que el ESP32 se encuentre conectado.
-1. WiFi.localIP() obtiene la dirección IP que el router o punto de acceso asignó al ESP32.
-1. server.on("/", handleRoot) indica que cuando el navegador solicite la ruta principal se ejecutará handleRoot().
-1. handleRoot() construye una página HTML y envía una respuesta HTTP 200 al navegador.
-1. server.handleClient() mantiene atendidas las solicitudes del navegador dentro de loop().
-## 4.3. Resultado e interpretación
+9.  Solicita conexión a la red WiFi configurada.
 
-La evidencia muestra que el ESP32 se conectó correctamente y que el navegador pudo acceder a su servidor web utilizando la IP local. En la práctica se observó la dirección 10.175.204.80. Esto confirma que el dispositivo recibió una dirección válida dentro de la red y que el servidor HTTP del ESP32 estaba funcionando.
+10. Espera hasta alcanzar el estado WL_CONNECTED.
 
-# 5. Ejemplo 03: Envío de datos a ThingSpeak
+11. Obtiene y muestra su dirección IP.
 
-Objetivo: tomar la lectura del potenciómetro, calcular su valor promedio y convertirlo a voltaje para enviarlo a una plataforma IoT. En esta actividad se utilizó ThingSpeak como servicio de almacenamiento y visualización.
+12. Inicia un servidor HTTP en el puerto 80.
 
-![Evidencia figura_07.png](imagenes/figura_07.png)
+13. El navegador accede a la IP del ESP32.
 
-*Figura 7. Planteamiento de la actividad del Ejemplo 03.*
+14. La ruta / ejecuta handleRoot().
 
-![Evidencia figura_08.png](imagenes/figura_08.png)
+15. El ESP32 construye la página HTML e inserta su IP.
 
-*Figura 8. Montaje y ejecución de la práctica con ESP32 y potenciómetro.*
+16. El servidor devuelve la página al navegador con HTTP 200.
 
-![Evidencia figura_09.png](imagenes/figura_09.png)
+17. El loop continúa atendiendo nuevas solicitudes.
 
-*Figura 9. Evidencia del programa utilizado para enviar el valor a ThingSpeak.*
+## 3.6 Interpretación de las salidas y evidencias
 
-![Evidencia figura_10.png](imagenes/figura_10.png)
+La evidencia de la página web muestra el mensaje “Servidor funcionando”
+y confirma la conexión WiFi. La dirección IP observada es 10.175.204.80.
+Esto demuestra que el ESP32 recibió una dirección válida dentro de la
+red y que el navegador pudo establecer comunicación con el servidor web
+ejecutado en la placa.
 
-*Figura 10. Gráfica de ThingSpeak correspondiente al voltaje registrado.*
+<img src="imagenes/media/image3.png"
+style="width:6in;height:3.37125in" />
 
-## 5.1. Código utilizado
+*Figura 3. Evidencia del proceso de carga del programa en el ESP32.*
 
-```cpp
-#include <WiFi.h>
-#include <ThingSpeak.h>
-```
+## 3.7 Interpretación de la gráfica
 
-```cpp
-const char* ssid = "UPCH_CENTRAL";
-const char* password = "CAYETANO2022";
-```
+No se genera una gráfica en este ejemplo. El resultado se valida
+mediante una página web dinámica. La evidencia demuestra la cadena de
+funcionamiento: conexión WiFi → asignación de IP → servidor HTTP →
+respuesta HTML → visualización en navegador.
 
-```cpp
-// ThingSpeak
-unsigned long channelID = 3515248;
-```
+# 4. EJEMPLO 3: Envío de datos a ThingSpeak
 
-```cpp
-const char* writeAPIKey = "BNU5ZQ3GHU1X1O49";
-WiFiClient client;
-```
+## 4.1 Objetivo
 
-```cpp
+El tercer ejemplo amplía el ejercicio del potenciómetro: además de leer
+y convertir la señal analógica, el ESP32 envía el voltaje calculado a
+ThingSpeak mediante su biblioteca específica. La plataforma almacena los
+datos en Field 1 y los representa en una gráfica temporal.
+
+## 4.2 Materiales y componentes
+
+- ESP32.
+
+- Potenciómetro conectado a GPIO 34.
+
+- Protoboard y cables.
+
+- Red WiFi.
+
+- Arduino IDE.
+
+- Cuenta/canal de ThingSpeak.
+
+<img src="imagenes/media/image4.png"
+style="width:5.9in;height:2.70908in" />
+
+*Figura 4. Montaje del potenciómetro utilizado para el envío a
+ThingSpeak.*
+
+## 4.3 Explicación del código por bloques
+
+### Bloque 1: Librerías y configuración de ThingSpeak
+
+\#include \<WiFi.h\>  
+\#include \<ThingSpeak.h\>  
+  
+const char\* ssid = "…";  
+const char\* password = "…";  
+  
+unsigned long channelID = 3515248;  
+const char\* writeAPIKey = "…";  
+  
+WiFiClient client;  
 int potPin = 34;
-void setup() {
-```
 
-```cpp
-Serial.begin(115200);
-WiFi.begin(ssid, password);
-```
+WiFi.h permite la conexión inalámbrica y ThingSpeak.h proporciona
+funciones de alto nivel para preparar y enviar datos al canal. channelID
+identifica el canal donde se almacenan los datos y writeAPIKey autoriza
+la escritura. WiFiClient representa el cliente de red que utiliza la
+biblioteca de ThingSpeak. potPin mantiene la asociación del
+potenciómetro con GPIO 34.
 
-```cpp
-Serial.print("Conectando a WiFi");
-while (WiFi.status() != WL_CONNECTED) {
-```
+### Bloque 2: Conexión WiFi e inicialización de ThingSpeak
 
-```cpp
-delay(500);
-Serial.print(".");
-```
-
-```cpp
-}
-Serial.println();
-```
-
-```cpp
-Serial.println("WiFi conectado");
-Serial.print("IP del ESP32: ");
-```
-
-```cpp
-Serial.println(WiFi.localIP());
+WiFi.begin(ssid, password);  
+while (WiFi.status() != WL_CONNECTED) {  
+delay(500);  
+Serial.print(".");  
+}  
+Serial.println("WiFi conectado");  
+Serial.println(WiFi.localIP());  
 ThingSpeak.begin(client);
-```
 
-```cpp
-}
-void loop() {
-```
+El programa espera a que el ESP32 se conecte a la red antes de iniciar
+la comunicación con ThingSpeak. Después muestra la IP asignada y ejecuta
+ThingSpeak.begin(client), que vincula la biblioteca con el cliente de
+red.
 
-```cpp
-long suma = 0;
-// Tomar 10 lecturas
-```
+### Bloque 3: Muestreo y promedio
 
-```cpp
-for (int i = 0; i < 10; i++) {
-int valor = analogRead(potPin);
-```
-
-```cpp
-suma += valor;
-delay(50);
-```
-
-```cpp
-}
-// Promedio de ADC
-```
-
-```cpp
+long suma = 0;  
+for (int i = 0; i \< 10; i++) {  
+int valor = analogRead(potPin);  
+suma += valor;  
+delay(50);  
+}  
 float promedioADC = suma / 10.0;
-// Conversión a voltaje
-```
 
-```cpp
-float voltaje = (promedioADC * 3.3) / 4095.0;
-Serial.print("ADC promedio: ");
-```
+Este bloque repite la estrategia del ejemplo 1. Se toman diez muestras,
+se acumulan y se calcula un promedio. La finalidad es evitar que una
+única lectura instantánea sea la que se envíe a la nube.
 
-```cpp
-Serial.print(promedioADC);
-Serial.print(" | Voltaje: ");
-```
+### Bloque 4: Conversión a voltaje
 
-```cpp
-Serial.print(voltaje, 3);
-Serial.println(" V");
-```
+float voltaje = (promedioADC \* 3.3) / 4095.0;
 
-```cpp
-// Enviar a Field 1
-ThingSpeak.setField(1, voltaje);
-```
+El promedio ADC se transforma a una estimación de voltaje utilizando el
+rango de 0 a 4095 y una referencia de 3.3 V, tal como está definido por
+la fórmula del programa.
 
-```cpp
+### Bloque 5: Preparación y envío a Field 1
+
+ThingSpeak.setField(1, voltaje);  
 int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
-if (respuesta == 200) {
-```
 
-```cpp
-Serial.println("Dato enviado correctamente a ThingSpeak");
-} else {
-```
+ThingSpeak.setField(1, voltaje) coloca el valor calculado en el Field 1
+del canal. Luego writeFields() utiliza el channelID y la Write API Key
+para realizar el envío. La función devuelve un código de respuesta que
+se almacena en respuesta.
 
-```cpp
-Serial.print("Error al enviar. Codigo HTTP: ");
-Serial.println(respuesta);
-```
+### Bloque 6: Validación de la respuesta
 
-```cpp
+if (respuesta == 200) {  
+Serial.println("Dato enviado correctamente a ThingSpeak");  
+} else {  
+Serial.print("Error al enviar. Codigo HTTP: ");  
+Serial.println(respuesta);  
 }
-// Esperar antes del siguiente envío
-```
 
-```cpp
+El código comprueba si la operación terminó con respuesta 200. En las
+evidencias aparece repetidamente “Dato enviado correctamente a
+ThingSpeak”, por lo que durante la captura las escrituras se realizaron
+correctamente.
+
+### Bloque 7: Periodicidad
+
 delay(15000);
-}
-```
 
-## 5.2. Explicación del código
+La espera de 15 000 ms equivale a 15 segundos. Por tanto, el programa
+intenta realizar un nuevo envío aproximadamente cada 15 s, además del
+tiempo necesario para ejecutar la lectura, conversión y comunicación.
 
-1. Se incluyen WiFi.h y ThingSpeak.h para establecer la conexión y comunicarse con la plataforma.
-1. channelID identifica el canal de ThingSpeak y writeAPIKey autoriza el envío de datos.
-1. WiFiClient client crea el cliente de red usado por ThingSpeak.
-1. Se toman 10 muestras del GPIO 34 y se calcula su promedio.
-1. El promedio ADC se convierte a voltios utilizando el rango de 3.3 V y 4095 cuentas.
-1. ThingSpeak.setField(1, voltaje) coloca el valor en el Field 1 del canal.
-1. ThingSpeak.writeFields(...) realiza el envío y devuelve un código de estado.
-1. El código 200 se interpreta como una respuesta HTTP correcta.
-1. El delay de 15000 ms establece aproximadamente 15 segundos entre envíos.
-## 5.3. Interpretación de la gráfica
+## 4.4 Funcionamiento completo
 
-La gráfica evidencia tres comportamientos principales: primero, un periodo relativamente estable alrededor de 1.5–1.6 V; posteriormente, una caída hasta valores cercanos a 0 V; finalmente, un incremento hasta aproximadamente 3.3 V, donde la señal vuelve a mantenerse estable. Este comportamiento es coherente con el giro del potenciómetro: una posición intermedia produce una tensión intermedia, mientras que las posiciones cercanas a los extremos producen valores próximos a 0 V o 3.3 V.
+18. El potenciómetro produce una señal analógica variable.
 
-Los puntos repetidos corresponden a los envíos periódicos realizados por el ESP32. La gráfica, por tanto, permite visualizar remotamente cómo cambia la variable medida en función del tiempo.
+19. El GPIO 34 recibe la señal y analogRead() la convierte a una lectura
+    digital.
 
-# 6. Ejemplo 04: Envío de datos del sensor MQ-2 a ThingSpeak
+20. Se toman diez muestras y se calcula el promedio ADC.
 
-Objetivo: obtener una lectura analógica del sensor de gas MQ-2 conectado al ESP32 y enviar el valor a ThingSpeak para observar su variación en el tiempo.
+21. El promedio se transforma a voltaje.
 
-![Evidencia figura_11.png](imagenes/figura_11.png)
+22. El voltaje se asigna a Field 1.
 
-*Figura 11. Planteamiento de la actividad del Ejemplo 04.*
+23. ThingSpeak escribe el dato en el canal identificado.
 
-![Evidencia figura_12.png](imagenes/figura_12.png)
+24. El Monitor Serial informa si la operación fue correcta.
 
-*Figura 12. Evidencia de la gráfica generada en ThingSpeak a partir del MQ-2.*
+25. Después de 15 s el proceso se repite.
 
-## 6.1. Conexión del circuito
+## 4.5 Interpretación de las salidas
 
-| Elemento | Descripción |
-| --- | --- |
-| MQ-2 VCC | Alimentación del módulo según el montaje empleado. |
-| MQ-2 GND | GND del ESP32. |
-| MQ-2 AO | GPIO 34 del ESP32 para lectura analógica. |
-| GPIO 34 | Entrada ADC utilizada para obtener el valor del sensor. |
+<img src="imagenes/media/image5.png"
+style="width:6.3in;height:3.33506in" />
 
-En el programa se define const int MQ2_PIN = 34. El ESP32 realiza una conversión analógico-digital de la salida del sensor. El valor obtenido es una lectura ADC cruda, no una concentración de gas expresada directamente en ppm.
+*Figura 5. Monitor Serial: se observan valores de ADC promedio de
+4095.00, voltaje de 3.300 V y confirmación de envío.*
 
-## 6.2. Código utilizado
+La evidencia muestra repetidamente “ADC promedio: 4095.00 \| Voltaje:
+3.300 V” seguido de “Dato enviado correctamente a ThingSpeak”. Un ADC
+promedio de 4095 corresponde al extremo superior del rango utilizado por
+la fórmula del programa; al sustituir 4095 en la conversión, se obtiene
+3.300 V. Esto indica que, durante la captura, el potenciómetro estaba
+proporcionando una lectura cercana al máximo representado por el ADC.
 
-```cpp
-#include <WiFi.h>
-#include <HTTPClient.h>
-```
+## 4.6 Interpretación de la gráfica
 
-```cpp
-const char* ssid = "UPCH_CENTRAL";
-const char* password = "CAYETANO2022";
-```
+<img src="imagenes/media/image6.png"
+style="width:5.9in;height:2.97581in" />
 
-```cpp
-String apiKey = "1NNJ4UQJU2CYUT6M";
+*Figura 6. Gráfica de Field 1 en ThingSpeak para el Ejemplo 3.*
+
+El eje X representa la fecha/hora de registro y el eje Y representa el
+valor de voltaje enviado a Field 1. La gráfica muestra un primer periodo
+alrededor de 1.5–1.6 V, seguido por una caída hasta aproximadamente 0 V,
+una recuperación intermedia cercana a 0.5–0.6 V y finalmente un ascenso
+hasta aproximadamente 3.3 V. El patrón indica que el valor del
+potenciómetro fue modificado durante la experiencia o que la señal pasó
+por distintos niveles de posición.
+
+La correspondencia entre el Monitor Serial y la nube es directa: el
+valor calculado como voltaje es el mismo valor colocado en Field 1. Por
+ello, los cambios de nivel visibles en la gráfica representan cambios en
+la señal que el ESP32 estuvo enviando.
+
+# 5. EJEMPLO 4: Envío de datos del sensor MQ-2 a ThingSpeak
+
+## 5.1 Objetivo
+
+El cuarto ejemplo sustituye el potenciómetro por un sensor MQ-2 y envía
+su lectura analógica a ThingSpeak. El objetivo es comprobar el flujo
+completo sensor → ADC del ESP32 → WiFi → solicitud HTTP → ThingSpeak →
+gráfica.
+
+## 5.2 Materiales y componentes
+
+- ESP32.
+
+- Sensor MQ-2.
+
+- Protoboard y cables.
+
+- Red WiFi.
+
+- Arduino IDE.
+
+- ThingSpeak.
+
+## 5.3 Conexión del circuito
+
+El código define const int MQ2_PIN = 34 y configura ese GPIO como
+entrada mediante pinMode(MQ2_PIN, INPUT). Por tanto, la salida analógica
+que el programa está leyendo se conecta al GPIO 34. El circuito de la
+evidencia muestra el módulo MQ-2 conectado mediante cables al ESP32 y a
+la protoboard. La alimentación exacta de cada cable no se documenta en
+el código, por lo que se evita atribuir pines de alimentación que no
+estén explícitamente identificados.
+
+<img src="imagenes/media/image7.png"
+style="width:6.3in;height:3.54563in" />
+
+*Figura 7. Evidencia del montaje físico del sensor MQ-2 y del canal de
+ThingSpeak.*
+
+## 5.4 Explicación del código por bloques
+
+### Bloque 1: Librerías
+
+\#include \<WiFi.h\>  
+\#include \<HTTPClient.h\>
+
+WiFi.h habilita la conexión inalámbrica del ESP32. HTTPClient.h permite
+construir y ejecutar una solicitud HTTP desde la placa. En este ejemplo
+no se utiliza la biblioteca ThingSpeak.h: la comunicación se realiza
+directamente mediante una URL del servicio de actualización de
+ThingSpeak.
+
+### Bloque 2: Configuración
+
+const char\* ssid = "…";  
+const char\* password = "…";  
+String apiKey = "…";  
 const int MQ2_PIN = 34;
-```
 
-```cpp
-void setup() {
-Serial.begin(115200);
-```
+ssid y password contienen las credenciales de red; apiKey identifica la
+autorización de escritura del canal; MQ2_PIN indica el GPIO utilizado
+para la señal analógica del MQ-2. La variable apiKey es String porque se
+concatena posteriormente con otros fragmentos de texto para formar una
+URL.
 
-```cpp
-pinMode(MQ2_PIN, INPUT);
-WiFi.begin(ssid, password);
-```
+### Bloque 3: setup() y configuración del sensor
 
-```cpp
-while (WiFi.status() != WL_CONNECTED) {
-delay(500);
-```
-
-```cpp
-Serial.print(".");
-}
-```
-
-```cpp
+Serial.begin(115200);  
+pinMode(MQ2_PIN, INPUT);  
+WiFi.begin(ssid, password);  
+  
+while (WiFi.status() != WL_CONNECTED) {  
+delay(500);  
+Serial.print(".");  
+}  
 Serial.println("\nWiFi conectado");
-}
-```
 
-```cpp
-void loop() {
-int valorMQ2 = analogRead(MQ2_PIN);
-```
+El programa inicia el Monitor Serial, establece el GPIO 34 como entrada
+y solicita la conexión WiFi. El while bloquea el avance hasta que el
+estado sea WL_CONNECTED. Esto garantiza que, al llegar al envío, el
+ESP32 tenga una conexión de red disponible.
 
-```cpp
-Serial.print("Valor MQ-2: ");
+### Bloque 4: Lectura del MQ-2
+
+int valorMQ2 = analogRead(MQ2_PIN);  
+  
+Serial.print("Valor MQ-2: ");  
 Serial.println(valorMQ2);
-```
 
-```cpp
-if (WiFi.status() == WL_CONNECTED) {
-HTTPClient http;
-```
+analogRead() toma la señal analógica del GPIO 34 y la convierte en un
+número digital mediante el ADC del ESP32. Ese número se almacena en
+valorMQ2 y se imprime. Es fundamental interpretar correctamente este
+dato: en este programa es una lectura ADC del sensor, no una
+concentración de gas expresada en ppm. Para obtener ppm sería necesario
+disponer de una calibración y un modelo de conversión que no aparecen en
+el código.
 
-```cpp
-String url = "https://api.thingspeak.com/update?api_key="
+### Bloque 5: Verificación de conectividad
+
+if (WiFi.status() == WL_CONNECTED) {  
+...  
+}
+
+Antes de intentar el envío, el programa comprueba nuevamente el estado
+de WiFi. Si la conexión no está activa, el bloque HTTP no se ejecuta y
+el programa continúa hasta la siguiente iteración.
+
+### Bloque 6: Construcción de la solicitud HTTP
+
+HTTPClient http;  
+  
+String url = "https://api.thingspeak.com/update?api_key="  
 + apiKey + "&field1=" + String(valorMQ2);
-```
 
-```cpp
-http.begin(url);
-int respuesta = http.GET();
-```
+HTTPClient representa el cliente HTTP. La URL se construye concatenando
+cuatro partes funcionales: la dirección del endpoint de actualización de
+ThingSpeak, el parámetro api_key, el valor de la API Key y el parámetro
+field1 con el valor leído del MQ-2. String(valorMQ2) convierte el número
+entero a texto para poder incorporarlo a la URL.
 
-```cpp
-Serial.print("Respuesta ThingSpeak: ");
+### Bloque 7: Envío y código de respuesta
+
+http.begin(url);  
+int respuesta = http.GET();  
+  
+Serial.print("Respuesta ThingSpeak: ");  
 Serial.println(respuesta);
-```
 
-```cpp
-http.end();
-}
-```
+http.begin(url) prepara la conexión usando la URL construida. http.GET()
+ejecuta una solicitud HTTP GET. El valor devuelto se almacena en
+respuesta. En la evidencia del Monitor Serial se observa “Respuesta
+ThingSpeak: 200” de forma repetida, lo que indica que las solicitudes
+fueron aceptadas correctamente durante la captura.
 
-```cpp
+### Bloque 8: Liberación y temporización
+
+http.end();  
 delay(15000);
+
+http.end() finaliza la comunicación HTTP de esa iteración. delay(15000)
+establece una espera de 15 segundos antes de volver a leer el sensor y
+realizar otro envío.
+
+## 5.5 Funcionamiento completo del sistema
+
+26. El MQ-2 produce una señal eléctrica asociada a las condiciones
+    detectadas por el sensor.
+
+27. La señal llega al GPIO 34 del ESP32.
+
+28. El ADC convierte la señal a un valor digital almacenado en valorMQ2.
+
+29. El valor se muestra en el Monitor Serial.
+
+30. Si WiFi está conectado, el ESP32 construye una URL con la API Key y
+    el valor en Field 1.
+
+31. HTTPClient ejecuta una solicitud GET al endpoint de ThingSpeak.
+
+32. ThingSpeak responde y el código de respuesta se muestra en el
+    Monitor Serial.
+
+33. El canal almacena el dato y lo representa en la gráfica.
+
+34. Después de 15 s se repite el ciclo.
+
+## 5.6 Interpretación de las salidas
+
+En las evidencias previas del Monitor Serial se observan lecturas del
+MQ-2 alrededor de valores de 2300, con pequeñas variaciones entre
+muestras, y respuestas HTTP 200 de ThingSpeak. Por ejemplo, se
+documentaron valores como 2305, 2315, 2304, 2289, 2294, 2297 y otras
+lecturas cercanas. Esto muestra que la señal del sensor no fue
+perfectamente constante, pero sí permaneció en un rango relativamente
+cercano durante ese periodo de observación.
+
+La variación entre lecturas no debe traducirse directamente a “ppm” sin
+calibración. Lo que sí puede afirmarse es que el ADC registró cambios en
+la señal eléctrica entregada por el módulo MQ-2.
+
+## 5.7 Interpretación de la gráfica
+
+<img src="imagenes/media/image8.png"
+style="width:6.2in;height:4.65in" />
+
+*Figura 8. Gráfica de Field 1 del Ejemplo 4 en ThingSpeak.*
+
+En la gráfica, el eje X representa el tiempo y el eje Y representa el
+valor almacenado en Field 1. Se observa inicialmente un nivel cercano a
+cero, seguido de un incremento brusco hasta aproximadamente el rango de
+2.0–2.3 mil unidades, donde se mantiene durante varios registros. En el
+extremo final se aprecia una disminución respecto del nivel anterior.
+
+Este comportamiento significa que el valor ADC enviado por el ESP32
+cambió de forma importante durante la sesión. La plataforma no está
+calculando una concentración química por sí misma: está representando el
+número que el programa envió. Por ello, la interpretación correcta es
+hablar de variación de la lectura ADC del MQ-2.
+
+## 5.8 Relación entre Monitor Serial y gráfica
+
+Cada 15 segundos el programa obtiene una nueva lectura y la incorpora a
+Field 1. Por tanto, las variaciones observadas en la gráfica son el
+resultado acumulado de las lecturas que previamente aparecen en el
+Monitor Serial. La respuesta 200 confirma que el mecanismo de
+comunicación HTTP funcionó correctamente en las capturas.
+
+# 6. EJEMPLO 5: Control remoto de un LED mediante ESP32 y Firebase
+
+## 6.1 Objetivo
+
+El quinto ejemplo implementa un control remoto: el ESP32 consulta un
+estado lógico almacenado en Firebase Realtime Database y utiliza ese
+estado para encender o apagar un LED conectado al GPIO 2. Además, el
+ESP32 escribe una confirmación en Firebase mediante el nodo
+/estado_esp32.
+
+## 6.2 Materiales y componentes
+
+- ESP32.
+
+- LED conectado al GPIO 2.
+
+- Protoboard y cables.
+
+- Red WiFi.
+
+- Arduino IDE.
+
+- Proyecto de Firebase con Authentication y Realtime Database.
+
+- Interfaz web utilizada para modificar/visualizar el estado.
+
+<img src="imagenes/media/image9.png" style="width:5.7in;height:7.6in" />
+
+*Figura 9. Evidencia del LED encendido y de la interfaz web Smart Light
+conectada a Firebase.*
+
+## 6.3 Conexión del circuito
+
+El código define LED_PIN como 2 y posteriormente configura ese GPIO como
+OUTPUT. En la evidencia se observa un LED montado en la protoboard y
+encendido, conectado al ESP32. El programa controla el estado eléctrico
+del GPIO mediante digitalWrite(). La resistencia en serie no se
+identifica de forma inequívoca en la evidencia proporcionada, por lo que
+no se afirma un valor concreto.
+
+## 6.4 Explicación del código por bloques
+
+### Bloque 1: Activación de módulos y librerías
+
+\#define ENABLE_USER_AUTH  
+\#define ENABLE_DATABASE  
+  
+\#include \<WiFi.h\>  
+\#include \<WiFiClientSecure.h\>  
+\#include \<FirebaseClient.h\>
+
+Las dos directivas ENABLE_USER_AUTH y ENABLE_DATABASE habilitan las
+capacidades de autenticación y base de datos utilizadas por la
+biblioteca. WiFi.h gestiona la red, WiFiClientSecure permite
+comunicación segura mediante TLS/SSL y FirebaseClient proporciona la
+integración con Firebase.
+
+### Bloque 2: Configuración de WiFi y Firebase
+
+\#define WIFI_SSID "…"  
+\#define WIFI_PASSWORD "…"  
+\#define API_KEY "…"  
+\#define DATABASE_URL "…"  
+\#define USER_EMAIL "…"  
+\#define USER_PASSWORD "…"  
+\#define LED_PIN 2
+
+Este bloque concentra parámetros de conexión. WIFI_SSID y WIFI_PASSWORD
+identifican la red; API_KEY identifica el proyecto de Firebase;
+DATABASE_URL indica la base de datos Realtime Database; USER_EMAIL y
+USER_PASSWORD corresponden al usuario utilizado por Firebase
+Authentication; LED_PIN establece el GPIO de control. En el informe se
+ocultan las credenciales reales.
+
+### Bloque 3: Objetos de autenticación y base de datos
+
+UserAuth user_auth(API_KEY, USER_EMAIL, USER_PASSWORD);  
+FirebaseApp app;  
+WiFiClientSecure ssl_client;  
+using AsyncClient = AsyncClientClass;  
+AsyncClient async_client(ssl_client);  
+RealtimeDatabase Database;
+
+UserAuth agrupa los datos necesarios para autenticarse. FirebaseApp
+representa la aplicación conectada a Firebase. ssl_client proporciona el
+cliente de red seguro y async_client permite las operaciones de la
+biblioteca. Database representa la interfaz con Realtime Database.
+
+### Bloque 4: Temporización y callback
+
+unsigned long ultimoTiempo = 0;  
+const unsigned long intervalo = 1000;  
+  
+void processData(AsyncResult &aResult)  
+{  
+if (!aResult.isResult())  
+return;  
+  
+if (aResult.isError())  
+{  
+Serial.print("Firebase error: ");  
+Serial.println(aResult.error().message());  
+}  
 }
-```
 
-## 6.3. Explicación del funcionamiento
+ultimoTiempo registra la referencia temporal de la última lectura y
+intervalo fija un periodo de 1000 ms. El callback processData() revisa
+los resultados de las operaciones de Firebase. Si no existe un resultado
+válido, retorna; si existe un error, muestra su mensaje en el Monitor
+Serial. Esto proporciona un mecanismo de diagnóstico para la
+comunicación con Firebase.
 
-1. Se incluyen WiFi.h y HTTPClient.h.
-1. Se configura el GPIO 34 como entrada para recibir la señal analógica del MQ-2.
-1. analogRead(MQ2_PIN) obtiene el valor digital correspondiente al nivel de tensión presente en la salida analógica del módulo.
-1. Se construye una URL con el Write API Key y el valor del sensor en Field 1.
-1. http.GET() realiza la solicitud HTTP al servidor de ThingSpeak.
-1. http.end() libera los recursos utilizados por la conexión.
-1. El envío se repite aproximadamente cada 15 segundos.
-## 6.4. Interpretación de la salida y de la gráfica
+### Bloque 5: Configuración del LED
 
-En el monitor serial, una respuesta ThingSpeak igual a 200 indica que el servidor recibió correctamente la solicitud. La variable 'Valor MQ-2' representa la lectura ADC instantánea del sensor.
-
-En la gráfica de evidencia se observa inicialmente una señal cercana a valores bajos y, posteriormente, un incremento brusco hasta aproximadamente la zona de 2000–2300 cuentas ADC, manteniéndose después en una meseta con una pequeña disminución al final. Esto significa que la tensión entregada por la salida analógica del MQ-2 aumentó durante la prueba.
-
-Importante: la lectura ADC no debe interpretarse directamente como 'ppm de gas'. Para convertirla en una concentración física se requiere conocer la característica del sensor, realizar calibración y aplicar el procedimiento correspondiente al gas y al módulo utilizado.
-
-# 7. Ejemplo 05: Consulta de ThingSpeak y control de un LED
-
-Objetivo: consultar periódicamente un valor almacenado en ThingSpeak y utilizarlo como comando remoto para encender o apagar un LED conectado al GPIO 2 del ESP32.
-
-![Evidencia figura_13.png](imagenes/figura_13.png)
-
-*Figura 13. Código del Ejemplo 05 y evidencia de comandos recibidos en el monitor serial.*
-
-![Evidencia figura_14.png](imagenes/figura_14.png)
-
-*Figura 14. Montaje físico del ESP32 utilizado en la actividad.*
-
-## 7.1. Código utilizado
-
-```cpp
-#include <WiFi.h>
-#include <HTTPClient.h>
-```
-
-```cpp
-// ====== WiFi ======
-const char* ssid = "Redmi Note 14 Pro 5G";
-```
-
-```cpp
-const char* password = "11111111";
-// ====== ThingSpeak ======
-```
-
-```cpp
-const char* CHANNEL_ID = "3515252";
-const char* TS_READ_KEY = "RWORDQV5T4AA9YQO";
-```
-
-```cpp
-// ====== LED ======
-const int LED_PIN = 2;
-```
-
-```cpp
-const unsigned long INTERVALO = 5000; // Consulta cada 5 s
-unsigned long ultimaConsulta = 0;
-```
-
-```cpp
-int estadoLed = -1; // -1 = aún sin estado
-void conectarWiFi() {
-```
-
-```cpp
-Serial.print("Conectando a WiFi");
-WiFi.mode(WIFI_STA);
-```
-
-```cpp
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
-```
-
-```cpp
-delay(500);
-Serial.print(".");
-```
-
-```cpp
-}
-Serial.print("\nConectado. IP: ");
-```
-
-```cpp
-Serial.println(WiFi.localIP());
-}
-```
-
-```cpp
-void consultarLed() {
-HTTPClient http;
-```
-
-```cpp
-String url = "http://api.thingspeak.com/channels/" + String(CHANNEL_ID) +
-"/fields/2/last.txt?api_key=" + String(TS_READ_KEY);
-```
-
-```cpp
-http.begin(url);
-int codigo = http.GET();
-```
-
-```cpp
-if (codigo == 200) {
-String respuesta = http.getString();
-```
-
-```cpp
-respuesta.trim();
-int nuevo = (respuesta == "1") ? 1 : 0;
-```
-
-```cpp
-if (nuevo != estadoLed) {
-estadoLed = nuevo;
-```
-
-```cpp
-digitalWrite(LED_PIN, estadoLed ? HIGH : LOW);
-Serial.print("Comando recibido: ");
-```
-
-```cpp
-Serial.println(estadoLed ? "LED ENCENDIDO" : "LED APAGADO");
-}
-```
-
-```cpp
-} else {
-Serial.print("Error HTTP: ");
-```
-
-```cpp
-Serial.println(codigo);
-}
-```
-
-```cpp
-http.end();
-}
-```
-
-```cpp
-void setup() {
-Serial.begin(115200);
-```
-
-```cpp
-pinMode(LED_PIN, OUTPUT);
+pinMode(LED_PIN, OUTPUT);  
 digitalWrite(LED_PIN, LOW);
-```
 
-```cpp
-conectarWiFi();
+pinMode configura GPIO 2 como salida digital. digitalWrite(..., LOW)
+establece el LED inicialmente apagado. Esta inicialización evita dejar
+el pin en un estado indeterminado al arrancar.
+
+### Bloque 6: Conexión WiFi
+
+WiFi.begin(WIFI_SSID, WIFI_PASSWORD);  
+while (WiFi.status() != WL_CONNECTED)  
+{  
+Serial.print(".");  
+delay(500);  
 }
-```
 
-```cpp
-void loop() {
-if (WiFi.status() != WL_CONNECTED) conectarWiFi();
-```
+El ESP32 intenta asociarse a la red y permanece en el while hasta que el
+estado sea WL_CONNECTED. La impresión de puntos permite observar el
+proceso de conexión. Una vez conectado, se imprime la IP local.
 
-```cpp
-if (millis() - ultimaConsulta >= INTERVALO || ultimaConsulta == 0) {
-ultimaConsulta = millis();
-```
+### Bloque 7: SSL y configuración de Firebase
 
-```cpp
-consultarLed();
+ssl_client.setInsecure();  
+  
+initializeApp(  
+async_client,  
+app,  
+getAuth(user_auth),  
+processData,  
+"authTask"  
+);  
+  
+app.getApp\<RealtimeDatabase\>(Database);  
+Database.url(DATABASE_URL);
+
+ssl_client.setInsecure() configura el cliente TLS para no validar el
+certificado del servidor. En un sistema de producción, esta decisión
+debería revisarse desde el punto de vista de seguridad. initializeApp()
+configura la aplicación Firebase y la autenticación;
+app.getApp\<RealtimeDatabase\>(Database) obtiene la interfaz de Realtime
+Database y Database.url() le indica qué base de datos utilizar.
+
+### Bloque 8: Mantenimiento de Firebase y temporización
+
+app.loop();  
+  
+if (millis() - ultimoTiempo \>= intervalo)  
+{  
+ultimoTiempo = millis();  
+  
+if (app.ready())  
+{  
+...  
+}  
 }
-```
 
-```cpp
+app.loop() mantiene las tareas internas de Firebase actualizadas.
+millis() devuelve el tiempo transcurrido desde el arranque sin bloquear
+el programa. La condición compara el tiempo actual con ultimoTiempo y
+permite ejecutar la lectura aproximadamente cada segundo. app.ready()
+comprueba que la aplicación esté preparada para realizar la operación.
+
+### Bloque 9: Lectura del estado remoto
+
+bool estado = Database.get\<bool\>(  
+async_client,  
+"/estado"  
+);  
+  
+Serial.print("Estado recibido: ");  
+Serial.println(estado ? "true" : "false");
+
+Database.get\<bool\>() solicita el valor booleano almacenado en el nodo
+/estado. El resultado se guarda en estado, que solamente puede
+representar true o false. El operador ternario se utiliza para imprimir
+la palabra correspondiente en el Monitor Serial.
+
+### Bloque 10: Control físico del LED
+
+if (estado)  
+{  
+digitalWrite(LED_PIN, HIGH);  
+Serial.println("LED ENCENDIDO");  
+}  
+else  
+{  
+digitalWrite(LED_PIN, LOW);  
+Serial.println("LED APAGADO");  
 }
-```
 
-## 7.2. Explicación del funcionamiento
+Este es el bloque que conecta el dato de la nube con el circuito físico.
+Si estado es true, GPIO 2 pasa a HIGH y el LED se enciende. Si es false,
+GPIO 2 pasa a LOW y el LED se apaga. Por tanto, la decisión tomada en
+Firebase se convierte directamente en una acción eléctrica sobre el pin
+de salida.
 
-1. El ESP32 se conecta a la red WiFi configurada mediante conectarWiFi().
-1. El LED se configura como salida en el GPIO 2 y comienza apagado.
-1. Cada 5 segundos se consulta el último dato almacenado en Field 2 del canal de ThingSpeak.
-1. La respuesta se obtiene como texto mediante http.getString().
-1. Si la respuesta es '1', el programa interpreta el comando como LED ENCENDIDO; en caso contrario, lo interpreta como LED APAGADO.
-1. digitalWrite() cambia físicamente el estado de la salida del GPIO 2.
-1. La variable estadoLed evita repetir mensajes y escrituras cuando el estado no ha cambiado.
-1. millis() permite controlar el intervalo de consulta sin utilizar un delay prolongado dentro de loop().
-## 7.3. Interpretación de la salida
+### Bloque 11: Confirmación hacia Firebase
 
-La evidencia del monitor serial muestra mensajes como 'Comando recibido: LED APAGADO' y 'Comando recibido: LED ENCENDIDO'. Esto demuestra el funcionamiento del enlace de lectura: ThingSpeak almacena el comando, el ESP32 consulta el último valor y, según la respuesta, cambia el estado del LED.
+Database.set\<bool\>(  
+async_client,  
+"/estado_esp32",  
+estado  
+);
 
-El proceso es bidireccional a nivel de arquitectura IoT: en los ejemplos 3 y 4 el ESP32 publica información hacia la nube; en este ejemplo el ESP32 consume información almacenada en la nube y la convierte en una acción física.
+Después de actuar sobre el LED, el ESP32 escribe el mismo estado en
+/estado_esp32. Esto permite que la base de datos conserve una
+confirmación del estado procesado por el dispositivo.
 
-# 8. Análisis comparativo de los cinco ejemplos
+## 6.5 Funcionamiento completo del sistema
 
-Las cinco actividades muestran una evolución desde una lectura local hasta un sistema IoT con comunicación de ida y vuelta.
+35. El ESP32 inicia el GPIO del LED como salida y lo deja apagado.
 
-| Elemento | Descripción |
-| --- | --- |
-| E01 – Potenciómetro | Entrada analógica → promedio → conversión a voltaje → monitor serial. |
-| E02 – WiFi/Servidor | ESP32 → red WiFi → servidor HTTP local → navegador. |
-| E03 – ThingSpeak | Potenciómetro → ESP32 → WiFi → ThingSpeak → gráfica. |
-| E04 – MQ-2 | MQ-2 → ADC GPIO 34 → ESP32 → HTTP → ThingSpeak → gráfica. |
-| E05 – Control remoto | ThingSpeak → HTTP → ESP32 → GPIO 2 → LED. |
+36. Se conecta a la red WiFi.
 
-# 9. Funcionamiento general del circuito y flujo de datos
+37. Se inicializa la autenticación con Firebase.
 
-En los ejemplos con sensores, la variable física se transforma primero en una señal eléctrica. El ESP32 recibe esa señal a través de una entrada analógica, la convierte mediante su ADC a un número digital y luego procesa o transmite ese valor. Cuando se utiliza ThingSpeak, la red WiFi permite que el ESP32 envíe o consulte información mediante solicitudes HTTP.
+38. Se configura el acceso a Realtime Database.
 
-El flujo puede resumirse de la siguiente manera:
+39. El loop mantiene activa la comunicación con Firebase.
 
-1. Sensor o potenciómetro genera una señal eléctrica.
-1. El ESP32 recibe la señal por el GPIO correspondiente.
-1. El ADC transforma la tensión en una lectura digital cuando se utiliza una entrada analógica.
-1. El programa procesa la lectura: promedio, conversión o interpretación.
-1. WiFi proporciona conectividad con la red.
-1. ThingSpeak recibe los datos o entrega un dato previamente almacenado.
-1. El ESP32 muestra el resultado en el monitor serial o lo transforma en una acción, como encender un LED.
+40. Cada aproximadamente 1 segundo, si la aplicación está lista, se
+    consulta /estado.
+
+41. El valor true o false se recibe en la variable estado.
+
+42. true enciende el LED; false lo apaga.
+
+43. El ESP32 registra el resultado en /estado_esp32.
+
+44. La interfaz web y Firebase permiten visualizar/controlar el estado
+    remoto.
+
+## 6.6 Interpretación de las salidas y evidencias
+
+<img src="imagenes/media/image10.png"
+style="width:6.1in;height:2.91656in" />
+
+*Figura 10. Firebase Realtime Database mostrando los nodos estado y
+estado_esp32.*
+
+La evidencia de Realtime Database muestra los nodos /estado y
+/estado_esp32, ambos con el valor false en el momento de la captura.
+Esto representa un estado lógico apagado. La fotografía del circuito
+muestra, en otra captura, el LED encendido y la interfaz web indicando
+“LED ENCENDIDO”, lo que demuestra que el sistema también puede trabajar
+con el estado true.
+
+## 6.7 Interfaz web complementaria
+
+<img src="imagenes/media/image11.png"
+style="width:6.2in;height:3.27438in" />
+
+*Figura 11. Evidencia del código JavaScript de la interfaz web que
+utiliza la configuración de Firebase.*
+
+La evidencia adicional muestra un archivo JavaScript que importa
+Firebase y configura la conexión con Realtime Database. Esta parte
+corresponde a la interfaz web complementaria, mientras que el código del
+ESP32 mostrado en el taller se encarga de consultar el estado y accionar
+el LED. La arquitectura completa puede entenderse como: interfaz web ↔
+Firebase Realtime Database ↔ ESP32 ↔ LED.
+
+## 6.8 Interpretación de la gráfica
+
+Este ejemplo no utiliza una gráfica temporal como los ejemplos de
+ThingSpeak. La visualización principal es el estado booleano de Firebase
+y la respuesta física del LED. Por ello, la evidencia se interpreta
+mediante estados true/false y su correspondencia con LED
+encendido/apagado.
+
+# 7. Integración y comparación de los cinco ejemplos
+
+Los cinco ejercicios muestran una progresión desde la lectura local de
+una señal hasta el control y almacenamiento remoto. La secuencia permite
+comprender diferentes capas de un sistema IoT.
+
+| Ejemplo | Entrada/acción         | Comunicación             | Resultado                                  |
+|---------|------------------------|--------------------------|--------------------------------------------|
+| 1       | Potenciómetro / ADC    | No utiliza nube          | Promedio ADC y voltaje en Monitor Serial   |
+| 2       | Conexión WiFi          | HTTP local en puerto 80  | Página web con IP del ESP32                |
+| 3       | Potenciómetro / ADC    | WiFi + ThingSpeak        | Voltaje almacenado y graficado             |
+| 4       | MQ-2 / ADC             | WiFi + HTTP + ThingSpeak | Lectura ADC almacenada y graficada         |
+| 5       | Estado remoto booleano | WiFi + Firebase          | LED controlado y estado confirmado en nube |
+
+## 7.1 Flujo general de datos
+
+Sensor / interfaz  
+↓  
+GPIO del ESP32  
+↓  
+Lectura o estado lógico  
+↓  
+Procesamiento en el programa  
+↓  
+WiFi  
+↓  
+Plataforma IoT / servidor  
+↓  
+Almacenamiento o respuesta  
+↓  
+Visualización / actuación física
+
+Los ejemplos 1, 3 y 4 utilizan entradas analógicas y muestran cómo una
+señal eléctrica se convierte en un dato digital. Los ejemplos 2, 3, 4 y
+5 incorporan comunicación de red. El ejemplo 2 utiliza al ESP32 como
+servidor; los ejemplos 3 y 4 utilizan ThingSpeak como plataforma de
+almacenamiento/visualización; y el ejemplo 5 utiliza Firebase como
+sistema de datos remoto y control.
+
+# 8. Resultados
+
+Se comprobó el funcionamiento de la lectura analógica mediante el
+potenciómetro, observándose valores de voltaje alrededor de 3.30 V en la
+evidencia del primer ejercicio. En el segundo ejercicio se obtuvo
+conectividad WiFi y una dirección IP observable desde el navegador,
+10.175.204.80, con una página servida directamente por el ESP32.
+
+En el tercer ejercicio se observaron lecturas de 4095.00 ADC y 3.300 V
+acompañadas de mensajes de envío correcto a ThingSpeak. La gráfica
+mostró diferentes niveles de voltaje, incluyendo un periodo cercano a
+1.5 V, una caída cercana a 0 V, una recuperación intermedia y un ascenso
+final hasta aproximadamente 3.3 V.
+
+En el cuarto ejercicio se obtuvieron lecturas ADC del MQ-2 alrededor de
+2.3 mil unidades en parte de la captura y respuestas HTTP 200. La
+gráfica mostró un salto desde valores cercanos a cero hacia un rango
+aproximado de 2.0–2.3 mil unidades, una zona relativamente estable y una
+disminución al final. Estas cifras representan lecturas ADC y no
+concentración de gas calibrada.
+
+En el quinto ejercicio se comprobó el control remoto de un LED mediante
+Firebase. La base de datos mostró los nodos /estado y /estado_esp32,
+mientras que la evidencia del circuito y de la interfaz web mostró el
+estado de LED encendido en una de las pruebas.
+
+# 9. Análisis
+
+El aspecto central de las prácticas es la relación entre software y
+hardware. En los ejemplos analógicos, una instrucción como analogRead()
+no es solamente una función de programación: representa el punto donde
+una magnitud eléctrica del circuito entra al modelo digital del ESP32.
+En los ejemplos de nube, las instrucciones de red convierten ese dato
+local en información transportable hacia un servicio remoto.
+
+También se evidencia que una respuesta exitosa de red no significa que
+el sensor haya sido calibrado. En el caso del MQ-2, el programa
+demuestra correctamente la adquisición y transmisión de la señal, pero
+no contiene la etapa necesaria para transformar el ADC en ppm. Esta
+distinción es importante para interpretar técnicamente los resultados
+sin atribuir al sistema una medición que el código no realiza.
+
+Firebase introduce una lógica diferente: en lugar de enviar únicamente
+una medición, el ESP32 consulta un estado remoto y lo convierte en una
+acción física. Esto representa un flujo bidireccional: la nube influye
+en el dispositivo y el dispositivo confirma su estado de regreso.
+
 # 10. Conclusiones
 
-- El ESP32 permite integrar adquisición de datos, procesamiento local y comunicación inalámbrica en un mismo dispositivo.
-- El promedio de varias muestras mejora la estabilidad de las lecturas del potenciómetro frente a pequeñas variaciones.
-- La conexión WiFi permite utilizar al ESP32 como servidor web y también como cliente de plataformas IoT.
-- ThingSpeak facilita almacenar y visualizar temporalmente las mediciones, permitiendo observar cambios y tendencias.
-- El MQ-2 proporciona una lectura analógica que puede emplearse como indicador de variación, pero una concentración de gas requiere calibración específica.
-- El Ejemplo 05 demuestra que la nube no solo puede almacenar datos: también puede utilizarse como fuente de comandos para controlar una salida física.
-- En conjunto, las actividades permiten comprender el flujo completo de un sistema IoT: medición, procesamiento, comunicación, visualización y actuación.
-# 11. Observaciones técnicas
+45. El ESP32 puede adquirir señales analógicas mediante sus entradas ADC
+    y convertirlas en datos digitales procesables por el programa.
 
-- Las claves de API, contraseñas WiFi y credenciales mostradas en las evidencias son datos de laboratorio. En un proyecto real deben mantenerse fuera del código público y renovarse si fueron expuestas.
-- Los valores de voltaje calculados suponen una referencia de 3.3 V y la escala ADC de 0–4095 utilizada en el ejercicio.
-- Los códigos HTTP 200 observados indican respuestas exitosas del servidor para las solicitudes realizadas.
-- Las gráficas de ThingSpeak representan los datos enviados por el ESP32 en función del tiempo; sus cambios deben relacionarse con la manipulación del sensor o con las condiciones de la prueba.
-Fin del informe
+46. El uso de varias muestras y un promedio permite obtener una lectura
+    más representativa que depender de una sola medición instantánea.
+
+47. La conexión WiFi permite ampliar el funcionamiento del ESP32 desde
+    tareas locales hacia servidores y plataformas IoT.
+
+48. ThingSpeak permite almacenar y visualizar los valores enviados por
+    el ESP32, facilitando la interpretación temporal mediante gráficas.
+
+49. El sensor MQ-2 del ejercicio 4 se trabajó como una fuente de lectura
+    analógica; el valor observado es ADC y no una concentración de gas
+    calibrada.
+
+50. Firebase permite implementar control remoto mediante variables
+    booleanas, de modo que un estado almacenado en la nube puede
+    convertirse en una acción sobre un GPIO.
+
+51. Las evidencias demuestran la correspondencia entre código, circuito,
+    salida serial, comunicación de red y visualización o actuación
+    final.
+
+# 11. Guía breve para defensa oral
+
+Si el profesor solicita explicar cada práctica, una respuesta técnica
+puede seguir esta secuencia:
+
+52. Indicar qué entrada o salida utiliza el ESP32.
+
+53. Explicar qué bloque del código adquiere o genera el dato.
+
+54. Describir cómo se procesa el dato antes de transmitirlo o mostrarlo.
+
+55. Explicar qué mecanismo de comunicación se utiliza: servidor HTTP,
+    ThingSpeak o Firebase.
+
+56. Interpretar exactamente qué muestra el Monitor Serial o la
+    evidencia.
+
+57. Relacionar el resultado con la gráfica o con la actuación física del
+    LED.
+
+58. Aclarar cualquier limitación de medición, como la ausencia de
+    calibración del MQ-2.
+
+# 12. Fuente de evidencias
+
+Código fuente, capturas de Arduino IDE, fotografías de los montajes,
+gráficas de ThingSpeak y evidencias de Firebase fueron tomados del
+material proporcionado para el taller. El documento base contiene 22
+páginas y los cinco ejemplos con sus respectivos códigos y evidencias.
