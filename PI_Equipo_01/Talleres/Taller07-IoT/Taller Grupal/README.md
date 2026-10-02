@@ -20,8 +20,6 @@
 | **Fecha** | 01/10/2026 |
 | **Institución** | Universidad Peruana Cayetano Heredia |
 
-> 🔐 **Nota de seguridad:** para esta versión destinada a GitHub se reemplazaron las contraseñas WiFi y MQTT por valores genéricos. No se recomienda publicar credenciales reales en repositorios públicos.
-
 ---
 
 ## 📑 Contenido
@@ -161,8 +159,6 @@ Esto permite transportar varias variables dentro de un único mensaje MQTT.
 
 ## 7. Código implementado en el ESP32
 
-> Las credenciales sensibles fueron sustituidas por valores genéricos antes de publicar este repositorio.
-
 ```cpp
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -171,16 +167,16 @@ Esto permite transportar varias variables dentro de un único mensaje MQTT.
 
 // ================= CONFIGURACIÓN WIFI =================
 
-const char* WIFI_SSID = "TU_RED_WIFI";
-const char* WIFI_PASS = "TU_PASSWORD_WIFI";
+const char* WIFI_SSID = "GalaxyA04s";
+const char* WIFI_PASS = "12345678";
 
 // ================= CONFIGURACIÓN MQTT =================
 
 const char* MQTT_SERVER = "mqtt.rcr-labs.com";
 const int MQTT_PORT = 1883;
 
-const char* MQTT_USER = "TU_USUARIO_MQTT";
-const char* MQTT_PASSWORD = "TU_PASSWORD_MQTT";
+const char* MQTT_USER = "alumno";
+const char* MQTT_PASSWORD = "UPCH2026";
 
 const char* CLIENT_ID = "ESP32_Equipo01";
 

@@ -111,8 +111,8 @@ La conexión se realizó correctamente y fue posible comprobar mediante el monit
 ```cpp
 #include <WiFi.h>
 #include <WebServer.h>
-const char* ssid = "--";
-const char* password = "--";
+const char* ssid = "UPCH_CENTRAL";
+const char* password = "CAYETANO2022";
 WebServer server(80);
 void handleRoot() {
 server.send(200, "text/html",
@@ -289,8 +289,8 @@ En la gráfica de ThingSpeak se pueden observar las variaciones de los valores r
 ```cpp
 #include <WiFi.h>
 #include <HTTPClient.h>
-const char* ssid = "--";
-const char* password = "--";
+const char* ssid = "UPCH_CENTRAL";
+const char* password = "CAYETANO2022";
 String apiKey = "1NNJ4UQJU2CYUT6M";
 const int MQ2_PIN = 34;
 void setup() {
