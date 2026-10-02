@@ -520,13 +520,6 @@ style="width:6in;height:3.37125in" />
 
 *Figura 3. Evidencia del proceso de carga del programa en el ESP32.*
 
-## 3.7 Interpretación de la gráfica
-
-No se genera una gráfica en este ejemplo. El resultado se valida
-mediante una página web dinámica. La evidencia demuestra la cadena de
-funcionamiento: conexión WiFi → asignación de IP → servidor HTTP →
-respuesta HTML → visualización en navegador.
-
 # 4. EJEMPLO 3: Envío de datos a ThingSpeak
 
 ## 4.1 Objetivo
