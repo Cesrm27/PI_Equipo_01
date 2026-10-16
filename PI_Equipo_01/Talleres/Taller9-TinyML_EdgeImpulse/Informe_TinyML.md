@@ -204,6 +204,14 @@ Los porcentajes de confianza permiten interpretar cada predicción. Por ejemplo,
 
 En SenseCraft se registró 73 % de confianza para Tomatodo y 91 % para Lentes en dos escenas distintas. Las fotografías de Anderson permiten relacionar cada resultado con la orientación de la cámara hacia el objeto correspondiente. Ambas pruebas muestran cómo se presenta la salida del clasificador durante su uso. Una puntuación elevada expresa mayor confianza del modelo en esa entrada, pero no constituye una garantía de que todas las predicciones futuras serán correctas.
 
+## Conclusiones
+
+Se logró implementar un clasificador de lentes y tomatodo y observar sus predicciones en la XIAO ESP32S3 Sense, mediante el monitor serie y SenseCraft. Las evidencias vinculan la preparación del conjunto de datos, el entrenamiento y las pruebas de laboratorio.
+
+La validación obtuvo **75 % de exactitud**, con mayor dificultad para reconocer el tomatodo. La versión float32 alcanzó **100 % en las 20 imágenes de prueba**; este resultado se limita a ese conjunto y no confirma la exactitud de la versión int8 seleccionada para exportación.
+
+Las pruebas visuales mostraron **73 % de confianza para Tomatodo** y **91 % para Lentes**. Estos valores describen predicciones individuales y deben distinguirse de la exactitud global. La evidencia permite concluir que el sistema funcionó en las escenas documentadas, pero no determinar su tasa de aciertos en todas las condiciones de uso.
+
 ### Fuente de la práctica
 
 Guía TinyML con Edge Impulse. Material de laboratorio proporcionado para la práctica. Las 21 capturas y fotografías incluidas corresponden a las evidencias aportadas del trabajo realizado.
