@@ -43,7 +43,7 @@
 
 ---
 
-## 🔬 Presentación del proyecto
+## Presentación del proyecto
 
 La tecnología que proponemos estudiar en GREENPLANT es un sistema de monitoreo de amoníaco, dióxido de carbono y condiciones ambientales y del suelo durante ensayos con plantas de papa. En el TRL 1 buscamos comprender los principios que permiten a los sensores detectar estas variables. La fertilización con urea constituye el contexto de aplicación; el fundamento tecnológico se centra en cómo se producen y se interpretan las señales de medición.
 
@@ -52,7 +52,7 @@ Nuestro planteamiento inicial es el siguiente: ¿qué principios científicos pe
 
 ---
 
-## 📚 1 Artículos científicos sobre los principios de la tecnología propuesta
+## 1 Artículos científicos sobre los principios de la tecnología propuesta
 
 ### Sensor MQ-137 para amoníaco
 
