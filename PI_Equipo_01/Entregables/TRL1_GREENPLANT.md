@@ -80,9 +80,9 @@ Placidi y colaboradores estudiaron sensores capacitivos v1.2 dentro de una red d
 
 ### ESP32 y comunicación mediante Wi-Fi y MQTT
 
-El ESP32 no es un sensor de gases: es el microcontrolador que permitiría adquirir y organizar sus señales. La conversión analógica a digital transforma una tensión en un valor numérico; las interfaces digitales permiten recibir datos de los sensores que ya realizan esa conversión internamente. Así, el MQ-137 y la sonda de humedad pueden aportar señales analógicas, mientras que el MH-Z19B y el BME280 ofrecen interfaces digitales. La compatibilidad eléctrica debe comprobarse antes de conectar cada módulo [[9]](#ref-9).
+El ESP32 es un microcontrolador con conectividad inalámbrica e interfaces para la adquisición y el procesamiento de datos. En GREENPLANT se propone utilizarlo como unidad central para recopilar las lecturas de los sensores MQ-137, MH-Z19B, BME280 y de humedad del suelo. Su funcionamiento se apoya en la conversión analógica a digital y en el intercambio de información mediante interfaces digitales. La primera permite representar numéricamente las señales de tensión procedentes de los circuitos de lectura del MQ-137 y de la sonda capacitiva de humedad; las segundas permiten recibir los datos del MH-Z19B y del BME280. La integración requerirá considerar los niveles de tensión y las características de comunicación de cada componente [[9]](#ref-9).
 
-Para comunicar los registros proponemos Wi-Fi y MQTT. Wi-Fi proporciona la conexión inalámbrica, mientras MQTT organiza mensajes mediante publicación y suscripción: un dispositivo publica datos en un tema y un servidor intermediario, llamado bróker, los distribuye a los clientes suscritos. Este fundamento permitiría vincular las lecturas con una aplicación y un registro en la nube. La transmisión no mejora por sí misma la exactitud de los sensores; transporta los datos obtenidos [[10]](#ref-10).
+Para la transmisión de los registros se propone emplear la conectividad Wi-Fi del ESP32 y el protocolo de mensajería MQTT. Este protocolo utiliza un modelo de publicación y suscripción, en el que los dispositivos envían mensajes asociados a temas específicos a un servidor intermediario denominado bróker, que los distribuye a las aplicaciones suscritas. En la arquitectura propuesta, el ESP32 actuaría como cliente publicador de las mediciones, mientras que una aplicación suscriptora permitiría recibirlas para su almacenamiento y visualización. Esta organización constituye la base de la comunicación prevista para el monitoreo remoto de las variables de GREENPLANT [[10]](#ref-10).
 
 ---
 
@@ -130,7 +130,7 @@ Con esta revisión, el TRL 1 de GREENPLANT queda centrado en los principios resi
 
 <a id="ref-1"></a>
 
-[1] M. Petric, F. Dodigović, I. Grčić, P. Markužić, L. Radetić, and M. Topić, “Ammonia concentration monitoring using Arduino platform,” Environmental Engineering – Inženjerstvo okoliša, vol. 6, no. 1, pp. 21–26, 2019, doi: 10.37023/ee.6.1.4.
+[1] M. Petric, F. Dodigović, I. Grčić, P. Markužić, L. Radetić, and M. Topić, “Ammonia concentration monitoring using Arduino platform,” Environmental Engineering – Inženjerstvo okoliša, vol. 6, no. 1, pp. 21–26, 2019, doi: 10.37023/ee.6.1.4.<https://hrcak.srce.hr/en/clanak/325243%3F>
 
 <a id="ref-2"></a>
 
