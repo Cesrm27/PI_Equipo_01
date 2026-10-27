@@ -205,89 +205,217 @@ Los datos obtenidos serán almacenados para posteriormente **analizarlos y compa
 
 ---
 
-## ⚠️ Problemática
+# 🌱 GREENPLANT — Proyecto integrador
 
-La agricultura requiere información que permita comprender el comportamiento de los cultivos y las condiciones que influyen en su desarrollo. En particular, el cultivo de papa presenta diferentes procesos asociados al suelo, la planta y el ambiente que pueden ser estudiados mediante el seguimiento de variables físicas y gaseosas durante condiciones experimentales controladas.
+## 🌿 Propósito del proyecto
 
-Uno de los aspectos de interés es el comportamiento del **CO₂**, debido a que su concentración puede estar relacionada con procesos de respiración e intercambio gaseoso del sistema suelo-planta. Las cámaras cerradas han sido utilizadas para realizar mediciones relacionadas con los flujos de CO₂ en suelos agrícolas [1], mientras que también se han desarrollado procedimientos mediante cámaras cerradas para estudiar la respiración del suelo a partir de la evolución de la concentración de CO₂ [2].
+Desarrollar un prototipo experimental de monitoreo para el cultivo de papa que permita registrar las concentraciones de amoníaco gaseoso (**NH₃**) y dióxido de carbono (**CO₂**), junto con variables ambientales y del sustrato.
 
-Por otro lado, la utilización de fertilizantes nitrogenados como la **urea** puede generar pérdidas de nitrógeno hacia la atmósfera mediante la volatilización de **NH₃**. Las propiedades del suelo y las condiciones de aplicación pueden influir en la volatilización de NH₃ proveniente de la urea [3]. Asimismo, se han estudiado diferentes factores relacionados con las emisiones de NH₃ derivadas de la fertilización con urea [4].
-
-Esta problemática también está presente específicamente en el cultivo de papa. Se ha analizado la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo condiciones de fertilización con urea, mostrando la importancia de considerar las condiciones del suelo y del cultivo al estudiar estas emisiones [5]. Además, se ha destacado la importancia de evaluar la eficiencia de la fertilización nitrogenada en el cultivo de papa y las pérdidas de nitrógeno asociadas [6].
-
-Asimismo, el CO₂ puede relacionarse con procesos respiratorios de los tejidos de papa, por lo que su comportamiento puede ser considerado como una variable de interés dentro del estudio experimental del cultivo [7].
-
-Sin embargo, estudiar simultáneamente las concentraciones de **NH₃ y CO₂** junto con variables ambientales y del sustrato requiere mantener condiciones experimentales controladas y registrar las mediciones de manera organizada. Una medición aislada de un gas no permite comprender por sí sola cómo se comporta el sistema durante el ensayo.
-
-Por ello, el problema no consiste únicamente en detectar la presencia de NH₃ o CO₂, sino en **obtener información experimental que permita relacionar la concentración de estos gases con las condiciones del cultivo y observar su comportamiento a lo largo del tiempo**.
-
-Ante esta necesidad, GREENPLANT propone una alternativa experimental orientada a:
-
-<div align="center">
-
-🔬 **Medir** → 💾 **Registrar** → 🔍 **Analizar** → 📊 **Comparar**
-
-</div>
-
-las variables obtenidas durante los ensayos.
-
-El sistema busca transformar las lecturas individuales de los sensores en **datos experimentales organizados**, permitiendo identificar tendencias, analizar posibles relaciones entre variables y comparar los resultados obtenidos bajo diferentes condiciones del cultivo.
-
-<div align="center">
-
-| 🔬 Medir | 💾 Registrar | 🧠 Analizar | 📊 Comparar |
-|:---:|:---:|:---:|:---:|
-| Gases y variables | Datos experimentales | Tendencias y relaciones | Resultados |
-
-</div>
-
-<p>
-De esta manera, GREENPLANT busca generar una base tecnológica para el <strong>estudio experimental del cultivo de papa</strong>, permitiendo observar el comportamiento de NH₃ y CO₂ bajo condiciones controladas y generar información que pueda ser utilizada posteriormente para el análisis de los resultados.
-</p>
-
-### 📚 Estudios que anteceden
-
-La propuesta se fundamenta en investigaciones relacionadas con la medición de gases en sistemas suelo-planta, el uso de cámaras cerradas y la volatilización de NH₃ asociada a la fertilización con urea.
-
-<div align="center">
-
-| Estudio | Aporte principal | Relación con nuestro proyecto |
-|:---|:---|:---|
-| **Kusa et al. (2008)** | Compararon métodos de cámara cerrada y gradiente de concentración para medir flujos de CO₂ y N₂O en suelos agrícolas **[1]**. | Sustenta el uso de una **cámara cerrada** como base para realizar mediciones de gases en condiciones controladas. |
-| **Baneschi et al. (2023)** | Desarrollaron un protocolo con cámaras cerradas para medir la respiración del suelo mediante CO₂ y analizar la incertidumbre de las mediciones **[2]**. | Sustenta la necesidad de controlar el **volumen de la cámara, el tiempo de medición y la calidad de los datos de CO₂**. |
-| **Perez-Trejo et al. (1981)** | Estudiaron el intercambio gaseoso y la respiración de tejidos de papa en relación con el CO₂ **[7]**. | Relaciona el **CO₂ con procesos respiratorios de la papa**, respaldando su inclusión como variable de estudio. |
-| **Lee et al. (2024)** | Evaluaron la volatilización de NH₃ en diferentes cultivos, incluyendo papa, bajo fertilización con urea y otras fuentes nitrogenadas **[5]**. | Sustenta el estudio del **NH₃ en papa bajo condiciones de fertilización**, considerando variables del suelo y ambientales. |
-| **Sunderlage y Cook (2018)** | Analizaron la influencia de propiedades del suelo sobre la volatilización de NH₃ proveniente de la urea **[3]**. | Sustenta la importancia de controlar las **condiciones del sustrato** durante los ensayos con urea. |
-| **Chatzitriantafyllou et al. (2026)** | Revisaron estrategias de fertilización nitrogenada en papa y los problemas relacionados con la eficiencia del uso del nitrógeno y las pérdidas ambientales **[6]**. | Refuerza la importancia de estudiar la **fertilización nitrogenada en el cultivo de papa** y generar información experimental. |
-
-</div>
-
-### 🔎 Conclusión de los antecedentes
-
-Los estudios revisados muestran que existen bases científicas para estudiar los gases mediante cámaras cerradas y que las condiciones del suelo, la fertilización y las características del cultivo pueden influir en las mediciones de NH₃ y CO₂.
-
-<p>
-A partir de estos antecedentes, GREENPLANT plantea integrar sensores, adquisición de datos y una cámara experimental para obtener información organizada que permita **medir, registrar, analizar y comparar** el comportamiento de estas variables durante los ensayos.
-<p>
-
-# 🎯 Objetivo General
-
-Desarrollar un **prototipo experimental inteligente** capaz de monitorear gases y variables ambientales y del suelo asociadas al cultivo de papa mediante **sensores y IoT**, generando datos que permitan analizar y comparar los resultados obtenidos durante los ensayos.
+Mediante el uso de sensores, un microcontrolador ESP32 y una cámara experimental, GREENPLANT busca obtener datos organizados que permitan analizar y comparar el comportamiento de estos gases bajo distintas condiciones de experimentación. La información generada podrá contribuir al estudio del manejo de la urea y de los factores asociados a las posibles pérdidas de nitrógeno.
 
 ---
 
-# 🎯 Objetivos Específicos
+## ⚠️ Problemática
 
-- Diseñar una cámara experimental cerrada para realizar ensayos con plantas jóvenes de papa.
-- Implementar sensores para medir gases y variables ambientales y del sustrato.
-- Registrar información relacionada con las concentraciones de gases presentes durante cada ensayo.
-- Registrar temperatura, humedad e iluminación asociadas a las condiciones experimentales.
-- Utilizar un microcontrolador **ESP32** para adquirir y gestionar los datos obtenidos por los sensores.
-- Almacenar las mediciones junto con la identificación del cultivo y el tiempo de experimentación.
-- Generar un conjunto de datos para el análisis de las variables registradas.
-- Comparar los resultados obtenidos durante diferentes ensayos del cultivo de papa.
-- Generar información que facilite el análisis experimental del comportamiento del cultivo.
+La agricultura utiliza fertilizantes nitrogenados, entre ellos la **urea**, para proporcionar nitrógeno a los cultivos. Sin embargo, después de su aplicación, la urea experimenta transformaciones físico-químicas en el suelo que pueden favorecer la volatilización de amoníaco gaseoso (**NH₃**). La magnitud de este proceso depende de factores como el pH, la temperatura, la humedad del suelo, las propiedades del sustrato y el método de aplicación del fertilizante [1], [6].
 
+La volatilización del NH₃ puede provocar pérdidas de nitrógeno y reducir la eficiencia del fertilizante. Además, el amoníaco puede reaccionar en la atmósfera y contribuir a la formación de material particulado fino (PM₂.₅). Su deposición también puede contribuir a la alteración de ecosistemas, la acidificación y la eutrofización en determinadas condiciones [7], [9], [13], [14].
+
+Por otra parte, el **CO₂** es una variable de interés porque puede relacionarse con procesos de respiración e intercambio gaseoso del sistema suelo-planta. En el cultivo de papa, su concentración puede verse influida por la respiración de las raíces y la actividad de los microorganismos del suelo. Cuando existe iluminación, la fotosíntesis también puede consumir CO₂ [3].
+
+Por ello, el CO₂ registrado dentro de una cámara experimental no debe atribuirse automáticamente a la aplicación de urea. Del mismo modo, detectar NH₃ no permite determinar por sí solo cuánto nitrógeno se ha perdido.
+
+El problema consiste en obtener información experimental organizada que permita estudiar las variaciones de NH₃ y CO₂ y relacionarlas con las condiciones del cultivo, la temperatura, la humedad y el manejo de la fertilización.
+
+Ante esta necesidad, GREENPLANT propone integrar sensores y un ESP32 para:
+
+🔬 **Medir** → 💾 **Registrar** → 🧠 **Analizar** → 📊 **Comparar**
+
+El sistema permitirá recopilar datos durante ensayos controlados, identificar tendencias y comparar los resultados obtenidos bajo diferentes condiciones experimentales.
+
+> **Consideración científica:** una concentración expresada en ppm no equivale directamente a una masa de gas emitida ni a una pérdida de nitrógeno en kg/ha. Para calcular una pérdida total de nitrógeno sería necesario emplear un método de medición de emisiones validado y considerar las características y condiciones de la cámara experimental.
+
+---
+
+## ❓ Pregunta de investigación
+
+¿Cómo se relacionan las dosis y el manejo de la urea, junto con las condiciones ambientales, con las concentraciones de NH₃ y CO₂ en ensayos controlados con plantas de papa, y cómo pueden utilizarse esos resultados, junto con información agronómica, para orientar un uso más eficiente del fertilizante y reducir aplicaciones excesivas?
+
+---
+
+## 🔬 Hipótesis
+
+Las dosis y el manejo de la urea, junto con las condiciones ambientales y del sustrato, se relacionan con variaciones en las concentraciones de NH₃ y CO₂ registradas durante los ensayos experimentales con cultivos de papa.
+
+---
+
+## 📚 Estudios que anteceden
+
+La propuesta de GREENPLANT se fundamenta en investigaciones relacionadas con la volatilización de amoníaco, la fertilización nitrogenada en papa y la medición de gases mediante cámaras experimentales.
+
+| Estudio | Aporte principal | Relación con GREENPLANT |
+|:---|:---|:---|
+| **Sunderlage y Cook (2018)** [1] | Analizaron la influencia de las propiedades del suelo y de los aditivos del fertilizante en la volatilización de NH₃ proveniente de la urea. | Sustenta la importancia de considerar las propiedades del sustrato y las condiciones de aplicación. |
+| **Lee et al. (2024)** [2] | Compararon la volatilización de amoníaco en suelos fertilizados con urea y sulfato de amonio en diferentes cultivos, incluida la papa. | Proporciona un antecedente directamente relacionado con el estudio de la volatilización de NH₃ en condiciones de fertilización. |
+| **Baneschi et al. (2023)** [3] | Presentaron un protocolo basado en cámaras cerradas para medir la respiración del suelo mediante CO₂ y reducir la incertidumbre de las mediciones. | Respalda la importancia de controlar el procedimiento experimental y analizar cuidadosamente las concentraciones registradas. |
+| **García Espinoza (2022)** [4] | Estudió dosis de nitrógeno y fósforo en el rendimiento y la eficiencia agronómica del cultivo de papa de la variedad UNICA en Apata-Jauja. | Aporta antecedentes sobre fertilización nitrogenada y respuesta agronómica de la papa. |
+| **Seminario Cunya et al. (2017)** [5] | Evaluaron el rendimiento de cosecha de diecisiete cultivares de papa del grupo Phureja. | Aporta contexto sobre la evaluación agronómica de cultivares de papa; no debe interpretarse como una medición de emisiones si el estudio no las reporta. |
+| **Engel, Jones y Wallander (2011)** [6] | Estudiaron la volatilización de amoníaco a partir de urea aplicada sobre suelos fríos y estrategias para mitigarla mediante NBPT. | Aporta información sobre factores y estrategias de manejo que pueden influir en la pérdida de NH₃. |
+
+### 🔎 Conclusión de los antecedentes
+
+Los estudios revisados muestran que las propiedades del suelo, el manejo de la fertilización y las condiciones experimentales pueden influir en la volatilización de NH₃ y en las mediciones de CO₂.
+
+A partir de estos antecedentes, GREENPLANT propone integrar sensores, adquisición de datos y una cámara experimental para observar el comportamiento de estos gases y generar información que facilite su análisis comparativo.
+
+---
+
+## 🧪 Urea y nitrógeno
+
+La urea comercial suele contener aproximadamente un **46 % de nitrógeno en masa**. Para convertir una dosis de nitrógeno expresada en kg N/ha a una cantidad equivalente de urea, se puede emplear la siguiente relación:
+
+$$
+\text{Urea (kg/ha)} = \frac{\text{N (kg/ha)}}{0.46}
+$$
+
+Por ejemplo, una aplicación de 150 kg de urea/ha contiene aproximadamente:
+
+$$
+150 \times 0.46 = 69\text{ kg N/ha}
+$$
+
+Este resultado corresponde al nitrógeno aplicado mediante el fertilizante; no representa la cantidad absorbida por la planta ni la cantidad perdida al ambiente.
+
+La volatilización de NH₃ no presenta un porcentaje único para todos los cultivos y suelos. La FAO recoge rangos de referencia que dependen del método de aplicación y de las condiciones ambientales y edáficas [7]. Dichos valores sirven como contexto general y **no deben considerarse resultados experimentales de GREENPLANT**.
+
+---
+
+## 📏 Medición e interpretación de los datos
+
+Durante los ensayos, GREENPLANT busca registrar las concentraciones de NH₃ y CO₂, junto con variables ambientales y del sustrato.
+
+Para facilitar la interpretación de los resultados, se propone registrar:
+
+- Concentración de NH₃ en ppm.
+- Concentración de CO₂ en ppm.
+- Temperatura ambiental.
+- Humedad relativa.
+- Humedad del sustrato.
+- Fecha, hora y duración del ensayo.
+- Tratamiento y cantidad de urea aplicada.
+- Superficie de la parcela o dimensiones del recipiente experimental.
+- Tiempo transcurrido desde la aplicación del fertilizante.
+- Condiciones de la cámara y características de los sensores.
+
+### Cálculos descriptivos
+
+**Cambio de concentración de NH₃ durante el ensayo:**
+
+$$
+\Delta C_{NH_3}=C_{\text{final}}-C_{\text{inicial}}
+$$
+
+**Tasa media de cambio durante una hora:**
+
+$$
+r=\frac{C_{\text{final}}-C_{\text{inicial}}}{60}
+$$
+
+En esta expresión, la tasa se expresa en ppm/min cuando el intervalo de medición es de 60 minutos.
+
+Estos cálculos permiten describir la evolución de la concentración. Sin embargo, **no convierten automáticamente las lecturas en una tasa de emisión de masa**.
+
+Si se desea estimar el porcentaje de nitrógeno perdido por volatilización, es necesario cuantificar la masa de nitrógeno emitida como NH₃-N mediante un método validado:
+
+$$
+\%N_{\text{perdido}}=
+\frac{\text{kg N emitido como NH}_3\text{-N}}
+{\text{kg N aplicado}}\times100
+$$
+
+Una lectura aislada del sensor en ppm no proporciona directamente el numerador de esta ecuación.
+
+### Consideraciones sobre la cámara experimental
+
+La cámara utilizada en GREENPLANT debe mantenerse en condiciones controladas y documentarse de manera consistente. Si existe poco intercambio de aire, los gases pueden acumularse y la concentración medida puede cambiar con el tiempo.
+
+Por esta razón, los ensayos de aproximadamente una hora permitirán analizar principalmente la evolución de las concentraciones durante ese intervalo. No necesariamente representarán la pérdida acumulada de nitrógeno durante todo el periodo de volatilización, que puede continuar durante más tiempo [11], [12].
+
+Los resultados deberán interpretarse considerando las características de la cámara, la calibración de los sensores, el tiempo de medición y las condiciones del sustrato.
+
+---
+
+## 🌎 Consecuencias ambientales de la volatilización de NH₃
+
+La pérdida de NH₃ puede tener consecuencias ambientales importantes:
+
+1. **Pérdida de nitrógeno disponible:** parte del nitrógeno aplicado abandona la zona de aplicación y deja de estar inmediatamente disponible para el cultivo.
+2. **Contaminación del aire:** el NH₃ puede reaccionar con compuestos ácidos y contribuir a la formación de partículas finas PM₂.₅, asociadas con efectos perjudiciales para la salud.
+3. **Deposición de nitrógeno:** el amoníaco puede desplazarse en la atmósfera y depositarse en suelos, vegetación y cuerpos de agua.
+4. **Acidificación y eutrofización:** la deposición y transformación de compuestos nitrogenados puede contribuir a cambios en el suelo y el agua, al exceso de nutrientes y a alteraciones en los ecosistemas.
+5. **Efectos indirectos sobre el clima:** el nitrógeno depositado puede participar en procesos que generen emisiones de óxido nitroso (N₂O), un gas de efecto invernadero potente [7], [9], [13], [14].
+
+GREENPLANT busca aportar información experimental para estudiar el comportamiento de las concentraciones registradas y contribuir al análisis del manejo de la urea. El sistema no demuestra por sí solo una reducción de la contaminación a escala de campo, pues esto requiere validación experimental adecuada.
+
+---
+
+# 🎯 Objetivo general
+
+Desarrollar un prototipo experimental que permita monitorear y registrar las concentraciones de NH₃ y CO₂, junto con variables ambientales y del sustrato, para analizar su comportamiento durante ensayos controlados con plantas de papa bajo distintas condiciones de fertilización y aportar evidencia para orientar un uso más eficiente de la urea.
+
+---
+
+# 🎯 Objetivos específicos
+
+- Identificar las principales regiones productoras de papa en el Perú y recopilar información documentada sobre dosis y prácticas de fertilización con urea.
+- Describir las transformaciones químicas de la urea relacionadas con la formación de NH₃ y explicar los procesos vinculados al CO₂.
+- Diseñar e implementar un prototipo con ESP32 y sensores para registrar NH₃, CO₂ y variables ambientales y del sustrato.
+- Registrar y organizar las concentraciones obtenidas durante los ensayos experimentales.
+- Graficar y analizar las variaciones de las concentraciones de los gases en función del tiempo y de las condiciones de experimentación.
+- Comparar los resultados obtenidos bajo distintas condiciones de fertilización.
+- Elaborar una orientación preliminar sobre el manejo de la urea a partir de los resultados experimentales y de referencias agronómicas, evitando recomendar dosis universales sin análisis de suelo ni validación en campo.
+
+---
+
+## 🌍 Relación con los Objetivos de Desarrollo Sostenible
+
+- **ODS 2: Hambre cero — Meta 2.4.** Relación con el estudio y desarrollo de prácticas agrícolas sostenibles y resilientes.
+- **ODS 9: Industria, innovación e infraestructura — Meta 9.5.** Relación con la investigación aplicada y el desarrollo de capacidades tecnológicas.
+- **ODS 13: Acción por el clima — Meta 13.3.** Relación educativa con el análisis de procesos ambientales vinculados al CO₂ y al manejo del nitrógeno.
+
+Estas relaciones representan la orientación potencial del proyecto; el prototipo no demuestra por sí mismo el cumplimiento de las metas de los ODS.
+
+---
+
+# 📖 Referencias bibliográficas
+
+[1] M. Sunderlage and R. L. Cook, “Soil Property and Fertilizer Additive Effects on Ammonia Volatilization from Urea,” *Soil Science Society of America Journal*, vol. 82, no. 1, pp. 253–259, 2018. https://doi.org/10.2136/sssaj2017.05.0151
+
+[2] Y.-J. Lee et al., “Comparison of ammonia volatilization in paddy and field soils fertilized with urea and ammonium sulfate during rice, potato, and Chinese cabbage cultivation,” *Atmospheric Pollution Research*, vol. 15, no. 4, art. 102049, 2024. https://doi.org/10.1016/j.apr.2024.102049
+
+[3] I. Baneschi et al., “Non-steady-state closed dynamic chamber to measure soil CO₂ respiration: A protocol to reduce uncertainty,” *Frontiers in Environmental Science*, vol. 10, art. 1048948, 2023. https://doi.org/10.3389/fenvs.2022.1048948
+
+[4] C. M. García Espinoza, *Efecto de dosis de nitrógeno y fósforo en el rendimiento y eficiencia agronómica del cultivo de papa (Solanum tuberosum L.). Apata-Jauja*. Tesis, Universidad Nacional del Centro del Perú, 2022. Repositorio institucional: https://repositorio.uncp.edu.pe/. Pendiente de confirmar el enlace específico de la tesis.
+
+[5] J. F. Seminario Cunya, A. Seminario Cunya, A. Domínguez Palacios y B. Escalante Zumaeta, “Rendimiento de cosecha de diecisiete cultivares de papa (Solanum tuberosum L.) del grupo Phureja,” *Scientia Agropecuaria*, vol. 8, no. 3, 2017. https://doi.org/10.17268/sci.agropecu.2017.03.01
+
+[6] R. Engel, C. Jones, and R. Wallander, “Ammonia Volatilization from Urea and Mitigation by NBPT following Surface Application to Cold Soils,” *Soil Science Society of America Journal*, vol. 75, no. 6, pp. 2348–2357, 2011. https://doi.org/10.2136/sssaj2011.0229
+
+[7] Food and Agriculture Organization of the United Nations (FAO), “Global estimates of gaseous emissions of NH₃, NO and N₂O from agricultural land.” https://www.fao.org/4/y2780E/y2780e04.htm
+
+[8] Ministerio de Desarrollo Agrario y Riego (MIDAGRI), “Más de 700 mil agricultores de 19 regiones sustentan la producción de papa en el país,” 2025. https://www.gob.pe/institucion/midagri/noticias/1178150-midagri-mas-de-700-mil-agricultores-de-19-regiones-sustentan-la-produccion-de-papa-en-el-pais
+
+[9] N. Rayne and C. Bandura, “Ammonia loss from urea-containing fertilizers,” University of Wisconsin–Madison Division of Extension. https://cropsandsoils.extension.wisc.edu/articles/ammonia-loss-from-urea-containing-fertilizers/
+
+[10] “The Effect of Nucleating Agents on Enzyme-Induced Carbonate Precipitation and Corresponding Microscopic Mechanisms,” *Materials*, 2022. https://pmc.ncbi.nlm.nih.gov/articles/PMC9457418/
+
+[11] Martins et al. (2021), “A simple and easy method to measure ammonia volatilization: Accuracy under field conditions,” *Pedosphere*. https://www.sciencedirect.com/science/article/pii/S1002016020600777
+
+[12] Araújo et al. (2010), “Calibration of a semi-opened static chamber for the quantification of volatilized ammonia from soil,” *Pesquisa Agropecuária Brasileira*. https://doi.org/10.1590/S1678-3921.pab2009.v44.1961
+
+[13] European Environment Agency (EEA). Información sobre deposición de nitrógeno y sus efectos en la eutrofización y biodiversidad. https://www.eea.europa.eu/
+
+[14] U.S. Environmental Protection Agency (EPA). Información sobre amoníaco/amonio como precursores de PM₂.₅ y efectos de la deposición de nitrógeno. https://www.epa.gov/
 ---
 # 👤 Público Objetivo
 
