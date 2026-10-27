@@ -415,8 +415,91 @@ Estas relaciones representan la orientación potencial del proyecto; el prototip
 
 [13] European Environment Agency (EEA). Información sobre deposición de nitrógeno y sus efectos en la eutrofización y biodiversidad. https://www.eea.europa.eu/
 
-[14] U.S. Environmental Protection Agency (EPA). Información sobre amoníaco/amonio como precursores de PM₂.₅ y efectos de la deposición de nitrógeno. https://www.epa.gov/
+[14] U.S. Environmental Protection Agency (EPA). *Progress Report – Atmospheric Deposition*. Actualizado el 17 de abril de 2024. https://www.epa.gov/power-sector/progress-report-atmospheric-deposition
 ---
+
+## ♻️ Ciclo del nitrógeno
+
+El ciclo del nitrógeno describe cómo este elemento circula entre la atmósfera, el suelo y los seres vivos mediante procesos biológicos, químicos y físicos. Es fundamental para la formación de proteínas, ácidos nucleicos y otras moléculas esenciales para el crecimiento de las plantas.
+
+### 🌎 Diagrama del ciclo del nitrógeno
+
+```mermaid
+flowchart TB
+    %% ==========================================
+    %% CICLO DEL NITRÓGENO — GREENPLANT
+    %% ==========================================
+
+    subgraph ATMOSFERA["🌌 ATMÓSFERA"]
+        N2["Nitrógeno molecular<br/>N₂ (gas)"]
+    end
+
+    subgraph FIJACION["⚡ FIJACIÓN DEL NITRÓGENO"]
+        BIO["Fijación biológica<br/>Bacterias fijadoras"]
+        ABI["Fijación abiótica<br/>Descargas eléctricas"]
+    end
+
+    subgraph SUELO["🟤 SUELO"]
+        NH4["Amonio<br/>NH₄⁺"]
+        AMON["Amonificación<br/>N orgánico → NH₃ / NH₄⁺"]
+        NITRI["Nitrificación<br/>NH₄⁺ → NO₂⁻ → NO₃⁻"]
+        NO3["Nitrato<br/>NO₃⁻"]
+        DENIT["Desnitrificación<br/>NO₃⁻ → N₂O → N₂"]
+        ORGANICO["Materia orgánica<br/>Restos vegetales y excretas"]
+    end
+
+    subgraph SERES_VIVOS["🌿 SISTEMA BIOLÓGICO"]
+        PLANTAS["🌱 Plantas<br/>Asimilación de NH₄⁺ y NO₃⁻"]
+        ANIMALES["🐄 Animales<br/>Consumo de plantas"]
+    end
+
+    %% Fijación del nitrógeno
+    N2 --> BIO
+    BIO --> NH4
+    N2 --> ABI
+    ABI -->|Deposición de nitrógeno| NO3
+
+    %% Transformaciones en el suelo
+    NH4 --> NITRI
+    NITRI --> NO3
+
+    %% Absorción y transferencia alimentaria
+    NH4 --> PLANTAS
+    NO3 --> PLANTAS
+    PLANTAS --> ANIMALES
+
+    %% Retorno de nitrógeno orgánico al suelo
+    PLANTAS -->|Restos vegetales| ORGANICO
+    ANIMALES -->|Excretas y restos| ORGANICO
+    ORGANICO --> AMON
+    AMON --> NH4
+
+    %% Regreso a la atmósfera
+    NO3 --> DENIT
+    DENIT --> N2
+
+    %% Estilos visuales
+    classDef atmosphere fill:#DCEEFF,stroke:#2874A6,color:#12304A,stroke-width:2px;
+    classDef fixation fill:#FFF0B3,stroke:#D49A00,color:#553A00,stroke-width:2px;
+    classDef soil fill:#E9D5C0,stroke:#956B43,color:#412D1D,stroke-width:2px;
+    classDef biology fill:#D9F2D0,stroke:#438A35,color:#1F4A19,stroke-width:2px;
+    classDef process fill:#E5E7FF,stroke:#5865A8,color:#20285C,stroke-width:2px;
+
+    class N2 atmosphere;
+    class BIO,ABI fixation;
+    class NH4,NO3,ORGANICO soil;
+    class PLANTAS,ANIMALES biology;
+    class AMON,NITRI,DENIT process;
+
+    style ATMOSFERA fill:#F0F8FF,stroke:#2874A6,stroke-width:2px
+    style FIJACION fill:#FFFAE6,stroke:#D49A00,stroke-width:2px
+    style SUELO fill:#F8F0E8,stroke:#956B43,stroke-width:2px
+    style SERES_VIVOS fill:#EFF8EC,stroke:#438A35,stroke-width:2px
+
+    linkStyle default stroke:#718096,stroke-width:2px
+```
+
+
 # 👤 Público Objetivo
 
 **GREENPLANT** estará dirigido principalmente a usuarios relacionados con el **estudio, producción y monitoreo agrícola**.
