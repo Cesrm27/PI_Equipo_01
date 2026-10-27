@@ -359,6 +359,12 @@ GREENPLANT busca aportar información experimental para estudiar el comportamien
 
 ---
 
+## ♻️ Ciclo del nitrógeno
+
+El ciclo del nitrógeno describe cómo este elemento circula entre la atmósfera, el suelo y los seres vivos mediante procesos biológicos, químicos y físicos. Es fundamental para la formación de proteínas, ácidos nucleicos y otras moléculas esenciales para el crecimiento de las plantas.
+
+### 🌎 Diagrama del ciclo del nitrógeno
+
 ```mermaid
 flowchart TB
   subgraph ATM["☁️ Atmósfera"]
