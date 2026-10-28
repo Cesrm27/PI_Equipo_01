@@ -353,7 +353,7 @@ GREENPLANT busca registrar y organizar estas variables durante ensayos controlad
 
 ---
 
-### 🌎 Diagrama del ciclo del nitrógeno
+## 🌎 Diagrama del ciclo del nitrógeno
 
 <p align="center">
   <img width="800" src="/Recursos/Imágenes/ciclo-nitrogeno.svg" alt="Diagrama animado del ciclo del nitrógeno: la urea aplicada al suelo se hidroliza en NH₃ y NH₄⁺; parte del NH₃ se pierde a la atmósfera por volatilización y otra parte es absorbida por la planta" />
@@ -362,9 +362,6 @@ GREENPLANT busca registrar y organizar estas variables durante ensayos controlad
 <p align="center">
   <em>Figura 2. Ciclo del nitrógeno en el sistema suelo-planta-atmósfera, con énfasis en la volatilización de NH₃(g) a partir de la urea. NH₃(g) es un contaminante atmosférico reactivo (puede participar en la formación de partículas finas y en la deposición de nitrógeno); el CO₂(g) es el gas de efecto invernadero.</em>
 </p>
-
-
-
 
 
 # 🎯 Objetivo general
