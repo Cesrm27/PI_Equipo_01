@@ -55,7 +55,7 @@ La tesis de Bezborodov [9] proporciona un antecedente de integración del BME280
 
 ### 1.5. Fertilización nitrogenada y volatilización de amoníaco en papa
 
-Wan et al. [2] estudiaron el efecto de distintas dosis de nitrógeno y de un inhibidor de ureasa en campos de papa con riego por goteo. Encontraron picos de volatilización de NH₃ entre uno y cinco días después de la fertilización y una mayor volatilización acumulada al aumentar la dosis de nitrógeno en las condiciones evaluadas.
+Wan et al. [2] estudiaron el efecto de distintas dosis de nitrógeno y de un inhibidor de urea en campos de papa con riego por goteo. Encontraron picos de volatilización de NH₃ entre uno y cinco días después de la fertilización y una mayor volatilización acumulada al aumentar la dosis de nitrógeno en las condiciones evaluadas.
 
 El estudio sustenta el seguimiento temporal del NH₃ después de fertilizar y la comparación de dosis [2]. Rochette et al. [3] observaron que la profundidad de incorporación de urea afectó la volatilización en el suelo estudiado, lo que fundamenta incluir la forma de aplicación como factor experimental. En GREENPLANT se propone establecer una línea de base previa a la aplicación y concentrar el seguimiento en los días posteriores, incluyendo un tratamiento sin urea como referencia experimental, en correspondencia con el control utilizado en [2].
 
