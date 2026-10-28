@@ -481,8 +481,6 @@ La selección de los sensores y componentes se realiza considerando su **princip
 
 </div>
 
-> ⚠️ **Nota importante:**  
-> La selección definitiva de sensores para **temperatura del suelo, humedad del suelo e iluminación** dependerá de la **viabilidad técnica, disponibilidad, compatibilidad y validación de los componentes** durante el desarrollo del prototipo.
 
 # 📦 Cámara Experimental
 
