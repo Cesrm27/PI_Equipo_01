@@ -1,30 +1,54 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:07111F,50:285C3A,100:4CAF50&height=230&section=header&text=GREENPLANT%20&fontSize=58&fontColor=FFFFFF&fontAlignY=42&desc=IoT%20%7C%20Monitoreo%20Experimental%20%7C%20Agricultura%20Inteligente&descSize=18&descAlignY=68&animation=fadeIn" width="100%"/>
-</p>
+<div align="center">
 
-<p align="center">
-  <strong>Sistema para el monitoreo experimental del cultivo de papa y sus emisiones gaseosas</strong>
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:07111F,50:285C3A,100:4CAF50&height=260&section=header&text=GREENPLANT&fontSize=68&fontColor=FFFFFF&fontAlignY=38&desc=IoT%20%C2%B7%20Monitoreo%20Experimental%20%C2%B7%20Agricultura%20Inteligente&descSize=19&descAlignY=60&animation=fadeIn" width="100%" alt="GREENPLANT"/>
 
-<p align="center">
-  <strong>PROYECTO INTEGRADOR · 2026-II</strong>
-  <br>
-  <sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática + Ingeniería Industrial</sub>
-</p>
+### Monitoreo experimental de **NH₃** y **CO₂** en el cultivo de papa
 
-<p align="center">
-  <img src="https://img.shields.io/badge/IoT-ESP32-285C3A?style=for-the-badge&logo=espressif&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Agricultura-Inteligente-66BB6A?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Sostenibilidad-ODS%2013-2E7D32?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/ODS%209-Innovación%20e%20Infraestructura-EA6A00?style=for-the-badge"/>
-</p>
+*Sensores, ESP32 y adquisición de datos para estudiar las pérdidas de nitrógeno asociadas al manejo de la urea.*
 
 <br>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=4CAF50&center=true&vCenter=true&width=750&lines=MEDIR+%E2%86%92+REGISTRAR+%E2%86%92+ANALIZAR+%E2%86%92+COMPARAR;Tecnolog%C3%ADa+IoT+para+una+agricultura+m%C3%A1s+sostenible" />
-</p>
+<img src="https://img.shields.io/badge/PROYECTO%20INTEGRADOR-2026--II-07111F?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ESTADO-EN%20DESARROLLO-EA6A00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/CULTIVO-PAPA-285C3A?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/IoT-ESP32-285C3A?style=for-the-badge&logo=espressif&logoColor=white"/>
+<img src="https://img.shields.io/badge/Sensor-ME3--NH₃-1565C0?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Sensor-MH--Z19C%20CO₂-37474F?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Sensor-BME280-00838F?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/ODS%202-Hambre%20Cero-4C9F38?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ODS%209-Innovación-EA6A00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ODS%2013-Acción%20Climática-3F7E44?style=for-the-badge"/>
+
+<br><br>
+
+<a href="#-pregunta-de-investigación"><b>Investigación</b></a> &nbsp;·&nbsp;
+<a href="#-urea-y-nitrógeno"><b>Urea y N</b></a> &nbsp;·&nbsp;
+<a href="#-variables-y-gases-a-monitorear"><b>Sensores</b></a> &nbsp;·&nbsp;
+<a href="#-cámara-experimental"><b>Cámara</b></a> &nbsp;·&nbsp;
+<a href="#-análisis-de-datos"><b>Datos</b></a> &nbsp;·&nbsp;
+<a href="#-integrantes-del-equipo"><b>Equipo</b></a> &nbsp;·&nbsp;
+<a href="#-referencias-bibliográficas"><b>Referencias</b></a>
+
+<br><br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=600&size=22&duration=2800&pause=900&color=4CAF50&center=true&vCenter=true&width=750&lines=MEDIR+%E2%86%92+REGISTRAR+%E2%86%92+ANALIZAR+%E2%86%92+COMPARAR;Tecnolog%C3%ADa+IoT+para+una+agricultura+m%C3%A1s+sostenible" alt="Medir, registrar, analizar, comparar"/>
+
+<br>
+
+<table>
+  <tr>
+    <td align="center" width="25%"><h3>⚠️</h3><b>Problema</b><br><sub>La urea aplicada puede perderse como NH₃(g) y reducir la eficiencia del fertilizante.</sub></td>
+    <td align="center" width="25%"><h3>📡</h3><b>Solución</b><br><sub>Cámara experimental con sensores y ESP32 para registrar las concentraciones.</sub></td>
+    <td align="center" width="25%"><h3>🧪</h3><b>Variables</b><br><sub>NH₃, CO₂, temperatura, humedad ambiental y del suelo, iluminación y tiempo.</sub></td>
+    <td align="center" width="25%"><h3>📊</h3><b>Resultado</b><br><sub>Datos organizados para analizar y comparar ensayos de fertilización.</sub></td>
+  </tr>
+</table>
+
+<sub>Universidad Peruana Cayetano Heredia · Ingeniería Informática + Ingeniería Industrial</sub>
+
+</div>
 
 ---
 
