@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ciclo del nitrógeno — GREENPLANT</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f8f5;--fg:#1c2b22;--card:#fff;--line:#d5ddd6;--accent:#2b8a3e;--muted:#5b6b61;
+--sky1:#d6ecff;--sky2:#f4fbff;--soil1:#8d6e53;--soil2:#5e4632;--ink:#16301f;--lab:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a15;--fg:#e6efe8;--card:#1a251e;--line:#2c3b31;--muted:#9fb1a5;--sky1:#1c3550;--sky2:#2a4d6b;--soil1:#5c4633;--soil2:#3a2c20;--ink:#e6efe8}}
+:root[data-theme="dark"]{--bg:#121a15;--fg:#e6efe8;--card:#1a251e;--line:#2c3b31;--muted:#9fb1a5;--sky1:#1c3550;--sky2:#2a4d6b;--soil1:#5c4633;--soil2:#3a2c20;--ink:#e6efe8}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:1.2rem;margin:0 0 4px}
+p.sub{margin:0 0 12px;color:var(--muted);font-size:.9rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+button{font:inherit;font-size:.85rem;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+button:hover,button:focus-visible{border-color:var(--accent);outline:none}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+svg{display:block;width:100%;height:auto}
+.stg{cursor:pointer;transition:opacity .3s,filter .2s}
+.stg:hover,.stg.sel{filter:drop-shadow(0 0 6px #ffd43b)}
+svg.solo .stg:not(.vol){opacity:.18}
+.t{font-size:13px;fill:var(--ink);font-weight:600}
+.tw{font-size:13px;fill:#fff;font-weight:700}
+.chip{font-size:12px}
+.flow{stroke-dasharray:8 6;animation:dash 1s linear infinite}
+svg.paused .flow{animation-play-state:paused}
+@keyframes dash{to{stroke-dashoffset:-14}}
+#info{padding:12px 14px;font-size:.92rem;line-height:1.45;border-top:1px solid var(--line);min-height:84px}
+#info b{color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+@media (max-width:560px){.t,.tw{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ciclo del nitrógeno: ¿adónde va la urea?</h1>
+<p class="sub">Toca o haz clic en cada etapa para ver su explicación.</p>
+<div class="bar">
+<button id="bp">⏸ Pausar</button>
+<button id="br">↺ Reiniciar</button>
+<button id="bs">Solo volatilización de NH₃</button>
+</div>
+<div class="card">
+<svg id="sv" viewBox="0 0 800 520" role="img" aria-label="Diagrama animado del ciclo del nitrógeno con volatilización de NH3">
+<defs>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky1)"/><stop offset="1" stop-color="var(--sky2)"/></linearGradient>
+<linearGradient id="so" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--soil1)"/><stop offset="1" stop-color="var(--soil2)"/></linearGradient>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker>
+</defs>
+<rect width="800" height="250" fill="url(#sk)"/>
+<rect y="250" width="800" height="270" fill="url(#so)"/>
+<rect y="246" width="800" height="8" fill="#5fa84a"/>
+<text x="14" y="22" class="t" style="opacity:.7">ATMÓSFERA</text>
+<text x="14" y="272" class="tw" style="opacity:.8">SUELO</text>
+
+<!-- planta -->
+<g class="stg" data-s="4" id="g4">
+<path d="M400 250V140" stroke="#2f9e44" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="365" cy="170" rx="34" ry="15" fill="#40c057" transform="rotate(-25 365 170)"/>
+<ellipse cx="437" cy="150" rx="34" ry="15" fill="#40c057" transform="rotate(25 437 150)"/>
+<ellipse cx="372" cy="215" rx="30" ry="13" fill="#37b24d" transform="rotate(-20 372 215)"/>
+<ellipse cx="430" cy="205" rx="30" ry="13" fill="#37b24d" transform="rotate(20 430 205)"/>
+<ellipse cx="400" cy="128" rx="22" ry="12" fill="#51cf66"/>
+<path d="M400 254C390 290 370 310 355 340M400 254C400 300 400 330 402 370M400 254C412 290 432 310 448 340M385 300C370 305 350 305 335 300M418 300C432 305 452 305 466 300" stroke="#e9d8a6" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="400" cy="395" rx="14" ry="10" fill="#d9a35b"/><ellipse cx="352" cy="352" rx="10" ry="8" fill="#d9a35b"/><ellipse cx="448" cy="352" rx="10" ry="8" fill="#d9a35b"/>
+<rect x="415" y="290" width="270" height="26" rx="13" fill="#2b8a3e"/>
+<text x="428" y="308" class="tw">Absorción de nitrógeno por la planta</text>
+</g>
+
+<!-- urea + hidrólisis -->
+<g class="stg vol" data-s="1" id="g1">
+<rect x="108" y="238" width="14" height="10" rx="3" fill="#fff"/><rect x="128" y="236" width="14" height="12" rx="3" fill="#f1f3f5"/><rect x="150" y="238" width="14" height="10" rx="3" fill="#fff"/><rect x="172" y="236" width="14" height="12" rx="3" fill="#f1f3f5"/><rect x="194" y="238" width="14" height="10" rx="3" fill="#fff"/>
+<rect x="92" y="204" width="136" height="24" rx="12" fill="#fff" stroke="#adb5bd"/>
+<text x="160" y="221" text-anchor="middle" class="t" style="fill:#16301f">Urea — CO(NH₂)₂</text>
+</g>
+<g class="stg vol" data-s="2" id="g2">
+<path d="M160 258V300" stroke="#fff" stroke-width="3" class="flow" marker-end="url(#ar)" fill="none"/>
+<rect x="60" y="388" width="200" height="24" rx="12" fill="#364fc7"/>
+<text x="160" y="405" text-anchor="middle" class="tw">Hidrólisis de la urea</text>
+<text x="50" y="330" class="tw" style="font-size:12px">NH₃</text>
+<text x="238" y="345" class="tw" style="font-size:12px">NH₄⁺</text>
+</g>
+
+<!-- volatilización -->
+<g class="stg vol" data-s="3" id="g3">
+<path d="M255 245C285 190 285 120 245 62" stroke="#e599f7" stroke-width="3" class="flow" marker-end="url(#ar)" fill="none"/>
+<rect x="14" y="132" width="204" height="24" rx="12" fill="#9c36b5"/>
+<text x="116" y="149" text-anchor="middle" class="tw">NH₃(g) — Amoníaco gaseoso</text>
+<rect x="14" y="36" width="250" height="26" rx="6" fill="#e03131"/>
+<text x="139" y="54" text-anchor="middle" class="tw">⚠ Pérdida de nitrógeno por volatilización</text>
+</g>
+
+<!-- atmósfera: otros gases -->
+<g class="stg" style="cursor:default">
+<text x="520" y="90" class="t">CO₂(g)</text><text x="520" y="106" style="font-size:11px;fill:var(--muted)">gas de efecto invernadero</text>
+<text x="660" y="90" class="t">N₂</text><text x="660" y="106" style="font-size:11px;fill:var(--muted)">nitrógeno molecular</text>
+</g>
+
+<!-- transformaciones -->
+<g class="stg" data-s="5" id="g5">
+<rect x="450" y="430" width="76" height="30" rx="8" fill="#1971c2"/><text x="488" y="450" text-anchor="middle" class="tw">NH₄⁺</text>
+<rect x="580" y="430" width="76" height="30" rx="8" fill="#e8a317"/><text x="618" y="450" text-anchor="middle" class="tw">NO₂⁻</text>
+<rect x="690" y="430" width="76" height="30" rx="8" fill="#e8590c"/><text x="728" y="450" text-anchor="middle" class="tw">NO₃⁻</text>
+<path d="M528 445H576M658 445H686" stroke="#fff" stroke-width="3" class="flow" marker-end="url(#ar)" fill="none"/>
+<text x="600" y="485" text-anchor="middle" class="tw">Nitrificación</text>
+<path d="M728 426V122" stroke="#fff" stroke-width="3" class="flow" marker-end="url(#ar)" fill="none" style="stroke:var(--ink)"/>
+<text x="718" y="340" text-anchor="end" class="tw">Desnitrificación</text>
+<path d="M470 426C450 410 440 400 430 392" stroke="#fff" stroke-width="3" class="flow" marker-end="url(#ar)" fill="none"/>
+<text x="360" y="440" class="tw">Asimilación</text>
+</g>
+<g id="pl"></g>
+</svg>
+<div id="info"></div>
+</div>
+<div class="chips" id="chips"></div>
+</div>
+<script>
+const NS="http://www.w3.org/2000/svg",sv=document.getElementById("sv"),pl=document.getElementById("pl");
+const R=(a,b)=>a+Math.random()*(b-a);
+const C={nh3:"#d0bfff",nh4:"#74c0fc",up:"#8ce99a"};
+const mk={
+ nh3(){const x=R(110,215);return{k:"nh3",c:C.nh3,r:4,sp:R(.12,.2),w:R(6,16),p:[[x,252],[x+R(20,70),150],[x+R(40,100),30]]}},
+ hyd(){const x=R(110,210);return{k:"hyd",c:Math.random()<.5?C.nh3:C.nh4,r:3.5,sp:R(.25,.4),w:3,p:[[x,256],[x+R(-30,30),R(310,370)]]}},
+ nh4(){const x=R(70,250),y=R(300,370);return{k:"nh4",c:C.nh4,r:3.5,sp:R(.1,.2),w:4,p:[[x,y],[x+R(-30,40),y+R(-20,40)]]}},
+ up(){const x=R(250,330);return{k:"up",c:C.up,r:3.5,sp:R(.1,.16),w:2,p:[[x,R(320,380)],[385,340],[400,300],[400,200],[R(380,420),140]]}}
+};
+const plan=[["nh3",16],["hyd",8],["nh4",10],["up",10]];
+let ps=[],run=true,solo=false,last=0;
+function seg(p,t){const n=p.length-1,f=t*n,i=Math.min(n-1,Math.floor(f)),u=f-i;return[p[i][0]+(p[i+1][0]-p[i][0])*u,p[i][1]+(p[i+1][1]-p[i][1])*u]}
+function build(){pl.innerHTML="";ps=[];plan.forEach(([k,n])=>{for(let i=0;i<n;i++){const o=mk[k]();o.t=Math.random();o.ph=R(0,6);o.el=document.createElementNS(NS,"circle");o.el.setAttribute("r",o.r);o.el.setAttribute("fill",o.c);o.el.setAttribute("stroke","#fff");o.el.setAttribute("stroke-width",.8);pl.appendChild(o.el);o.k0=k;ps.push(o)}})}
+function draw(ts){
+ const dt=Math.min(50,ts-last)/1000;last=ts;
+ if(run)ps.forEach(o=>{o.t+=dt*o.sp;o.ph+=dt*3;if(o.t>=1){Object.assign(o,mk[o.k0](),{t:0})}});
+ ps.forEach(o=>{const[x,y]=seg(o.p,o.t);o.el.setAttribute("cx",x+Math.sin(o.ph)*o.w);o.el.setAttribute("cy",y);
+  const edge=Math.min(o.t*6,(1-o.t)*6,1);o.el.setAttribute("opacity",edge*(solo&&o.k!=="nh3"&&o.k!=="hyd"?.12:1))});
+ requestAnimationFrame(draw)}
+const I={
+ 1:["Etapa 1 · Aplicación de urea","Se esparce urea, CO(NH₂)₂, sobre el suelo como fertilizante nitrogenado."],
+ 2:["Etapa 2 · Hidrólisis de la urea","La enzima ureasa del suelo transforma la urea en amoníaco (NH₃) y amonio (NH₄⁺), que quedan en el suelo."],
+ 3:["Etapa 3 · Volatilización del amoníaco","Parte del NH₃ escapa del suelo como gas y sube a la atmósfera: es nitrógeno que la planta ya no puede usar. El NH₃(g) <b>no es un gas de efecto invernadero</b>; es un contaminante reactivo que puede formar partículas finas y volver a depositarse como nitrógeno en otros ecosistemas."],
+ 4:["Etapa 4 · Absorción por la planta","El nitrógeno que permanece en el suelo (como NH₄⁺ o NO₃⁻) es absorbido por las raíces y llega a la planta de papa."],
+ 5:["Etapa 5 · Transformaciones en el suelo","<b>Nitrificación:</b> NH₄⁺ → NO₂⁻ → NO₃⁻. <b>Asimilación:</b> las plantas y microorganismos incorporan N. <b>Desnitrificación:</b> el NO₃⁻ se convierte en N₂, que regresa a la atmósfera."]
+};
+const info=document.getElementById("info"),chips=document.getElementById("chips");
+function sel(s){document.querySelectorAll(".stg").forEach(g=>g.classList.toggle("sel",g.dataset.s==s));info.innerHTML="<b>"+I[s][0]+"</b><br>"+I[s][1];
+ chips.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.s==s));if(s==3)setSolo(true,true)}
+document.querySelectorAll(".stg[data-s]").forEach(g=>g.addEventListener("click",()=>sel(g.dataset.s)));
+Object.keys(I).forEach(s=>{const b=document.createElement("button");b.className="chip";b.dataset.s=s;b.textContent=s+". "+I[s][0].split("· ")[1];b.onclick=()=>sel(s);chips.appendChild(b)});
+function setSolo(v,keepSel){solo=v;sv.classList.toggle("solo",v);bs.classList.toggle("on",v);if(!v&&!keepSel){}}
+const bp=document.getElementById("bp"),bs=document.getElementById("bs");
+bp.onclick=()=>{run=!run;sv.classList.toggle("paused",!run);bp.textContent=run?"⏸ Pausar":"▶ Reanudar"};
+document.getElementById("br").onclick=()=>{build();run=true;sv.classList.remove("paused");bp.textContent="⏸ Pausar";setSolo(false);document.querySelectorAll(".sel").forEach(e=>e.classList.remove("sel"));chips.querySelectorAll(".on").forEach(b=>b.classList.remove("on"));info.innerHTML="Ciclo reiniciado. Toca una etapa para ver su explicación."};
+bs.onclick=()=>{setSolo(!solo);if(solo)sel(3)};
+info.innerHTML="Toca una etapa del diagrama para ver qué ocurre con el nitrógeno.";
+build();requestAnimationFrame(draw);
+</script>
+</body>
+</html>
