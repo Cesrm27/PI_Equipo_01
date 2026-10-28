@@ -353,48 +353,16 @@ GREENPLANT busca registrar y organizar estas variables durante ensayos controlad
 
 ---
 
-## ♻️ Ciclo del nitrógeno
-
-El ciclo del nitrógeno describe cómo este elemento circula entre la atmósfera, el suelo y los seres vivos mediante procesos biológicos, químicos y físicos. Es fundamental para la formación de proteínas, ácidos nucleicos y otras moléculas esenciales para el crecimiento de las plantas.
-
 ### 🌎 Diagrama del ciclo del nitrógeno
 
-```mermaid
-flowchart TB
-  subgraph ATM["☁️ Atmósfera"]
-    N2["N₂"]
-    N2O["N₂O"]
-    NH3["NH₃ (g)"]
-  end
-  subgraph SUE["🌱 Suelo y biota"]
-    BACT(["Bacterias fijadoras"])
-    UREA["Urea CO(NH₂)₂"]
-    ORG["Materia orgánica (N orgánico)"]
-    NH4["NH₄⁺"]
-    NO2["NO₂⁻"]
-    NO3["NO₃⁻"]
-    PLANT["Planta (papa)"]
-    ANIMAL["Animales"]
-  end
-  N2 -->|"fijación biológica"| BACT
-  BACT --> NH4
-  N2 -.->|"fijación abiótica: descargas + deposición"| NO3
-  ORG -->|"amonificación"| NH4
-  NH4 -->|"nitrificación"| NO2
-  NO2 -->|"nitrificación"| NO3
-  NH4 -->|"asimilación"| PLANT
-  NO3 -->|"asimilación"| PLANT
-  PLANT -->|"consumo"| ANIMAL
-  PLANT -->|"restos vegetales"| ORG
-  ANIMAL -->|"excretas y restos"| ORG
-  NO3 -->|"desnitrificación"| N2O
-  N2O --> N2
-  UREA -->|"hidrólisis (ureasa)"| NH4
-  NH4 -.->|"volatilización de NH₃"| NH3
-  linkStyle 13,14 stroke:#e65100,stroke-width:3px
-  classDef gp fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
-  class UREA,NH3 gp
-```
+<p align="center">
+  <img width="800" src="/Recursos/Imágenes/ciclo-nitrogeno.svg" alt="Diagrama animado del ciclo del nitrógeno: la urea aplicada al suelo se hidroliza en NH₃ y NH₄⁺; parte del NH₃ se pierde a la atmósfera por volatilización y otra parte es absorbida por la planta" />
+</p>
+
+<p align="center">
+  <em>Figura 2. Ciclo del nitrógeno en el sistema suelo-planta-atmósfera, con énfasis en la volatilización de NH₃(g) a partir de la urea. NH₃(g) es un contaminante atmosférico reactivo (puede participar en la formación de partículas finas y en la deposición de nitrógeno); el CO₂(g) es el gas de efecto invernadero.</em>
+</p>
+
 
 
 
