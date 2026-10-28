@@ -217,23 +217,21 @@ Mediante el uso de sensores, un microcontrolador ESP32 y una cámara experimenta
 
 ## ⚠️ Problemática
 
-La agricultura utiliza fertilizantes nitrogenados, entre ellos la **urea**, para proporcionar nitrógeno a los cultivos. Sin embargo, después de su aplicación, la urea experimenta transformaciones físico-químicas en el suelo que pueden favorecer la volatilización de amoníaco gaseoso (**NH₃**). La magnitud de este proceso depende de factores como el pH, la temperatura, la humedad del suelo, las propiedades del sustrato y el método de aplicación del fertilizante [1], [6].
+La agricultura utiliza fertilizantes nitrogenados sintéticos, entre ellos la **urea**, para aportar nitrógeno a los cultivos. Después de su aplicación, la urea experimenta transformaciones fisicoquímicas en el suelo que pueden favorecer la volatilización de amoníaco gaseoso (**NH₃**). La magnitud de este proceso depende de factores como el pH, la temperatura, la humedad del suelo, las propiedades del sustrato y el método de aplicación del fertilizante [1], [5].
 
-La volatilización del NH₃ puede provocar pérdidas de nitrógeno y reducir la eficiencia del fertilizante. Además, el amoníaco puede reaccionar en la atmósfera y contribuir a la formación de material particulado fino (PM₂.₅). Su deposición también puede contribuir a la alteración de ecosistemas, la acidificación y la eutrofización en determinadas condiciones [7], [9], [12], [13].
+La volatilización del NH₃ puede ocasionar pérdidas de nitrógeno y reducir la eficiencia del fertilizante. Por ello, es importante observar cómo varía la concentración de este gas después de la aplicación de urea y bajo distintas condiciones ambientales y del sustrato. Sin embargo, una lectura de concentración por sí sola no permite calcular directamente la cantidad total de nitrógeno perdido [5], [7].
 
-Por otra parte, el **CO₂** es una variable de interés porque puede relacionarse con procesos de respiración e intercambio gaseoso del sistema suelo-planta. En el cultivo de papa, su concentración puede verse influida por la respiración de las raíces y la actividad de los microorganismos del suelo. Cuando existe iluminación, la fotosíntesis también puede consumir CO₂ [3].
-
-Por ello, el CO₂ registrado dentro de una cámara experimental no debe atribuirse automáticamente a la aplicación de urea. Del mismo modo, detectar NH₃ no permite determinar por sí solo cuánto nitrógeno se ha perdido.
+Por otra parte, el **CO₂** es una variable de interés porque puede relacionarse con procesos de respiración e intercambio gaseoso del sistema suelo-planta. En el cultivo de papa, su concentración puede verse influida por la respiración de las raíces y la actividad de los microorganismos del suelo. Cuando existe iluminación, la fotosíntesis también puede consumir CO₂ [3]. Por ello, el CO₂ registrado dentro de una cámara experimental no debe atribuirse automáticamente a la aplicación de urea ni interpretarse como una medición directa de emisiones por hectárea.
 
 El problema consiste en obtener información experimental organizada que permita estudiar las variaciones de NH₃ y CO₂ y relacionarlas con las condiciones del cultivo, la temperatura, la humedad y el manejo de la fertilización.
 
-Ante esta necesidad, GREENPLANT propone integrar sensores y un ESP32 para:
+Ante esta necesidad, GREENPLANT propone integrar sensores y un microcontrolador ESP32 para:
 
 🔬 **Medir** → 💾 **Registrar** → 🧠 **Analizar** → 📊 **Comparar**
 
-El sistema permitirá recopilar datos durante ensayos controlados, identificar tendencias y comparar los resultados obtenidos bajo diferentes condiciones experimentales.
+El sistema permitirá recopilar datos durante ensayos controlados, identificar tendencias y comparar los resultados obtenidos bajo diferentes condiciones experimentales. La información podrá apoyar el estudio del manejo de la urea, sin sustituir el análisis de suelo, la evaluación agronómica ni la validación en campo.
 
-> **Consideración científica:** una concentración expresada en ppm no equivale directamente a una masa de gas emitida ni a una pérdida de nitrógeno en kg/ha. Para calcular una pérdida total de nitrógeno sería necesario emplear un método de medición de emisiones validado y considerar las características y condiciones de la cámara experimental.
+> **Precisión científica:** NH₃(g) es amoníaco en fase gaseosa y se considera una forma de nitrógeno reactivo y un contaminante atmosférico. CO₂(g) es un gas de efecto invernadero. Las concentraciones medidas en la cámara describen las condiciones del ensayo; por sí solas no determinan la pérdida total de nitrógeno ni una dosis de fertilizante recomendada.
 
 ---
 
@@ -260,7 +258,7 @@ La propuesta de GREENPLANT se fundamenta en investigaciones relacionadas con la 
 | **Baneschi et al. (2023)** [3] | Presentaron un protocolo basado en cámaras cerradas para medir la respiración del suelo mediante CO₂ y reducir la incertidumbre de las mediciones. | Respalda la importancia de controlar el procedimiento experimental y analizar cuidadosamente las concentraciones registradas. |
 | **García Espinoza (2022)** [4] | Estudió dosis de nitrógeno y fósforo en el rendimiento y la eficiencia agronómica del cultivo de papa de la variedad UNICA en Apata-Jauja. | Aporta antecedentes sobre fertilización nitrogenada y respuesta agronómica de la papa. |
 | **Seminario Cunya et al. (2017)** [5] | Evaluaron el rendimiento de cosecha de diecisiete cultivares de papa del grupo Phureja. | Aporta contexto sobre la evaluación agronómica de cultivares de papa; no debe interpretarse como una medición de emisiones si el estudio no las reporta. |
-| **Engel, Jones y Wallander (2011)** [6] | Estudiaron la volatilización de amoníaco a partir de urea aplicada sobre suelos fríos y estrategias para mitigarla mediante NBPT. | Aporta información sobre factores y estrategias de manejo que pueden influir en la pérdida de NH₃. |
+| **Engel, Jones y Wallander (2011)** [5] | Estudiaron la volatilización de amoníaco a partir de urea aplicada sobre suelos fríos y estrategias para mitigarla mediante NBPT. | Aporta información sobre factores y estrategias de manejo que pueden influir en la pérdida de NH₃. |
 
 ### 🔎 Conclusión de los antecedentes
 
@@ -286,7 +284,7 @@ $$
 
 Este resultado corresponde al nitrógeno aplicado mediante el fertilizante; no representa la cantidad absorbida por la planta ni la cantidad perdida al ambiente.
 
-La volatilización de NH₃ no presenta un porcentaje único para todos los cultivos y suelos. La FAO recoge rangos de referencia que dependen del método de aplicación y de las condiciones ambientales y edáficas [7]. Dichos valores sirven como contexto general y **no deben considerarse resultados experimentales de GREENPLANT**.
+La volatilización de NH₃ no presenta un porcentaje único para todos los cultivos y suelos. La FAO recoge rangos de referencia que dependen del método de aplicación y de las condiciones ambientales y edáficas [6]. Dichos valores sirven como contexto general y **no deben considerarse resultados experimentales de GREENPLANT**.
 
 ---
 
@@ -339,23 +337,19 @@ Una lectura aislada del sensor en ppm no proporciona directamente el numerador d
 
 La cámara utilizada en GREENPLANT debe mantenerse en condiciones controladas y documentarse de manera consistente. Si existe poco intercambio de aire, los gases pueden acumularse y la concentración medida puede cambiar con el tiempo.
 
-Por esta razón, los ensayos de aproximadamente una hora permitirán analizar principalmente la evolución de las concentraciones durante ese intervalo. No necesariamente representarán la pérdida acumulada de nitrógeno durante todo el periodo de volatilización, que puede continuar durante más tiempo [10], [11].
+Por esta razón, los ensayos de aproximadamente una hora permitirán analizar principalmente la evolución de las concentraciones durante ese intervalo. No necesariamente representarán la pérdida acumulada de nitrógeno durante todo el periodo de volatilización, que puede continuar durante más tiempo [9], [10].
 
 Los resultados deberán interpretarse considerando las características de la cámara, la calibración de los sensores, el tiempo de medición y las condiciones del sustrato.
 
 ---
 
-## 🌎 Consecuencias ambientales de la volatilización de NH₃
+## 🌱 Relevancia del monitoreo de NH₃ y CO₂
 
-La pérdida de NH₃ puede tener consecuencias ambientales importantes:
+La volatilización de NH₃ es relevante para el manejo de fertilizantes nitrogenados porque puede representar una pérdida de nitrógeno aplicado y disminuir la eficiencia de su aprovechamiento por el cultivo [5], [7], [12]. La magnitud de esta pérdida depende de factores como las propiedades del suelo, las condiciones ambientales y la forma de aplicación de la urea [1], [2], [5].
 
-1. **Pérdida de nitrógeno disponible:** parte del nitrógeno aplicado abandona la zona de aplicación y deja de estar inmediatamente disponible para el cultivo.
-2. **Contaminación del aire:** el NH₃ puede reaccionar con compuestos ácidos y contribuir a la formación de partículas finas PM₂.₅, asociadas con efectos perjudiciales para la salud.
-3. **Deposición de nitrógeno:** el amoníaco puede desplazarse en la atmósfera y depositarse en suelos, vegetación y cuerpos de agua.
-4. **Acidificación y eutrofización:** la deposición y transformación de compuestos nitrogenados puede contribuir a cambios en el suelo y el agua, al exceso de nutrientes y a alteraciones en los ecosistemas.
-5. **Efectos indirectos sobre el clima:** el nitrógeno depositado puede participar en procesos que generen emisiones de óxido nitroso (N₂O), un gas de efecto invernadero potente [7], [9], [12], [13].
+El monitoreo de CO₂ complementa el registro experimental, ya que permite observar cambios asociados con procesos de respiración e intercambio gaseoso del sistema suelo-planta [3]. Su medición debe interpretarse de manera independiente y no atribuirse automáticamente a la urea.
 
-GREENPLANT busca aportar información experimental para estudiar el comportamiento de las concentraciones registradas y contribuir al análisis del manejo de la urea. El sistema no demuestra por sí solo una reducción de la contaminación a escala de campo, pues esto requiere validación experimental adecuada.
+GREENPLANT busca registrar y organizar estas variables durante ensayos controlados. El prototipo no cuantifica por sí solo la pérdida de nitrógeno a escala de campo ni demuestra una reducción de emisiones; esas conclusiones requieren métodos de medición validados y evaluación agronómica adicional.
 
 ---
 
@@ -461,14 +455,14 @@ GREENPLANT utilizará diferentes sensores para obtener información de los gases
 
 | Variable | Función | Justificación y fuente |
 |:---|:---|:---|
-| 🧪 **NH₃** | Monitoreo de amoníaco gaseoso | Se selecciona debido a que la aplicación de fertilizantes nitrogenados como la urea puede generar volatilización de NH₃, cuya magnitud depende de las condiciones del suelo y del ambiente **[1], [15], [2]**. |
-| 🌫️ **CO₂** | Monitoreo de dióxido de carbono gaseoso | Se selecciona porque el CO₂ está relacionado con procesos de respiración e intercambio gaseoso del sistema suelo-planta y puede ser estudiado mediante cámaras cerradas **[14], [3], [17]**. |
-| 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara | Se considera una variable de control porque la temperatura puede influir en los procesos relacionados con la volatilización de NH₃ y en el comportamiento fisiológico del cultivo **[15], [2]**. |
+| 🧪 **NH₃** | Monitoreo de amoníaco gaseoso | Se selecciona debido a que la aplicación de fertilizantes nitrogenados como la urea puede generar volatilización de NH₃, cuya magnitud depende de las condiciones del suelo y del ambiente **[1], [12], [2]**. |
+| 🌫️ **CO₂** | Monitoreo de dióxido de carbono gaseoso | Se selecciona porque el CO₂ está relacionado con procesos de respiración e intercambio gaseoso del sistema suelo-planta y puede ser estudiado mediante cámaras cerradas **[11], [3], [17]**. |
+| 🌡️ **Temperatura ambiental** | Medición de la temperatura dentro de la cámara | Se considera una variable de control porque la temperatura puede influir en los procesos relacionados con la volatilización de NH₃ y en el comportamiento fisiológico del cultivo **[12], [2]**. |
 | 💧 **Humedad ambiental** | Medición de la humedad relativa | Se incluye para caracterizar las condiciones ambientales de la cámara y mantener un registro de las condiciones en las que se realizan las mediciones. |
-| 🌡️ **Temperatura del suelo** | Caracterización de las condiciones térmicas del sustrato | Se incluye debido a que la temperatura del suelo puede influir en los procesos de transformación y volatilización asociados al nitrógeno aplicado al sustrato **[15], [2]**. |
-| 💧 **Humedad del suelo** | Medición de la humedad del sustrato | Se incluye debido a que el contenido de agua del suelo puede influir en la volatilización de NH₃ y constituye una condición importante para interpretar los resultados del ensayo **[1], [15], [2]**. |
-| 💡 **Iluminación** | Medición de la intensidad de luz | Se incluye para caracterizar las condiciones de iluminación de la planta, debido a que la intensidad lumínica influye en la fotosíntesis y el intercambio de CO₂ en el cultivo de papa **[17], [21]**. |
-| ⏱️ **Tiempo** | Registro temporal de cada medición | Se incluye para observar la evolución de las concentraciones de NH₃ y CO₂ y de las demás variables durante el ensayo, permitiendo comparar su comportamiento a lo largo del tiempo **[14], [3]**. |
+| 🌡️ **Temperatura del suelo** | Caracterización de las condiciones térmicas del sustrato | Se incluye debido a que la temperatura del suelo puede influir en los procesos de transformación y volatilización asociados al nitrógeno aplicado al sustrato **[12], [2]**. |
+| 💧 **Humedad del suelo** | Medición de la humedad del sustrato | Se incluye debido a que el contenido de agua del suelo puede influir en la volatilización de NH₃ y constituye una condición importante para interpretar los resultados del ensayo **[1], [12], [2]**. |
+| 💡 **Iluminación** | Medición de la intensidad de luz | Se incluye para caracterizar las condiciones de iluminación de la planta, debido a que la intensidad lumínica influye en la fotosíntesis y el intercambio de CO₂ en el cultivo de papa **[17], [17]**. |
+| ⏱️ **Tiempo** | Registro temporal de cada medición | Se incluye para observar la evolución de las concentraciones de NH₃ y CO₂ y de las demás variables durante el ensayo, permitiendo comparar su comportamiento a lo largo del tiempo **[11], [3]**. |
 
 </div>
 
@@ -480,10 +474,10 @@ La selección de los sensores y componentes se realiza considerando su **princip
 
 | Componente | Variable asociada | Justificación de selección | Fuente |
 |:---|:---|:---|:---:|
-| **ME3-NH₃** | NH₃ | Sensor electroquímico diseñado específicamente para detectar amoníaco. Presenta un rango de medición de **0–100 ppm**, resolución de **0.5 ppm** y tiempo de respuesta T90 ≤ 90 s, características que permiten utilizarlo para el monitoreo experimental de NH₃ **[18]**. | **[18]** |
-| **MH-Z19C** | CO₂ | Sensor NDIR diseñado para la detección de CO₂. Dispone de salida UART/PWM, compensación de temperatura y rangos de medición que incluyen **400–2000, 400–5000 y 400–10000 ppm**, según la configuración **[19]**. | **[19]** |
-| **BME280** | Temperatura y humedad ambiental | Permite obtener temperatura y humedad relativa mediante un mismo sensor y dispone de interfaces **I²C y SPI**, facilitando su integración con el sistema de adquisición **[20]**. | **[20]** |
-| **ESP32** | Adquisición de datos | Se utiliza como controlador principal debido a que dispone de interfaces de comunicación y periféricos adecuados para integrar sensores y procesar sus lecturas. El ESP32 incorpora ADC, UART, I²C, SPI y conectividad inalámbrica, facilitando la adquisición y transmisión de datos ****. | **** |
+| **ME3-NH₃** | NH₃ | Sensor electroquímico diseñado específicamente para detectar amoníaco. Presenta un rango de medición de **0–100 ppm**, resolución de **0.5 ppm** y tiempo de respuesta T90 ≤ 90 s, características que permiten utilizarlo para el monitoreo experimental de NH₃ **[14]**. | **[14]** |
+| **MH-Z19C** | CO₂ | Sensor NDIR diseñado para la detección de CO₂. Dispone de salida UART/PWM, compensación de temperatura y rangos de medición que incluyen **400–2000, 400–5000 y 400–10000 ppm**, según la configuración **[15]**. | **[15]** |
+| **BME280** | Temperatura y humedad ambiental | Permite obtener temperatura y humedad relativa mediante un mismo sensor y dispone de interfaces **I²C y SPI**, facilitando su integración con el sistema de adquisición **[16]**. | **[16]** |
+| **ESP32** | Adquisición de datos | Se utiliza como controlador principal debido a que dispone de interfaces de comunicación y periféricos adecuados para integrar sensores y procesar sus lecturas. El ESP32 incorpora ADC, UART, I²C, SPI y conectividad inalámbrica, facilitando la adquisición y transmisión de datos **[16]**. | **[16]** |
 
 </div>
 
@@ -666,38 +660,30 @@ Los datos experimentales generados por GREENPLANT serán organizados para facili
 
 [4] C. M. García Espinoza, *Efecto de dosis de nitrógeno y fósforo en el rendimiento y eficiencia agronómica del cultivo de papa (Solanum tuberosum L.). Apata-Jauja*. Tesis, Universidad Nacional del Centro del Perú, 2022. Repositorio institucional: https://repositorio.uncp.edu.pe/. Pendiente de confirmar el enlace específico de la tesis.
 
-[5] J. F. Seminario Cunya, A. Seminario Cunya, A. Domínguez Palacios y B. Escalante Zumaeta, “Rendimiento de cosecha de diecisiete cultivares de papa (Solanum tuberosum L.) del grupo Phureja,” *Scientia Agropecuaria*, vol. 8, no. 3, 2017. https://doi.org/10.17268/sci.agropecu.2017.03.01
+[5] R. Engel, C. Jones, and R. Wallander, “Ammonia Volatilization from Urea and Mitigation by NBPT following Surface Application to Cold Soils,” *Soil Science Society of America Journal*, vol. 75, no. 6, pp. 2348–2357, 2011. https://doi.org/10.2136/sssaj2011.0229
 
-[6] R. Engel, C. Jones, and R. Wallander, “Ammonia Volatilization from Urea and Mitigation by NBPT following Surface Application to Cold Soils,” *Soil Science Society of America Journal*, vol. 75, no. 6, pp. 2348–2357, 2011. https://doi.org/10.2136/sssaj2011.0229
+[6] Food and Agriculture Organization of the United Nations (FAO), “Global estimates of gaseous emissions of NH₃, NO and N₂O from agricultural land.” https://www.fao.org/4/y2780E/y2780e04.htm
 
-[7] Food and Agriculture Organization of the United Nations (FAO), “Global estimates of gaseous emissions of NH₃, NO and N₂O from agricultural land.” https://www.fao.org/4/y2780E/y2780e04.htm
+[7] Ministerio de Desarrollo Agrario y Riego (MIDAGRI), “Más de 700 mil agricultores de 19 regiones sustentan la producción de papa en el país,” 2025. https://www.gob.pe/institucion/midagri/noticias/1178150-midagri-mas-de-700-mil-agricultores-de-19-regiones-sustentan-la-produccion-de-papa-en-el-pais
 
-[8] Ministerio de Desarrollo Agrario y Riego (MIDAGRI), “Más de 700 mil agricultores de 19 regiones sustentan la producción de papa en el país,” 2025. https://www.gob.pe/institucion/midagri/noticias/1178150-midagri-mas-de-700-mil-agricultores-de-19-regiones-sustentan-la-produccion-de-papa-en-el-pais
+[8] N. Rayne and C. Bandura, “Ammonia loss from urea-containing fertilizers,” University of Wisconsin–Madison Division of Extension. https://cropsandsoils.extension.wisc.edu/articles/ammonia-loss-from-urea-containing-fertilizers/
 
-[9] N. Rayne and C. Bandura, “Ammonia loss from urea-containing fertilizers,” University of Wisconsin–Madison Division of Extension. https://cropsandsoils.extension.wisc.edu/articles/ammonia-loss-from-urea-containing-fertilizers/
+[9] Martins et al. (2021), “A simple and easy method to measure ammonia volatilization: Accuracy under field conditions,” *Pedosphere*. https://www.sciencedirect.com/science/article/pii/S1002016020600777
 
-[10] Martins et al. (2021), “A simple and easy method to measure ammonia volatilization: Accuracy under field conditions,” *Pedosphere*. https://www.sciencedirect.com/science/article/pii/S1002016020600777
+[10] Araújo et al. (2010), “Calibration of a semi-opened static chamber for the quantification of volatilized ammonia from soil,” *Pesquisa Agropecuária Brasileira*. https://doi.org/10.1590/S1678-3921.pab2009.v44.1961
 
-[11] Araújo et al. (2010), “Calibration of a semi-opened static chamber for the quantification of volatilized ammonia from soil,” *Pesquisa Agropecuária Brasileira*. https://doi.org/10.1590/S1678-3921.pab2009.v44.1961
+[11] K. Kusa, T. Sawamoto, R. Hu, and R. Hatano, “Comparison of the closed-chamber and gas concentration gradient methods for measurement of CO₂ and N₂O fluxes in two upland field soils,” *Soil Science and Plant Nutrition*, vol. 54, no. 5, pp. 777–785, 2008, doi: 10.1111/j.1747-0765.2008.00292.x.
 
-[12] European Environment Agency (EEA). Información sobre deposición de nitrógeno y sus efectos en la eutrofización y biodiversidad. https://www.eea.europa.eu/
+[12] M. Klimczyk, A. Siczek, and L. Schimmelpfennig, “Improving the efficiency of urea-based fertilization leading to reduction in ammonia emission,” *Science of the Total Environment*, vol. 771, 145483, 2021, doi: 10.1016/j.scitotenv.2021.145483.
 
-[13] U.S. Environmental Protection Agency (EPA). *Progress Report – Atmospheric Deposition*. Actualizado el 17 de abril de 2024. https://www.epa.gov/power-sector/progress-report-atmospheric-deposition
+[13] M. Chatzitriantafyllou, P. Stavropoulos, S. Kallergi, M. Mavroeidis, I. Roussis, S. Karydogianni, D. Bilalis, and I. Kakabouki, “Optimizing Nitrogen Fertilization in Potato (Solanum tuberosum L.) Cultivation: A Review Regarding Inhibitor Use, Multifaceted Assessment Indicators, and Pathways to Sustainable Intensification,” *Applied Sciences*, vol. 16, no. 5, 2565, 2026, doi: 10.3390/app16052565.
 
-[14] K. Kusa, T. Sawamoto, R. Hu, and R. Hatano, “Comparison of the closed-chamber and gas concentration gradient methods for measurement of CO₂ and N₂O fluxes in two upland field soils,” *Soil Science and Plant Nutrition*, vol. 54, no. 5, pp. 777–785, 2008, doi: 10.1111/j.1747-0765.2008.00292.x.
+[14] Winsen Electronics, “ME3-NH3 Electrochemical Gas Sensor,” Winsen Electronics, 2026.
 
-[15] M. Klimczyk, A. Siczek, and L. Schimmelpfennig, “Improving the efficiency of urea-based fertilization leading to reduction in ammonia emission,” *Science of the Total Environment*, vol. 771, 145483, 2021, doi: 10.1016/j.scitotenv.2021.145483.
+[15] Winsen Electronics, “MH-Z19C NDIR CO₂ Sensor for HVAC and IAQ,” Winsen Electronics, 2026.
 
-[16] M. Chatzitriantafyllou, P. Stavropoulos, S. Kallergi, M. Mavroeidis, I. Roussis, S. Karydogianni, D. Bilalis, and I. Kakabouki, “Optimizing Nitrogen Fertilization in Potato (Solanum tuberosum L.) Cultivation: A Review Regarding Inhibitor Use, Multifaceted Assessment Indicators, and Pathways to Sustainable Intensification,” *Applied Sciences*, vol. 16, no. 5, 2565, 2026, doi: 10.3390/app16052565.
+[16] Espressif Systems, “ESP32 Series Datasheet,” Espressif Systems, 2026.
 
-[17] M. S. Perez-Trejo, H. W. Janes, and C. Frenkel, “Mobilization of Respiratory Metabolism in Potato Tubers by Carbon Dioxide,” *Plant Physiology*, vol. 67, no. 3, pp. 514–517, 1981, doi: 10.1104/pp.67.3.514.
+[17] Bosch Sensortec, “BME280: Combined humidity, pressure and temperature sensor,” Bosch Sensortec, Datasheet.
 
-[18] Winsen Electronics, “ME3-NH3 Electrochemical Gas Sensor,” Winsen Electronics, 2026.
-
-[19] Winsen Electronics, “MH-Z19C NDIR CO₂ Sensor for HVAC and IAQ,” Winsen Electronics, 2026.
-
-[20] Espressif Systems, “ESP32 Series Datasheet,” Espressif Systems, 2026.
-
-[21] Bosch Sensortec, “BME280: Combined humidity, pressure and temperature sensor,” Bosch Sensortec, Datasheet.
-
-[22] V. I. Chikov, A. L. Mikhailov, O. A. Timofeeva, and L. A. Khamidullina, “Photosynthetic carbon metabolism in potato leaves under changes in light intensity,” Russian Journal of Plant Physiology, vol. 63, no. 1, pp. 70–76, 2016, doi: 10.1134/S1021443716010040.
+[18] V. I. Chikov, A. L. Mikhailov, O. A. Timofeeva, and L. A. Khamidullina, “Photosynthetic carbon metabolism in potato leaves under changes in light intensity,” *Russian Journal of Plant Physiology*, vol. 63, no. 1, pp. 70–76, 2016, doi: 10.1134/S1021443716010040.
