@@ -2,7 +2,7 @@
 
 ## Formulación conceptual de la propuesta tecnológica
 
-La propuesta define la integración de sensores de bajo costo para el monitoreo experimental de gases y variables ambientales durante ensayos con plantas de papa. Este informe presenta el sustento científico, el análisis preliminar de protección y el perfil del proyecto correspondiente al TRL 2.
+La propuesta define la integración de sensores de bajo costo para el monitoreo experimental de gases y variables ambientales durante ensayos con plantas de papa. 
 
 ## Datos del informe
 
@@ -15,182 +15,212 @@ La propuesta define la integración de sensores de bajo costo para el monitoreo 
 | **Institución** | Universidad Peruana Cayetano Heredia |
 | **Tema** | TRL 2 de GREENPLANT — Formulación conceptual de la propuesta tecnológica |
 
-**Definición del TRL 2**
+## Definición del TRL 2 en GREENPLANT
 
-Este nivel se caracteriza por el desarrollo de investigación aplicada, explorando las aplicaciones prácticas de la propuesta tecnológica, siendo las posibles aplicaciones aún especulativas. Se sustentan en el análisis del estado del arte acotado al concepto de aplicación tecnológico. En este nivel los aspectos de propiedad intelectual adquieren importancia y continúan en adelante. Se desarrolla en un entorno de laboratorio.
+El TRL 2 corresponde a la formulación del concepto tecnológico y de su aplicación a partir de principios científicos conocidos, según la escala de madurez tecnológica analizada por Mankins [1]. En GREENPLANT, esta etapa consiste en definir un sistema experimental que integre sensores de NH₃, CO₂, condiciones del aire y humedad del sustrato para estudiar tratamientos de fertilización con urea en plantas de papa (Solanum tuberosum).
 
-GREENPLANT propone un sistema de monitoreo experimental de amoníaco (NH₃), dióxido de carbono (CO₂), condiciones ambientales y humedad del sustrato durante ensayos con plantas de papa (Solanum tuberosum) fertilizadas con urea. A partir de los principios científicos revisados en el TRL 1, esta etapa define la aplicación prevista, los componentes del sistema y su integración conceptual en un entorno de laboratorio.
+La aplicación agrícola se sustenta en el estudio de Wan et al. [2], que relaciona la fertilización nitrogenada con la volatilización de NH₃ en cultivos de papa, y en el de Rochette et al. [3], que examina el efecto de la profundidad de incorporación de la urea sobre las pérdidas de amoníaco. Estos antecedentes fundamentan la comparación de dosis y formas de aplicación. El CO₂ se incorpora como variable complementaria del sistema suelo-planta, considerando las distintas fuentes biológicas de CO₂ descritas por Kuzyakov [4].
 
-La propuesta contempla sensores de bajo costo conectados a un microcontrolador ESP32, encargado de adquirir, procesar y transmitir los registros. En concordancia con el TRL 2, se explora su aplicación práctica en laboratorio y se establece el fundamento de la arquitectura, sus necesidades de calibración y las alternativas de protección intelectual. Las posibles aplicaciones de apoyo a la decisión agronómica siguen siendo especulativas: no se considera demostrada la exactitud del conjunto ni su capacidad para generar recomendaciones de fertilización.
+La selección instrumental se apoya en antecedentes específicos: Petric et al. [5] utilizaron el MQ-137 para medir amoníaco con calibración frente a un analizador; Othman et al. [6] evaluaron el MH-Z19B en una cámara de calibración; y Placidi et al. [7] estudiaron la sonda capacitiva v1.2 para monitorear el contenido de agua del suelo. El registro ambiental se fundamenta en Huerta et al. [8], quienes analizaron la influencia de temperatura y humedad en sensores de óxido metálico. Como antecedente de integración, la tesis de Bezborodov [9] describe un equipo que combina ESP32, BME280 y MH-Z19B para monitorear aire en espacios interiores.
 
-## 1 Artículos científicos que respalden o tengan relación directa con la propuesta tecnológica
+La arquitectura de adquisición, almacenamiento y visualización toma como antecedente el sistema agrícola con ESP32 de Berrios Gomez y Rivera Herrera [10]. GREENPLANT adapta este enfoque a ensayos de fertilización e incorpora el alojamiento de sensores ya contemplado en su diseño. Su configuración de medición se orienta por los criterios de trabajo con cámaras discutidos por Davidson et al. [11]. Así, el TRL 2 reúne una aplicación definida, componentes respaldados por investigaciones y una propuesta de integración orientada a la evaluación experimental.
 
-### 1.1 Medición de amoníaco mediante el sensor MQ 137
+## 1. Fundamento científico y antecedentes tecnológicos
 
-Petric et al. \[1\] desarrollaron un dispositivo de monitoreo de amoníaco basado en un sensor MQ-137 conectado a una plataforma compatible con Arduino. Los autores compararon sus mediciones con las de un analizador profesional y evaluaron la calibración y repetibilidad del dispositivo en condiciones controladas. Este antecedente respalda la posibilidad de utilizar el MQ-137 en sistemas experimentales, siempre que su respuesta eléctrica se contraste con una referencia.
+### 1.1. Medición de amoníaco con el MQ-137
 
-En GREENPLANT se propone adquirir la señal del circuito de lectura del MQ-137 y estudiar su relación con la concentración de NH₃. Las curvas de la hoja técnica servirán como orientación inicial; la conversión a partes por millón requerirá una calibración apropiada para los sensores y las condiciones del ensayo. El procesamiento en el ESP32 permitirá aplicar las relaciones obtenidas, pero no sustituirá la validación de las mediciones \[1\].
+Petric et al. [5] desarrollaron un dispositivo con un sensor MQ-137 conectado a una placa Croduino Basic 2 y compararon sus registros con un analizador Geotech GA5000. El estudio empleó mediciones en un entorno controlado para calibrar el dispositivo y evaluar su repetibilidad.
 
-### 1.2 Monitoreo de dióxido de carbono mediante sensores NDIR
+Este antecedente sustenta la selección del MQ-137 para el monitoreo experimental de NH₃ en GREENPLANT. Se propone registrar su señal analógica y obtener una relación de calibración mediante concentraciones conocidas o un instrumento de referencia. La calibración se realizará en el intervalo de concentraciones previsto para los ensayos, siguiendo el criterio de contraste instrumental empleado en [5].
 
-Dubey et al. \[2\] evaluaron sensores de CO₂ de bajo costo basados en absorción infrarroja no dispersiva —NDIR, por sus siglas en inglés— mediante comparación con un instrumento de referencia. Su trabajo destaca la importancia de caracterizar el desempeño de cada sensor y evaluar métodos de calibración antes de interpretar sus registros.
+### 1.2. Medición de CO₂ mediante el MH-Z19B
 
-Este estudio sustenta el enfoque de evaluación previsto para GREENPLANT, aunque no constituye una validación específica del MH-Z19B. Para este modelo, el fabricante documenta el principio NDIR, la comunicación UART y las condiciones de funcionamiento sin condensación \[3\]. Su selección se plantea como una alternativa para registrar variaciones de CO₂ dentro de la cámara experimental, cuyo desempeño deberá verificarse en las condiciones reales de uso \[2\], \[3\].
+Othman et al. [6] desarrollaron una cámara para evaluar sensores de calidad del aire y compararon el MH-Z19B con un monitor Onset HOBO MX1102. Su investigación incluye evaluación experimental y calibración por regresión. Este antecedente respalda directamente el uso del modelo seleccionado en un montaje de medición controlada.
 
-### 1.3 Calibración de sensores capacitivos de humedad del suelo
+Como complemento metodológico, Dubey et al. [12] evaluaron los sensores NDIR Sunrise, K30 y GMP343 frente a un instrumento de referencia. Este estudio aporta criterios de calibración para la tecnología NDIR; el antecedente específico del MH-Z19B es [6].
 
-Placidi et al. \[4\] estudiaron sensores de bajo costo para el monitoreo del suelo y del ambiente en una arquitectura de agricultura de precisión. El trabajo muestra que la sensibilidad de la sonda de contenido de agua no es constante, por lo que resulta necesario caracterizar la relación entre la señal de salida y la humedad del medio.
+GREENPLANT propone utilizar el MH-Z19B para seguir la concentración de CO₂ y contrastar su respuesta con una referencia antes de comparar tratamientos [6]. Su comunicación UART y las condiciones de instalación se establecerán según el manual del fabricante [13].
 
-Para GREENPLANT se propone calibrar la sonda capacitiva v1.2 utilizando el sustrato seleccionado para los ensayos. Se contrastará su señal con una referencia gravimétrica obtenida a partir de las masas húmeda y seca de muestras representativas. Si se requiere expresar el contenido volumétrico de agua, también deberá determinarse la densidad aparente del sustrato. De este modo, se evitará interpretar la tensión de salida como un porcentaje universal de humedad \[4\].
+### 1.3. Humedad del sustrato mediante una sonda capacitiva
 
-### 1.4 Influencia de la temperatura y la humedad en las mediciones de gases
+Placidi et al. [7] estudiaron sensores de contenido de agua del suelo, incluida la sonda capacitiva v1.2, dentro de una arquitectura de monitoreo agrícola. Su trabajo relaciona la respuesta de sensores de bajo costo con el comportamiento hídrico del medio y con mediciones de referencia.
 
-Huerta et al. \[5\] estudiaron un método para reducir la influencia de las variaciones de temperatura y humedad sobre señales de sensores químicos de óxido metálico. Su investigación respalda el registro simultáneo de variables ambientales como información necesaria para desarrollar y evaluar modelos de corrección.
+En GREENPLANT se propone calibrar la sonda utilizando el mismo sustrato de los ensayos. El procedimiento relacionará la señal eléctrica con el contenido de agua determinado mediante muestras húmedas y secas. La variable se expresará como contenido gravimétrico de agua; para obtener contenido volumétrico se incorporará la densidad aparente del sustrato. Esta propuesta de calibración adapta al sustrato del proyecto el enfoque de caracterización de sensores de humedad presentado en [7].
 
-En GREENPLANT, el BME280 se utilizará para registrar temperatura, humedad relativa y presión del aire \[6\]. Estas variables permitirán contextualizar las lecturas de gases y explorar posibles relaciones entre el ambiente y la respuesta de los sensores. Sin embargo, incorporar el BME280 no garantiza corregir automáticamente la deriva del MQ-137 ni eliminar interferencias de otros gases. Cualquier compensación deberá obtenerse y validarse mediante ensayos específicos \[5\], \[6\].
+### 1.4. Registro simultáneo de temperatura y humedad del aire
 
-## 2 Análisis de patentabilidad y protección
+Huerta et al. [8] desarrollaron un método para tratar la influencia de la temperatura y la humedad en las señales de sensores de óxido metálico, utilizando registros ambientales simultáneos. Este antecedente sustenta la incorporación de variables ambientales al análisis de los sensores de gases.
 
-### 2.1 Revisión del estado de la técnica
+La tesis de Bezborodov [9] proporciona un antecedente de integración del BME280 con el ESP32 y el MH-Z19B. En GREENPLANT, el BME280 registrará temperatura, humedad relativa y presión del aire, conforme a las funciones documentadas por Bosch [14]. Estos datos acompañarán las lecturas de NH₃ y CO₂ y permitirán examinar su comportamiento bajo las condiciones ambientales de cada ensayo. El método de Huerta et al. [8] orienta el análisis de la influencia ambiental; sus coeficientes se ajustarían con los datos del sistema GREENPLANT.
 
-Los antecedentes revisados muestran que la medición de amoníaco mediante sensores de bajo costo, la integración de sensores ambientales y el procesamiento de señales son soluciones conocidas \[1\], \[4\], \[5\]. Por ello, su incorporación en GREENPLANT no permite afirmar, por sí sola, que la propuesta sea nueva o patentable.
+### 1.5. Fertilización nitrogenada y volatilización de amoníaco en papa
 
-Como antecedente documental se identificó la patente estadounidense US7341694B2, titulada “Ammonia sensor” \[7\], que describe una solución para detectar amoníaco y abordar la influencia de la temperatura sobre la medición. Su principio y aplicación difieren de la integración propuesta para GREENPLANT; aun así, evidencia que la mejora de la selectividad y la respuesta térmica forman parte del estado de la técnica. Este antecedente no demuestra una interferencia específica del CO₂ sobre el MQ-137 ni determina la patentabilidad de la cámara propuesta.
+Wan et al. [2] estudiaron el efecto de distintas dosis de nitrógeno y de un inhibidor de ureasa en campos de papa con riego por goteo. Encontraron picos de volatilización de NH₃ entre uno y cinco días después de la fertilización y una mayor volatilización acumulada al aumentar la dosis de nitrógeno en las condiciones evaluadas.
 
-El posible aporte de GREENPLANT se explorará en la configuración de la cámara, la distribución del aire y la ubicación de los sensores. Se plantea estudiar si una disposición determinada reduce la influencia del calentador del MQ-137 sobre los demás componentes y mejora la representatividad de los registros. Estas ventajas constituyen hipótesis de diseño pendientes de comprobación.
+El estudio sustenta el seguimiento temporal del NH₃ después de fertilizar y la comparación de dosis [2]. Rochette et al. [3] observaron que la profundidad de incorporación de urea afectó la volatilización en el suelo estudiado, lo que fundamenta incluir la forma de aplicación como factor experimental. En GREENPLANT se propone establecer una línea de base previa a la aplicación y concentrar el seguimiento en los días posteriores, incluyendo un tratamiento sin urea como referencia experimental, en correspondencia con el control utilizado en [2].
 
-En consecuencia, la revisión realizada es preliminar. Antes de solicitar protección, será necesario ampliar la búsqueda de antecedentes y comparar las características del diseño con las reivindicaciones de documentos pertinentes. En el TRL 2 no se declara demostrada la novedad ni el nivel inventivo de GREENPLANT.
+### 1.6. Diseño de la cámara y condiciones de medición
 
-### 2.2 Mecanismos de protección considerados
+Davidson et al. [11] analizaron fuentes de error en mediciones de respiración del suelo realizadas con cámaras. El trabajo muestra la importancia de controlar las condiciones de medición y las perturbaciones introducidas por la cámara.
 
-#### Modelo de utilidad
+Como criterio de diseño para GREENPLANT, se propone documentar el volumen de aire, la duración de las mediciones y el régimen de circulación o renovación utilizado. El alojamiento existente se integra a esta configuración. La exigencia de acceso del aire a los sensores se concreta con las indicaciones de instalación del MH-Z19B [13]. Como antecedente adicional de evaluación del montaje, Othman et al. [6] estudiaron la circulación del aire y la estabilidad ambiental de una cámara de calibración. Estos trabajos orientan los requisitos de GREENPLANT; la geometría del alojamiento corresponde al diseño del equipo.
 
-Se evaluará la posibilidad de proteger una configuración física de la cámara o de sus componentes si presenta una nueva disposición que aporte una ventaja técnica. Esta alternativa podría comprender la ubicación de sensores, los soportes o los elementos de distribución del aire, siempre que sus características cumplan los requisitos aplicables. INDECOPI señala que los modelos de utilidad protegen nuevas formas o configuraciones de elementos de un producto que le otorguen una ventaja técnica \[8\]. Por tanto, la solicitud dependerá del diseño finalmente desarrollado y del análisis de antecedentes.
+### 1.7. ESP32, integración electrónica y gestión de registros
+
+Berrios Gomez y Rivera Herrera [10] desarrollaron en Perú un sistema con ESP32 para monitorear variables ambientales y del suelo en un invernadero de lechugas. Los nodos enviaban información por ESP-NOW a un nodo central y los registros se almacenaban para su consulta. Este trabajo respalda la arquitectura general de adquisición y visualización agrícola; GREENPLANT propone MQTT para su propia comunicación.
+
+La tesis de Bezborodov [9], presentada en 2025 en la Universidad Nacional V. N. Karazin de Járkiv, describe una integración concreta de ESP32, BME280 y MH-Z19B. Se utiliza como antecedente de compatibilidad e integración, según el resumen institucional del trabajo. Las interfaces y los límites eléctricos se especificarán con la documentación del ESP32 [15]; el esquema de publicación y suscripción se fundamenta en el estándar MQTT [16].
+
+### 1.8. Función del CO₂ en la interpretación del sistema suelo-planta
+
+Kuzyakov [4] distingue contribuciones al CO₂ del suelo procedentes de raíces, microorganismos y descomposición de materia orgánica. Este antecedente justifica registrar CO₂ como información complementaria y separar su interpretación del seguimiento de NH₃. En GREENPLANT se analizarán las variaciones de CO₂ junto con las condiciones de medición, manteniendo el NH₃ como variable gaseosa principal del estudio de fertilización [2], [4], [11].
+
+## 2. Estado de la técnica y estrategia de protección
+
+### 2.1. Antecedentes y aporte tecnológico de GREENPLANT
+
+Los artículos [5], [6], [7], [8] y [10], junto con la tesis [9], documentan antecedentes de medición e integración pertinentes para los componentes seleccionados. GREENPLANT utiliza estos principios para formular una plataforma destinada a ensayos de fertilización con urea en plantas de papa.
+
+La patente US7341694B2, «Ammonia sensor» [17], describe un sensor con una capa sensible basada predominantemente en ZrO₂ y que contiene tungsteno. Su objeto es el elemento de detección de amoníaco. GREENPLANT, en cambio, integra sensores comerciales y organiza su adquisición de datos para una aplicación experimental agrícola. Esta distinción delimita el objeto técnico de ambos desarrollos.
+
+La propuesta combina el seguimiento de fertilización estudiado en [2], [3] con la adquisición electrónica descrita en [5], [6], [9], [10]. Su aporte de desarrollo es organizar las mediciones por tratamiento y tiempo de aplicación de la urea. El diseño aportado ya contempla un alojamiento destinado a los sensores. Este elemento se incorpora como parte de la arquitectura mecánica del equipo y como referencia para definir su montaje y acceso al aire de la cámara.
+
+El criterio de integración es conservar la función de protección del alojamiento y permitir la exposición adecuada de los sensores al medio de medición. Para el MH-Z19B, el fabricante indica mantener libre el intercambio de aire en su ventana de difusión y alejar el módulo de fuentes de calor [13]. Estas indicaciones se adoptan como requisitos de montaje del alojamiento existente.
+
+### 2.2. Mecanismos de protección considerados
+
+#### Modelo de utilidad: configuración del alojamiento existente
+
+El objeto de esta modalidad sería la configuración física del alojamiento ya previsto para los sensores y su integración con el equipo. El artículo [10] también describe el uso de una caja protectora para un nodo electrónico, por lo que la protección física se reconoce como una práctica de integración existente. INDECOPI señala que un modelo de utilidad protege una nueva forma o configuración de elementos que aporte una ventaja técnica [18]. Por ello, la justificación tendría que identificar una característica constructiva concreta y explicar qué mejora produce frente a otras configuraciones.
+
+En la documentación actual, el alojamiento se presenta por su función de montaje y protección. Se mantiene como parte del diseño de GREENPLANT, sin convertir la existencia de una cubierta o un espacio para sensores en una justificación automática de modelo de utilidad. La modalidad queda vinculada a una diferencia constructiva y a una ventaja técnica identificables.
 
 #### Derecho de autor sobre el software
 
-Se considerará el registro del programa desarrollado para el ESP32, correspondiente a las rutinas originales de adquisición, organización y transmisión de datos. INDECOPI dispone de un procedimiento de registro para programas de ordenador \[9\]. La documentación del proyecto deberá identificar a sus autores y distinguir el código propio de las bibliotecas de terceros utilizadas.
+La estrategia contempla documentar la autoría del código original desarrollado para adquirir, organizar, transmitir y visualizar los datos, conservando las versiones y distinguiendo las bibliotecas de terceros. INDECOPI dispone del registro de programas de ordenador mediante su plataforma de Registro Virtual de Obras [19].
 
-#### Secreto empresarial
+#### Documentación técnica del proyecto
 
-Se evaluará esta alternativa para información técnica no divulgada que pueda obtenerse durante el desarrollo, como parámetros de calibración o procedimientos específicos. Su protección como secreto empresarial dependerá de que la información sea secreta, tenga valor comercial por esa condición y esté sujeta a medidas razonables de confidencialidad \[10\]. En esta etapa no se afirma que GREENPLANT disponga de coeficientes o curvas experimentales propios ya obtenidos.
+Los planos, esquemas eléctricos, archivos de diseño, procedimientos de calibración y versiones del programa se organizarán con identificación de autores y fechas. Esta documentación permitirá mantener la trazabilidad del desarrollo. El secreto empresarial no se prioriza como mecanismo del proyecto académico, cuya evaluación requiere presentar el diseño y sus procedimientos.
 
-## 3 Perfil o propuesta de proyecto
+## 3. Perfil del proyecto
 
-### 3.1 Título del proyecto
+### 3.1. Título
 
-GREENPLANT: sistema experimental de monitoreo de NH₃(g), CO₂(g) y variables ambientales para estudiar el manejo de la urea en el cultivo de papa.
+GREENPLANT: sistema experimental de monitoreo de NH₃, CO₂ y variables ambientales en ensayos de fertilización con urea en plantas de papa.
 
-### 3.2 Problema y justificación
+### 3.2. Problema y justificación
 
-GREENPLANT parte de la necesidad de estudiar el comportamiento de los gases y las condiciones del sistema suelo-planta durante la fertilización con urea. El documento base del proyecto identifica como problema el riesgo de aplicar fertilizantes nitrogenados sin suficiente correspondencia con las necesidades del cultivo y las condiciones del suelo, lo que puede favorecer aplicaciones excesivas y pérdidas de nitrógeno \[11\].
+La volatilización de amoníaco es una vía de pérdida de nitrógeno estudiada en la fertilización de papa [2]. La dosis y la colocación del fertilizante constituyen factores pertinentes para su análisis: Wan et al. evaluaron dosis en este cultivo [2], mientras que Rochette et al. investigaron la profundidad de incorporación de urea en suelo [3]. Estos resultados fundamentan el problema experimental que aborda GREENPLANT.
 
-La propuesta busca disponer de registros experimentales comparables de NH₃(g) y CO₂(g), acompañados de temperatura y humedad del aire y humedad del sustrato. Esta información permitirá explorar cómo varían las concentraciones bajo distintas dosis y formas de aplicación de urea. Su interpretación deberá considerar las condiciones de la cámara, la calibración de los sensores y el tiempo transcurrido desde la fertilización.
+La necesidad instrumental es reunir mediciones de gases, ambiente y sustrato en registros comparables. Los antecedentes del MQ-137 [5], del MH-Z19B [6] y de sensores capacitivos de humedad [7] respaldan la selección de los dispositivos; la influencia ambiental sobre sensores de óxido metálico justifica acompañar el registro con temperatura y humedad del aire [8].
 
-El propósito agronómico es aportar evidencia para una orientación preliminar sobre el uso de la urea, integrada con análisis de suelo, requerimientos de la papa y evaluación del cultivo. La contribución tecnológica consiste en formular una plataforma que reúna la adquisición, transmisión, almacenamiento y visualización de esas variables. En el TRL 2 se plantea esta aplicación y se fundamenta su diseño; su utilidad agronómica y su desempeño instrumental permanecen pendientes de comprobación.
+GREENPLANT propone organizar estas variables por tratamiento, unidad experimental y tiempo. El CO₂ se incorpora como variable complementaria por sus distintas fuentes biológicas [4]. La adquisición y consulta digital siguen un enfoque de monitoreo agrícola con antecedentes en sistemas basados en ESP32 [10].
 
-### 3.3 Pregunta de investigación e hipótesis
+### 3.3. Pregunta de investigación e hipótesis
 
-Pregunta de investigación: ¿Cómo se relacionan las dosis y las formas de aplicación de urea, junto con las condiciones ambientales y del sustrato, con las concentraciones de NH₃(g) y CO₂(g) registradas en ensayos controlados con plantas de papa, y cómo podrían contribuir esos resultados, junto con información agronómica, a orientar un uso más eficiente del fertilizante? \[11\].
+Pregunta de investigación: ¿Cómo varían las concentraciones de NH₃ y CO₂ registradas en una cámara experimental con plantas de papa entre tratamientos con distintas dosis y formas de aplicación de urea, considerando las condiciones del aire y la humedad del sustrato?
 
-Hipótesis de trabajo: las dosis y las formas de aplicación de urea, junto con las condiciones ambientales y del sustrato, se relacionan con variaciones en las concentraciones de NH₃(g) y CO₂(g) registradas durante los ensayos con plantas de papa. Esta hipótesis deberá contrastarse experimentalmente; no implica que una lectura de gas permita determinar por sí sola la dosis adecuada de fertilizante.
+Hipótesis de trabajo: los tratamientos de fertilización con urea producirán diferencias en la evolución temporal del NH₃ registrado en la cámara. Se formula a partir de los antecedentes sobre dosis y colocación del fertilizante [2], [3]. El CO₂ y las variables ambientales se analizarán como información complementaria [4], [8].
 
-### 3.4 Objetivos del proyecto y alcance del TRL 2
+### 3.4. Objetivos
 
-Objetivo general del proyecto: desarrollar un prototipo experimental que permita monitorear y registrar NH₃(g), CO₂(g) y variables ambientales y del sustrato, para analizar su comportamiento en ensayos controlados con plantas de papa bajo distintas condiciones de fertilización y aportar evidencia para orientar un uso más eficiente de la urea \[11\].
+Objetivo general: desarrollar un sistema experimental para registrar NH₃, CO₂, condiciones del aire y humedad del sustrato, y comparar su comportamiento en ensayos con plantas de papa sometidas a distintos tratamientos de fertilización con urea.
 
-Objetivos específicos del proyecto:
+Los objetivos siguientes traducen el fundamento agronómico [2], [3] y los antecedentes instrumentales [5], [6], [7], [10] en actividades propias del proyecto.
 
-- Recopilar antecedentes sobre el cultivo de papa en el Perú y sobre dosis y prácticas de fertilización con urea, considerando su contexto agronómico.
+Objetivos específicos:
 
-- Describir las transformaciones de la urea relacionadas con el NH₃(g) y los procesos que intervienen en las variaciones de CO₂(g) del sistema suelo-planta.
+1. Sustentar la selección de sensores y el esquema de medición mediante antecedentes científicos y documentación técnica.
+2. Integrar los sensores, el alojamiento previsto y el ESP32 en una arquitectura de adquisición y transmisión de datos.
+3. Establecer procedimientos de calibración, verificación y registro para los componentes del sistema.
+4. Obtener series temporales identificadas por tratamiento, repetición y momento de medición.
+5. Comparar los registros e interpretarlos junto con las condiciones del sustrato y los indicadores de crecimiento del cultivo.
 
-- Diseñar e implementar, en etapas posteriores, un prototipo con ESP32 y sensores para registrar gases, condiciones del aire y humedad del sustrato.
+Objetivo del TRL 2: definir el concepto tecnológico, la arquitectura, la función de los componentes y el plan de evaluación del sistema, en correspondencia con la formulación de aplicación descrita por Mankins [1].
 
-- Organizar, graficar y analizar los registros para comparar las condiciones experimentales evaluadas.
+### 3.5. Arquitectura tecnológica
 
-- Elaborar una orientación preliminar de manejo de la urea sustentada en los ensayos y en referencias agronómicas, sin proponer dosis universales ni sustituir el análisis de suelo y la validación en campo.
+La plataforma propuesta reúne una cámara experimental, el alojamiento de sensores contemplado en el diseño, los dispositivos de medición, un ESP32 y una aplicación de registros. La arquitectura adapta antecedentes de medición en cámaras [6], [11] y de monitoreo agrícola conectado [10].
 
-Objetivo específico de esta etapa TRL 2: formular el concepto de aplicación tecnológica, definir la arquitectura y las funciones de sus componentes, establecer un plan preliminar de evaluación e identificar posibles mecanismos de protección. El objetivo de desarrollar el prototipo corresponde al proyecto completo; su implementación y validación no se presentan como resultados ya alcanzados en esta etapa.
+Componentes y funciones:
 
-### 3.5 Solución y arquitectura tecnológica propuesta
+- MQ-137: adquisición de una señal analógica asociada a la respuesta al NH₃ y conversión mediante calibración [5].
+- MH-Z19B: registro de CO₂, respaldado por su evaluación experimental en [6], con NDIR y UART según [13].
+- BME280: registro ambiental; su integración con ESP32 tiene antecedente en [9], y sus funciones e interfaz I²C se documentan en [14].
+- Sonda capacitiva v1.2: estimación del contenido de agua del sustrato a partir de una calibración específica [7].
+- ESP32: lectura y transmisión de datos, con antecedente agrícola en [10] y especificaciones en [15].
 
-Se propone una plataforma de laboratorio compuesta por una cámara experimental para ensayos con plantas de papa, sensores de gases y variables ambientales, un ESP32 y una aplicación de almacenamiento y visualización. La cámara deberá permitir documentar su volumen, la ubicación de los sensores y las condiciones de circulación o renovación de aire. Su configuración final se definirá de acuerdo con el propósito de medición; no se considerará caracterizada como cámara dinámica únicamente por incorporar un ventilador.
+El alojamiento representado en la imagen aportada se utilizará como base del montaje de los sensores de gases y del aire. La sonda de humedad se instalará en el sustrato. Como requisitos de integración, se propone mantener accesibles las zonas de detección [13] y organizar el cableado. La ubicación del BME280 fuera de la proximidad inmediata de fuentes de calor se adopta para reducir el riesgo de medir el calentamiento local del equipo: Bosch indica que su lectura térmica depende de la temperatura del circuito y del autocalentamiento [14]. La distribución se documentará mediante un plano rotulado, con identificación de sensores y puntos de comunicación con el aire de la cámara.
 
-La arquitectura contempla los siguientes componentes:
+El circuito incluirá la alimentación correspondiente a cada módulo y el acondicionamiento de las señales analógicas de acuerdo con los límites de entrada del ESP32 [15]. El programa conservará la señal original y el valor calculado, junto con fecha, hora, tratamiento e identificación de la unidad experimental.
 
-- MQ-137: sensor para estudiar la respuesta al NH₃(g). Su circuito de lectura entregará una señal analógica que deberá calibrarse antes de interpretarse como concentración \[1\].
+La transmisión se propone mediante mensajes JSON sobre MQTT. El ESP32 publicará los registros en un bróker y una aplicación suscriptora los almacenará y mostrará en gráficas [16]. Esta organización permitirá revisar las mediciones y relacionarlas con las operaciones de fertilización y riego.
 
-- MH-Z19B: sensor NDIR para registrar CO₂(g), con comunicación UART y funcionamiento dentro de las condiciones establecidas por el fabricante \[3\].
+### 3.6. Plan de evaluación y ensayos
 
-- BME280: sensor digital para registrar temperatura, humedad relativa y presión del aire mediante I²C \[6\].
+El plan adapta la comparación de fertilización en papa de [2], el estudio de colocación de urea de [3] y los criterios instrumentales de [5], [6], [7], [11]. Se propone comparar tratamientos con un control sin urea, manteniendo una variedad de papa, una etapa de desarrollo y un sustrato comunes. La dosis se expresará por unidad experimental, indicando la cantidad de urea y de nitrógeno aplicada. El protocolo fijará las dosis, las formas de aplicación, el número de repeticiones y la duración antes de iniciar los ensayos.
 
-- Sonda capacitiva v1.2: sensor analógico para estimar la humedad del sustrato mediante una calibración específica \[4\].
+La evaluación comprenderá cinco actividades:
 
-- ESP32: microcontrolador encargado de adquirir las señales, organizar los registros y transmitirlos mediante su conectividad Wi-Fi \[12\].
+1. Verificación instrumental. Comprobar alimentación, comunicaciones, estabilización y continuidad del registro. Contrastar los sensores de gases con referencias e identificar el intervalo útil de medición y la repetibilidad. Calibrar la sonda en el sustrato seleccionado [5], [6], [7].
+2. Comprobación del montaje. Revisar el acceso del aire a los sensores, registrar la distribución de los componentes y comprobar el comportamiento de las lecturas con el equipo completo en funcionamiento. Documentar el volumen de la cámara y el régimen de circulación o renovación del aire [6], [11].
+3. Preparación experimental. Identificar cada maceta como unidad experimental; registrar masa de sustrato, tratamiento, estado inicial de la planta, riego e iluminación. Distribuir aleatoriamente los tratamientos y mantener condiciones comparables de medición.
+4. Seguimiento temporal. Obtener una línea de base antes de aplicar urea y registrar las variables durante un periodo común. Anotar fertilizaciones, riegos y aperturas de la cámara. Si una misma cámara se utiliza sucesivamente, establecer un procedimiento de renovación del aire entre mediciones.
+5. Análisis. Comparar la evolución temporal y la variabilidad entre unidades experimentales. Las lecturas sucesivas de una misma maceta se tratarán como medidas repetidas. Se incorporarán altura, número de hojas y, al finalizar el ensayo, biomasa cuando el procedimiento lo permita.
 
-Se verificarán las tensiones de alimentación y los niveles de señal de todos los componentes. Las salidas analógicas del MQ-137 y de la sonda capacitiva deberán acondicionarse cuando sea necesario para respetar los límites de entrada del ESP32. El BME280 medirá condiciones del aire; no se le atribuirá medición de temperatura del suelo. Si el ensayo requiere esta última variable, deberá incorporarse una sonda específica.
+El pH y las propiedades químicas del sustrato se obtendrán mediante análisis complementarios, considerando su relación con la interpretación de la volatilización discutida en [3]. Si se incorpora temperatura del suelo al análisis, se empleará una sonda específica para esa variable.
 
-El firmware organizará las lecturas con fecha, hora e identificación del ensayo. Se propone transmitirlas como mensajes JSON mediante MQTT, utilizando el modelo de publicación y suscripción: el ESP32 publicará los datos en un bróker y una aplicación suscriptora los recibirá para almacenarlos y visualizarlos \[13\]. Se conservarán las señales originales y se distinguirán de los valores convertidos o filtrados. Cualquier compensación ambiental deberá sustentarse en una evaluación experimental propia.
+### 3.7. Aplicación y resultados esperados
 
-### 3.6 Plan preliminar de ensayos y análisis
+La aplicación inicial de GREENPLANT será el seguimiento de ensayos de fertilización en un laboratorio académico. El sistema facilitará la consulta de los registros y la comparación de tratamientos en condiciones documentadas.
 
-Se plantea comparar tratamientos con distintas dosis y, cuando el diseño lo permita, distintas formas de aplicación de urea, incluyendo un control sin aplicación de urea. Las dosis concretas, el número de repeticiones y la duración de los ensayos se definirán antes de la implementación, con base en el análisis del sustrato, la variedad y etapa de desarrollo de la papa, las referencias agronómicas y los recursos disponibles. No se trasladarán directamente dosis por hectárea a macetas sin justificar su equivalencia.
+Los resultados del proyecto serán un prototipo con su documentación técnica, un procedimiento de calibración y operación, una base de datos identificada por unidad experimental, gráficas temporales y un informe comparativo. Las conclusiones sobre manejo de urea se formularán para las condiciones estudiadas e integrarán la información del sustrato y del cultivo.
 
-El plan considerará las siguientes actividades:
+El producto de esta etapa es la formulación del sistema y su aplicación [1]: fundamento científico, selección de componentes, arquitectura de integración, función del alojamiento y plan de evaluación. Los resultados esperados descritos corresponden a productos del proyecto.
 
-- Caracterización del sistema de medición: verificar alimentación, comunicación, estabilidad, repetibilidad y respuesta de los sensores; comparar los registros de gases con concentraciones conocidas o instrumentos de referencia y calibrar la humedad del sustrato mediante un método gravimétrico.
+### 3.8. Criterios de interpretación
 
-- Preparación y trazabilidad de los ensayos: registrar tratamiento, cantidad de urea aplicada, forma y momento de aplicación, características del sustrato, estado inicial de las plantas, riego y condiciones de iluminación y ventilación.
+Las variables principales se reportarán como concentraciones de gases dentro de la cámara. Para expresar pérdidas de nitrógeno o flujos de emisión se necesitaría un procedimiento adicional de cuantificación que considere volumen, intercambio de aire, tiempo y superficie de referencia. La metodología de medición con cámaras exige distinguir estas magnitudes [11].
 
-- Adquisición de datos: obtener una línea de base antes de la aplicación y registrar las variables durante un periodo definido, manteniendo criterios de medición comparables entre tratamientos.
+El CO₂ se interpretará considerando el intercambio de aire [11] y las fuentes biológicas del suelo y las raíces [4]; su variación no se asignará exclusivamente a la urea. La comparación de tratamientos se apoyará en registros obtenidos dentro del intervalo calibrado y bajo condiciones equivalentes. Las recomendaciones agronómicas combinarán estos resultados con información del suelo y del cultivo.
 
-- Evaluación del cultivo: incorporar, si se analizará la respuesta de las plantas, indicadores directos como altura, número o área de hojas y biomasa. El rendimiento se evaluará únicamente si el alcance y la duración del ensayo lo permiten.
+## Referencias bibliográficas — formato IEEE
 
-- Análisis comparativo: elaborar series temporales y comparar los tratamientos, documentando variabilidad, datos faltantes, posibles interferencias y limitaciones de los sensores. Las asociaciones entre variables se interpretarán sin asumir causalidad por correlación.
+[1] J. C. Mankins, “Technology readiness assessments: A retrospective,” Acta Astronautica, vol. 65, n.os 9–10, pp. 1216–1223, 2009, doi: 10.1016/j.actaastro.2009.03.058. Disponible: https://doi.org/10.1016/j.actaastro.2009.03.058
 
-La temperatura y humedad del aire se registrarán con el BME280 y la humedad del sustrato con la sonda capacitiva. El pH y las propiedades químicas del suelo, cuando sean necesarios para interpretar los resultados, se obtendrán mediante análisis o instrumentos adicionales; los sensores propuestos no proporcionan esas mediciones.
+[2] W.-f. Wan, F. Li, M. Hong, F. Chang y H.-y. Gao, “Effects of nitrogen rate and urease inhibitor on N₂O emission and NH₃ volatilization in drip irrigated potato fields,” Journal of Plant Nutrition and Fertilizers, vol. 24, n.º 3, pp. 693–702, 2018, doi: 10.11674/zwyf.17197. Disponible: https://doi.org/10.11674/zwyf.17197
 
-### 3.7 Aplicación prevista y resultados esperados
+[3] P. Rochette et al., “Ammonia volatilization and nitrogen retention: How deep to incorporate urea?,” Journal of Environmental Quality, vol. 42, n.º 6, pp. 1635–1642, 2013, doi: 10.2134/jeq2013.05.0192. Disponible: https://doi.org/10.2134/jeq2013.05.0192
 
-La aplicación inicial será el monitoreo y la comparación de condiciones de fertilización en un entorno académico de laboratorio. Los registros se utilizarán para estudiar patrones de concentración y formular preguntas o recomendaciones preliminares de manejo que posteriormente deban contrastarse con evidencia agronómica. La posible utilidad para productores de papa se considera una proyección del proyecto y requerirá validación adicional.
+[4] Y. Kuzyakov, “Sources of CO₂ efflux from soil and review of partitioning methods,” Soil Biology and Biochemistry, vol. 38, n.º 3, pp. 425–448, 2006, doi: 10.1016/j.soilbio.2005.08.020. Disponible: https://doi.org/10.1016/j.soilbio.2005.08.020
 
-Como resultados del proyecto completo se esperan un prototipo documentado, un procedimiento de calibración y operación, una base de registros experimentales, gráficas comparativas y un informe de interpretación. La orientación sobre urea deberá integrar los resultados de gases con los análisis de suelo, los requerimientos del cultivo y los indicadores de crecimiento disponibles \[11\].
+[5] M. Petric, F. Dodigović, I. Grčić, P. Markužić, L. Radetić y M. Topić, “Ammonia concentration monitoring using Arduino platform,” Environmental Engineering – Inženjerstvo okoliša, vol. 6, n.º 1, pp. 21–26, 2019, doi: 10.37023/ee.6.1.4. Disponible: https://doi.org/10.37023/ee.6.1.4
 
-El resultado específico del TRL 2 será el perfil tecnológico, acompañado de la arquitectura conceptual, la selección justificada de componentes, el plan preliminar de ensayos y el análisis de protección intelectual. No se reportan en esta etapa curvas de calibración propias, porcentajes de reducción de pérdidas ni mejoras de rendimiento ya demostradas.
+[6] H. Othman, G. Sieves, T. Guimarães y R. Azari, “A calibration chamber framework for low-cost indoor air quality sensor validation,” Building and Environment, vol. 287, art. 113856, ene. 2026, doi: 10.1016/j.buildenv.2025.113856. Disponible: https://doi.org/10.1016/j.buildenv.2025.113856
 
-### 3.8 Alcance y limitaciones de interpretación
+[7] P. Placidi, R. Morbidelli, D. Fortunati, N. Papini, F. Gobbi y A. Scorzoni, “Monitoring soil and ambient parameters in the IoT precision agriculture scenario: An original modeling approach dedicated to low-cost soil water content sensors,” Sensors, vol. 21, n.º 15, art. 5110, 2021, doi: 10.3390/s21155110. Disponible: https://doi.org/10.3390/s21155110
 
-El alcance inicial se limita a ensayos controlados con plantas de papa. Las concentraciones de NH₃(g) y CO₂(g) en ppm no equivalen directamente a flujos de emisión por unidad de superficie ni permiten calcular, por sí solas, el porcentaje de nitrógeno aplicado que se volatilizó. Para estimar esas magnitudes se requerirá un método de cuantificación que considere la configuración y el volumen de la cámara, la renovación de aire, el tiempo de medición y la cantidad de nitrógeno aplicada \[11\].
+[8] R. Huerta, T. S. Mosqueiro, J. Fonollosa, N. F. Rulkov e I. Rodriguez-Lujan, “Online decorrelation of humidity and temperature in chemical sensors for continuous monitoring,” Chemometrics and Intelligent Laboratory Systems, vol. 157, pp. 169–176, 2016, doi: 10.1016/j.chemolab.2016.07.004. Disponible: https://doi.org/10.1016/j.chemolab.2016.07.004
 
-El NH₃(g) se abordará como una forma de nitrógeno reactivo asociada al problema de volatilización; no se presentará como un gas de efecto invernadero directo equivalente al CO₂(g). Tampoco se atribuirán automáticamente las variaciones de CO₂(g) a la urea, pues su interpretación debe considerar la respiración del sistema suelo-planta, la fotosíntesis y el intercambio de aire \[11\].
+[9] A. A. Bezborodov, “Розробка системи перевірки якості повітря на основі ESP32” [Desarrollo de un sistema de monitoreo de calidad del aire basado en ESP32], tesis de grado, especialidad de Ciencias de la Computación, Universidad Nacional V. N. Karazin de Járkiv, Járkiv, Ucrania, 2025. Consultado: 28-oct-2026. [En línea]. Disponible: https://ekhnuir.karazin.ua/handle/123456789/26414
 
-Una menor concentración registrada no demostrará por sí sola una reducción de pérdidas de nitrógeno ni un crecimiento óptimo. La ventilación, las propiedades del sustrato y el desempeño del instrumento pueden influir en el registro. Por ello, cualquier orientación de fertilización se limitará a las condiciones estudiadas y requerirá revisión agronómica antes de su aplicación fuera del laboratorio.
+[10] S. Berrios Gomez y H. J. Rivera Herrera, “Sistema IoT basado en ESP32 para el control y monitoreo de cultivos en invernadero con enfoque de agricultura 4.0,” Ingeniería Investiga, vol. 4, art. e624, 2022, doi: 10.47796/ing.v4i0.624. Disponible: https://doi.org/10.47796/ing.v4i0.624
 
-## Referencias bibliográficas
+[11] E. A. Davidson, K. Savage, L. V. Verchot y R. Navarro, “Minimizing artifacts and biases in chamber-based measurements of soil respiration,” Agricultural and Forest Meteorology, vol. 113, pp. 21–37, 2002, doi: 10.1016/S0168-1923(02)00100-4. Disponible: https://doi.org/10.1016/S0168-1923(02)00100-4
 
-\[1\] M. Petric, F. Dodigović, I. Grčić, P. Markužić, L. Radetić y M. Topić, “Ammonia concentration monitoring using Arduino platform,” Environmental Engineering – Inženjerstvo okoliša, vol. 6, n.º 1, pp. 21–26, 2019, doi: 10.37023/ee.6.1.4. Disponible: https://doi.org/10.37023/ee.6.1.4
+[12] R. Dubey et al., “Low-cost CO₂ NDIR sensors: Performance evaluation and calibration using machine learning techniques,” Sensors, vol. 24, n.º 17, art. 5675, 2024, doi: 10.3390/s24175675. Disponible: https://doi.org/10.3390/s24175675
 
-\[2\] R. Dubey et al., “Low-cost CO₂ NDIR sensors: Performance evaluation and calibration using machine learning techniques,” Sensors, vol. 24, n.º 17, art. 5675, 2024, doi: 10.3390/s24175675. Disponible: https://doi.org/10.3390/s24175675
+[13] Zhengzhou Winsen Electronics Technology Co., Ltd., “Infrared CO₂ sensor module (model: MH-Z19B): User’s manual,” ver. 1.7, oct. 2020. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.winsen-sensor.com/d/files/manual/mh-z19b.pdf
 
-\[3\] Zhengzhou Winsen Electronics Technology Co., Ltd., “Infrared CO₂ sensor module (model: MH-Z19B): User’s manual,” ver. 1.7, oct. 2020. \[En línea\]. Disponible: https://www.winsen-sensor.com/d/files/manual/mh-z19b.pdf. \[Consulta: 27-oct-2026\].
+[14] Bosch Sensortec, “BME280: Data sheet,” rev. 1.24, feb. 2024. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
 
-\[4\] P. Placidi, R. Morbidelli, D. Fortunati, N. Papini, F. Gobbi y A. Scorzoni, “Monitoring soil and ambient parameters in the IoT precision agriculture scenario: An original modeling approach dedicated to low-cost soil water content sensors,” Sensors, vol. 21, n.º 15, art. 5110, 2021, doi: 10.3390/s21155110. Disponible: https://doi.org/10.3390/s21155110
+[15] Espressif Systems, “ESP32 series datasheet,” ver. 5.3. Consultado: 28-oct-2026. [En línea]. Disponible: https://documentation.espressif.com/esp32_datasheet_en.html
 
-\[5\] R. Huerta, T. S. Mosqueiro, J. Fonollosa, N. F. Rulkov e I. Rodriguez-Lujan, “Online decorrelation of humidity and temperature in chemical sensors for continuous monitoring,” Chemometrics and Intelligent Laboratory Systems, vol. 157, pp. 169–176, 2016, doi: 10.1016/j.chemolab.2016.07.004. Disponible: https://doi.org/10.1016/j.chemolab.2016.07.004
+[16] OASIS, MQTT Version 5.0, OASIS Standard, 7-mar-2019. Consultado: 28-oct-2026. [En línea]. Disponible: https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html
 
-\[6\] Bosch Sensortec, “BME280: Data sheet,” rev. 1.24, feb. 2024. \[En línea\]. Disponible: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf. \[Consulta: 27-oct-2026\].
+[17] H. Nishiyama et al., “Ammonia sensor,” patente de EE. UU. US7341694B2, 11-mar-2008. [En línea]. Disponible: https://patents.google.com/patent/US7341694B2/en
 
-\[7\] H. Nishiyama et al., “Ammonia sensor,” patente estadounidense US7341694B2, 11-mar-2008. \[En línea\]. Disponible: https://patents.google.com/patent/US7341694B2/en.
+[18] INDECOPI, “Formulario de solicitud de registro de modelo de utilidad,” jun. 2026. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/informes-publicaciones/1272433-formulario-de-solicitud-de-registro-de-modelo-de-utilidad
 
-\[8\] INDECOPI, “Formulario de solicitud de registro de modelo de utilidad.” \[En línea\]. Disponible: https://www.gob.pe/institucion/indecopi/informes-publicaciones/1272433-formulario-de-solicitud-de-registro-de-modelo-de-utilidad. \[Consulta: 27-oct-2026\].
-
-\[9\] INDECOPI, “El Indecopi habilita servicio para que creadores de software registren sus programas a través de la plataforma de Registro Virtual de Obras,” 2024. \[En línea\]. Disponible: https://www.gob.pe/institucion/indecopi/noticias/906591-el-indecopi-habilita-servicio-para-que-creadores-de-software-registren-sus-programas-a-traves-de-la-plataforma-de-registro-virtual-de-obras. \[Consulta: 27-oct-2026\].
-
-\[10\] INDECOPI, Módulo instruccional: Derecho de la propiedad intelectual, 2019. \[En línea\]. Disponible: https://escuela.indecopi.gob.pe/images/publicaciones/pdf/2019/Mdulo_Instruccional_Derecho_de_la_Propiedad_Intelectual_PUBLICADO.pdf. \[Consulta: 27-oct-2026\].
-
-\[11\] Equipo GREENPLANT, “GREENPLANT — Proyecto integrador: monitoreo experimental de NH₃(g) y CO₂(g) en cultivo de papa,” documento de trabajo del proyecto, s. f., pp. 1–10. Archivo proporcionado: greenplant el real.pdf.
-
-\[12\] Espressif Systems, “ESP32 series datasheet,” ver. 5.3. \[En línea\]. Disponible: https://documentation.espressif.com/esp32_datasheet_en.html. \[Consulta: 27-oct-2026\].
-
-\[13\] OASIS, MQTT Version 5.0, OASIS Standard, 7-mar-2019. \[En línea\]. Disponible: https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html. \[Consulta: 27-oct-2026\].
+[19] INDECOPI, “El Indecopi habilita servicio para que creadores de software registren sus programas a través de la plataforma de Registro Virtual de Obras,” 2024. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/noticias/906591-el-indecopi-habilita-servicio-para-que-creadores-de-software-registren-sus-programas-a-traves-de-la-plataforma-de-registro-virtual-de-obras
