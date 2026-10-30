@@ -21,11 +21,7 @@ Mankins describe los niveles de madurez tecnológica como una escala que va desd
 
 En GREENPLANT, el concepto que se formula es un sistema experimental de laboratorio que registra amoníaco gaseoso, NH₃(g), dióxido de carbono gaseoso, CO₂(g), las condiciones del aire y la humedad del sustrato durante ensayos de fertilización con urea en plantas de papa (Solanum tuberosum) de la variedad Única, liberada en el Perú en 1998 y adaptada desde la costa hasta la sierra [2]. La aplicación que se explora es comparar cómo cambia el amoníaco registrado según la dosis y la forma de aplicación de la urea, ya que parte del nitrógeno de este fertilizante puede perderse como NH₃(g) después de aplicarlo [3], [4].
 
-El informe sigue la estructura que exige el TRL 2. La primera parte reúne los artículos científicos que respaldan la propuesta o tienen relación directa con ella; la segunda presenta el análisis de patentabilidad y protección; y la tercera desarrolla el perfil del proyecto. El diseño de la cámara en Onshape y la placa electrónica PCB3 se incluyen como parte del concepto, pero todavía no se fabrican ni se validan: su prueba corresponde al TRL 3 [1].
-
 1. Artículos científicos que respaldan la propuesta tecnológica
-
-Los artículos de esta sección se eligieron porque validan, con mediciones experimentales, alguno de los componentes de GREENPLANT: los sensores de gases, los sensores del aire y del sustrato, la medición dentro de cámaras y la integración electrónica con un microcontrolador ESP32. Las hojas de datos de los fabricantes se citan como documentación técnica complementaria, porque establecen los límites de operación de cada componente, pero no reemplazan a la evidencia científica.
 
 1.1. Medición de amoníaco con el sensor MQ-137
 
