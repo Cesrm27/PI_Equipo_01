@@ -20,13 +20,14 @@
 2. [Estado del arte: artículos científicos que respaldan la propuesta](#2-estado-del-arte-artículos-científicos-que-respaldan-la-propuesta)
 3. [Formulación del concepto tecnológico](#3-formulación-del-concepto-tecnológico)
 4. [Arquitectura conceptual de GREENPLANT](#4-arquitectura-conceptual-de-greenplant)
-5. [Evidencias del diseño conceptual](#5-evidencias-del-diseño-conceptual)
-6. [Requisitos conceptuales](#6-requisitos-conceptuales)
-7. [Análisis de patentabilidad y protección](#7-análisis-de-patentabilidad-y-protección)
-8. [Perfil del proyecto](#8-perfil-del-proyecto)
-9. [Cumplimiento de los indicadores del TRL 2](#9-cumplimiento-de-los-indicadores-del-trl-2)
-10. [Conclusión](#10-conclusión)
-11. [Referencias bibliográficas](#referencias-bibliográficas)
+5. [Diseño conceptual](#5-diseño-conceptual)
+6. [Evidencias del diseño conceptual](#6-evidencias-del-diseño-conceptual)
+7. [Requisitos conceptuales](#7-requisitos-conceptuales)
+8. [Análisis de patentabilidad y protección](#8-análisis-de-patentabilidad-y-protección)
+9. [Perfil del proyecto](#9-perfil-del-proyecto)
+10. [Cumplimiento de los indicadores del TRL 2](#10-cumplimiento-de-los-indicadores-del-trl-2)
+11. [Conclusión](#11-conclusión)
+12. [Referencias bibliográficas](#referencias-bibliográficas)
 
 ---
 
@@ -38,7 +39,7 @@ Mankins describe los niveles de madurez tecnológica (TRL, por sus siglas en ing
 
 Por ello, el objetivo de este informe no es demostrar que el sistema funciona, sino explicar por qué la solución podría funcionar, cómo se organizarían sus componentes y qué evidencia científica respalda cada decisión. Las pruebas de funcionamiento corresponden al TRL 3.
 
-Para GREENPLANT, las evidencias del TRL 2 son seis: el estado del arte (sección 2), la formulación del concepto y la selección de sensores (sección 3), la arquitectura de la cámara, la electrónica y la comunicación (sección 4), los diseños conceptuales con sus figuras (sección 5), el análisis de patentabilidad (sección 7) y el perfil del proyecto con su plan experimental (sección 8).
+Para GREENPLANT, las evidencias del TRL 2 se presentan en este orden: el estado del arte (sección 2), la formulación del concepto y la selección de sensores (sección 3), la arquitectura de la cámara, la electrónica y la comunicación (sección 4), el diseño conceptual por funciones (sección 5), las figuras de los diseños (sección 6), el análisis de patentabilidad (sección 8) y el perfil del proyecto con su plan experimental (sección 9).
 
 ## 1.2 Antecedentes provenientes del TRL 1
 
@@ -133,7 +134,7 @@ En papa, Wan et al. estudiaron el efecto de la dosis de nitrógeno y de un inhib
 
 Estos estudios se realizaron en campo y con otras variedades. Hace falta una herramienta de laboratorio, de bajo costo, que permita comparar el efecto de la dosis y de la forma de aplicación con la variedad Única bajo condiciones controladas. GREENPLANT responde a esa necesidad.
 
-> **Precisión sobre las unidades:** las lecturas en ppm describen la concentración de gas dentro de la cámara. Por sí solas no equivalen a la masa de nitrógeno perdida; para calcularla se necesita el procedimiento de la sección 8.4.
+> **Precisión sobre las unidades:** las lecturas en ppm describen la concentración de gas dentro de la cámara. Por sí solas no equivalen a la masa de nitrógeno perdida; para calcularla se necesita el procedimiento de la sección 9.4.
 
 ## 3.3 Pregunta de investigación e hipótesis
 
@@ -202,7 +203,7 @@ La iluminación se registra como condición del ensayo porque la fotosíntesis m
 
 ## 4.1 Cámara experimental
 
-La cámara es el espacio donde se coloca una planta joven de papa con su sustrato. Se modeló en Onshape como tres piezas fabricables por impresión 3D en PETG que se apilan sobre una misma huella de 180 × 180 mm: la base, el soporte/planta y la tapa (Figuras 6 a 9).
+La cámara es el espacio donde se coloca una planta joven de papa con su sustrato. Se modeló en Onshape como tres piezas fabricables por impresión 3D en PETG que se apilan sobre una misma huella de 180 × 180 mm: la base, el soporte/planta y la tapa (Figuras 8 a 11).
 
 *Tabla 4. Dimensiones del modelo de la cámara.*
 
@@ -249,9 +250,9 @@ La distribución permitirá revisar y reemplazar cada sensor sin desmontar toda 
 
 ## 4.4 Módulo electrónico: placa PCB3
 
-El ESP32 es la unidad central de adquisición. El equipo diseñó en EasyEDA Pro una placa propia, la PCB3, de dos capas y aproximadamente 107 × 110 mm, con cuatro perforaciones de 3,1 mm para tornillos M3, de modo que cabe dentro de la base (Figuras 10 a 14). La placa reúne los conectores de los sensores, el ESP32, la pantalla LCD 1602, el módulo de relés y la distribución de la alimentación. Sus archivos de fabricación están listos, pero la placa todavía no se ha fabricado ni probado.
+El ESP32 es la unidad central de adquisición. El equipo diseñó en EasyEDA Pro una placa propia, la PCB3, de dos capas y aproximadamente 107 × 110 mm, con cuatro perforaciones de 3,1 mm para tornillos M3, de modo que cabe dentro de la base (Figuras 12 a 16). La placa reúne los conectores de los sensores, el ESP32, la pantalla LCD 1602, el módulo de relés y la distribución de la alimentación. Sus archivos de fabricación están listos, pero la placa todavía no se ha fabricado ni probado.
 
-**Compatibilidad con el MH-Z19C.** La PCB3 se diseñó cuando el sensor previsto era el MH-Z19B. Su conector de cuatro pines lleva 5 V, tierra, RX y TX, las mismas señales que el manual del MH-Z19C define como Vin, GND, Rx y Tx, con UART de 3,3 V [[13]](#ref13). Por tanto, la conexión eléctrica es compatible. Antes de fabricar la siguiente versión debe confirmarse que el orden de pines rotulado junto al conector (Tx, Rx, −, +; Figura 12) coincide con el del modelo adquirido, y cambiar en la serigrafía el rótulo «MH-Z19B» por «MH-Z19C» (Figura 13).
+**Compatibilidad con el MH-Z19C.** La PCB3 se diseñó cuando el sensor previsto era el MH-Z19B. Su conector de cuatro pines lleva 5 V, tierra, RX y TX, las mismas señales que el manual del MH-Z19C define como Vin, GND, Rx y Tx, con UART de 3,3 V [[13]](#ref13). Por tanto, la conexión eléctrica es compatible. Antes de fabricar la siguiente versión debe confirmarse que el orden de pines rotulado junto al conector (Tx, Rx, −, +; Figura 14) coincide con el del modelo adquirido, y cambiar en la serigrafía el rótulo «MH-Z19B» por «MH-Z19C» (Figura 15).
 
 ## 4.5 Alimentación y acondicionamiento de señales
 
@@ -279,7 +280,7 @@ Cada registro conservará la señal original del sensor y el valor calculado, pa
 
 ## 4.7 Dashboard
 
-Se propone una interfaz web para consultar las mediciones. Incluye una tarjeta principal para el NH₃, una para el CO₂, indicadores de temperatura, humedad, presión y humedad del suelo, gráficos de evolución temporal, la identificación del ensayo activo, el historial de registros, la comparación entre tratamientos y el estado de conexión del ESP32 y de los sensores (Figuras 15 a 21).
+Se propone una interfaz web para consultar las mediciones. Incluye una tarjeta principal para el NH₃, una para el CO₂, indicadores de temperatura, humedad, presión y humedad del suelo, gráficos de evolución temporal, la identificación del ensayo activo, el historial de registros, la comparación entre tratamientos y el estado de conexión del ESP32 y de los sensores (Figuras 17 a 23).
 
 Las pantallas del prototipo muestran valores de ejemplo marcados como **DATOS SIMULADOS**. Sirven solo para mostrar la distribución de la interfaz: no son mediciones reales ni datos adquiridos por el ESP32.
 
@@ -322,13 +323,55 @@ flowchart TD
 
 ---
 
-# 5. Evidencias del diseño conceptual
+# 5. Diseño conceptual
+
+Antes de elegir componentes, el sistema se describió por las funciones que debe cumplir, siguiendo el método de diseño sistemático de Pahl et al. Este método parte de una caja negra, que define qué entra y qué sale del sistema, y la descompone en una estructura de funciones conectadas por flujos de energía, materia y señales [[33]](#ref33). Así, cada decisión posterior responde a una función concreta y no a la elección previa de un componente.
+
+## 5.1 Caja negra
+
+La Figura 2 representa a GREENPLANT como una sola caja y muestra sus cuatro entradas y sus cuatro salidas. La leyenda distingue tres tipos de flujo: energía (línea verde continua), materia (flecha hueca) y señales (línea discontinua).
+
+<p align="center">
+  <img width="900" height="500" alt="image" src="https://github.com/user-attachments/assets/3538d51a-5a8d-4b78-814f-6f025cd18f56" />
+</p>
+<p align="center"><em>Figura 2. Caja negra de GREENPLANT: entradas y salidas del sistema, clasificadas en flujos de energía, materia y señales.</em></p>
+
+**Entradas.** La única entrada de materia son los **gases del cultivo de papa**, es decir, el NH₃ y el CO₂ que se liberan en la maceta. La **energía eléctrica** alimenta todo el sistema. Las otras dos entradas son señales: las **condiciones ambientales** (temperatura, humedad y presión del aire), que el sistema debe registrar porque influyen en los sensores de gases [[7]](#ref7), y la **configuración del ensayo**, con la que el usuario indica el tratamiento, la dosis y la forma de aplicación de la urea.
+
+**Salidas.** Las salidas son señales: la **concentración medida de NH₃ y CO₂**, las **variables ambientales registradas**, la **lectura en la pantalla LCD** del equipo y el **estado de funcionamiento del sistema**.
+
+## 5.2 Estructura de funciones
+
+La Figura 3 abre la caja negra y muestra cómo se reparten las funciones en seis subsistemas. Los rectángulos con letras (A1, A2, C1, C2, P e I) son conectores que enlazan subsistemas sin cruzar líneas en el dibujo.
+
+<p align="center">
+  <img width="1203" height="765" alt="image" src="https://github.com/user-attachments/assets/b0742d40-c641-439b-ad97-27d20a556fc8" />
+</p>
+<p align="center"><em>Figura 3. Esquema de funciones de GREENPLANT: subsistemas eléctrico, mecánico, de adquisición de señales, de procesamiento y control, de comunicación y de interfaz.</em></p>
+
+**Subsistema eléctrico.** Recibe la energía eléctrica, la convierte de corriente alterna a continua, la regula y la protege. Luego la adecua a lo que necesita cada parte y la reparte mediante tres conectores: A2 para los sensores de gas, C2 para la comunicación y P para el procesamiento. En la arquitectura de la sección 4.5, estas funciones las cumplen la fuente de 12 V y el convertidor LM2596. El diagrama incluye también la función de almacenar energía, que en la arquitectura actual todavía no tiene un componente asignado.
+
+**Subsistema mecánico.** Captura los gases acumulados que emite el cultivo, es decir, el flujo de materia de la caja negra. Esta función la cumple la cámara modelada en Onshape (sección 4.1). El subsistema recibe además la energía luminosa de la iluminación y la energía mecánica de la ventilación, que mezcla el aire de la cámara.
+
+**Subsistema de adquisición de señales.** Capta las señales de NH₃, CO₂, temperatura y humedad a partir de los gases capturados por la cámara. Recibe la energía por el conector A2 y las señales externas para empezar, detener y activar el funcionamiento. En el diagrama, la función de NH₃ conserva el nombre ZE03-NH₃, que era la alternativa evaluada en la matriz morfológica; en la selección final esta función la cumple el MQ-137 (sección 6.1). La función de humedad comprende la humedad del aire, medida por el BME280, y la del sustrato, medida por la sonda capacitiva (sección 3.5).
+
+**Subsistema de procesamiento y control.** Es el que cumple el ESP32. Primero promedia las lecturas para reducir el ruido y las convierte a sus unidades: NH₃ y CO₂ a ppm, temperatura a °C y humedad a %. Con esos valores evalúa un nivel de riesgo bajo, medio o alto, con histéresis para evitar falsas alarmas; es decir, la alarma no se enciende y se apaga cada vez que la lectura oscila alrededor de un umbral. Los umbrales de cada nivel se definirán a partir de las calibraciones del TRL 3. A partir de esa evaluación, el ESP32 toma una decisión que se muestra en la interfaz (conector I), activa una alerta, controla los actuadores (conector A1) y registra el evento para la comunicación (conector C1). La función de calibrar sensores ajusta los parámetros de calibración y devuelve valores corregidos a la adquisición.
+
+**Subsistema de comunicación.** Transmite los registros a la nube por Wi-Fi, confirma el envío y los guarda en una base de datos. Desde esa base de datos actualiza el historial, genera reportes y notifica al usuario a través de la aplicación. Estas funciones corresponden a la comunicación MQTT y al dashboard descritos en las secciones 4.6 y 4.7.
+
+**Subsistema de interfaz.** Muestra en la pantalla LCD los valores de los gases, los valores del ambiente y el nivel de riesgo, de modo que el usuario puede consultar el estado del ensayo sin abrir la cámara.
+
+En conjunto, el esquema de funciones define qué debe hacer cada parte del sistema. La sección 6 muestra cómo se eligió el componente que cumple cada función y cómo se concretó en los diseños mecánico, electrónico y de software.
+
+---
+
+# 6. Evidencias del diseño conceptual
 
 Esta sección reúne las figuras que documentan el diseño. Son evidencias de formulación, no resultados de pruebas.
 
-## 5.1 Matriz morfológica
+## 6.1 Matriz morfológica
 
-La matriz morfológica comparó alternativas para cada función del sistema: sensado de gases, medición ambiental, monitoreo del suelo, procesamiento, estructura, alimentación, comunicación y visualización (Figura 2). La matriz conserva las opciones evaluadas en ese momento, entre ellas el ZE03-NH₃ y el MH-Z19B, que no forman parte de la selección final.
+La matriz morfológica comparó alternativas para cada función del sistema: sensado de gases, medición ambiental, monitoreo del suelo, procesamiento, estructura, alimentación, comunicación y visualización (Figura 4). La matriz conserva las opciones evaluadas en ese momento, entre ellas el ZE03-NH₃ y el MH-Z19B, que no forman parte de la selección final.
 
 La selección final se justifica así. El **MQ-137** reemplazó a la alternativa electroquímica porque cuenta con un antecedente experimental de calibración frente a un analizador [[5]](#ref5), ya se usa en un equipo patentado para medir la volatilización de amoníaco [[8]](#ref8) y su rango de 5 a 500 ppm [[6]](#ref6) cubre las concentraciones estimadas en la sección 4.2 (13 a 105 ppm). El **MH-Z19C** reemplazó al MH-Z19B porque mantiene el principio NDIR que Othman et al. evaluaron en cámara [[11]](#ref11), ofrece rangos configurables hasta 10000 ppm, usa la misma interfaz UART de 3,3 V y necesita solo 1 minuto de precalentamiento [[13]](#ref13).
 
@@ -346,140 +389,140 @@ La selección final se justifica así. El **MQ-137** reemplazó a la alternativa
 | Visualización | Dashboard web | Consultar las mediciones y el historial. |
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/Matriz_Morfologica.png" alt="Figura 2. Matriz morfológica de GREENPLANT" width="100%">
+  <img width="500" height="900" alt="image" src="https://github.com/user-attachments/assets/c653e87a-1767-4d20-81e7-f95cd5d85edc" />
 </p>
-<p align="center"><em>Figura 2. Matriz morfológica de GREENPLANT con las alternativas evaluadas para cada función.</em></p>
+<p align="center"><em>Figura 4. Matriz morfológica de GREENPLANT con las alternativas evaluadas para cada función.</em></p>
 
-## 5.2 Bocetos conceptuales
+## 6.2 Bocetos conceptuales
 
-Los bocetos representan alternativas de distribución de la cámara, la planta, los sensores y la electrónica. Sirvieron para definir el modelo tridimensional (Figuras 3 a 5).
+Los bocetos representan alternativas de distribución de la cámara, la planta, los sensores y la electrónica. Sirvieron para definir el modelo tridimensional (Figuras 5 a 7).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_1.png" alt="Figura 3. Boceto conceptual 1 de GREENPLANT" width="75%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_1.png" alt="Figura 5. Boceto conceptual 1 de GREENPLANT" width="75%">
 </p>
-<p align="center"><em>Figura 3. Primera propuesta de diseño conceptual de GREENPLANT.</em></p>
+<p align="center"><em>Figura 5. Primera propuesta de diseño conceptual de GREENPLANT.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_2.png" alt="Figura 4. Boceto conceptual 2 de GREENPLANT" width="75%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_2.png" alt="Figura 6. Boceto conceptual 2 de GREENPLANT" width="75%">
 </p>
-<p align="center"><em>Figura 4. Segunda propuesta de diseño conceptual de GREENPLANT.</em></p>
+<p align="center"><em>Figura 6. Segunda propuesta de diseño conceptual de GREENPLANT.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_3.png" alt="Figura 5. Boceto conceptual 3 de GREENPLANT" width="75%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_3.png" alt="Figura 7. Boceto conceptual 3 de GREENPLANT" width="75%">
 </p>
-<p align="center"><em>Figura 5. Tercera propuesta de diseño conceptual de GREENPLANT.</em></p>
+<p align="center"><em>Figura 7. Tercera propuesta de diseño conceptual de GREENPLANT.</em></p>
 
-## 5.3 Modelo tridimensional de la cámara
+## 6.3 Modelo tridimensional de la cámara
 
 El modelo de Onshape separa la electrónica del aire donde se mide y deja puntos de acceso para instalar los sensores (sección 4.1).
 
 <p align="center">
-  <img width="400" alt="Figura 6. Vista de conjunto del prototipo GREENPLANT en Onshape" src="https://github.com/user-attachments/assets/ae8d851e-f7b2-4c90-b3de-7b02eb0877fd" />
+  <img width="400" alt="Figura 8. Vista de conjunto del prototipo GREENPLANT en Onshape" src="https://github.com/user-attachments/assets/ae8d851e-f7b2-4c90-b3de-7b02eb0877fd" />
 </p>
-<p align="center"><em>Figura 6. Vista de conjunto del prototipo modelado en Onshape: tapa, cámara (soporte/planta) y base.</em></p>
+<p align="center"><em>Figura 8. Vista de conjunto del prototipo modelado en Onshape: tapa, cámara (soporte/planta) y base.</em></p>
 
 <p align="center">
-  <img width="500" alt="Figura 7. Plano de la base de GREENPLANT" src="https://github.com/user-attachments/assets/c711088a-44b7-4ca6-9874-f98113872913" />
+  <img width="500" alt="Figura 9. Plano de la base de GREENPLANT" src="https://github.com/user-attachments/assets/c711088a-44b7-4ca6-9874-f98113872913" />
 </p>
-<p align="center"><em>Figura 7. Plano de la base: vistas superior, frontal, lateral e isométrica.</em></p>
+<p align="center"><em>Figura 9. Plano de la base: vistas superior, frontal, lateral e isométrica.</em></p>
 
 <p align="center">
-  <img width="500" alt="Figura 8. Plano del soporte/planta de GREENPLANT" src="https://github.com/user-attachments/assets/81ca0a23-d4d7-4291-96eb-4c09884b8da9" />
+  <img width="500" alt="Figura 10. Plano del soporte/planta de GREENPLANT" src="https://github.com/user-attachments/assets/81ca0a23-d4d7-4291-96eb-4c09884b8da9" />
 </p>
-<p align="center"><em>Figura 8. Plano del soporte/planta: cámara experimental con una cara de acceso.</em></p>
+<p align="center"><em>Figura 10. Plano del soporte/planta: cámara experimental con una cara de acceso.</em></p>
 
 <p align="center">
-  <img width="500" alt="Figura 9. Plano de la tapa de GREENPLANT" src="https://github.com/user-attachments/assets/f4767c66-5cf2-4a17-953f-8e0a3ee07dd9" />
+  <img width="500" alt="Figura 11. Plano de la tapa de GREENPLANT" src="https://github.com/user-attachments/assets/f4767c66-5cf2-4a17-953f-8e0a3ee07dd9" />
 </p>
-<p align="center"><em>Figura 9. Plano de la tapa: placa de 180 × 180 mm con perforaciones de fijación.</em></p>
+<p align="center"><em>Figura 11. Plano de la tapa: placa de 180 × 180 mm con perforaciones de fijación.</em></p>
 
-## 5.4 Diseño electrónico preliminar
+## 6.4 Diseño electrónico preliminar
 
-El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃ y CO₂, de condiciones del aire y de humedad del suelo, junto con el procesamiento, la alimentación y el control de dispositivos auxiliares (Figura 10). La Figura 11 muestra la distribución de esos componentes en la PCB3, y las Figuras 12 a 14 presentan la placa tal como quedó diseñada en EasyEDA Pro, en vista de trazado y en vistas 3D de ambas caras. Sus características y correcciones se describen en las secciones 4.4 y 4.5.
+El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃ y CO₂, de condiciones del aire y de humedad del suelo, junto con el procesamiento, la alimentación y el control de dispositivos auxiliares (Figura 12). La Figura 13 muestra la distribución de esos componentes en la PCB3, y las Figuras 14 a 16 presentan la placa tal como quedó diseñada en EasyEDA Pro, en vista de trazado y en vistas 3D de ambas caras. Sus características y correcciones se describen en las secciones 4.4 y 4.5.
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/esquematico.png" alt="Figura 10. Esquemático electrónico de GREENPLANT" width="100%">
+  <img width="977" height="688" alt="image" src="https://github.com/user-attachments/assets/57542df9-51a5-4379-b97c-965504533509" />
 </p>
-<p align="center"><em>Figura 10. Esquemático electrónico preliminar de GREENPLANT desarrollado en EasyEDA.</em></p>
+<p align="center"><em>Figura 12. Esquemático electrónico preliminar de GREENPLANT desarrollado en EasyEDA.</em></p>
 
 <p align="center">
-  <img width="500" alt="Figura 11. Guía de la PCB3 de GREENPLANT" src="https://github.com/user-attachments/assets/a4f95e06-0d6d-45b1-ba11-f57689b66f14" />
+  <img width="500" alt="Figura 13. Guía de la PCB3 de GREENPLANT" src="https://github.com/user-attachments/assets/a4f95e06-0d6d-45b1-ba11-f57689b66f14" />
 </p>
-<p align="center"><em>Figura 11. Guía de distribución de componentes de la PCB3: sensores, control, salidas y alimentación.</em></p>
+<p align="center"><em>Figura 13. Guía de distribución de componentes de la PCB3: sensores, control, salidas y alimentación.</em></p>
 
-**Trazado de la placa.** La Figura 12 muestra la capa superior de la PCB3 en el editor de EasyEDA Pro. La regla superior, en milésimas de pulgada (mil), indica un ancho de unos 4200 mil, equivalente a los 107 mm de la placa, y en las cuatro esquinas se ven las perforaciones para tornillos M3. Toda la superficie lleva un relleno de cobre, sobre el que se distinguen las pistas que unen cada conector con el ESP32 y con el LM2596. Junto a los conectores del borde izquierdo, la serigrafía rotula el orden de los pines de cada sensor (por ejemplo, A0 y D0 para el MQ-137; Tx y Rx para el sensor de CO₂; SDA y SCL para el BME280), lo que evita errores de conexión al montar la placa.
+**Trazado de la placa.** La Figura 14 muestra la capa superior de la PCB3 en el editor de EasyEDA Pro. La regla superior, en milésimas de pulgada (mil), indica un ancho de unos 4200 mil, equivalente a los 107 mm de la placa, y en las cuatro esquinas se ven las perforaciones para tornillos M3. Toda la superficie lleva un relleno de cobre, sobre el que se distinguen las pistas que unen cada conector con el ESP32 y con el LM2596. Junto a los conectores del borde izquierdo, la serigrafía rotula el orden de los pines de cada sensor (por ejemplo, A0 y D0 para el MQ-137; Tx y Rx para el sensor de CO₂; SDA y SCL para el BME280), lo que evita errores de conexión al montar la placa.
 
 <p align="center">
   <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/5bd12a3b-26c1-4766-a08e-4b6afcb6ad09" />
 </p>
-<p align="center"><em>Figura 12. Trazado de la capa superior de la PCB3 en EasyEDA Pro, con la regla en mil, las perforaciones de montaje y el rótulo de pines de cada conector.</em></p>
+<p align="center"><em>Figura 14. Trazado de la capa superior de la PCB3 en EasyEDA Pro, con la regla en mil, las perforaciones de montaje y el rótulo de pines de cada conector.</em></p>
 
-**Vista 3D de la cara superior.** La Figura 13 permite identificar el tipo de cada conexión. Los sensores (MQ-137, sensor de CO₂ y BME280), la pantalla LCD 1602 y el módulo de relés usan conectores blancos de cuatro pines, y la sonda de humedad (P1), uno de tres pines; por eso cada sensor puede ubicarse en la cámara mediante un cable y reemplazarse sin soldar, como exige el requisito de mantenimiento de la sección 6. La alimentación, la luz LED y el ventilador usan borneras verdes de tornillo, adecuadas para los cables de 12 V. El conversor de nivel lógico aparece como un módulo azul, mientras que el ESP32 y el LM2596 se representan solo por su contorno, porque se insertan como módulos sobre la placa.
+**Vista 3D de la cara superior.** La Figura 15 permite identificar el tipo de cada conexión. Los sensores (MQ-137, sensor de CO₂ y BME280), la pantalla LCD 1602 y el módulo de relés usan conectores blancos de cuatro pines, y la sonda de humedad (P1), uno de tres pines; por eso cada sensor puede ubicarse en la cámara mediante un cable y reemplazarse sin soldar, como exige el requisito de mantenimiento de la sección 7. La alimentación, la luz LED y el ventilador usan borneras verdes de tornillo, adecuadas para los cables de 12 V. El conversor de nivel lógico aparece como un módulo azul, mientras que el ESP32 y el LM2596 se representan solo por su contorno, porque se insertan como módulos sobre la placa.
 
 <p align="center">
  <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/49ba087f-e376-4e37-9814-183c0be8fd67" />
 </p>
-<p align="center"><em>Figura 13. Vista 3D de la cara superior de la PCB3: conectores de los sensores, borneras de potencia, conversor de nivel y contornos del ESP32 y del LM2596.</em></p>
+<p align="center"><em>Figura 15. Vista 3D de la cara superior de la PCB3: conectores de los sensores, borneras de potencia, conversor de nivel y contornos del ESP32 y del LM2596.</em></p>
 
-**Vista 3D de la cara inferior.** La Figura 14 muestra la segunda capa de cobre, por la que pasan las pistas que no caben en la cara superior, y los puntos de soldadura de los componentes de inserción. Esta vista confirma que la PCB3 es una placa de dos capas y que lleva el emblema de la Universidad Peruana Cayetano Heredia.
+**Vista 3D de la cara inferior.** La Figura 16 muestra la segunda capa de cobre, por la que pasan las pistas que no caben en la cara superior, y los puntos de soldadura de los componentes de inserción. Esta vista confirma que la PCB3 es una placa de dos capas y que lleva el emblema de la Universidad Peruana Cayetano Heredia.
 
 <p align="center">
   <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/7c12e89a-4619-4f08-bd27-8da8ddbcd7ef" />
 </p>
-<p align="center"><em>Figura 14. Vista 3D de la cara inferior de la PCB3, con las pistas de la segunda capa y los puntos de soldadura.</em></p>
+<p align="center"><em>Figura 16. Vista 3D de la cara inferior de la PCB3, con las pistas de la segunda capa y los puntos de soldadura.</em></p>
 
-## 5.5 Diseño conceptual del dashboard
+## 6.5 Diseño conceptual del dashboard
 
 El prototipo visual del dashboard tiene siete pantallas: monitoreo general, sensores, gestión de ensayos, análisis comparativo, historial, estado del dispositivo y arquitectura del sistema. Todas usan **DATOS SIMULADOS**.
 
-**Dashboard principal.** Presenta los indicadores de NH₃, CO₂, temperatura, humedad relativa, presión y humedad del suelo, con gráficos temporales y el estado general de los componentes (Figura 15).
+**Dashboard principal.** Presenta los indicadores de NH₃, CO₂, temperatura, humedad relativa, presión y humedad del suelo, con gráficos temporales y el estado general de los componentes (Figura 17).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/dashboard_principal.png" alt="Figura 15. Dashboard principal de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/dashboard_principal.png" alt="Figura 17. Dashboard principal de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 15. Propuesta del dashboard principal de GREENPLANT.</em></p>
+<p align="center"><em>Figura 17. Propuesta del dashboard principal de GREENPLANT.</em></p>
 
-**Monitoreo de sensores.** Muestra por separado las mediciones del MQ-137, el MH-Z19C, el BME280 y la sonda capacitiva, cada una con su gráfico (Figura 16).
+**Monitoreo de sensores.** Muestra por separado las mediciones del MQ-137, el MH-Z19C, el BME280 y la sonda capacitiva, cada una con su gráfico (Figura 18).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/monitoreo_sensores.png" alt="Figura 16. Monitoreo de sensores de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/monitoreo_sensores.png" alt="Figura 18. Monitoreo de sensores de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 16. Propuesta del módulo de monitoreo de sensores.</em></p>
+<p align="center"><em>Figura 18. Propuesta del módulo de monitoreo de sensores.</em></p>
 
-**Gestión de ensayos y análisis comparativo.** El módulo de ensayos registra las condiciones de cada tratamiento: dosis de 0, 80 y 160 kg N/ha y aplicación superficial o incorporada (Figura 17). El módulo de análisis compara las concentraciones de NH₃ y CO₂ entre tratamientos mediante gráficos y tablas (Figura 18).
+**Gestión de ensayos y análisis comparativo.** El módulo de ensayos registra las condiciones de cada tratamiento: dosis de 0, 80 y 160 kg N/ha y aplicación superficial o incorporada (Figura 19). El módulo de análisis compara las concentraciones de NH₃ y CO₂ entre tratamientos mediante gráficos y tablas (Figura 20).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/gestion_ensayos.png" alt="Figura 17. Gestión de ensayos de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/gestion_ensayos.png" alt="Figura 19. Gestión de ensayos de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 17. Propuesta del módulo de gestión de ensayos experimentales.</em></p>
+<p align="center"><em>Figura 19. Propuesta del módulo de gestión de ensayos experimentales.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/analisis_comparativo.png" alt="Figura 18. Análisis comparativo de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/analisis_comparativo.png" alt="Figura 20. Análisis comparativo de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 18. Propuesta del módulo de análisis comparativo entre tratamientos.</em></p>
+<p align="center"><em>Figura 20. Propuesta del módulo de análisis comparativo entre tratamientos.</em></p>
 
-**Historial y estado del dispositivo.** El historial permite consultar los registros por ensayo, fecha y hora, y exportarlos en CSV o Excel (Figura 19). La pantalla de estado muestra el funcionamiento del ESP32, la conexión Wi-Fi y MQTT y el estado de cada sensor (Figura 20).
+**Historial y estado del dispositivo.** El historial permite consultar los registros por ensayo, fecha y hora, y exportarlos en CSV o Excel (Figura 21). La pantalla de estado muestra el funcionamiento del ESP32, la conexión Wi-Fi y MQTT y el estado de cada sensor (Figura 22).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/historial_mediciones.png" alt="Figura 19. Historial de mediciones de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/historial_mediciones.png" alt="Figura 21. Historial de mediciones de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 19. Propuesta del historial de mediciones experimentales.</em></p>
+<p align="center"><em>Figura 21. Propuesta del historial de mediciones experimentales.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/estado_dispositivo.png" alt="Figura 20. Estado del dispositivo de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/estado_dispositivo.png" alt="Figura 22. Estado del dispositivo de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 20. Propuesta de la pantalla de estado del dispositivo y sus componentes.</em></p>
+<p align="center"><em>Figura 22. Propuesta de la pantalla de estado del dispositivo y sus componentes.</em></p>
 
-**Arquitectura del sistema.** Representa dentro del dashboard el mismo flujo de la Figura 1: cultivo, cámara, sensores, ESP32, Wi-Fi y MQTT, y dashboard (Figura 21).
+**Arquitectura del sistema.** Representa dentro del dashboard el mismo flujo de la Figura 1: cultivo, cámara, sensores, ESP32, Wi-Fi y MQTT, y dashboard (Figura 23).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/arquitectura_greenplant.png" alt="Figura 21. Arquitectura del sistema GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/arquitectura_greenplant.png" alt="Figura 23. Arquitectura del sistema GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 21. Pantalla de arquitectura y flujo de información de GREENPLANT.</em></p>
+<p align="center"><em>Figura 23. Pantalla de arquitectura y flujo de información de GREENPLANT.</em></p>
 
 ---
 
-# 6. Requisitos conceptuales
+# 7. Requisitos conceptuales
 
 A partir de la propuesta, el sistema deberá cumplir los siguientes requisitos en las etapas posteriores:
 
@@ -495,61 +538,61 @@ A partir de la propuesta, el sistema deberá cumplir los siguientes requisitos e
 
 ---
 
-# 7. Análisis de patentabilidad y protección
+# 8. Análisis de patentabilidad y protección
 
-## 7.1 Requisitos de patentabilidad
+## 8.1 Requisitos de patentabilidad
 
-El análisis se basa en la Decisión 486 de la Comunidad Andina, que establece el régimen común de propiedad industrial vigente en el Perú [[33]](#ref33). Según esta norma, una invención es patentable si cumple tres requisitos: **novedad**, es decir, no estar comprendida en el estado de la técnica (artículo 16); **nivel inventivo**, es decir, no resultar obvia para una persona del oficio (artículo 18); y **aplicación industrial**, es decir, poder producirse o usarse en cualquier industria (artículo 19). La misma norma define el **modelo de utilidad** como una nueva forma, configuración o disposición de elementos de un objeto que le dé un mejor funcionamiento o una ventaja técnica que antes no tenía (artículo 81) [[33]](#ref33).
+El análisis se basa en la Decisión 486 de la Comunidad Andina, que establece el régimen común de propiedad industrial vigente en el Perú [[34]](#ref34). Según esta norma, una invención es patentable si cumple tres requisitos: **novedad**, es decir, no estar comprendida en el estado de la técnica (artículo 16); **nivel inventivo**, es decir, no resultar obvia para una persona del oficio (artículo 18); y **aplicación industrial**, es decir, poder producirse o usarse en cualquier industria (artículo 19). La misma norma define el **modelo de utilidad** como una nueva forma, configuración o disposición de elementos de un objeto que le dé un mejor funcionamiento o una ventaja técnica que antes no tenía (artículo 81) [[34]](#ref34).
 
 Como GREENPLANT usa sensores comerciales y un microcontrolador de uso extendido, su posible aporte protegible no está en el principio de medición, sino en la configuración física de la cámara.
 
-## 7.2 Búsqueda de patentes relacionadas
+## 8.2 Búsqueda de patentes relacionadas
 
 Se buscaron patentes en Google Patents y Patsnap con términos como «ammonia volatilization detection device», «plant growth chamber CO₂» y «greenhouse environmental monitoring system». Se encontraron cuatro documentos cercanos:
 
 - **CN115097075B**, de la Universidad de Ciencia y Tecnología de Kunming, solicitada en 2022. Describe un equipo de campo para detectar en línea la volatilización de amoníaco, con una cámara de gas, cuatro sensores de NH₃ (uno de ellos un MQ-137), placas Arduino y un módulo inalámbrico ESP8266 [[8]](#ref8).
-- **US5341595A**, de Griggs, Bartley y Rule, de 1994. Describe una cámara de crecimiento exterior hermética, con control de temperatura y humedad, adaptada para analizar la absorción de CO₂ por las plantas [[34]](#ref34).
-- **CN114365649A**, de Liu, publicada en 2022. Propone un sistema de monitoreo y control para invernaderos con sensores ambientales y de suelo, ventilación e iluminación; la solicitud fue rechazada en 2024 [[35]](#ref35).
-- **US7341694B2**, de Nishiyama et al., de 2008. Protege un sensor de amoníaco con una capa sensible de ZrO₂ que contiene tungsteno [[36]](#ref36).
+- **US5341595A**, de Griggs, Bartley y Rule, de 1994. Describe una cámara de crecimiento exterior hermética, con control de temperatura y humedad, adaptada para analizar la absorción de CO₂ por las plantas [[35]](#ref35).
+- **CN114365649A**, de Liu, publicada en 2022. Propone un sistema de monitoreo y control para invernaderos con sensores ambientales y de suelo, ventilación e iluminación; la solicitud fue rechazada en 2024 [[36]](#ref36).
+- **US7341694B2**, de Nishiyama et al., de 2008. Protege un sensor de amoníaco con una capa sensible de ZrO₂ que contiene tungsteno [[37]](#ref37).
 
-## 7.3 Comparación con GREENPLANT
+## 8.3 Comparación con GREENPLANT
 
 *Tabla 6. Patentes relacionadas y diferencias con GREENPLANT.*
 
 | Documento | Elemento en común | Diferencia con GREENPLANT |
 |---|---|---|
 | CN115097075B [[8]](#ref8) | Detección de la volatilización de NH₃ con un MQ-137 y electrónica de bajo costo | Es un equipo de campo; no mide CO₂, condiciones del aire ni humedad del sustrato. |
-| US5341595A [[34]](#ref34) | Cámara para estudiar el intercambio de CO₂ en plantas | No mide NH₃ ni está orientada a la fertilización; es una cámara grande, no un equipo de bajo costo. |
-| CN114365649A [[35]](#ref35) | Sensores ambientales y de suelo con monitoreo remoto | No mide NH₃ ni compara tratamientos de urea. |
-| US7341694B2 [[36]](#ref36) | Detección de amoníaco | Protege un elemento sensor; GREENPLANT usa sensores comerciales. |
+| US5341595A [[35]](#ref35) | Cámara para estudiar el intercambio de CO₂ en plantas | No mide NH₃ ni está orientada a la fertilización; es una cámara grande, no un equipo de bajo costo. |
+| CN114365649A [[36]](#ref36) | Sensores ambientales y de suelo con monitoreo remoto | No mide NH₃ ni compara tratamientos de urea. |
+| US7341694B2 [[37]](#ref37) | Detección de amoníaco | Protege un elemento sensor; GREENPLANT usa sensores comerciales. |
 
 La búsqueda es preliminar. En la siguiente etapa se ampliará a la base de datos de INDECOPI y a Espacenet, y no reemplaza una búsqueda oficial ni una opinión legal.
 
-## 7.4 Evaluación y estrategia de protección
+## 8.4 Evaluación y estrategia de protección
 
-**Patente de invención.** La combinación exacta de NH₃, CO₂, condiciones del aire y humedad del sustrato en una cámara para comparar tratamientos de urea no apareció en la búsqueda. Sin embargo, sus partes ya existen [[8]](#ref8), [[34]](#ref34), [[35]](#ref35), y combinar sensores comerciales con un microcontrolador sería previsible para una persona del oficio. Por falta de nivel inventivo (artículo 18) [[33]](#ref33), no se recomienda solicitar una patente de invención.
+**Patente de invención.** La combinación exacta de NH₃, CO₂, condiciones del aire y humedad del sustrato en una cámara para comparar tratamientos de urea no apareció en la búsqueda. Sin embargo, sus partes ya existen [[8]](#ref8), [[35]](#ref35), [[36]](#ref36), y combinar sensores comerciales con un microcontrolador sería previsible para una persona del oficio. Por falta de nivel inventivo (artículo 18) [[34]](#ref34), no se recomienda solicitar una patente de invención.
 
-**Modelo de utilidad.** La configuración de la cámara podría protegerse como modelo de utilidad si se demuestra una ventaja técnica concreta [[33]](#ref33); la solicitud ante INDECOPI exige describir esa ventaja [[37]](#ref37). Las características candidatas son la separación entre la electrónica y el aire medido dentro de una misma huella de 180 × 180 mm, las aberturas que comunican los sensores con la cámara y la unión desmontable de las tres piezas. Como una caja protectora para electrónica ya es una práctica conocida [[19]](#ref19), la solicitud solo sería viable si los ensayos del TRL 3 demuestran, por ejemplo, que la separación reduce el calentamiento del aire de la cámara por la electrónica.
+**Modelo de utilidad.** La configuración de la cámara podría protegerse como modelo de utilidad si se demuestra una ventaja técnica concreta [[34]](#ref34); la solicitud ante INDECOPI exige describir esa ventaja [[38]](#ref38). Las características candidatas son la separación entre la electrónica y el aire medido dentro de una misma huella de 180 × 180 mm, las aberturas que comunican los sensores con la cámara y la unión desmontable de las tres piezas. Como una caja protectora para electrónica ya es una práctica conocida [[19]](#ref19), la solicitud solo sería viable si los ensayos del TRL 3 demuestran, por ejemplo, que la separación reduce el calentamiento del aire de la cámara por la electrónica.
 
-**Derecho de autor.** El software para adquirir, organizar, transmitir y visualizar los datos se protegerá como programa de ordenador. El equipo conservará sus versiones, documentará su autoría y distinguirá las bibliotecas de terceros; INDECOPI permite registrarlo en su plataforma de Registro Virtual de Obras [[38]](#ref38).
+**Derecho de autor.** El software para adquirir, organizar, transmitir y visualizar los datos se protegerá como programa de ordenador. El equipo conservará sus versiones, documentará su autoría y distinguirá las bibliotecas de terceros; INDECOPI permite registrarlo en su plataforma de Registro Virtual de Obras [[39]](#ref39).
 
-**Divulgación.** En el Perú, la divulgación de una invención dentro de los 12 meses anteriores a la solicitud no afecta su novedad [[39]](#ref39). Como GREENPLANT se presentará en las exposiciones del curso, la fecha de la primera presentación pública inicia ese plazo si el equipo decide solicitar un modelo de utilidad.
+**Divulgación.** En el Perú, la divulgación de una invención dentro de los 12 meses anteriores a la solicitud no afecta su novedad [[40]](#ref40). Como GREENPLANT se presentará en las exposiciones del curso, la fecha de la primera presentación pública inicia ese plazo si el equipo decide solicitar un modelo de utilidad.
 
 ---
 
-# 8. Perfil del proyecto
+# 9. Perfil del proyecto
 
-## 8.1 Título
+## 9.1 Título
 
 **GREENPLANT: sistema experimental de laboratorio para el monitoreo de NH₃(g), CO₂(g) y variables ambientales durante ensayos de fertilización con urea en papa (*Solanum tuberosum*) variedad Única.**
 
-## 8.2 Usuarios y beneficiarios
+## 9.2 Usuarios y beneficiarios
 
 El sistema está dirigido a estudiantes, investigadores y responsables de ensayos agrícolas que necesiten registrar y comparar concentraciones de gases y condiciones ambientales en pruebas controladas de fertilización. Sus resultados apoyarán el análisis experimental del NH₃, pero no reemplazarán el análisis agronómico del suelo ni la validación en campo.
 
-## 8.3 Plan experimental
+## 9.3 Plan experimental
 
-### 8.3.1 Tratamientos
+### 9.3.1 Tratamientos
 
 El ensayo tendrá cinco tratamientos (Tabla 7).
 
@@ -563,9 +606,9 @@ El ensayo tendrá cinco tratamientos (Tabla 7).
 | T3 | Dosis alta | 160 kg N/ha | Superficial |
 | T4 | Dosis alta | 160 kg N/ha | Incorporada |
 
-Las dosis de 80 y 160 kg N/ha son las que Zúñiga et al. evaluaron en papa en la sierra central del Perú [[40]](#ref40). Como ese estudio usó variedades nativas, se toman como niveles de comparación y no como recomendación agronómica para Única. En la aplicación superficial, los gránulos quedarán sobre el sustrato; en la incorporada, se enterrarán a unos 5 cm, profundidad dentro del intervalo en el que la incorporación reduce la pérdida de amoníaco [[2]](#ref2), [[26]](#ref26).
+Las dosis de 80 y 160 kg N/ha son las que Zúñiga et al. evaluaron en papa en la sierra central del Perú [[41]](#ref41). Como ese estudio usó variedades nativas, se toman como niveles de comparación y no como recomendación agronómica para Única. En la aplicación superficial, los gránulos quedarán sobre el sustrato; en la incorporada, se enterrarán a unos 5 cm, profundidad dentro del intervalo en el que la incorporación reduce la pérdida de amoníaco [[2]](#ref2), [[26]](#ref26).
 
-### 8.3.2 Cantidad de urea por maceta
+### 9.3.2 Cantidad de urea por maceta
 
 La urea comercial se etiqueta con 46 % de nitrógeno. La masa de urea equivalente a una dosis de nitrógeno se calcula así:
 
@@ -583,11 +626,11 @@ $$
 
 Estos valores se ajustarán a la superficie real de la maceta y al porcentaje de nitrógeno de la etiqueta del fertilizante, y se pesarán con una balanza de 0,01 g.
 
-### 8.3.3 Momento de aplicación
+### 9.3.3 Momento de aplicación
 
-La urea se aplicará en la siembra. En el cultivo comercial, el INIA recomienda aplicar la mitad del nitrógeno en la siembra y la otra mitad, como urea, en el primer aporque [[41]](#ref41). El ensayo evalúa solo la aplicación en la siembra por dos razones: la altura de la cámara limita las mediciones a plantas jóvenes (sección 4.2) y los picos de volatilización ocurren en los primeros días después de fertilizar [[24]](#ref24). Por ello, sus resultados describen una condición de ensayo y no una recomendación de manejo.
+La urea se aplicará en la siembra. En el cultivo comercial, el INIA recomienda aplicar la mitad del nitrógeno en la siembra y la otra mitad, como urea, en el primer aporque [[42]](#ref42). El ensayo evalúa solo la aplicación en la siembra por dos razones: la altura de la cámara limita las mediciones a plantas jóvenes (sección 4.2) y los picos de volatilización ocurren en los primeros días después de fertilizar [[24]](#ref24). Por ello, sus resultados describen una condición de ensayo y no una recomendación de manejo.
 
-### 8.3.4 Repeticiones y organización en ciclos
+### 9.3.4 Repeticiones y organización en ciclos
 
 Cada tratamiento tendrá tres repeticiones, es decir, 15 macetas. Este número es coherente con las tres o cuatro repeticiones en bloques completos al azar que se usaron para evaluar la variedad Única [[21]](#ref21).
 
@@ -595,13 +638,13 @@ Como el prototipo tiene una sola cámara, las macetas permanecerán fuera de ell
 
 Cada ciclo incluirá un día de línea de base antes de fertilizar y siete días de medición después de la aplicación, un periodo que cubre los picos observados entre el primer y el quinto día [[24]](#ref24).
 
-### 8.3.5 Variables por medición y análisis
+### 9.3.5 Variables por medición y análisis
 
 En cada medición se registrarán la curva de NH₃(g) durante el cierre, el CO₂(g), la temperatura, la humedad relativa, la presión, la humedad del sustrato, la identificación del tratamiento, la repetición y la maceta, y el estado de la iluminación.
 
 La variable principal será la concentración de NH₃(g) al final del cierre. La variable secundaria será la pendiente de acumulación ajustada por regresión lineal, opción que Baneschi et al. recomiendan por su reproducibilidad [[18]](#ref18). Los tratamientos se compararán mediante un análisis de varianza en bloques completos al azar, con el ciclo como bloque y los días como medidas repetidas de cada maceta. El pH y las propiedades químicas del sustrato se analizarán aparte, porque influyen en la volatilización [[3]](#ref3).
 
-## 8.4 Criterios de interpretación
+## 9.4 Criterios de interpretación
 
 Las concentraciones de NH₃ y CO₂ se expresarán en ppm dentro de la cámara. Una concentración no equivale a la masa de gas emitida ni al porcentaje de nitrógeno perdido. Para estimar la emisión se necesita el flujo, que en una cámara cerrada se calcula a partir de la pendiente de acumulación [[17]](#ref17), [[18]](#ref18):
 
@@ -613,7 +656,7 @@ donde $\Delta C/\Delta t$ es la pendiente de cambio de la concentración, $V$ el
 
 El CO₂ se interpretará considerando la respiración de las raíces y de los microorganismos [[9]](#ref9), la fotosíntesis [[10]](#ref10) y las condiciones de ventilación e iluminación.
 
-## 8.5 Resultados esperados
+## 9.5 Resultados esperados
 
 Al cerrar el TRL 2 se cuenta con:
 
@@ -628,7 +671,7 @@ Al cerrar el TRL 2 se cuenta con:
 
 Son productos de formulación y diseño, no resultados de pruebas.
 
-## 8.6 Alcance y limitaciones
+## 9.6 Alcance y limitaciones
 
 El TRL 2 de GREENPLANT se limita a formular y sustentar el concepto tecnológico. El sistema no está validado y los sensores aún no tienen una precisión determinada. En el TRL 3 se deberán resolver estas tareas:
 
@@ -642,7 +685,7 @@ El TRL 2 de GREENPLANT se limita a formular y sustentar el concepto tecnológico
 
 ---
 
-# 9. Cumplimiento de los indicadores del TRL 2
+# 10. Cumplimiento de los indicadores del TRL 2
 
 *Tabla 9. Indicadores del TRL 2 y evidencias de GREENPLANT.*
 
@@ -650,21 +693,22 @@ El TRL 2 de GREENPLANT se limita a formular y sustentar el concepto tecnológico
 |---|---|---|
 | Artículos científicos relacionados con la propuesta | Estudios sobre volatilización de NH₃, medición de CO₂, sensores del aire y del suelo, cámaras e integración con ESP32 | 2 |
 | Formulación del concepto tecnológico | Sistema de laboratorio para monitorear NH₃, CO₂, aire y humedad del suelo en papa | 3 |
-| Selección de sensores | MQ-137, MH-Z19C, BME280 y sonda capacitiva, con su justificación | 3.5 y 5.1 |
+| Selección de sensores | MQ-137, MH-Z19C, BME280 y sonda capacitiva, con su justificación | 3.5 y 6.1 |
 | Arquitectura conceptual | Cámara, sensores, ESP32, Wi-Fi/MQTT, registro y dashboard | 4 |
-| Diseño mecánico | Modelo de base, soporte/planta y tapa en Onshape | 4.1 y 5.3 |
-| Diseño electrónico | Esquemático, PCB3 y correcciones para la PCB4 | 4.4, 4.5 y 5.4 |
-| Diseño de la interfaz | Siete pantallas del dashboard con datos simulados | 5.5 |
-| Análisis de patentabilidad y protección | Búsqueda de patentes, evaluación y estrategia | 7 |
-| Perfil o propuesta del proyecto | Problema, pregunta, hipótesis, objetivos, plan experimental, alcance y limitaciones | 3 y 8 |
+| Diseño conceptual | Caja negra y estructura de funciones del sistema | 5 |
+| Diseño mecánico | Modelo de base, soporte/planta y tapa en Onshape | 4.1 y 6.3 |
+| Diseño electrónico | Esquemático, PCB3 y correcciones para la PCB4 | 4.4, 4.5 y 6.4 |
+| Diseño de la interfaz | Siete pantallas del dashboard con datos simulados | 6.5 |
+| Análisis de patentabilidad y protección | Búsqueda de patentes, evaluación y estrategia | 8 |
+| Perfil o propuesta del proyecto | Problema, pregunta, hipótesis, objetivos, plan experimental, alcance y limitaciones | 3 y 9 |
 
 ---
 
-# 10. Conclusión
+# 11. Conclusión
 
 En el TRL 2 se formuló el concepto tecnológico de GREENPLANT: un sistema experimental de laboratorio para monitorear NH₃(g), CO₂(g), temperatura, humedad relativa, presión atmosférica y humedad del suelo durante ensayos de fertilización con urea en papa variedad Única.
 
-La revisión del estado del arte respaldó la selección de cuatro sensores: el MQ-137 para el amoníaco, el MH-Z19C para el dióxido de carbono, el BME280 para las condiciones del aire y una sonda capacitiva para la humedad del suelo, con el ESP32 como unidad de adquisición y una comunicación propuesta por Wi-Fi y MQTT. El modelo de la cámara en Onshape, el diseño de la PCB3 y el dashboard conceptual muestran cómo se organizaría el sistema, y la estimación de la sección 4.2 indica que la concentración esperada de NH₃ estaría dentro del rango del sensor con un cierre de 30 minutos.
+La revisión del estado del arte respaldó la selección de cuatro sensores: el MQ-137 para el amoníaco, el MH-Z19C para el dióxido de carbono, el BME280 para las condiciones del aire y una sonda capacitiva para la humedad del suelo, con el ESP32 como unidad de adquisición y una comunicación propuesta por Wi-Fi y MQTT. La caja negra y la estructura de funciones definieron qué debe hacer el sistema antes de elegir sus componentes. El modelo de la cámara en Onshape, el diseño de la PCB3 y el dashboard conceptual muestran cómo se organizaría el sistema, y la estimación de la sección 4.2 indica que la concentración esperada de NH₃ estaría dentro del rango del sensor con un cierre de 30 minutos.
 
 El análisis de patentabilidad concluyó que el sistema completo no cumpliría el requisito de nivel inventivo para una patente de invención, pero que la configuración de la cámara podría evaluarse como modelo de utilidad y el software protegerse mediante derecho de autor. Finalmente, el plan experimental define cinco tratamientos, tres repeticiones organizadas en ciclos y criterios claros de interpretación. La fabricación, la calibración y la prueba de concepto del sistema completo corresponden al TRL 3.
 
@@ -736,20 +780,22 @@ El análisis de patentabilidad concluyó que el sistema completo no cumpliría e
 
 <a id="ref32"></a>[32] Ningbo Songle Relay, “SRD-05VDC-SL-C,” ficha del componente. Consultado: 30-oct-2026. [En línea]. Disponible: https://www.lcsc.com/product-detail/C35449.html
 
-<a id="ref33"></a>[33] Comunidad Andina, “Decisión 486: Régimen Común sobre Propiedad Industrial,” 14-sep-2000. Consultado: 30-oct-2026. [En línea]. Disponible: https://www.comunidadandina.org/StaticFiles/DocOf/DEC486.pdf
+<a id="ref33"></a>[33] G. Pahl, W. Beitz, J. Feldhusen y K.-H. Grote, Engineering Design: A Systematic Approach, 3.ª ed. Londres, Reino Unido: Springer, 2007.
 
-<a id="ref34"></a>[34] S. H. Griggs, W. E. Bartley y A. O. Rule III, “Environmental chamber for plant growth analysis,” patente de EE. UU. US5341595A, 30-ago-1994. [En línea]. Disponible: https://patents.google.com/patent/US5341595
+<a id="ref34"></a>[34] Comunidad Andina, “Decisión 486: Régimen Común sobre Propiedad Industrial,” 14-sep-2000. Consultado: 30-oct-2026. [En línea]. Disponible: https://www.comunidadandina.org/StaticFiles/DocOf/DEC486.pdf
 
-<a id="ref35"></a>[35] D. Liu, “Smart greenhouse environment monitoring and control system,” solicitud de patente de China CN114365649A, 19-abr-2022. Consultado: 30-oct-2026. [En línea]. Disponible: https://patents.google.com/patent/CN114365649A/en
+<a id="ref35"></a>[35] S. H. Griggs, W. E. Bartley y A. O. Rule III, “Environmental chamber for plant growth analysis,” patente de EE. UU. US5341595A, 30-ago-1994. [En línea]. Disponible: https://patents.google.com/patent/US5341595
 
-<a id="ref36"></a>[36] H. Nishiyama et al., “Ammonia sensor,” patente de EE. UU. US7341694B2, 11-mar-2008. [En línea]. Disponible: https://patents.google.com/patent/US7341694B2/en
+<a id="ref36"></a>[36] D. Liu, “Smart greenhouse environment monitoring and control system,” solicitud de patente de China CN114365649A, 19-abr-2022. Consultado: 30-oct-2026. [En línea]. Disponible: https://patents.google.com/patent/CN114365649A/en
 
-<a id="ref37"></a>[37] INDECOPI, “Formulario de solicitud de registro de modelo de utilidad,” jun. 2026. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/informes-publicaciones/1272433-formulario-de-solicitud-de-registro-de-modelo-de-utilidad
+<a id="ref37"></a>[37] H. Nishiyama et al., “Ammonia sensor,” patente de EE. UU. US7341694B2, 11-mar-2008. [En línea]. Disponible: https://patents.google.com/patent/US7341694B2/en
 
-<a id="ref38"></a>[38] INDECOPI, “El Indecopi habilita servicio para que creadores de software registren sus programas a través de la plataforma de Registro Virtual de Obras,” 2024. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/noticias/906591-el-indecopi-habilita-servicio-para-que-creadores-de-software-registren-sus-programas-a-traves-de-la-plataforma-de-registro-virtual-de-obras
+<a id="ref38"></a>[38] INDECOPI, “Formulario de solicitud de registro de modelo de utilidad,” jun. 2026. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/informes-publicaciones/1272433-formulario-de-solicitud-de-registro-de-modelo-de-utilidad
 
-<a id="ref39"></a>[39] Organización Mundial de la Propiedad Intelectual (OMPI), “Período de gracia: disposiciones de las legislaciones nacionales y regionales,” Comité Permanente sobre el Derecho de Patentes. Consultado: 30-oct-2026. [En línea]. Disponible: https://www.wipo.int/documents/d/scp/docs-es-national-laws-grace-period.pdf
+<a id="ref39"></a>[39] INDECOPI, “El Indecopi habilita servicio para que creadores de software registren sus programas a través de la plataforma de Registro Virtual de Obras,” 2024. Consultado: 28-oct-2026. [En línea]. Disponible: https://www.gob.pe/institucion/indecopi/noticias/906591-el-indecopi-habilita-servicio-para-que-creadores-de-software-registren-sus-programas-a-traves-de-la-plataforma-de-registro-virtual-de-obras
 
-<a id="ref40"></a>[40] L. Zúñiga, A. Oswald y J. Sánchez, “Efecto de la fertilización orgánica e inorgánica sobre variedades de papas nativas en la sierra central de Perú,” en XXIII Congreso de la Asociación Latinoamericana de la Papa: Memorias, Universidad Nacional de Mar del Plata, Argentina, 2008, pp. 123–124. Consultado: 30-oct-2026. [En línea]. Disponible: https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/784/1/Zu%c3%b1iga-Efecto_fertilizaci%c3%b3n_org%c3%a1nica_inorg%c3%a1nica.pdf
+<a id="ref40"></a>[40] Organización Mundial de la Propiedad Intelectual (OMPI), “Período de gracia: disposiciones de las legislaciones nacionales y regionales,” Comité Permanente sobre el Derecho de Patentes. Consultado: 30-oct-2026. [En línea]. Disponible: https://www.wipo.int/documents/d/scp/docs-es-national-laws-grace-period.pdf
 
-<a id="ref41"></a>[41] H. A. Cabrera Hoyos y F. Escobal Valencia, Buenas prácticas agrícolas en el cultivo de papa. Cajamarca, Perú: Instituto Nacional de Innovación Agraria, Estación Experimental Agraria Baños del Inca, 2013. Consultado: 30-oct-2026. [En línea]. Disponible: https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/109/1/Cultivo_papa_Cajamarca_2013.pdf
+<a id="ref41"></a>[41] L. Zúñiga, A. Oswald y J. Sánchez, “Efecto de la fertilización orgánica e inorgánica sobre variedades de papas nativas en la sierra central de Perú,” en XXIII Congreso de la Asociación Latinoamericana de la Papa: Memorias, Universidad Nacional de Mar del Plata, Argentina, 2008, pp. 123–124. Consultado: 30-oct-2026. [En línea]. Disponible: https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/784/1/Zu%c3%b1iga-Efecto_fertilizaci%c3%b3n_org%c3%a1nica_inorg%c3%a1nica.pdf
+
+<a id="ref42"></a>[42] H. A. Cabrera Hoyos y F. Escobal Valencia, Buenas prácticas agrícolas en el cultivo de papa. Cajamarca, Perú: Instituto Nacional de Innovación Agraria, Estación Experimental Agraria Baños del Inca, 2013. Consultado: 30-oct-2026. [En línea]. Disponible: https://pgc-snia.inia.gob.pe:8443/jspui/bitstream/inia/109/1/Cultivo_papa_Cajamarca_2013.pdf
