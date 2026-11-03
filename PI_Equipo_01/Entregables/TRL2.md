@@ -461,7 +461,7 @@ Esta representación permite identificar las conexiones eléctricas y la distrib
        width="100%">
 </p>
 
-*Figura X. Esquemático electrónico preliminar de GREENPLANT desarrollado en EasyEDA.*
+*Esquemático electrónico preliminar de GREENPLANT desarrollado en EasyEDA.*
 
 ### 5.4.2 Diseño de la placa PCB3
 
@@ -469,7 +469,7 @@ La placa PCB3 fue diseñada en EasyEDA Pro, mediante un circuito impreso de dos 
 
 <img width="500" height="400" alt="Guía de la PCB3 de GREENPLANT" src="https://github.com/user-attachments/assets/a4f95e06-0d6d-45b1-ba11-f57689b66f14" />
 
-*Figura X. Guía de distribución de componentes de la PCB3 de GREENPLANT.*
+*Guía de distribución de componentes de la PCB3 de GREENPLANT.*
 
 Los archivos de fabricación de la PCB3 fueron preparados, pero la documentación técnica indica que la placa aún no había sido fabricada ni probada. También se identificaron correcciones necesarias en la adaptación de señales del MQ-137 y en el control de cargas mediante relés.
 
