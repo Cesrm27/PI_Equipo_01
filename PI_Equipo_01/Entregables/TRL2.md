@@ -515,7 +515,6 @@ Esta pantalla representa el flujo conceptual de información de GREENPLANT, desd
 
 *Figura 12. Representación conceptual de la arquitectura y el flujo de información de GREENPLANT.*
 
-**Nota:** Las capturas corresponden a un prototipo navegable HTML con fines de representación conceptual. Los valores mostrados son simulados y no representan mediciones experimentales reales. La conexión con el ESP32 y la comunicación MQTT todavía no se encuentran implementadas. Las funcionalidades de registro y exportación también requieren desarrollo posterior.
 ---
 
 # 6. Requisitos conceptuales de GREENPLANT
