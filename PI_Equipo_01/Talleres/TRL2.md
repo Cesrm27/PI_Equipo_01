@@ -388,25 +388,13 @@ Documentos relacionados:
 - [Evaluación de Matriz Morfológica](../Entregables/Evaluación%20de%20Matriz%20Morfológica.md)
 - [Matriz Morfológica (PDF)](../Entregables/Matriz%20Morfológica.pdf)
 
-## 5.2 Caja negra y esquema de funciones
-
-La caja negra y el esquema de funciones describen las entradas, procesos y salidas principales de GREENPLANT.
-
-En términos funcionales, el sistema recibe como entradas las condiciones del cultivo, la concentración de gases y las variables ambientales y del sustrato. El proceso tecnológico comprende la medición mediante sensores, la adquisición de datos por el ESP32 y la organización de las mediciones. Las salidas previstas son los registros de NH₃, CO₂ y variables complementarias, junto con información para comparar ensayos.
-
-Documentos de referencia:
-
-- [Caja Negra de GREENPLANT (PDF)](../Entregables/Caja%20Negra.pdf)
-- [Esquema de Funciones (PDF)](../Entregables/Esquema%20de%20Funciones.pdf)
-- [Diagrama de flujo (PDF)](../Entregables/Diagrama%20de%20flujo.pdf)
-
-## 5.3 Bocetos conceptuales
+## 5.2 Bocetos conceptuales
 
 Los bocetos permiten representar alternativas de distribución física para la cámara experimental, la planta, los sensores y los componentes electrónicos. Su finalidad es anticipar la disposición de los elementos y facilitar la definición del modelo tridimensional.
 
 [Consultar Bocetos-GREENPLANT (PDF)](../Entregables/Bocetos-GREENPLANT.pdf)
 
-## 5.4 Modelado tridimensional de la cámara
+## 5.3 Modelado tridimensional de la cámara
 
 El equipo elaboró en Onshape un modelo compuesto por tres piezas principales: base, soporte/planta y tapa. La distribución propuesta separa la electrónica del espacio de aire donde se realizan las mediciones y contempla puntos de acceso para instalar los sensores.
 
@@ -426,7 +414,7 @@ El equipo elaboró en Onshape un modelo compuesto por tres piezas principales: b
 
 *Figura 4. Plano de la tapa: placa de 180 × 180 mm con perforaciones de fijación.*
 
-## 5.5 Diseño electrónico preliminar
+## 5.4 Diseño electrónico preliminar
 
 La documentación describe una PCB3 diseñada en EasyEDA Pro, con dos capas y dimensiones aproximadas de 107 × 110 mm. La placa contempla conexiones para los sensores, el ESP32, la pantalla, la alimentación y los módulos de salida.
 
@@ -438,7 +426,7 @@ Los archivos de fabricación de PCB3 fueron preparados, pero el documento técni
 
 Además, la documentación electrónica deberá actualizarse para reflejar el sensor MH-Z19C como modelo definitivo, en sustitución de la referencia anterior al MH-Z19B. La compatibilidad final deberá confirmarse con la ficha del componente adquirido.
 
-## 5.6 Diseño conceptual del dashboard GREENPLANT
+## 5.5 Diseño conceptual del dashboard GREENPLANT
 
 Se elaboró un prototipo visual navegable como referencia para la futura interfaz de monitoreo de GREENPLANT. La propuesta tiene como pantalla central un dashboard que destaca la concentración de NH₃ y presenta el CO₂ y las variables ambientales y del suelo como indicadores complementarios.
 
