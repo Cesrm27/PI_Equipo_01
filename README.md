@@ -380,7 +380,7 @@ GREENPLANT busca registrar y organizar estas variables durante ensayos controlad
 ## 🌎 Diagrama del ciclo del nitrógeno
 
 <p align="center">
-  <img width="800" src="/Recursos/Imágenes/ciclo-nitrogeno.svg" alt="Diagrama animado del ciclo del nitrógeno: la urea aplicada al suelo se hidroliza en NH₃ y NH₄⁺; parte del NH₃ se pierde a la atmósfera por volatilización y otra parte es absorbida por la planta" />
+  <img width="800" src="/Recursos/Imágenes/Readme_Presentacion/ciclo-nitrogeno.svg" alt="Diagrama animado del ciclo del nitrógeno: la urea aplicada al suelo se hidroliza en NH₃ y NH₄⁺; parte del NH₃ se pierde a la atmósfera por volatilización y otra parte es absorbida por la planta" />
 </p>
 
 <p align="center">
