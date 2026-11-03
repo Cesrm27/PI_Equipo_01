@@ -265,7 +265,7 @@ Para saber si una lectura es correcta, se compara con un valor de referencia tom
 
 | Sensor | Prueba | Valor de referencia | Margen aceptable | Fuente |
 |:---:|:---:|:---:|:---:|:---:|
-| MH-Z19B | CO₂ en aire exterior | 426,1 ppm (promedio mundial, julio de 2026) | ± (50 ppm + 5 % de la lectura): de 355 a 497 ppm | NOAA [[21]](#ref21); fabricante [[12]](#ref12) |
+| MH-Z19C | CO₂ en aire exterior | 426,1 ppm (promedio mundial, julio de 2026) | ± (50 ppm + 5 % de la lectura): de 355 a 497 ppm | NOAA [[21]](#ref21); fabricante [[12]](#ref12) |
 | BME280 | Temperatura | Lectura del termómetro de referencia | ± 1,0 °C (entre 0 y 65 °C) | Bosch [[11]](#ref11) |
 | BME280 | Humedad relativa | Lectura del higrómetro de referencia | ± 3 % HR | Bosch [[11]](#ref11) |
 | BME280 | Presión atmosférica | ≈ 995 hPa a 150 m de altitud | ± 1,0 hPa, más la variación del clima del día | Bosch [[11]](#ref11) |
@@ -313,7 +313,7 @@ En la figura se identifican los cinco componentes:
 
 - **ESP32:** recibe las señales de los cuatro sensores y se alimenta por el cable USB.
 - **MQ-137:** el LED rojo encendido del módulo indica que está energizado.
-- **MH-Z19B:** sensor de CO₂ por absorción infrarroja no dispersiva (NDIR); su etiqueta indica el rango de 0 a 5000 ppm, una de las configuraciones que ofrece el fabricante [[12]](#ref12).
+- **MH-Z19C:** sensor de CO₂ por absorción infrarroja no dispersiva (NDIR); su etiqueta indica el rango de 0 a 5000 ppm, una de las configuraciones que ofrece el fabricante [[12]](#ref12).
 - **BME280:** módulo de temperatura, humedad y presión conectado por I²C [[11]](#ref11).
 - **Sensor capacitivo v1.2:** conectado por su cable de tres hilos, listo para insertarse en el sustrato.
 
