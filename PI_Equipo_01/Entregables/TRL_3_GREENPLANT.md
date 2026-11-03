@@ -7,7 +7,7 @@
 **Repositorio:** https://github.com/Cesrm27/PI_Equipo_01  
 **Fecha:** 2 de noviembre de 2026
 
-> **Estado de este informe:** documento técnico de preparación y evaluación de TRL 3, adaptado al proyecto GREENPLANT a partir del modelo TRL 3 proporcionado. Se utiliza numeración de referencias estilo Vancouver (`[1]`, `[2]`, etc.), con citas en los párrafos. Los procedimientos y criterios son propuestas para aplicar y documentar; **no constituyen resultados ya obtenidos**. Las configuraciones reales de la placa, cámara, energía, software y tratamientos deben cotejarse con el hardware y las evidencias del equipo.
+> **Estado de este informe:** documento técnico de preparación y evaluación de TRL 3. Se utiliza numeración de referencias estilo Vancouver (`[1]`, `[2]`, etc.), con citas en los párrafos. Los procedimientos y criterios son propuestas para aplicar y documentar; **no constituyen resultados ya obtenidos**. Las configuraciones reales de la placa, cámara, energía, software y tratamientos deben cotejarse con el hardware y las evidencias del equipo.
 >
 > **Corrección de componentes confirmada por el equipo:** para NH₃ se utilizará **MQ-137** y para CO₂ **MH-Z19C**. No se utilizará el ME3-NH₃ ni el MH-Z19B. La selección de estos componentes es una decisión del equipo; las referencias [5] y [6] respaldan sus características técnicas.
 
