@@ -406,7 +406,7 @@ El equipo elaboró en Onshape un modelo compuesto por tres piezas principales: b
 
 *Figura 2. Plano de la base: vistas superior, frontal, lateral e isométrica.*
 
-<img width="500" height="400" alt="Plano del soporte y cámara de GREENPLANT" src="https://github.com/user-attachments/assets/81ca0a23-d4b7-4291-96eb-4c09884b8da9" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/81ca0a23-d4d7-4291-96eb-4c09884b8da9" />
 
 *Figura 3. Plano del soporte/planta: cámara experimental con una cara de acceso.*
 
