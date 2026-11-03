@@ -447,16 +447,33 @@ El equipo elaboró en Onshape un modelo compuesto por tres piezas principales: b
 
 ## 5.4 Diseño electrónico preliminar
 
-La documentación describe una PCB3 diseñada en EasyEDA Pro, con dos capas y dimensiones aproximadas de 107 × 110 mm. La placa contempla conexiones para los sensores, el ESP32, la pantalla, la alimentación y los módulos de salida.
+El diseño electrónico de GREENPLANT contempla la integración de los sensores, el microcontrolador ESP32, los módulos de alimentación y los elementos auxiliares necesarios para la adquisición y procesamiento de las variables experimentales.
+
+### 5.4.1 Esquemático electrónico
+
+Se elaboró el esquemático electrónico mediante EasyEDA, organizando los módulos de sensado de NH₃ y CO₂, temperatura y humedad ambiental, humedad del suelo, procesamiento, alimentación y control de dispositivos auxiliares.
+
+Esta representación permite identificar las conexiones eléctricas y la distribución funcional de los componentes que conforman el sistema.
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/esquematico.png"
+       alt="Esquemático electrónico de GREENPLANT"
+       width="100%">
+</p>
+
+*Figura X. Esquemático electrónico preliminar de GREENPLANT desarrollado en EasyEDA.*
+
+### 5.4.2 Diseño de la placa PCB3
+
+La placa PCB3 fue diseñada en EasyEDA Pro, mediante un circuito impreso de dos capas y dimensiones aproximadas de 107 × 110 mm. Su distribución contempla las conexiones de los sensores, el ESP32, la pantalla, la alimentación y los módulos de salida.
 
 <img width="500" height="400" alt="Guía de la PCB3 de GREENPLANT" src="https://github.com/user-attachments/assets/a4f95e06-0d6d-45b1-ba11-f57689b66f14" />
 
-*Figura 5. Guía de la PCB3, cara superior, generada a partir de los archivos Gerber.*
+*Figura X. Guía de distribución de componentes de la PCB3 de GREENPLANT.*
 
-Los archivos de fabricación de PCB3 fueron preparados, pero el documento técnico indica que la placa aún no había sido fabricada ni probada. También se identificaron correcciones necesarias en la adaptación de señales del MQ-137 y en el control de cargas mediante relés.
+Los archivos de fabricación de la PCB3 fueron preparados, pero la documentación técnica indica que la placa aún no había sido fabricada ni probada. También se identificaron correcciones necesarias en la adaptación de señales del MQ-137 y en el control de cargas mediante relés.
 
 Además, la documentación electrónica deberá actualizarse para reflejar el sensor MH-Z19C como modelo definitivo, en sustitución de la referencia anterior al MH-Z19B. La compatibilidad final deberá confirmarse con la ficha del componente adquirido.
-
 ### 5.5 Diseño conceptual del dashboard GREENPLANT
 
 Se desarrolló un prototipo visual navegable como propuesta de la futura interfaz de monitoreo de GREENPLANT. El dashboard está orientado a visualizar las concentraciones de NH₃ y CO₂, junto con las variables ambientales y del suelo registradas durante los ensayos experimentales.
