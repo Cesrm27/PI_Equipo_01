@@ -60,7 +60,7 @@ El principio que identificamos en el MQ-137 es la variación de la resistencia e
 
 Petric y colaboradores utilizaron un MQ-137 conectado a una plataforma compatible con Arduino y compararon sus mediciones con un analizador profesional. Este antecedente nos permite comprender que una lectura eléctrica necesita una relación de calibración antes de expresarse como concentración. En GREENPLANT, el principio servirá para estudiar variaciones de NH₃ en el aire de la cámara. La temperatura, la humedad, el calentamiento del sensor y la respuesta a otros gases deberán considerarse al interpretar sus lecturas [[1]](#ref-1), [[2]](#ref-2).
 
-### Sensor MH-Z19B para dióxido de carbono
+### Sensor MH-Z19C para dióxido de carbono
 
 El MH-Z19B utiliza el principio de absorción infrarroja no dispersiva, conocido como NDIR. El CO₂ absorbe radiación infrarroja en bandas características; al atravesar el gas, la intensidad detectada disminuye. La relación entre absorción, recorrido óptico y cantidad de gas permite estimar su concentración a partir de una calibración. Consideramos este principio útil para GREENPLANT porque proporciona una vía óptica de medición distinta de la respuesta resistiva del MQ-137 [[3]](#ref-3), [[4]](#ref-4).
 
