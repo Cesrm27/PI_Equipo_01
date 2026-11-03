@@ -249,9 +249,9 @@ La distribución permitirá revisar y reemplazar cada sensor sin desmontar toda 
 
 ## 4.4 Módulo electrónico: placa PCB3
 
-El ESP32 es la unidad central de adquisición. El equipo diseñó en EasyEDA Pro una placa propia, la PCB3, de dos capas y aproximadamente 107 × 110 mm, con cuatro perforaciones de 3,1 mm para tornillos M3, de modo que cabe dentro de la base (Figuras 10 y 11). La placa reúne los conectores de los sensores, el ESP32, la pantalla LCD 1602, el módulo de relés y la distribución de la alimentación. Sus archivos de fabricación están listos, pero la placa todavía no se ha fabricado ni probado.
+El ESP32 es la unidad central de adquisición. El equipo diseñó en EasyEDA Pro una placa propia, la PCB3, de dos capas y aproximadamente 107 × 110 mm, con cuatro perforaciones de 3,1 mm para tornillos M3, de modo que cabe dentro de la base (Figuras 10 a 14). La placa reúne los conectores de los sensores, el ESP32, la pantalla LCD 1602, el módulo de relés y la distribución de la alimentación. Sus archivos de fabricación están listos, pero la placa todavía no se ha fabricado ni probado.
 
-**Compatibilidad con el MH-Z19C.** La PCB3 se diseñó cuando el sensor previsto era el MH-Z19B. Su conector de cuatro pines lleva 5 V, tierra, RX y TX, las mismas señales que el manual del MH-Z19C define como Vin, GND, Rx y Tx, con UART de 3,3 V [[13]](#ref13). Por tanto, la conexión eléctrica es compatible; antes de fabricar la siguiente versión solo debe confirmarse el orden físico de los pines del modelo adquirido.
+**Compatibilidad con el MH-Z19C.** La PCB3 se diseñó cuando el sensor previsto era el MH-Z19B. Su conector de cuatro pines lleva 5 V, tierra, RX y TX, las mismas señales que el manual del MH-Z19C define como Vin, GND, Rx y Tx, con UART de 3,3 V [[13]](#ref13). Por tanto, la conexión eléctrica es compatible. Antes de fabricar la siguiente versión debe confirmarse que el orden de pines rotulado junto al conector (Tx, Rx, −, +; Figura 12) coincide con el del modelo adquirido, y cambiar en la serigrafía el rótulo «MH-Z19B» por «MH-Z19C» (Figura 13).
 
 ## 4.5 Alimentación y acondicionamiento de señales
 
@@ -279,7 +279,7 @@ Cada registro conservará la señal original del sensor y el valor calculado, pa
 
 ## 4.7 Dashboard
 
-Se propone una interfaz web para consultar las mediciones. Incluye una tarjeta principal para el NH₃, una para el CO₂, indicadores de temperatura, humedad, presión y humedad del suelo, gráficos de evolución temporal, la identificación del ensayo activo, el historial de registros, la comparación entre tratamientos y el estado de conexión del ESP32 y de los sensores (Figuras 12 a 18).
+Se propone una interfaz web para consultar las mediciones. Incluye una tarjeta principal para el NH₃, una para el CO₂, indicadores de temperatura, humedad, presión y humedad del suelo, gráficos de evolución temporal, la identificación del ensayo activo, el historial de registros, la comparación entre tratamientos y el estado de conexión del ESP32 y de los sensores (Figuras 15 a 21).
 
 Las pantallas del prototipo muestran valores de ejemplo marcados como **DATOS SIMULADOS**. Sirven solo para mostrar la distribución de la interfaz: no son mediciones reales ni datos adquiridos por el ESP32.
 
@@ -395,7 +395,7 @@ El modelo de Onshape separa la electrónica del aire donde se mide y deja puntos
 
 ## 5.4 Diseño electrónico preliminar
 
-El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃ y CO₂, de condiciones del aire y de humedad del suelo, junto con el procesamiento, la alimentación y el control de dispositivos auxiliares (Figura 10). La Figura 11 muestra la distribución de esos componentes en la PCB3; sus características y correcciones se describen en las secciones 4.4 y 4.5.
+El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃ y CO₂, de condiciones del aire y de humedad del suelo, junto con el procesamiento, la alimentación y el control de dispositivos auxiliares (Figura 10). La Figura 11 muestra la distribución de esos componentes en la PCB3, y las Figuras 12 a 14 presentan la placa tal como quedó diseñada en EasyEDA Pro, en vista de trazado y en vistas 3D de ambas caras. Sus características y correcciones se describen en las secciones 4.4 y 4.5.
 
 <p align="center">
   <img src="../../Recursos/Im%C3%A1genes/TLR2/esquematico.png" alt="Figura 10. Esquemático electrónico de GREENPLANT" width="100%">
@@ -407,54 +407,75 @@ El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃
 </p>
 <p align="center"><em>Figura 11. Guía de distribución de componentes de la PCB3: sensores, control, salidas y alimentación.</em></p>
 
+**Trazado de la placa.** La Figura 12 muestra la capa superior de la PCB3 en el editor de EasyEDA Pro. La regla superior, en milésimas de pulgada (mil), indica un ancho de unos 4200 mil, equivalente a los 107 mm de la placa, y en las cuatro esquinas se ven las perforaciones para tornillos M3. Toda la superficie lleva un relleno de cobre, sobre el que se distinguen las pistas que unen cada conector con el ESP32 y con el LM2596. Junto a los conectores del borde izquierdo, la serigrafía rotula el orden de los pines de cada sensor (por ejemplo, A0 y D0 para el MQ-137; Tx y Rx para el sensor de CO₂; SDA y SCL para el BME280), lo que evita errores de conexión al montar la placa.
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_layout_EasyEDA.jpg" alt="Figura 12. Trazado de la capa superior de la PCB3 en EasyEDA Pro" width="100%">
+</p>
+<p align="center"><em>Figura 12. Trazado de la capa superior de la PCB3 en EasyEDA Pro, con la regla en mil, las perforaciones de montaje y el rótulo de pines de cada conector.</em></p>
+
+**Vista 3D de la cara superior.** La Figura 13 permite identificar el tipo de cada conexión. Los sensores (MQ-137, sensor de CO₂ y BME280), la pantalla LCD 1602 y el módulo de relés usan conectores blancos de cuatro pines, y la sonda de humedad (P1), uno de tres pines; por eso cada sensor puede ubicarse en la cámara mediante un cable y reemplazarse sin soldar, como exige el requisito de mantenimiento de la sección 6. La alimentación, la luz LED y el ventilador usan borneras verdes de tornillo, adecuadas para los cables de 12 V. El conversor de nivel lógico aparece como un módulo azul, mientras que el ESP32 y el LM2596 se representan solo por su contorno, porque se insertan como módulos sobre la placa.
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_3D_superior.jpg" alt="Figura 13. Vista 3D de la cara superior de la PCB3" width="100%">
+</p>
+<p align="center"><em>Figura 13. Vista 3D de la cara superior de la PCB3: conectores de los sensores, borneras de potencia, conversor de nivel y contornos del ESP32 y del LM2596.</em></p>
+
+**Vista 3D de la cara inferior.** La Figura 14 muestra la segunda capa de cobre, por la que pasan las pistas que no caben en la cara superior, y los puntos de soldadura de los componentes de inserción. Esta vista confirma que la PCB3 es una placa de dos capas y que lleva el emblema de la Universidad Peruana Cayetano Heredia.
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_3D_inferior.jpg" alt="Figura 14. Vista 3D de la cara inferior de la PCB3" width="100%">
+</p>
+<p align="center"><em>Figura 14. Vista 3D de la cara inferior de la PCB3, con las pistas de la segunda capa y los puntos de soldadura.</em></p>
+
 ## 5.5 Diseño conceptual del dashboard
 
 El prototipo visual del dashboard tiene siete pantallas: monitoreo general, sensores, gestión de ensayos, análisis comparativo, historial, estado del dispositivo y arquitectura del sistema. Todas usan **DATOS SIMULADOS**.
 
-**Dashboard principal.** Presenta los indicadores de NH₃, CO₂, temperatura, humedad relativa, presión y humedad del suelo, con gráficos temporales y el estado general de los componentes (Figura 12).
+**Dashboard principal.** Presenta los indicadores de NH₃, CO₂, temperatura, humedad relativa, presión y humedad del suelo, con gráficos temporales y el estado general de los componentes (Figura 15).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/dashboard_principal.png" alt="Figura 12. Dashboard principal de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/dashboard_principal.png" alt="Figura 15. Dashboard principal de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 12. Propuesta del dashboard principal de GREENPLANT.</em></p>
+<p align="center"><em>Figura 15. Propuesta del dashboard principal de GREENPLANT.</em></p>
 
-**Monitoreo de sensores.** Muestra por separado las mediciones del MQ-137, el MH-Z19C, el BME280 y la sonda capacitiva, cada una con su gráfico (Figura 13).
+**Monitoreo de sensores.** Muestra por separado las mediciones del MQ-137, el MH-Z19C, el BME280 y la sonda capacitiva, cada una con su gráfico (Figura 16).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/monitoreo_sensores.png" alt="Figura 13. Monitoreo de sensores de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/monitoreo_sensores.png" alt="Figura 16. Monitoreo de sensores de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 13. Propuesta del módulo de monitoreo de sensores.</em></p>
+<p align="center"><em>Figura 16. Propuesta del módulo de monitoreo de sensores.</em></p>
 
-**Gestión de ensayos y análisis comparativo.** El módulo de ensayos registra las condiciones de cada tratamiento: dosis de 0, 80 y 160 kg N/ha y aplicación superficial o incorporada (Figura 14). El módulo de análisis compara las concentraciones de NH₃ y CO₂ entre tratamientos mediante gráficos y tablas (Figura 15).
+**Gestión de ensayos y análisis comparativo.** El módulo de ensayos registra las condiciones de cada tratamiento: dosis de 0, 80 y 160 kg N/ha y aplicación superficial o incorporada (Figura 17). El módulo de análisis compara las concentraciones de NH₃ y CO₂ entre tratamientos mediante gráficos y tablas (Figura 18).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/gestion_ensayos.png" alt="Figura 14. Gestión de ensayos de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/gestion_ensayos.png" alt="Figura 17. Gestión de ensayos de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 14. Propuesta del módulo de gestión de ensayos experimentales.</em></p>
+<p align="center"><em>Figura 17. Propuesta del módulo de gestión de ensayos experimentales.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/analisis_comparativo.png" alt="Figura 15. Análisis comparativo de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/analisis_comparativo.png" alt="Figura 18. Análisis comparativo de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 15. Propuesta del módulo de análisis comparativo entre tratamientos.</em></p>
+<p align="center"><em>Figura 18. Propuesta del módulo de análisis comparativo entre tratamientos.</em></p>
 
-**Historial y estado del dispositivo.** El historial permite consultar los registros por ensayo, fecha y hora, y exportarlos en CSV o Excel (Figura 16). La pantalla de estado muestra el funcionamiento del ESP32, la conexión Wi-Fi y MQTT y el estado de cada sensor (Figura 17).
+**Historial y estado del dispositivo.** El historial permite consultar los registros por ensayo, fecha y hora, y exportarlos en CSV o Excel (Figura 19). La pantalla de estado muestra el funcionamiento del ESP32, la conexión Wi-Fi y MQTT y el estado de cada sensor (Figura 20).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/historial_mediciones.png" alt="Figura 16. Historial de mediciones de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/historial_mediciones.png" alt="Figura 19. Historial de mediciones de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 16. Propuesta del historial de mediciones experimentales.</em></p>
+<p align="center"><em>Figura 19. Propuesta del historial de mediciones experimentales.</em></p>
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/estado_dispositivo.png" alt="Figura 17. Estado del dispositivo de GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/estado_dispositivo.png" alt="Figura 20. Estado del dispositivo de GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 17. Propuesta de la pantalla de estado del dispositivo y sus componentes.</em></p>
+<p align="center"><em>Figura 20. Propuesta de la pantalla de estado del dispositivo y sus componentes.</em></p>
 
-**Arquitectura del sistema.** Representa dentro del dashboard el mismo flujo de la Figura 1: cultivo, cámara, sensores, ESP32, Wi-Fi y MQTT, y dashboard (Figura 18).
+**Arquitectura del sistema.** Representa dentro del dashboard el mismo flujo de la Figura 1: cultivo, cámara, sensores, ESP32, Wi-Fi y MQTT, y dashboard (Figura 21).
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/arquitectura_greenplant.png" alt="Figura 18. Arquitectura del sistema GREENPLANT" width="100%">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/arquitectura_greenplant.png" alt="Figura 21. Arquitectura del sistema GREENPLANT" width="100%">
 </p>
-<p align="center"><em>Figura 18. Pantalla de arquitectura y flujo de información de GREENPLANT.</em></p>
+<p align="center"><em>Figura 21. Pantalla de arquitectura y flujo de información de GREENPLANT.</em></p>
 
 ---
 
