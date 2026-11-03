@@ -131,8 +131,6 @@ La comunicación del MH-Z19C puede realizarse mediante UART, mientras que el BME
 | LCD | Según módulo adquirido | Alimentación, interfaz y dirección si usa I²C |
 | ESP32 | Wi-Fi | Cobertura, manejo de desconexiones y registro [9] |
 
-**Advertencia eléctrica:** la existencia de un pin de salida analógica en un módulo de MQ-137 no autoriza conectarlo sin medición previa a una entrada del ESP32. Deben comprobarse el voltaje máximo de la señal y, cuando corresponda, el uso de acondicionamiento o divisor resistivo [5,9,10].
-
 ### 4.4. Cámara experimental y ubicación de componentes
 
 La cámara experimental se utilizará para observar variaciones de gases asociadas a las condiciones del ensayo. Deben documentarse sus dimensiones internas y volumen efectivo, posición de planta y sustrato, ubicación de sensores y condiciones de apertura o ventilación. La literatura sobre técnicas de medición de NH₃ señala que la geometría de la cámara y el intercambio de aire influyen en las mediciones, lo que hace imprescindible describir el sistema de muestreo [4].
