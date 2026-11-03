@@ -410,21 +410,21 @@ El esquemático, elaborado en EasyEDA, organiza los módulos de sensado de NH₃
 **Trazado de la placa.** La Figura 12 muestra la capa superior de la PCB3 en el editor de EasyEDA Pro. La regla superior, en milésimas de pulgada (mil), indica un ancho de unos 4200 mil, equivalente a los 107 mm de la placa, y en las cuatro esquinas se ven las perforaciones para tornillos M3. Toda la superficie lleva un relleno de cobre, sobre el que se distinguen las pistas que unen cada conector con el ESP32 y con el LM2596. Junto a los conectores del borde izquierdo, la serigrafía rotula el orden de los pines de cada sensor (por ejemplo, A0 y D0 para el MQ-137; Tx y Rx para el sensor de CO₂; SDA y SCL para el BME280), lo que evita errores de conexión al montar la placa.
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_layout_EasyEDA.jpg" alt="Figura 12. Trazado de la capa superior de la PCB3 en EasyEDA Pro" width="100%">
+  <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/5bd12a3b-26c1-4766-a08e-4b6afcb6ad09" />
 </p>
 <p align="center"><em>Figura 12. Trazado de la capa superior de la PCB3 en EasyEDA Pro, con la regla en mil, las perforaciones de montaje y el rótulo de pines de cada conector.</em></p>
 
 **Vista 3D de la cara superior.** La Figura 13 permite identificar el tipo de cada conexión. Los sensores (MQ-137, sensor de CO₂ y BME280), la pantalla LCD 1602 y el módulo de relés usan conectores blancos de cuatro pines, y la sonda de humedad (P1), uno de tres pines; por eso cada sensor puede ubicarse en la cámara mediante un cable y reemplazarse sin soldar, como exige el requisito de mantenimiento de la sección 6. La alimentación, la luz LED y el ventilador usan borneras verdes de tornillo, adecuadas para los cables de 12 V. El conversor de nivel lógico aparece como un módulo azul, mientras que el ESP32 y el LM2596 se representan solo por su contorno, porque se insertan como módulos sobre la placa.
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_3D_superior.jpg" alt="Figura 13. Vista 3D de la cara superior de la PCB3" width="100%">
+ <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/49ba087f-e376-4e37-9814-183c0be8fd67" />
 </p>
 <p align="center"><em>Figura 13. Vista 3D de la cara superior de la PCB3: conectores de los sensores, borneras de potencia, conversor de nivel y contornos del ESP32 y del LM2596.</em></p>
 
 **Vista 3D de la cara inferior.** La Figura 14 muestra la segunda capa de cobre, por la que pasan las pistas que no caben en la cara superior, y los puntos de soldadura de los componentes de inserción. Esta vista confirma que la PCB3 es una placa de dos capas y que lleva el emblema de la Universidad Peruana Cayetano Heredia.
 
 <p align="center">
-  <img src="../../Recursos/Im%C3%A1genes/TLR2/PCB3_3D_inferior.jpg" alt="Figura 14. Vista 3D de la cara inferior de la PCB3" width="100%">
+  <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/7c12e89a-4619-4f08-bd27-8da8ddbcd7ef" />
 </p>
 <p align="center"><em>Figura 14. Vista 3D de la cara inferior de la PCB3, con las pistas de la segunda capa y los puntos de soldadura.</em></p>
 
