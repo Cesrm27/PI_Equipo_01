@@ -399,7 +399,7 @@ Los bocetos permiten representar alternativas de distribución física para la c
 </p>
 
 <p align="center">
-  <em>Figura X. Primera propuesta de diseño conceptual de GREENPLANT.</em>
+  <em> Primera propuesta de diseño conceptual de GREENPLANT.</em>
 </p>
 
 <p align="center">
@@ -409,7 +409,7 @@ Los bocetos permiten representar alternativas de distribución física para la c
 </p>
 
 <p align="center">
-  <em>Figura X. Segunda propuesta de diseño conceptual de GREENPLANT.</em>
+  <em> Segunda propuesta de diseño conceptual de GREENPLANT.</em>
 </p>
 
 <p align="center">
@@ -419,7 +419,7 @@ Los bocetos permiten representar alternativas de distribución física para la c
 </p>
 
 <p align="center">
-  <em>Figura X. Tercera propuesta de diseño conceptual de GREENPLANT.</em>
+  <em> Tercera propuesta de diseño conceptual de GREENPLANT.</em>
 </p>
 
 ## 5.3 Modelado tridimensional de la cámara
