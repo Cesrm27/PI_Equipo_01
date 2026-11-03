@@ -454,20 +454,65 @@ Los archivos de fabricación de PCB3 fueron preparados, pero el documento técni
 
 Además, la documentación electrónica deberá actualizarse para reflejar el sensor MH-Z19C como modelo definitivo, en sustitución de la referencia anterior al MH-Z19B. La compatibilidad final deberá confirmarse con la ficha del componente adquirido.
 
-## 5.5 Diseño conceptual del dashboard GREENPLANT
+### 5.5 Diseño conceptual del dashboard GREENPLANT
 
-Se elaboró un prototipo visual navegable como referencia para la futura interfaz de monitoreo de GREENPLANT. La propuesta tiene como pantalla central un dashboard que destaca la concentración de NH₃ y presenta el CO₂ y las variables ambientales y del suelo como indicadores complementarios.
+Se desarrolló un prototipo visual navegable como propuesta de la futura interfaz de monitoreo de GREENPLANT. El dashboard está orientado a visualizar las concentraciones de NH₃ y CO₂, junto con las variables ambientales y del suelo registradas durante los ensayos experimentales.
 
-El dashboard contempla tarjetas de medición, gráficos temporales, estado de los componentes y acceso a información del ensayo. Su función en el TRL 2 es representar cómo el investigador podrá consultar los datos cuando la arquitectura de adquisición y comunicación se encuentre implementada.
+La interfaz contempla módulos de monitoreo, gestión de ensayos, análisis comparativo, historial de mediciones, estado del dispositivo y arquitectura del sistema.
 
-La siguiente imagen corresponde a la captura que se incorporará desde la carpeta de evidencias del TRL 2:
+#### 5.5.1 Dashboard principal
 
-![Dashboard conceptual de GREENPLANT](../../Recursos/Imágenes/TLR2/dashboard_principal.png)
+La pantalla principal presenta los indicadores de NH₃, CO₂, temperatura, humedad ambiental, presión atmosférica y humedad del suelo. También incorpora gráficos temporales y el estado general de los componentes.
 
-*Figura 6. Propuesta conceptual del dashboard principal de GREENPLANT. Las lecturas que aparecen en el prototipo son datos simulados y no corresponden a mediciones experimentales reales.*
+![Dashboard principal de GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/dashboard_principal.png)
 
-**Nota sobre el prototipo:** la captura representa el diseño conceptual de la interfaz. No demuestra que el dashboard esté conectado a los sensores, al ESP32 o a un broker MQTT. Tampoco representa resultados experimentales, calibraciones ni umbrales validados.
+*Figura 6. Propuesta conceptual del dashboard principal de GREENPLANT.*
 
+#### 5.5.2 Monitoreo de sensores
+
+Esta sección permite visualizar individualmente los cuatro sensores: MQ-137 para NH₃, MH-Z19C para CO₂, BME280 para variables ambientales y el sensor capacitivo para humedad del suelo. Cada uno presenta sus mediciones y una representación gráfica.
+
+![Monitoreo de sensores GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/monitoreo_sensores.png)
+
+*Figura 7. Propuesta conceptual del módulo de monitoreo de sensores.*
+
+#### 5.5.3 Gestión de ensayos y análisis comparativo
+
+El módulo de ensayos contempla el registro de las condiciones experimentales, considerando las dosis de 0, 80 y 160 kg N/ha y las formas de aplicación superficial e incorporada.
+
+Por su parte, el módulo de análisis permite comparar las concentraciones de NH₃ y CO₂ mediante gráficos y tablas, facilitando la interpretación de las variaciones entre tratamientos.
+
+![Gestión de ensayos GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/gestion_ensayos.png)
+
+*Figura 8. Propuesta conceptual de gestión de ensayos experimentales.*
+
+![Análisis comparativo GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/analisis_comparativo.png)
+
+*Figura 9. Propuesta conceptual de análisis comparativo de los resultados.*
+
+#### 5.5.4 Historial y estado del dispositivo
+
+El historial permite consultar los registros organizados por ensayo, fecha y hora, incluyendo las mediciones de los sensores. Asimismo, se contempla la exportación de información en formatos CSV y Excel.
+
+La sección de estado del dispositivo representa el funcionamiento del ESP32, la comunicación Wi-Fi y MQTT, y el estado individual de los cuatro sensores.
+
+![Historial de mediciones GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/historial_mediciones.png)
+
+*Figura 10. Propuesta conceptual del historial de mediciones experimentales.*
+
+![Estado del dispositivo GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/estado_dispositivo.png)
+
+*Figura 11. Propuesta conceptual del estado del dispositivo y sus componentes.*
+
+#### 5.5.5 Arquitectura del sistema
+
+Esta pantalla representa el flujo conceptual de información de GREENPLANT, desde el cultivo de papa y la cámara experimental hasta los sensores, el ESP32, la comunicación Wi-Fi y MQTT, y finalmente el dashboard.
+
+![Arquitectura del sistema GREENPLANT](../../Recursos/Im%C3%A1genes/TLR2/arquitectura_greenplant.png)
+
+*Figura 12. Representación conceptual de la arquitectura y el flujo de información de GREENPLANT.*
+
+**Nota:** Las capturas corresponden a un prototipo navegable HTML con fines de representación conceptual. Los valores mostrados son simulados y no representan mediciones experimentales reales. La conexión con el ESP32 y la comunicación MQTT todavía no se encuentran implementadas. Las funcionalidades de registro y exportación también requieren desarrollo posterior.
 ---
 
 # 6. Requisitos conceptuales de GREENPLANT
