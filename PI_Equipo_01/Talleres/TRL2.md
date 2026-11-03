@@ -383,10 +383,13 @@ Para esta versión del TRL 2 se adopta la configuración final comunicada por el
 
 **Nota de consistencia documental:** la matriz morfológica original del repositorio presenta una selección previa diferente (ZE03-NH₃ y MH-Z19B). Para evitar contradicciones, el equipo deberá actualizar también ese documento y reflejar allí la selección vigente MQ-137 y MH-Z19C.
 
-Documentos relacionados:
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Matriz_Morfologica.png"
+       alt="Matriz morfológica de GREENPLANT"
+       width="100%">
+</p>
 
-- [Evaluación de Matriz Morfológica](../Entregables/Evaluación%20de%20Matriz%20Morfológica.md)
-- [Matriz Morfológica (PDF)](../Entregables/Matriz%20Morfológica.pdf)
+*Figura X. Matriz morfológica de GREENPLANT y alternativas de solución tecnológica.*
 
 ## 5.2 Bocetos conceptuales
 
