@@ -326,7 +326,7 @@ Para cada sensor se explica primero por qué se obtuvo ese valor, según el prin
 La Figura 4 muestra el primer prototipo funcional de GREENPLANT: los cuatro sensores conectados a un ESP32 sobre una protoboard y alimentados por USB. La placa PCB3 diseñada en el TRL 2 todavía no se ha fabricado; la protoboard permite probar las conexiones y el programa antes de pasar a la placa definitiva.
 
 <p align="center">
-<img width="700" alt="Figura 4. Prototipo de GREENPLANT en protoboard" src="https://github.com/user-attachments/assets/befc1ff9-16fe-463d-8d77-6e56ef6711e0" />
+<img width="900" height="500" alt="image" src="https://github.com/user-attachments/assets/df3b0659-fddb-437e-8a87-a0ebe7662c99" />
 </p>
 <p align="center"><em>Figura 4. Prototipo de GREENPLANT en protoboard: ESP32 con los sensores BME280, MQ-137, MH-Z19B y el sensor capacitivo de humedad de tierra v1.2.</em></p>
 
