@@ -392,7 +392,35 @@ Documentos relacionados:
 
 Los bocetos permiten representar alternativas de distribución física para la cámara experimental, la planta, los sensores y los componentes electrónicos. Su finalidad es anticipar la disposición de los elementos y facilitar la definición del modelo tridimensional.
 
-[Consultar Bocetos-GREENPLANT (PDF)](../Entregables/Bocetos-GREENPLANT.pdf)
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_1.png"
+       alt="Boceto conceptual 1 de GREENPLANT"
+       width="75%">
+</p>
+
+<p align="center">
+  <em>Figura X. Primera propuesta de diseño conceptual de GREENPLANT.</em>
+</p>
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_2.png"
+       alt="Boceto conceptual 2 de GREENPLANT"
+       width="75%">
+</p>
+
+<p align="center">
+  <em>Figura X. Segunda propuesta de diseño conceptual de GREENPLANT.</em>
+</p>
+
+<p align="center">
+  <img src="../../Recursos/Im%C3%A1genes/TLR2/Boceto_3.png"
+       alt="Boceto conceptual 3 de GREENPLANT"
+       width="75%">
+</p>
+
+<p align="center">
+  <em>Figura X. Tercera propuesta de diseño conceptual de GREENPLANT.</em>
+</p>
 
 ## 5.3 Modelado tridimensional de la cámara
 
