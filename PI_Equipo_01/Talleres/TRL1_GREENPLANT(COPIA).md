@@ -62,7 +62,7 @@ Petric y colaboradores utilizaron un MQ-137 conectado a una plataforma compatibl
 
 ### Sensor MH-Z19C para dióxido de carbono
 
-El MH-Z19B utiliza el principio de absorción infrarroja no dispersiva, conocido como NDIR. El CO₂ absorbe radiación infrarroja en bandas características; al atravesar el gas, la intensidad detectada disminuye. La relación entre absorción, recorrido óptico y cantidad de gas permite estimar su concentración a partir de una calibración. Consideramos este principio útil para GREENPLANT porque proporciona una vía óptica de medición distinta de la respuesta resistiva del MQ-137 [[3]](#ref-3), [[4]](#ref-4).
+El MH-Z19C utiliza el principio de absorción infrarroja no dispersiva, conocido como NDIR. El CO₂ absorbe radiación infrarroja en bandas características; al atravesar el gas, la intensidad detectada disminuye. La relación entre absorción, recorrido óptico y cantidad de gas permite estimar su concentración a partir de una calibración. Consideramos este principio útil para GREENPLANT porque proporciona una vía óptica de medición distinta de la respuesta resistiva del MQ-137 [[3]](#ref-3), [[4]](#ref-4).
 
 Dubey y colaboradores evaluaron sensores NDIR de otros modelos y mostraron la importancia de compararlos con un instrumento de referencia. Su estudio sustenta el análisis de esta tecnología, pero no valida específicamente nuestro MH-Z19B. Para este modelo recurrimos al manual de Winsen, que establece condiciones de funcionamiento, compensación de temperatura y uso sin condensación. Por ello, no asumimos una precisión absoluta ni independencia total de las condiciones ambientales [[3]](#ref-3), [[4]](#ref-4).
 
