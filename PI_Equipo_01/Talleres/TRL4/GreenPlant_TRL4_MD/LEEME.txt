@@ -1,0 +1,17 @@
+GREENPLANT – INFORME TRL 4 (Markdown)
+
+Contenido:
+- GreenPlant_TRL4.md: documento editable en Markdown.
+- imagenes/: imágenes extraídas del DOCX original y referenciadas desde el Markdown.
+
+Para mantener las imágenes visibles, conserva la estructura:
+GreenPlant_TRL4_MD/
+  GreenPlant_TRL4.md
+  imagenes/
+    foto_01_circuito_electronico.png
+    foto_02_prototipo_planta.png
+    figura_01_flujo_datos.png
+    captura_01_plataforma_web.png
+    foto_03_medicion_invernadero.png
+
+El Markdown conserva el contenido y los datos del documento fuente. No se han corregido ni actualizado sus resultados. El marcador de la Foto 4 se conserva como nota porque el DOCX no contenía un archivo de imagen independiente para esa pantalla.
