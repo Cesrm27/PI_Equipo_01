@@ -161,13 +161,13 @@ El equipo ya está configurado con estos rangos. Con ellos decide si una lectura
 
 El sensor de suelo entrega un número crudo, no un porcentaje. Para convertirlo, el equipo usa dos lecturas de referencia de cada sustrato, una en seco y otra recién regado y escurrido, y aplica esta fórmula:
 
-$$
-H(\%) = \frac{ADC_{seco} - ADC_{actual}}{ADC_{seco} - ADC_{húmedo}} \times 100
-$$
+<img width="443" height="76" alt="image" src="https://github.com/user-attachments/assets/39b49bbf-3a2c-4569-b90d-9eb3fcec1fde" />
 
 El resultado de la fórmula aparece directamente en la pantalla LCD del equipo, junto con el amoníaco en ppm, y también en la plataforma web.
 
-**Marcador de imagen presente en el documento original:** pantalla del prototipo mostrando NH₃ 38,8 ppm y MQ 54. No se encontró una imagen independiente de esta pantalla entre los archivos multimedia extraídos del DOCX.
+<img width="555" height="732" alt="image" src="https://github.com/user-attachments/assets/988dfc2f-3c4f-4ab0-b0f3-45be93693deb" />
+
+**Foto 4:** pantalla del prototipo mostrando NH₃ 38,8 ppm y MQ 54. No se encontró una imagen independiente de esta pantalla entre los archivos multimedia extraídos del DOCX.
 
 *Foto 4. La pantalla ya convierte la señal del MQ-137 a ppm. Para la misma señal (54), la pantalla muestra 38,8 ppm y la plataforma web 7,2 ppm; falta poner en la pantalla la misma fórmula calibrada de la web.*
 
