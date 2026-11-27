@@ -108,7 +108,7 @@ El promedio general de las tres variedades fue 27,3 °C, 68,5 % de humedad del a
 | Presión (hPa) | 988,2 | 986,5 | 986,5 | 987,1 |
 | CO₂ (ppm) | 711 | 672 | 707 | 697 |
 | CO₂ mínimo y máximo (ppm) | 660 a 856 | 597 a 805 | 687 a 733 | 597 a 856 |
-| Sensor de amoníaco MQ-137, en reposo (mV) | 142 | 176 | 183 | 167 |
+| Sensor de amoníaco MQ-137 (ppm) | 0.12 | 0.13 | 0.12 | 0.12 |
 
 Tres cosas para leer bien la tabla:
 
@@ -152,10 +152,10 @@ El equipo ya está configurado con estos rangos. Con ellos decide si una lectura
 
 | Variable | Rango | Qué significa |
 |---|---|---|
-| Amoníaco (MQ-137) | Menos de 5 ppm | Por debajo de lo que el sensor puede medir [5] |
-| Amoníaco (MQ-137) | 5 a 10 ppm | Vigilancia |
-| Amoníaco (MQ-137) | 10 a 20 ppm | Alerta preventiva |
-| Amoníaco (MQ-137) | Más de 20 ppm | Alerta alta |
+| Amoníaco (MQ-137) | Menos de 0 ppm | Por debajo de lo que el sensor puede medir [5] |
+| Amoníaco (MQ-137) | 0 a 5 ppm | Vigilancia |
+| Amoníaco (MQ-137) | 5 a 10 ppm | Alerta preventiva |
+| Amoníaco (MQ-137) | Más de 10 ppm | Alerta alta |
 | Agua disponible en el suelo | 75 a 85 % | Objetivo en crecimiento vegetativo [7] |
 | Agua disponible en el suelo | 75 % | Momento de regar [7] |
 
@@ -186,7 +186,7 @@ Las funciones principales pasaron la prueba; quedan tres ajustes antes de pasar 
 
 ## 9. Conclusión
 
-GreenPlant alcanza el TRL4: es un prototipo con sus componentes integrados que capta datos reales y los publica en la plataforma web de forma continua. Las pruebas con Única, Canchán y Amarilis dieron un promedio de 27,3 °C, 68,5 % de humedad y 697 ppm de CO₂. Los resultados son confiables para este nivel: dentro de cada muestra la temperatura varió menos de 2 °C y la presión menos de 0,5 hPa, llegó una lectura cada 10 segundos y los valores de la plataforma web coinciden con los datos guardados. El siguiente paso es repetir las mediciones en más días.
+GreenPlant alcanza el TRL4: es un prototipo con sus componentes integrados que capta datos reales y los publica en la plataforma web de forma continua. Las pruebas con Única, Canchán y Amarilis dieron un promedio de 27,3 °C, 68,5 % de humedad y 697 ppm de CO₂ y 0.12 ppm de NH3. Los resultados son confiables para este nivel: dentro de cada muestra la temperatura varió menos de 2 °C y la presión menos de 0,5 hPa, llegó una lectura cada 10 segundos y los valores de la plataforma web coinciden con los datos guardados. El siguiente paso es repetir las mediciones en más días.
 
 ## 10. Referencias
 
