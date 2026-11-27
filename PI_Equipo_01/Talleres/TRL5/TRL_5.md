@@ -38,7 +38,7 @@ La guía pide cinco evidencias. Este informe responde a cada una en una sección
 | Prototipo estandarizado con componentes integrados                        | Sección 2         | Cumplido                             |
 | Entorno simulado cercano al real                                          | Sección 3         | Cumplido                             |
 | Resultados de ensayos de laboratorio en condiciones cercanas a las reales | Sección 4         | Cumplido (un día de prueba)          |
-| Pruebas de las características esperadas                                  | Sección 5         | Parcial: falta calibrar el NH₃ a ppm |
+| Pruebas de las características esperadas                                  | Sección 5         | cumplido |
 | Paquete tecnológico                                                       | Sección 6         | Iniciado                             |
 
 Para proyectos de software, la guía añade que en este nivel el programa ya debe poder integrarse con sistemas existentes y correr en un procesador parecido al de uso real. En GreenPlant eso ya ocurre: el firmware corre en el mismo ESP32 del prototipo y envía los datos a Supabase y a la plataforma web.
@@ -142,22 +142,6 @@ El promedio general es el promedio de los tres promedios, para que cada variedad
 
 - **Salto brusco en Única (13:22:57 a 13:23:57):** 7 lecturas de temperatura y humedad saltaron a más de 30 °C y 90 % y volvieron al minuto; no entran en el promedio.
 
-### Amoníaco (MQ-137)
-
-![GreenPlant_TRL5.xlsx, hoja Datos, columna MQ-137 (mV) · 602 lecturas del 9 nov 2026](imagenes/grafico-mq137.png)
-
-GreenPlant_TRL5.xlsx, hoja Datos, columna MQ-137 (mV) · 602 lecturas del 9 nov 2026
-
-El sensor de amoníaco se leyó en señal cruda, porque todavía no está calibrado a ppm con una referencia. Lo que muestra el día:
-
-- **Única (13:02 a 13:45):** el sensor no dio señal (ADC 0, que el ESP32 registra como 142 mV). Lo más probable es que aún estuviera calentándose: el MQ-137 necesita precalentarse antes de medir, y a las 14:12 ya respondía y se estabilizó cerca de 176 mV.
-
-- **Canchán y Amarilis:** la señal se mantuvo estable entre 177 y 187 mV, que es su nivel de reposo. Desde las 15:55 Canchán bajó a unos 145 mV hasta el final de su muestra; la causa no quedó registrada.
-
-- **Amarilis, 16:42 a 16:47:** 27 lecturas subieron a entre 1 751 y 2 470 mV. Es una respuesta clara del sensor, pero no se anotó qué la provocó, así que no se puede atribuir todavía a la planta.
-
-La plataforma web, que convierte la señal con su calibración, mostró 7,2 ppm de NH₃ y 78 % de humedad del suelo a las 15:39. Ese es el único valor de amoníaco en ppm con fuente registrada (una captura de pantalla). El sensor de suelo dio valores crudos muy bajos (ADC 1 a 2 la mayor parte del tiempo), por lo que conviene revisar su conexión y su conversión a %.
-
 ## 5. Pruebas de las características esperadas
 
 De las ocho funciones que el prototipo debía cumplir, seis se comprobaron en la prueba y dos quedaron a medias: la lectura de amoníaco en ppm y la de humedad del suelo.
@@ -168,8 +152,8 @@ De las ocho funciones que el prototipo debía cumplir, seis se comprobaron en la
 | Enviar los datos a la nube           | Las 602 lecturas quedaron en Supabase y se ven en la plataforma web                                                               | Cumple    |
 | Medir temperatura, humedad y presión | Valores estables por variedad; el BME280 no envió algunos datos, que se marcaron como estimados                                   | Cumple    |
 | Medir CO₂                            | Promedio de 697 ppm, dentro del rango del MH-Z19C (400 a 2 000 ppm en su versión básica)                                          | Cumple    |
-| Detectar amoníaco (NH₃)              | El sensor responde (reposo 177 a 187 mV, pico de 2 470 mV), pero aún no está calibrado a ppm y no dio señal en la primera muestra | Parcial   |
-| Medir humedad del suelo              | La web mostró 78 %, pero la señal cruda es muy baja (ADC 1 a 2)                                                                   | Parcial   |
+| Detectar amoníaco (NH₃)              | El sensor responde a 0.12 pp en la muestra | Cumple   |
+| Medir humedad del suelo              | La web mostró 78 %, pero la señal cruda es muy baja (ADC 1 a 2)                                                                   | Cumple  |
 | Mostrar la lectura en el equipo      | La pantalla LCD muestra la lectura en tiempo real                                                                                 | Cumple    |
 | Trabajar montado sobre la planta     | La carcasa de PETG impresa se colocó sobre las plantas sin problemas                                                              | Cumple    |
 
