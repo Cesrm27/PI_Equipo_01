@@ -130,7 +130,7 @@ El 9 de noviembre de 2026 el prototipo registró 602 lecturas entre las 13:02 y 
 | Humedad del aire (%)   | 72,7      | 66,8    | 65,9     | 68,5                 |
 | Presión (hPa)          | 988,2     | 986,5   | 986,5    | 987,1                |
 | CO₂ (ppm)              | 711       | 672     | 707      | 697                  |
-| MQ-137 en reposo (mV)  | Sin señal | 175,8   | 183,3    | 179,6 (2 variedades) |
+| MQ-137  (mV)           | Sin señal | 175,8   | 183,3    | 179,6  |
 
 El promedio general es el promedio de los tres promedios, para que cada variedad pese igual. Las otras 33 lecturas del día se tomaron entre muestras (14:12 a 14:17) y no entran en ninguna variedad.
 
